@@ -86,6 +86,21 @@
 		8B7385411881D10E00D1E0C2 /* toolbar-home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384F31881D10E00D1E0C2 /* toolbar-home@2x.png */; };
 		8B7385421881D10E00D1E0C2 /* top-title.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384F41881D10E00D1E0C2 /* top-title.png */; };
 		8B7385431881D10E00D1E0C2 /* top-title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384F51881D10E00D1E0C2 /* top-title@2x.png */; };
+		8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73854B1881F07F00D1E0C2 /* TIMViewController.m */; };
+		8B73854F1881F0BC00D1E0C2 /* TIMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73854E1881F0BC00D1E0C2 /* TIMNavigationViewController.m */; };
+		8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385511881F15400D1E0C2 /* TIMRegistrationNavController.m */; };
+		8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385541881F1DD00D1E0C2 /* TIMRegistrationViewController.m */; };
+		8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385571881F22000D1E0C2 /* TIMHomeNavigationViewController.m */; };
+		8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73855E1881F29B00D1E0C2 /* TIMHomeProfileViewController.m */; };
+		8B7385611881F29B00D1E0C2 /* TIMHomeProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B73855F1881F29B00D1E0C2 /* TIMHomeProfileViewController.xib */; };
+		8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385641881F2E500D1E0C2 /* TIMLoginViewController.m */; };
+		8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7385651881F2E600D1E0C2 /* TIMLoginViewController.xib */; };
+		8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73856C1881F37E00D1E0C2 /* TIMStepOneRegViewController.m */; };
+		8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B73856D1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib */; };
+		8B7385731881F39500D1E0C2 /* TIMStepTwoRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385711881F39500D1E0C2 /* TIMStepTwoRegViewController.m */; };
+		8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7385721881F39500D1E0C2 /* TIMStepTwoRegViewController.xib */; };
+		8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385761881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m */; };
+		8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7385771881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib */; };
 		8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50218815D09009ED9D8 /* Foundation.framework */; };
 		8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */; };
 		8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
@@ -192,6 +207,31 @@
 		8B7384F31881D10E00D1E0C2 /* toolbar-home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "toolbar-home@2x.png"; path = "Images/Registration/toolbar-home@2x.png"; sourceTree = "<group>"; };
 		8B7384F41881D10E00D1E0C2 /* top-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top-title.png"; path = "Images/Registration/top-title.png"; sourceTree = "<group>"; };
 		8B7384F51881D10E00D1E0C2 /* top-title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top-title@2x.png"; path = "Images/Registration/top-title@2x.png"; sourceTree = "<group>"; };
+		8B73854A1881F07F00D1E0C2 /* TIMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMViewController.h; path = Controllers/TIMViewController.h; sourceTree = "<group>"; };
+		8B73854B1881F07F00D1E0C2 /* TIMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMViewController.m; path = Controllers/TIMViewController.m; sourceTree = "<group>"; };
+		8B73854D1881F0BC00D1E0C2 /* TIMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMNavigationViewController.h; path = Controllers/TIMNavigationViewController.h; sourceTree = "<group>"; };
+		8B73854E1881F0BC00D1E0C2 /* TIMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMNavigationViewController.m; path = Controllers/TIMNavigationViewController.m; sourceTree = "<group>"; };
+		8B7385501881F15400D1E0C2 /* TIMRegistrationNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMRegistrationNavController.h; path = Controllers/TIMRegistrationNavController.h; sourceTree = "<group>"; };
+		8B7385511881F15400D1E0C2 /* TIMRegistrationNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMRegistrationNavController.m; path = Controllers/TIMRegistrationNavController.m; sourceTree = "<group>"; };
+		8B7385531881F1DD00D1E0C2 /* TIMRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMRegistrationViewController.h; path = Controllers/TIMRegistrationViewController.h; sourceTree = "<group>"; };
+		8B7385541881F1DD00D1E0C2 /* TIMRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMRegistrationViewController.m; path = Controllers/TIMRegistrationViewController.m; sourceTree = "<group>"; };
+		8B7385561881F22000D1E0C2 /* TIMHomeNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMHomeNavigationViewController.h; path = Controllers/TIMHomeNavigationViewController.h; sourceTree = "<group>"; };
+		8B7385571881F22000D1E0C2 /* TIMHomeNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMHomeNavigationViewController.m; path = Controllers/TIMHomeNavigationViewController.m; sourceTree = "<group>"; };
+		8B73855D1881F29B00D1E0C2 /* TIMHomeProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMHomeProfileViewController.h; path = Controllers/TIMHomeProfileViewController.h; sourceTree = "<group>"; };
+		8B73855E1881F29B00D1E0C2 /* TIMHomeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMHomeProfileViewController.m; path = Controllers/TIMHomeProfileViewController.m; sourceTree = "<group>"; };
+		8B73855F1881F29B00D1E0C2 /* TIMHomeProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMHomeProfileViewController.xib; path = Controllers/TIMHomeProfileViewController.xib; sourceTree = "<group>"; };
+		8B7385631881F2E500D1E0C2 /* TIMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMLoginViewController.h; path = Controllers/TIMLoginViewController.h; sourceTree = "<group>"; };
+		8B7385641881F2E500D1E0C2 /* TIMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLoginViewController.m; path = Controllers/TIMLoginViewController.m; sourceTree = "<group>"; };
+		8B7385651881F2E600D1E0C2 /* TIMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMLoginViewController.xib; path = Controllers/TIMLoginViewController.xib; sourceTree = "<group>"; };
+		8B73856B1881F37E00D1E0C2 /* TIMStepOneRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStepOneRegViewController.h; path = Controllers/TIMStepOneRegViewController.h; sourceTree = "<group>"; };
+		8B73856C1881F37E00D1E0C2 /* TIMStepOneRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMStepOneRegViewController.m; path = Controllers/TIMStepOneRegViewController.m; sourceTree = "<group>"; };
+		8B73856D1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMStepOneRegViewController.xib; path = Controllers/TIMStepOneRegViewController.xib; sourceTree = "<group>"; };
+		8B7385701881F39500D1E0C2 /* TIMStepTwoRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStepTwoRegViewController.h; path = Controllers/TIMStepTwoRegViewController.h; sourceTree = "<group>"; };
+		8B7385711881F39500D1E0C2 /* TIMStepTwoRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMStepTwoRegViewController.m; path = Controllers/TIMStepTwoRegViewController.m; sourceTree = "<group>"; };
+		8B7385721881F39500D1E0C2 /* TIMStepTwoRegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMStepTwoRegViewController.xib; path = Controllers/TIMStepTwoRegViewController.xib; sourceTree = "<group>"; };
+		8B7385751881F3AF00D1E0C2 /* TIMStepThreeRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStepThreeRegViewController.h; path = Controllers/TIMStepThreeRegViewController.h; sourceTree = "<group>"; };
+		8B7385761881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMStepThreeRegViewController.m; path = Controllers/TIMStepThreeRegViewController.m; sourceTree = "<group>"; };
+		8B7385771881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMStepThreeRegViewController.xib; path = Controllers/TIMStepThreeRegViewController.xib; sourceTree = "<group>"; };
 		8BA5B4FF18815D09009ED9D8 /* TrueIMPRESSION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueIMPRESSION.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA5B50218815D09009ED9D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -329,9 +369,138 @@
 			name = Registration;
 			sourceTree = "<group>";
 		};
+		8B7385441881EA0200D1E0C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385461881EA2900D1E0C2 /* Custom Nav Controller */,
+				8B7385471881EA3600D1E0C2 /* Custom View Controller */,
+				8B7385491881EAC400D1E0C2 /* Main Home Controller */,
+				8B7385481881EA5500D1E0C2 /* Registration Controllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8B7385451881EA1200D1E0C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8B7385461881EA2900D1E0C2 /* Custom Nav Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B73854D1881F0BC00D1E0C2 /* TIMNavigationViewController.h */,
+				8B73854E1881F0BC00D1E0C2 /* TIMNavigationViewController.m */,
+			);
+			name = "Custom Nav Controller";
+			sourceTree = "<group>";
+		};
+		8B7385471881EA3600D1E0C2 /* Custom View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B73854A1881F07F00D1E0C2 /* TIMViewController.h */,
+				8B73854B1881F07F00D1E0C2 /* TIMViewController.m */,
+			);
+			name = "Custom View Controller";
+			sourceTree = "<group>";
+		};
+		8B7385481881EA5500D1E0C2 /* Registration Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385621881F2B100D1E0C2 /* Login */,
+				8B7385681881F30C00D1E0C2 /* Step 1 */,
+				8B7385691881F31600D1E0C2 /* Step 2 */,
+				8B73856A1881F31C00D1E0C2 /* Step 3 */,
+				8B73855A1881F24500D1E0C2 /* parent */,
+				8B7385591881F23500D1E0C2 /* navigation */,
+			);
+			name = "Registration Controllers";
+			sourceTree = "<group>";
+		};
+		8B7385491881EAC400D1E0C2 /* Main Home Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B73855B1881F25400D1E0C2 /* navigation */,
+				8B73855D1881F29B00D1E0C2 /* TIMHomeProfileViewController.h */,
+				8B73855E1881F29B00D1E0C2 /* TIMHomeProfileViewController.m */,
+				8B73855F1881F29B00D1E0C2 /* TIMHomeProfileViewController.xib */,
+			);
+			name = "Main Home Controller";
+			sourceTree = "<group>";
+		};
+		8B7385591881F23500D1E0C2 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385501881F15400D1E0C2 /* TIMRegistrationNavController.h */,
+				8B7385511881F15400D1E0C2 /* TIMRegistrationNavController.m */,
+			);
+			name = navigation;
+			sourceTree = "<group>";
+		};
+		8B73855A1881F24500D1E0C2 /* parent */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385531881F1DD00D1E0C2 /* TIMRegistrationViewController.h */,
+				8B7385541881F1DD00D1E0C2 /* TIMRegistrationViewController.m */,
+			);
+			name = parent;
+			sourceTree = "<group>";
+		};
+		8B73855B1881F25400D1E0C2 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385561881F22000D1E0C2 /* TIMHomeNavigationViewController.h */,
+				8B7385571881F22000D1E0C2 /* TIMHomeNavigationViewController.m */,
+			);
+			name = navigation;
+			sourceTree = "<group>";
+		};
+		8B7385621881F2B100D1E0C2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385631881F2E500D1E0C2 /* TIMLoginViewController.h */,
+				8B7385641881F2E500D1E0C2 /* TIMLoginViewController.m */,
+				8B7385651881F2E600D1E0C2 /* TIMLoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		8B7385681881F30C00D1E0C2 /* Step 1 */ = {
+			isa = PBXGroup;
+			children = (
+				8B73856B1881F37E00D1E0C2 /* TIMStepOneRegViewController.h */,
+				8B73856C1881F37E00D1E0C2 /* TIMStepOneRegViewController.m */,
+				8B73856D1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib */,
+			);
+			name = "Step 1";
+			sourceTree = "<group>";
+		};
+		8B7385691881F31600D1E0C2 /* Step 2 */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385701881F39500D1E0C2 /* TIMStepTwoRegViewController.h */,
+				8B7385711881F39500D1E0C2 /* TIMStepTwoRegViewController.m */,
+				8B7385721881F39500D1E0C2 /* TIMStepTwoRegViewController.xib */,
+			);
+			name = "Step 2";
+			sourceTree = "<group>";
+		};
+		8B73856A1881F31C00D1E0C2 /* Step 3 */ = {
+			isa = PBXGroup;
+			children = (
+				8B7385751881F3AF00D1E0C2 /* TIMStepThreeRegViewController.h */,
+				8B7385761881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m */,
+				8B7385771881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib */,
+			);
+			name = "Step 3";
+			sourceTree = "<group>";
+		};
 		8BA5B4F618815D09009ED9D8 = {
 			isa = PBXGroup;
 			children = (
+				8B7385451881EA1200D1E0C2 /* Views */,
+				8B7385441881EA0200D1E0C2 /* Controllers */,
 				8B7384A51881D0B500D1E0C2 /* Images */,
 				8BA5B50818815D09009ED9D8 /* TrueIMPRESSION */,
 				8BA5B52118815D09009ED9D8 /* TrueIMPRESSIONTests */,
@@ -491,6 +660,7 @@
 				8B7385281881D10E00D1E0C2 /* info-line@2x.png in Resources */,
 				8B73850A1881D10E00D1E0C2 /* flag-ru@2x.png in Resources */,
 				8B7385271881D10E00D1E0C2 /* info-line.png in Resources */,
+				8B7385611881F29B00D1E0C2 /* TIMHomeProfileViewController.xib in Resources */,
 				8B7385421881D10E00D1E0C2 /* top-title.png in Resources */,
 				8B73853C1881D10E00D1E0C2 /* text-field.png in Resources */,
 				8B73852E1881D10E00D1E0C2 /* login-button-down.png in Resources */,
@@ -507,6 +677,7 @@
 				8B7385321881D10E00D1E0C2 /* logo.png in Resources */,
 				8B73850C1881D10E00D1E0C2 /* header-back-button-down@2x.png in Resources */,
 				8B7385311881D10E00D1E0C2 /* login-button@2x.png in Resources */,
+				8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */,
 				8B73850B1881D10E00D1E0C2 /* header-back-button-down.png in Resources */,
 				8B73851B1881D10E00D1E0C2 /* icon-feed-place.png in Resources */,
 				8B7385391881D10E00D1E0C2 /* stars-example@2x.png in Resources */,
@@ -520,6 +691,7 @@
 				8B73853E1881D10E00D1E0C2 /* title-image.png in Resources */,
 				8B7385131881D10E00D1E0C2 /* home-button-waves.png in Resources */,
 				8B7385251881D10E00D1E0C2 /* icon-toolbar-search.png in Resources */,
+				8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */,
 				8B7385041881D10E00D1E0C2 /* disclosure-icon.png in Resources */,
 				8B7385341881D10E00D1E0C2 /* reg-circle.png in Resources */,
 				8BA5B50D18815D09009ED9D8 /* InfoPlist.strings in Resources */,
@@ -551,9 +723,11 @@
 				8B7385061881D10E00D1E0C2 /* flag_by.png in Resources */,
 				8B7384FC1881D10E00D1E0C2 /* camera-delete-icon.png in Resources */,
 				8B7384F91881D10E00D1E0C2 /* camera-choose-icon@2x.png in Resources */,
+				8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */,
 				8B7385151881D10E00D1E0C2 /* home-button.png in Resources */,
 				8B7385361881D10E00D1E0C2 /* register-window.png in Resources */,
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
+				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
 				8B7385141881D10E00D1E0C2 /* home-button-waves@2x.png in Resources */,
 				8B7385381881D10E00D1E0C2 /* stars-example.png in Resources */,
 				8B73853D1881D10E00D1E0C2 /* text-field@2x.png in Resources */,
@@ -615,7 +789,17 @@
 			files = (
 				8B7385291881D10E00D1E0C2 /* LMAttributeEditCell.m in Sources */,
 				8BA5B50F18815D09009ED9D8 /* main.m in Sources */,
+				8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */,
+				8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
+				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,
+				8B7385731881F39500D1E0C2 /* TIMStepTwoRegViewController.m in Sources */,
+				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
+				8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */,
+				8B73854F1881F0BC00D1E0C2 /* TIMNavigationViewController.m in Sources */,
+				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,
+				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
+				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

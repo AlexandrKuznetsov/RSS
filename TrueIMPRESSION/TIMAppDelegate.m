@@ -13,7 +13,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    TIMHomeProfileViewController *homeViewController = [[TIMHomeProfileViewController alloc]
+                                                        initWithNibName:@"TIMHomeProfileViewController"
+                                                        bundle:[NSBundle mainBundle]];
+    TIMHomeNavigationViewController *homeNavigation = [[TIMHomeNavigationViewController alloc]
+                                                       initWithRootViewController:homeViewController];
+    self.window.rootViewController = homeNavigation;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

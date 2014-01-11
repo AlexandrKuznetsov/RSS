@@ -8,6 +8,8 @@
 
 
 #import <UIKit/UIKit.h>
+#import "TIMHomeNavigationViewController.h"
+#import "TIMHomeProfileViewController.h"
 
 
 @interface TIMAppDelegate : UIResponder <UIApplicationDelegate>
