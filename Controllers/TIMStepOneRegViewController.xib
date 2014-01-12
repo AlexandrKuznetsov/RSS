@@ -28,11 +28,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nGn-n8-mHc">
-                            <rect key="frame" x="111" y="346" width="99" height="30"/>
+                            <rect key="frame" x="80" y="346" width="160" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.39203398582689242" green="1" blue="0.34359245585006315" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="Продолжить">
+                            <state key="normal" title="Продолжить" backgroundImage="btn_green.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -96,6 +96,7 @@
         </view>
     </objects>
     <resources>
+        <image name="btn_green.png" width="160" height="35"/>
         <image name="reg-circle.png" width="40" height="40"/>
         <image name="register-window.png" width="320" height="339"/>
         <image name="text-field.png" width="234" height="33"/>
