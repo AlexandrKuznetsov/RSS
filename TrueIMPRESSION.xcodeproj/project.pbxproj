@@ -115,6 +115,7 @@
 		8B9283CA18833876009F93C0 /* icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283C218833876009F93C0 /* icon_circle.png */; };
 		8B9283CD188350A0009F93C0 /* TIMHomeNavButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9283CC188350A0009F93C0 /* TIMHomeNavButtonsView.m */; };
 		8B9283CF188350AE009F93C0 /* TIMHomeNavButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283CE188350AE009F93C0 /* TIMHomeNavButtonsView.xib */; };
+		8B9283D31883593B009F93C0 /* TIMRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9283D21883593B009F93C0 /* TIMRoundedImageView.m */; };
 		8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50218815D09009ED9D8 /* Foundation.framework */; };
 		8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */; };
 		8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
@@ -266,6 +267,8 @@
 		8B9283CB188350A0009F93C0 /* TIMHomeNavButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMHomeNavButtonsView.h; path = views/TIMHomeNavButtonsView.h; sourceTree = "<group>"; };
 		8B9283CC188350A0009F93C0 /* TIMHomeNavButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMHomeNavButtonsView.m; path = views/TIMHomeNavButtonsView.m; sourceTree = "<group>"; };
 		8B9283CE188350AE009F93C0 /* TIMHomeNavButtonsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMHomeNavButtonsView.xib; sourceTree = "<group>"; };
+		8B9283D11883593B009F93C0 /* TIMRoundedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMRoundedImageView.h; path = "Custom Elements/TIMRoundedImageView.h"; sourceTree = "<group>"; };
+		8B9283D21883593B009F93C0 /* TIMRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMRoundedImageView.m; path = "Custom Elements/TIMRoundedImageView.m"; sourceTree = "<group>"; };
 		8BA5B4FF18815D09009ED9D8 /* TrueIMPRESSION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueIMPRESSION.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA5B50218815D09009ED9D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -550,6 +553,7 @@
 		8B73857A1882000400D1E0C2 /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				8B9283D018835918009F93C0 /* Image View */,
 				8B73857B1882001200D1E0C2 /* Buttons */,
 			);
 			name = "Custom Elements";
@@ -575,6 +579,15 @@
 				C5A531B718831D2E007B4019 /* NSObject+CheckData.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		8B9283D018835918009F93C0 /* Image View */ = {
+			isa = PBXGroup;
+			children = (
+				8B9283D11883593B009F93C0 /* TIMRoundedImageView.h */,
+				8B9283D21883593B009F93C0 /* TIMRoundedImageView.m */,
+			);
+			name = "Image View";
 			sourceTree = "<group>";
 		};
 		8BA5B4F618815D09009ED9D8 = {
@@ -894,6 +907,7 @@
 				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
 				8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */,
 				C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */,
+				8B9283D31883593B009F93C0 /* TIMRoundedImageView.m in Sources */,
 				8B73854F1881F0BC00D1E0C2 /* TIMNavigationViewController.m in Sources */,
 				8B9283CD188350A0009F93C0 /* TIMHomeNavButtonsView.m in Sources */,
 				8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */,

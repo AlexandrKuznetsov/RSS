@@ -51,33 +51,23 @@
     return _buttonsView;
 }
 
-
 #pragma mark - Buttons 
 
-- (void)menuButton {
+- (UIBarButtonItem *)customButtonWithImageName:(NSString *)imageName selector:(SEL)aSel {
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
     UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
-    [customButton setBackgroundImage:[UIImage imageNamed:@"btn_menu"] forState:UIControlStateNormal];
-    [customButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
+    [customButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [customButton addTarget:self action:aSel forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:customButton];
-    UIBarButtonItem *customItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
-    self.navigationItem.leftBarButtonItem = customItem;
-}
-
-- (void)addButton {
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
-    UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
-    [customButton setBackgroundImage:[UIImage imageNamed:@"btn_add_place"] forState:UIControlStateNormal];
-    [customButton addTarget:self action:@selector(addImpression) forControlEvents:UIControlEventTouchUpInside];
-    [customView addSubview:customButton];
-    UIBarButtonItem *customItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
-    self.navigationItem.rightBarButtonItem = customItem;
+    return [[UIBarButtonItem alloc] initWithCustomView:customView];
 }
 
 - (void)addNavigationButtons {
     self.navigationItem.titleView = self.buttonsView;
-    [self addButton];
-    [self menuButton];
+    self.navigationItem.leftBarButtonItem = [self customButtonWithImageName:@"btn_menu"
+                                                                   selector:@selector(showMenu)];
+    self.navigationItem.rightBarButtonItem = [self customButtonWithImageName:@"btn_add_place"
+                                                                    selector:@selector(addImpression)];
 }
 
 #pragma mark - Navigation
