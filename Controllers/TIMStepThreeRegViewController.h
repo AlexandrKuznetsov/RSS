@@ -10,4 +10,6 @@
 
 @interface TIMStepThreeRegViewController : TIMRegistrationViewController
 
+- (IBAction)finishRegistration:(id)sender;
+
 @end

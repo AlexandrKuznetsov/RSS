@@ -39,4 +39,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)goToNextStep:(id)sender {
+    [self pushStepTwo];
+}
+
+- (void)pushStepTwo {
+    TIMStepTwoRegViewController *stepTwoController = [[TIMStepTwoRegViewController alloc]
+                                                      initWithNibName:@"TIMStepTwoRegViewController"
+                                                      bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:stepTwoController animated:YES];
+}
+
 @end

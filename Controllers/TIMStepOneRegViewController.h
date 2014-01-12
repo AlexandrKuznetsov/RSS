@@ -7,7 +7,10 @@
 //
 
 #import "TIMRegistrationViewController.h"
+#import "TIMStepTwoRegViewController.h"
 
 @interface TIMStepOneRegViewController : TIMRegistrationViewController
+
+- (IBAction)goToNextStep:(id)sender;
 
 @end

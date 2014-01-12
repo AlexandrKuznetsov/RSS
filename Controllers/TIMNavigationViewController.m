@@ -26,8 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    UIImage *navBarBackgroundImage = [[UIImage imageNamed:@"header-title.png"]
+                                      resizableImageWithCapInsets:UIEdgeInsetsMake(20, 0, 20, 0)];
+    [self.navigationBar setBackgroundImage:navBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    [self backButtonCustomizaton];
 }
+
+- (void)backButtonCustomizaton {
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -35,4 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)finishRegistration:(id)sender {
+    [self dismissRegistration];
+}
+
+- (void)dismissRegistration {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 @end

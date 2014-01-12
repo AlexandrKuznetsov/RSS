@@ -35,4 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)goToNextStep:(id)sender {
+    [self pushStepThree];
+}
+
+- (void)pushStepThree {
+    TIMStepThreeRegViewController *stepThreeController = [[TIMStepThreeRegViewController alloc]
+                                                          initWithNibName:@"TIMStepThreeRegViewController"
+                                                          bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:stepThreeController animated:YES];
+}
+
 @end
