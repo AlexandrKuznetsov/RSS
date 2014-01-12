@@ -9,7 +9,10 @@
 #import "TIMViewController.h"
 #import "TIMRegistrationNavController.h"
 #import "TIMLoginViewController.h"
+#import "TIMHomeNavButtonsView.h"
 
 @interface TIMHomeProfileViewController : TIMViewController
+
+@property (strong, nonatomic) TIMHomeNavButtonsView *buttonsView;
 
 @end

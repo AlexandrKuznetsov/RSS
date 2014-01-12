@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self checkForLoginInformation];
+    //[self checkForLoginInformation];
+    [self addNavigationButtons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +42,46 @@
     [self pushLoginViewController];
 }
 
+#pragma mark - Accessors
+
+- (TIMHomeNavButtonsView *)buttonsView {
+    if (!_buttonsView) {
+        _buttonsView = [TIMHomeNavButtonsView loadView];
+    }
+    return _buttonsView;
+}
+
+
+#pragma mark - Buttons 
+
+- (void)menuButton {
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
+    UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
+    [customButton setBackgroundImage:[UIImage imageNamed:@"btn_menu"] forState:UIControlStateNormal];
+    [customButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
+    [customView addSubview:customButton];
+    UIBarButtonItem *customItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
+    self.navigationItem.leftBarButtonItem = customItem;
+}
+
+- (void)addButton {
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
+    UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
+    [customButton setBackgroundImage:[UIImage imageNamed:@"btn_add_place"] forState:UIControlStateNormal];
+    [customButton addTarget:self action:@selector(addImpression) forControlEvents:UIControlEventTouchUpInside];
+    [customView addSubview:customButton];
+    UIBarButtonItem *customItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
+    self.navigationItem.rightBarButtonItem = customItem;
+}
+
+- (void)addNavigationButtons {
+    self.navigationItem.titleView = self.buttonsView;
+    [self addButton];
+    [self menuButton];
+}
+
+#pragma mark - Navigation
+
 - (void)pushLoginViewController {
     TIMLoginViewController *loginController = [[TIMLoginViewController alloc]
                                                initWithNibName:@"TIMLoginViewController"
@@ -48,6 +89,12 @@
     TIMRegistrationNavController *registrationNavigation = [[TIMRegistrationNavController alloc]
                                                             initWithRootViewController:loginController];
     [self presentViewController:registrationNavigation animated:NO completion:nil];
+}
+
+- (void)showMenu {
+}
+
+- (void)addImpression {
 }
 
 @end
