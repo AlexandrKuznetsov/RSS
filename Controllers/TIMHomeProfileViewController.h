@@ -7,6 +7,8 @@
 //
 
 #import "TIMViewController.h"
+#import "TIMRegistrationNavController.h"
+#import "TIMLoginViewController.h"
 
 @interface TIMHomeProfileViewController : TIMViewController
 

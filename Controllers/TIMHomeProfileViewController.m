@@ -26,13 +26,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self checkForLoginInformation];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)checkForLoginInformation {
+    //проверка на информацию о логине. При отсутвии - переход на экран с логином.
+    //На данный момент переход на экран логина осуществляется всегда для разработки экранов регистрации
+    [self pushLoginViewController];
+}
+
+- (void)pushLoginViewController {
+    TIMLoginViewController *loginController = [[TIMLoginViewController alloc]
+                                               initWithNibName:@"TIMLoginViewController"
+                                               bundle:[NSBundle mainBundle]];
+    TIMRegistrationNavController *registrationNavigation = [[TIMRegistrationNavController alloc]
+                                                            initWithRootViewController:loginController];
+    [self presentViewController:registrationNavigation animated:NO completion:nil];
 }
 
 @end

@@ -59,7 +59,6 @@
 		8B7385261881D10E00D1E0C2 /* icon-toolbar-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384D71881D10D00D1E0C2 /* icon-toolbar-search@2x.png */; };
 		8B7385271881D10E00D1E0C2 /* info-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384D81881D10D00D1E0C2 /* info-line.png */; };
 		8B7385281881D10E00D1E0C2 /* info-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384D91881D10D00D1E0C2 /* info-line@2x.png */; };
-		8B7385291881D10E00D1E0C2 /* LMAttributeEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7384DB1881D10D00D1E0C2 /* LMAttributeEditCell.m */; };
 		8B73852A1881D10E00D1E0C2 /* login-area.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384DC1881D10D00D1E0C2 /* login-area.png */; };
 		8B73852B1881D10E00D1E0C2 /* login-area@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384DD1881D10D00D1E0C2 /* login-area@2x.png */; };
 		8B73852C1881D10E00D1E0C2 /* login-bottom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384DE1881D10D00D1E0C2 /* login-bottom.jpg */; };
@@ -101,6 +100,9 @@
 		8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7385721881F39500D1E0C2 /* TIMStepTwoRegViewController.xib */; };
 		8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7385761881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m */; };
 		8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7385771881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib */; };
+		8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */; };
+		8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */; };
+		8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */; };
 		8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50218815D09009ED9D8 /* Foundation.framework */; };
 		8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */; };
 		8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
@@ -179,8 +181,6 @@
 		8B7384D71881D10D00D1E0C2 /* icon-toolbar-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-toolbar-search@2x.png"; path = "Images/Registration/icon-toolbar-search@2x.png"; sourceTree = "<group>"; };
 		8B7384D81881D10D00D1E0C2 /* info-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info-line.png"; path = "Images/Registration/info-line.png"; sourceTree = "<group>"; };
 		8B7384D91881D10D00D1E0C2 /* info-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info-line@2x.png"; path = "Images/Registration/info-line@2x.png"; sourceTree = "<group>"; };
-		8B7384DA1881D10D00D1E0C2 /* LMAttributeEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMAttributeEditCell.h; path = Images/Registration/LMAttributeEditCell.h; sourceTree = "<group>"; };
-		8B7384DB1881D10D00D1E0C2 /* LMAttributeEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMAttributeEditCell.m; path = Images/Registration/LMAttributeEditCell.m; sourceTree = "<group>"; };
 		8B7384DC1881D10D00D1E0C2 /* login-area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-area.png"; path = "Images/Registration/login-area.png"; sourceTree = "<group>"; };
 		8B7384DD1881D10D00D1E0C2 /* login-area@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-area@2x.png"; path = "Images/Registration/login-area@2x.png"; sourceTree = "<group>"; };
 		8B7384DE1881D10D00D1E0C2 /* login-bottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "login-bottom.jpg"; path = "Images/Registration/login-bottom.jpg"; sourceTree = "<group>"; };
@@ -232,6 +232,12 @@
 		8B7385751881F3AF00D1E0C2 /* TIMStepThreeRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStepThreeRegViewController.h; path = Controllers/TIMStepThreeRegViewController.h; sourceTree = "<group>"; };
 		8B7385761881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMStepThreeRegViewController.m; path = Controllers/TIMStepThreeRegViewController.m; sourceTree = "<group>"; };
 		8B7385771881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMStepThreeRegViewController.xib; path = Controllers/TIMStepThreeRegViewController.xib; sourceTree = "<group>"; };
+		8B73857C1882003A00D1E0C2 /* TIMLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMLoginButton.h; path = "Custom Elements/TIMLoginButton.h"; sourceTree = "<group>"; };
+		8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLoginButton.m; path = "Custom Elements/TIMLoginButton.m"; sourceTree = "<group>"; };
+		8B73857F188203E100D1E0C2 /* TIMLoginButtonSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMLoginButtonSmall.h; path = "Custom Elements/TIMLoginButtonSmall.h"; sourceTree = "<group>"; };
+		8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLoginButtonSmall.m; path = "Custom Elements/TIMLoginButtonSmall.m"; sourceTree = "<group>"; };
+		8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		8BA5B4FF18815D09009ED9D8 /* TrueIMPRESSION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueIMPRESSION.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA5B50218815D09009ED9D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -337,8 +343,6 @@
 				8B7384D71881D10D00D1E0C2 /* icon-toolbar-search@2x.png */,
 				8B7384D81881D10D00D1E0C2 /* info-line.png */,
 				8B7384D91881D10D00D1E0C2 /* info-line@2x.png */,
-				8B7384DA1881D10D00D1E0C2 /* LMAttributeEditCell.h */,
-				8B7384DB1881D10D00D1E0C2 /* LMAttributeEditCell.m */,
 				8B7384DC1881D10D00D1E0C2 /* login-area.png */,
 				8B7384DD1881D10D00D1E0C2 /* login-area@2x.png */,
 				8B7384DE1881D10D00D1E0C2 /* login-bottom.jpg */,
@@ -496,9 +500,39 @@
 			name = "Step 3";
 			sourceTree = "<group>";
 		};
+		8B73857A1882000400D1E0C2 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				8B73857B1882001200D1E0C2 /* Buttons */,
+			);
+			name = "Custom Elements";
+			sourceTree = "<group>";
+		};
+		8B73857B1882001200D1E0C2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8B73857C1882003A00D1E0C2 /* TIMLoginButton.h */,
+				8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */,
+				8B73857F188203E100D1E0C2 /* TIMLoginButtonSmall.h */,
+				8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		8B73858218820D3500D1E0C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */,
+				8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		8BA5B4F618815D09009ED9D8 = {
 			isa = PBXGroup;
 			children = (
+				8B73858218820D3500D1E0C2 /* Helpers */,
+				8B73857A1882000400D1E0C2 /* Custom Elements */,
 				8B7385451881EA1200D1E0C2 /* Views */,
 				8B7385441881EA0200D1E0C2 /* Controllers */,
 				8B7384A51881D0B500D1E0C2 /* Images */,
@@ -787,16 +821,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7385291881D10E00D1E0C2 /* LMAttributeEditCell.m in Sources */,
 				8BA5B50F18815D09009ED9D8 /* main.m in Sources */,
 				8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */,
 				8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */,
+				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
 				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,
+				8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8B7385731881F39500D1E0C2 /* TIMStepTwoRegViewController.m in Sources */,
 				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
 				8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */,
 				8B73854F1881F0BC00D1E0C2 /* TIMNavigationViewController.m in Sources */,
+				8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */,
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,
 				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
 				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
