@@ -26,32 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self customBackButtonItem];
-}
-
-- (void)customBackButtonItem{
-    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 22)];
-    UIImage *buttonImage = [UIImage imageNamed:@"header-back-button.png"];
-    UIImage *buttonHiglitedImage = [UIImage imageNamed:@"header-back-button-down.png"];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:buttonImage forState:UIControlStateNormal];
-    [button setImage:buttonHiglitedImage forState:UIControlStateHighlighted];
-    int xPosition;
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        xPosition = 0;
-    } else {
-        xPosition = customView.frame.size.width-22;
-    }
-    button.frame = CGRectMake(xPosition, 0, 22, 22);
-    [customView addSubview:button];
-    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* customBackBtn = [[UIBarButtonItem alloc] initWithCustomView:customView];
-    self.navigationItem.leftBarButtonItem = customBackBtn;
-    self.navigationItem.hidesBackButton = YES;
-}
-
-- (void)back{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

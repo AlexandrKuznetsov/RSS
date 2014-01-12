@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TIMViewController.h"
 
-@interface TIMRegistrationViewController : UIViewController
+@interface TIMRegistrationViewController : TIMViewController
 
 @end
