@@ -53,7 +53,9 @@
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* customBackBtn = [[UIBarButtonItem alloc] initWithCustomView:customView];
     self.navigationItem.leftBarButtonItem = customBackBtn;
-    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
     self.navigationItem.hidesBackButton = YES;
 }
 
