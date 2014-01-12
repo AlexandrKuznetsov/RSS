@@ -63,10 +63,30 @@
     [UIView animateWithDuration:0.5
                      animations:^{
                          self.loginView.alpha = 0;
-                         
                      } completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.5 animations:^{
                              self.fieldsView.alpha = 1;
+                         }];
+                     }];
+}
+
+- (void)animateView:(id)view hide:(BOOL)isHide {
+    UIView *animatedView;
+    BOOL action;
+    if ([view isKindOfClass:[NSArray class]]) {
+        animatedView = view[0];
+        action = (BOOL)view[1];
+    } else {
+        animatedView = view;
+        action = isHide;
+    }
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         self.fieldsView.alpha = (action ? 1 : 0);
+                         self.registrationButton.alpha = (action ? 1 : 0);
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.5 animations:^{
+                             animatedView.alpha = (action ? 0 : 1);
                          }];
                      }];
 }
@@ -85,6 +105,24 @@
     [self.passwordField resignFirstResponder];
 }
 
+- (void)fieldsWithError {
+    self.loginField.textColor = [UIColor redColor];
+    self.passwordField.textColor = [UIColor redColor];
+}
+
+- (void)fieldsWithoutError {
+    self.loginField.textColor = [UIColor whiteColor];
+    self.passwordField.textColor = [UIColor whiteColor];
+}
+
+- (void)showLoginError {
+    [self fieldsWithError];
+    [self animateView:self.errorView hide:NO];
+    [self performSelector:@selector(animateView:hide:)
+               withObject:@[self.errorView, @(NO)]
+               afterDelay:5.0f];
+}
+
 #pragma mark - Data
 
 - (void) sendImpressionsRequest {
@@ -92,7 +130,7 @@
 }
 
 - (void) sendLogin:(NSString *)login andPassword:(NSString *)password {
-    
+    [self showLoginError];
 }
 
 #pragma mark - Actions
@@ -102,6 +140,7 @@
 }
 
 - (IBAction)login:(id)sender {
+    [self hideKeyBoard];
     if ([self isAllFieldsAreValid]) {
         [self sendLogin:self.loginField.text andPassword:self.passwordField.text];
     }
@@ -109,6 +148,19 @@
 
 - (IBAction)goToRegistration:(id)sender {
     [self pushRegistrationViewController];
+}
+
+- (IBAction)hideErrorView:(id)sender {
+    [self animateView:self.errorView hide:YES];
+}
+
+- (IBAction)openMail:(id)sender {
+    [self animateView:self.forgetView hide:YES];
+}
+
+- (IBAction)showForgetView:(id)sender {
+    //отправка запроса на забывание пароля
+    [self animateView:self.forgetView hide:NO];
 }
 
 #pragma mark - Checks 
@@ -120,6 +172,7 @@
     }
     if (![self emailIsValid:self.loginField.text]) {
         [self showAlertWithMessage:@"Введите правильный e-mail"];
+        self.loginField.textColor = [UIColor redColor];
         return NO;
     }
     if (self.passwordField.text.length == 0) {
@@ -140,6 +193,10 @@
 
 
 #pragma mark - Delegates
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self fieldsWithoutError];
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [self hideKeyBoard];
 }

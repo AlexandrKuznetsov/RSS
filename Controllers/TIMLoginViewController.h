@@ -15,9 +15,15 @@
 @property (weak, nonatomic) IBOutlet UIView *fieldsView;
 @property (weak, nonatomic) IBOutlet UITextField *loginField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIView *errorView;
+@property (weak, nonatomic) IBOutlet UIView *forgetView;
+@property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 - (IBAction)showLoginFields:(id)sender;
 - (IBAction)login:(id)sender;
 - (IBAction)goToRegistration:(id)sender;
+- (IBAction)hideErrorView:(id)sender;
+- (IBAction)openMail:(id)sender;
+- (IBAction)showForgetView:(id)sender;
 
 
 @end

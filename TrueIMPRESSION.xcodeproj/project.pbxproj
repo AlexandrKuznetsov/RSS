@@ -103,6 +103,16 @@
 		8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */; };
 		8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */; };
 		8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */; };
+		8B9283B918832F34009F93C0 /* btn_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B718832F34009F93C0 /* btn_ok.png */; };
+		8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B818832F34009F93C0 /* btn_ok@2x.png */; };
+		8B9283C318833876009F93C0 /* btn_add_place_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BB18833876009F93C0 /* btn_add_place_retina.png */; };
+		8B9283C418833876009F93C0 /* btn_add_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BC18833876009F93C0 /* btn_add_place.png */; };
+		8B9283C518833876009F93C0 /* btn_green_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BD18833876009F93C0 /* btn_green_retina.png */; };
+		8B9283C618833876009F93C0 /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BE18833876009F93C0 /* btn_green.png */; };
+		8B9283C718833876009F93C0 /* btn_menu_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BF18833876009F93C0 /* btn_menu_retina.png */; };
+		8B9283C818833876009F93C0 /* btn_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283C018833876009F93C0 /* btn_menu.png */; };
+		8B9283C918833876009F93C0 /* icon_circle_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283C118833876009F93C0 /* icon_circle_retina.png */; };
+		8B9283CA18833876009F93C0 /* icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283C218833876009F93C0 /* icon_circle.png */; };
 		8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50218815D09009ED9D8 /* Foundation.framework */; };
 		8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */; };
 		8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
@@ -238,6 +248,16 @@
 		8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLoginButtonSmall.m; path = "Custom Elements/TIMLoginButtonSmall.m"; sourceTree = "<group>"; };
 		8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		8B9283B718832F34009F93C0 /* btn_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_ok.png; path = Images/Registration/btn_ok.png; sourceTree = "<group>"; };
+		8B9283B818832F34009F93C0 /* btn_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_ok@2x.png"; path = "Images/Registration/btn_ok@2x.png"; sourceTree = "<group>"; };
+		8B9283BB18833876009F93C0 /* btn_add_place_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_add_place_retina.png; path = Images/Registration/btn_add_place_retina.png; sourceTree = "<group>"; };
+		8B9283BC18833876009F93C0 /* btn_add_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_add_place.png; path = Images/Registration/btn_add_place.png; sourceTree = "<group>"; };
+		8B9283BD18833876009F93C0 /* btn_green_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_green_retina.png; path = Images/Registration/btn_green_retina.png; sourceTree = "<group>"; };
+		8B9283BE18833876009F93C0 /* btn_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_green.png; path = Images/Registration/btn_green.png; sourceTree = "<group>"; };
+		8B9283BF18833876009F93C0 /* btn_menu_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_menu_retina.png; path = Images/Registration/btn_menu_retina.png; sourceTree = "<group>"; };
+		8B9283C018833876009F93C0 /* btn_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_menu.png; path = Images/Registration/btn_menu.png; sourceTree = "<group>"; };
+		8B9283C118833876009F93C0 /* icon_circle_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_circle_retina.png; path = Images/Registration/icon_circle_retina.png; sourceTree = "<group>"; };
+		8B9283C218833876009F93C0 /* icon_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_circle.png; path = Images/Registration/icon_circle.png; sourceTree = "<group>"; };
 		8BA5B4FF18815D09009ED9D8 /* TrueIMPRESSION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueIMPRESSION.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA5B50218815D09009ED9D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -292,6 +312,16 @@
 		8B7384A61881D0BE00D1E0C2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				8B9283BB18833876009F93C0 /* btn_add_place_retina.png */,
+				8B9283BC18833876009F93C0 /* btn_add_place.png */,
+				8B9283BD18833876009F93C0 /* btn_green_retina.png */,
+				8B9283BE18833876009F93C0 /* btn_green.png */,
+				8B9283BF18833876009F93C0 /* btn_menu_retina.png */,
+				8B9283C018833876009F93C0 /* btn_menu.png */,
+				8B9283C118833876009F93C0 /* icon_circle_retina.png */,
+				8B9283C218833876009F93C0 /* icon_circle.png */,
+				8B9283B718832F34009F93C0 /* btn_ok.png */,
+				8B9283B818832F34009F93C0 /* btn_ok@2x.png */,
 				8B7384A71881D10D00D1E0C2 /* camera-choose-icon-hover.png */,
 				8B7384A81881D10D00D1E0C2 /* camera-choose-icon-hover@2x.png */,
 				8B7384A91881D10D00D1E0C2 /* camera-choose-icon.png */,
@@ -698,6 +728,7 @@
 				8B7385421881D10E00D1E0C2 /* top-title.png in Resources */,
 				8B73853C1881D10E00D1E0C2 /* text-field.png in Resources */,
 				8B73852E1881D10E00D1E0C2 /* login-button-down.png in Resources */,
+				8B9283C918833876009F93C0 /* icon_circle_retina.png in Resources */,
 				8B73850E1881D10E00D1E0C2 /* header-back-button@2x.png in Resources */,
 				8B7385301881D10E00D1E0C2 /* login-button.png in Resources */,
 				8B7385401881D10E00D1E0C2 /* toolbar-home.png in Resources */,
@@ -708,7 +739,9 @@
 				8B7385081881D10E00D1E0C2 /* flag_ua.png in Resources */,
 				8B73853A1881D10E00D1E0C2 /* table-bottom.png in Resources */,
 				8B73850D1881D10E00D1E0C2 /* header-back-button.png in Resources */,
+				8B9283C318833876009F93C0 /* btn_add_place_retina.png in Resources */,
 				8B7385321881D10E00D1E0C2 /* logo.png in Resources */,
+				8B9283B918832F34009F93C0 /* btn_ok.png in Resources */,
 				8B73850C1881D10E00D1E0C2 /* header-back-button-down@2x.png in Resources */,
 				8B7385311881D10E00D1E0C2 /* login-button@2x.png in Resources */,
 				8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */,
@@ -718,6 +751,7 @@
 				8B7384FF1881D10E00D1E0C2 /* camera-take-icon-hover@2x.png in Resources */,
 				8B7385071881D10E00D1E0C2 /* flag_ru.png in Resources */,
 				8B7385031881D10E00D1E0C2 /* default-wallpaper.png in Resources */,
+				8B9283C618833876009F93C0 /* btn_green.png in Resources */,
 				8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */,
 				8B7385331881D10E00D1E0C2 /* logo@2x.png in Resources */,
 				8B7385411881D10E00D1E0C2 /* toolbar-home@2x.png in Resources */,
@@ -727,6 +761,7 @@
 				8B7385251881D10E00D1E0C2 /* icon-toolbar-search.png in Resources */,
 				8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */,
 				8B7385041881D10E00D1E0C2 /* disclosure-icon.png in Resources */,
+				8B9283C718833876009F93C0 /* btn_menu_retina.png in Resources */,
 				8B7385341881D10E00D1E0C2 /* reg-circle.png in Resources */,
 				8BA5B50D18815D09009ED9D8 /* InfoPlist.strings in Resources */,
 				8B7384FA1881D10E00D1E0C2 /* camera-delete-icon-hover.png in Resources */,
@@ -760,12 +795,17 @@
 				8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */,
 				8B7385151881D10E00D1E0C2 /* home-button.png in Resources */,
 				8B7385361881D10E00D1E0C2 /* register-window.png in Resources */,
+				8B9283C418833876009F93C0 /* btn_add_place.png in Resources */,
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
 				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
 				8B7385141881D10E00D1E0C2 /* home-button-waves@2x.png in Resources */,
 				8B7385381881D10E00D1E0C2 /* stars-example.png in Resources */,
+				8B9283CA18833876009F93C0 /* icon_circle.png in Resources */,
 				8B73853D1881D10E00D1E0C2 /* text-field@2x.png in Resources */,
 				8B73852B1881D10E00D1E0C2 /* login-area@2x.png in Resources */,
+				8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */,
+				8B9283C518833876009F93C0 /* btn_green_retina.png in Resources */,
+				8B9283C818833876009F93C0 /* btn_menu.png in Resources */,
 				8B7384F81881D10E00D1E0C2 /* camera-choose-icon.png in Resources */,
 				8BA5B51518815D09009ED9D8 /* Images.xcassets in Resources */,
 				8B7385051881D10E00D1E0C2 /* disclosure-icon@2x.png in Resources */,
