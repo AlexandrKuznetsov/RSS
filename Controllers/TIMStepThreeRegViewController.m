@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!self.mapView) {
+        [self.locationManager startUpdatingLocation];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 

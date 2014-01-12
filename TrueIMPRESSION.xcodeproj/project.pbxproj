@@ -125,6 +125,9 @@
 		8BA5B51E18815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
 		8BA5B52618815D09009ED9D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5B52418815D09009ED9D8 /* InfoPlist.strings */; };
 		8BA5B52818815D09009ED9D8 /* TrueIMPRESSIONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */; };
+		C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A531B718831D2E007B4019 /* NSObject+CheckData.m */; };
+		C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B51882F4B500B25ACA /* MapKit.framework */; };
+		C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B71882F57200B25ACA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +277,10 @@
 		8BA5B52318815D09009ED9D8 /* TrueIMPRESSIONTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrueIMPRESSIONTests-Info.plist"; sourceTree = "<group>"; };
 		8BA5B52518815D09009ED9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrueIMPRESSIONTests.m; sourceTree = "<group>"; };
+		C5A531B618831D2E007B4019 /* NSObject+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CheckData.h"; sourceTree = "<group>"; };
+		C5A531B718831D2E007B4019 /* NSObject+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CheckData.m"; sourceTree = "<group>"; };
+		C5F728B51882F4B500B25ACA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C5F728B71882F57200B25ACA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +288,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */,
+				C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */,
 				8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */,
 				8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */,
 				8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */,
@@ -554,6 +563,8 @@
 			children = (
 				8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */,
 				8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */,
+				C5A531B618831D2E007B4019 /* NSObject+CheckData.h */,
+				C5A531B718831D2E007B4019 /* NSObject+CheckData.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -586,6 +597,8 @@
 		8BA5B50118815D09009ED9D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5F728B71882F57200B25ACA /* CoreLocation.framework */,
+				C5F728B51882F4B500B25ACA /* MapKit.framework */,
 				8BA5B50218815D09009ED9D8 /* Foundation.framework */,
 				8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */,
 				8BA5B50618815D09009ED9D8 /* UIKit.framework */,
@@ -871,6 +884,7 @@
 				8B7385731881F39500D1E0C2 /* TIMStepTwoRegViewController.m in Sources */,
 				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
 				8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */,
+				C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */,
 				8B73854F1881F0BC00D1E0C2 /* TIMNavigationViewController.m in Sources */,
 				8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */,
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,

@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self makeRaundedRectToView:continueBtn withCornerRadius:15];
+    if (!self.mapView) {
+        [self.locationManager startUpdatingLocation];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -41,13 +45,33 @@
 }
 
 - (IBAction)goToNextStep:(id)sender {
-    [self pushStepTwo];
+    if ([self checkIsDataValid]) {
+        [self pushStepTwo];
+    }
+}
+
+- (BOOL)checkIsDataValid{
+    NSString* problem = [self checkFirsStepRegistration:mailTextField.text
+                                                   pass:passwordTextField.text
+                                         andConfirmPass:repeatPasswordTextField.text];
+    if (!problem) {
+        return YES;
+    } else {
+        UIAlertView* alerView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                           message:problem
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Закрыть"
+                                                 otherButtonTitles:nil, nil];
+        [alerView show];
+        return NO;
+    }
 }
 
 - (void)pushStepTwo {
     TIMStepTwoRegViewController *stepTwoController = [[TIMStepTwoRegViewController alloc]
                                                       initWithNibName:@"TIMStepTwoRegViewController"
                                                       bundle:[NSBundle mainBundle]];
+    stepTwoController.mapView = self.mapView;
     [self.navigationController pushViewController:stepTwoController animated:YES];
 }
 
