@@ -79,7 +79,7 @@ const CGFloat kCalculatedContentPadding = 10;
 - (void)keyboardWillShow:(NSNotification*)notification {
     if ( CGSizeEqualToSize(self.contentSize, CGSizeZero) ) {
         // Set the content size, if it's not set
-        self.contentSize = CGSizeMake(_contentsSize.width + kCalculatedContentPadding, _contentsSize.height + kCalculatedContentPadding);
+        self.contentSize = CGSizeMake(_contentsSize.width, _contentsSize.height + kCalculatedContentPadding);
     }
     
     _keyboardRect = [[[notification userInfo] objectForKey:_UIKeyboardFrameEndUserInfoKey] CGRectValue];
