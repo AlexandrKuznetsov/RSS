@@ -8,8 +8,16 @@
 
 #import "TIMRegistrationViewController.h"
 #import "TIMStepTwoRegViewController.h"
+#import "NSObject+CheckData.h"
 
-@interface TIMStepOneRegViewController : TIMRegistrationViewController
+@interface TIMStepOneRegViewController : TIMRegistrationViewController{
+    
+    __weak IBOutlet UIButton *continueBtn;
+    __weak IBOutlet UITextField *repeatPasswordTextField;
+    __weak IBOutlet UITextField *passwordTextField;
+    __weak IBOutlet UITextField *mailTextField;
+    
+}
 
 - (IBAction)goToNextStep:(id)sender;
 

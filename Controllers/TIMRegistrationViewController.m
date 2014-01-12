@@ -26,7 +26,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"Регистрация";
     [self customBackButtonItem];
+    if (_mapView) {
+        [self addingMapAndmoveToBack];
+    } else {
+        [self getCrrentUserLocation];
+    }
+}
+
+- (void)makeRaundedRectToView:(UIView*)view withCornerRadius:(CGFloat)radius{
+    view.layer.cornerRadius = radius;
+}
+
+- (void)getCrrentUserLocation{
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+}
+
+- (void)createBackgroundMap:(CLLocation*)location{
+    _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    [_mapView setCenterCoordinate:location.coordinate];
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, span);
+    [_mapView setRegion:region animated:NO];
+    [self addingMapAndmoveToBack];
+}
+
+- (void)addingMapAndmoveToBack{
+    [self.view addSubview:_mapView];
+    [self.view sendSubviewToBack:_mapView];
 }
 
 - (void)customBackButtonItem{
@@ -54,6 +83,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 }
@@ -62,6 +95,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+		   fromLocation:(CLLocation *)oldLocation{
+    [manager stopUpdatingLocation];
+    [self createBackgroundMap:newLocation];
 }
 
 @end
