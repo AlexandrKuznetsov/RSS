@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 Impression. All rights reserved.
 //
 
+#import "TIMViewController.h"
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface TIMRegistrationViewController : UIViewController <CLLocationManagerDelegate>{
+@interface TIMRegistrationViewController : TIMViewController <CLLocationManagerDelegate>{
     
 }
 
