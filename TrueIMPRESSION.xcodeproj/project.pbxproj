@@ -116,6 +116,7 @@
 		8B9283CD188350A0009F93C0 /* TIMHomeNavButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9283CC188350A0009F93C0 /* TIMHomeNavButtonsView.m */; };
 		8B9283CF188350AE009F93C0 /* TIMHomeNavButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283CE188350AE009F93C0 /* TIMHomeNavButtonsView.xib */; };
 		8B9283D31883593B009F93C0 /* TIMRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9283D21883593B009F93C0 /* TIMRoundedImageView.m */; };
+		8B9283D51883CB66009F93C0 /* bg_screen01_5s.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283D41883CB66009F93C0 /* bg_screen01_5s.png */; };
 		8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50218815D09009ED9D8 /* Foundation.framework */; };
 		8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */; };
 		8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
@@ -128,6 +129,10 @@
 		8BA5B51E18815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
 		8BA5B52618815D09009ED9D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5B52418815D09009ED9D8 /* InfoPlist.strings */; };
 		8BA5B52818815D09009ED9D8 /* TrueIMPRESSIONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */; };
+		8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */; };
+		8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */; };
+		8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */; };
+		8BEAFDD218848A6B00D6A2BA /* TIMProfileImpressionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */; };
 		C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A531B718831D2E007B4019 /* NSObject+CheckData.m */; };
 		C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B51882F4B500B25ACA /* MapKit.framework */; };
 		C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B71882F57200B25ACA /* CoreLocation.framework */; };
@@ -269,6 +274,7 @@
 		8B9283CE188350AE009F93C0 /* TIMHomeNavButtonsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMHomeNavButtonsView.xib; sourceTree = "<group>"; };
 		8B9283D11883593B009F93C0 /* TIMRoundedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMRoundedImageView.h; path = "Custom Elements/TIMRoundedImageView.h"; sourceTree = "<group>"; };
 		8B9283D21883593B009F93C0 /* TIMRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMRoundedImageView.m; path = "Custom Elements/TIMRoundedImageView.m"; sourceTree = "<group>"; };
+		8B9283D41883CB66009F93C0 /* bg_screen01_5s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_screen01_5s.png; sourceTree = "<group>"; };
 		8BA5B4FF18815D09009ED9D8 /* TrueIMPRESSION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueIMPRESSION.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA5B50218815D09009ED9D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BA5B50418815D09009ED9D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -285,6 +291,12 @@
 		8BA5B52318815D09009ED9D8 /* TrueIMPRESSIONTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrueIMPRESSIONTests-Info.plist"; sourceTree = "<group>"; };
 		8BA5B52518815D09009ED9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrueIMPRESSIONTests.m; sourceTree = "<group>"; };
+		8BEAFDC61884826D00D6A2BA /* TIMProfileImpressionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMProfileImpressionCell.h; path = "Custom Elements/cells/TIMProfileImpressionCell.h"; sourceTree = "<group>"; };
+		8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMProfileImpressionCell.m; path = "Custom Elements/cells/TIMProfileImpressionCell.m"; sourceTree = "<group>"; };
+		8BEAFDCC18848A1200D6A2BA /* TIMProfileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMProfileInfoCell.h; path = "Custom Elements/cells/TIMProfileInfoCell.h"; sourceTree = "<group>"; };
+		8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMProfileInfoCell.m; path = "Custom Elements/cells/TIMProfileInfoCell.m"; sourceTree = "<group>"; };
+		8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMProfileInfoCell.xib; path = "Custom Elements/cells/TIMProfileInfoCell.xib"; sourceTree = "<group>"; };
+		8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMProfileImpressionCell.xib; path = "Custom Elements/cells/TIMProfileImpressionCell.xib"; sourceTree = "<group>"; };
 		C5A531B618831D2E007B4019 /* NSObject+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CheckData.h"; sourceTree = "<group>"; };
 		C5A531B718831D2E007B4019 /* NSObject+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CheckData.m"; sourceTree = "<group>"; };
 		C5F728B51882F4B500B25ACA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -329,6 +341,7 @@
 		8B7384A61881D0BE00D1E0C2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				8B9283D41883CB66009F93C0 /* bg_screen01_5s.png */,
 				8B9283BB18833876009F93C0 /* btn_add_place@2x.png */,
 				8B9283BC18833876009F93C0 /* btn_add_place.png */,
 				8B9283BD18833876009F93C0 /* btn_green@2x.png */,
@@ -553,6 +566,7 @@
 		8B73857A1882000400D1E0C2 /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				8BEAFDC41884818900D6A2BA /* Cells */,
 				8B9283D018835918009F93C0 /* Image View */,
 				8B73857B1882001200D1E0C2 /* Buttons */,
 			);
@@ -669,6 +683,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8BEAFDC41884818900D6A2BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8BEAFDCB188489CE00D6A2BA /* Profile info cell */,
+				8BEAFDC51884819600D6A2BA /* Profile impr cell */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8BEAFDC51884819600D6A2BA /* Profile impr cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */,
+				8BEAFDC61884826D00D6A2BA /* TIMProfileImpressionCell.h */,
+				8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */,
+			);
+			name = "Profile impr cell";
+			sourceTree = "<group>";
+		};
+		8BEAFDCB188489CE00D6A2BA /* Profile info cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BEAFDCC18848A1200D6A2BA /* TIMProfileInfoCell.h */,
+				8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */,
+				8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */,
+			);
+			name = "Profile info cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -775,6 +818,7 @@
 				8B73850D1881D10E00D1E0C2 /* header-back-button.png in Resources */,
 				8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */,
 				8B7385321881D10E00D1E0C2 /* logo.png in Resources */,
+				8BEAFDD218848A6B00D6A2BA /* TIMProfileImpressionCell.xib in Resources */,
 				8B9283B918832F34009F93C0 /* btn_ok.png in Resources */,
 				8B73850C1881D10E00D1E0C2 /* header-back-button-down@2x.png in Resources */,
 				8B7385311881D10E00D1E0C2 /* login-button@2x.png in Resources */,
@@ -803,6 +847,7 @@
 				8B9283CF188350AE009F93C0 /* TIMHomeNavButtonsView.xib in Resources */,
 				8B7385241881D10E00D1E0C2 /* icon-toolbar-people@2x.png in Resources */,
 				8B7385221881D10E00D1E0C2 /* icon-toolbar-eye@2x.png in Resources */,
+				8B9283D51883CB66009F93C0 /* bg_screen01_5s.png in Resources */,
 				8B7385431881D10E00D1E0C2 /* top-title@2x.png in Resources */,
 				8B7385121881D10E00D1E0C2 /* home-button-down@2x.png in Resources */,
 				8B7385351881D10E00D1E0C2 /* reg-circle@2x.png in Resources */,
@@ -832,6 +877,7 @@
 				8B7385361881D10E00D1E0C2 /* register-window.png in Resources */,
 				8B9283C418833876009F93C0 /* btn_add_place.png in Resources */,
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
+				8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */,
 				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
 				8B7385141881D10E00D1E0C2 /* home-button-waves@2x.png in Resources */,
 				8B7385381881D10E00D1E0C2 /* stars-example.png in Resources */,
@@ -902,6 +948,7 @@
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
 				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,
+				8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */,
 				8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8B7385731881F39500D1E0C2 /* TIMStepTwoRegViewController.m in Sources */,
 				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
@@ -914,6 +961,7 @@
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,
 				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
 				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
+				8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

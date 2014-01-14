@@ -63,5 +63,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (CGSize)sizeString:(NSString *)string forLabel:(UILabel *)label {
+    CGSize maximumLabelSize = CGSizeMake(CGRectGetWidth(label.frame),9999);
+    
+    return [string sizeWithFont:label.font
+                                      constrainedToSize:maximumLabelSize
+                                          lineBreakMode:label.lineBreakMode];
+}
+
 
 @end

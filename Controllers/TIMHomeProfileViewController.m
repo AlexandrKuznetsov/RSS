@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self checkForLoginInformation];
+    [self checkForLoginInformation];
     [self addNavigationButtons];
 }
 
@@ -81,6 +81,48 @@
     [self presentViewController:registrationNavigation animated:NO completion:nil];
 }
 
+#pragma mark - TableView Data source and delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 4;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"profileInfoCell"];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"impressionCell"];
+    }
+    NSArray *topLevelObjects;
+    if (cell == nil) {
+        if (indexPath.row == 0) {
+            topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileInfoCell" owner:self options:nil];
+        } else {
+            topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileImpressionCell" owner:self options:nil];
+        }
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 167;
+    }
+    return 121;
+}
+
+#pragma mark - Navigation actions
 - (void)showMenu {
 }
 
