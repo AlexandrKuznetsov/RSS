@@ -33,9 +33,6 @@
     int maxY = CGRectGetMaxY(nextStepBtn.frame) + REGISTRATION_OFFSET_FROM_NEXT_STEP_BTN;
     [_scrollView setContentSize:CGSizeMake(_scrollView.contentSize.width,
                                            maxY)];
-    [self setBorderWidht:4.0 color:[UIColor whiteColor]
-            cornerRadius:avatarImageView.frame.size.width/2 toView:avatarImageView];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

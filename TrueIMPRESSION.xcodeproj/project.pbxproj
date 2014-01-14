@@ -103,6 +103,8 @@
 		8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */; };
 		8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */; };
 		8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */; };
+		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
+		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
 		8B9283B918832F34009F93C0 /* btn_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B718832F34009F93C0 /* btn_ok.png */; };
 		8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B818832F34009F93C0 /* btn_ok@2x.png */; };
 		8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BB18833876009F93C0 /* btn_add_place@2x.png */; };
@@ -259,6 +261,8 @@
 		8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLoginButtonSmall.m; path = "Custom Elements/TIMLoginButtonSmall.m"; sourceTree = "<group>"; };
 		8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		8B8791D818859D21004E177E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/Registration/line.png; sourceTree = "<group>"; };
+		8B8791D918859D21004E177E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Images/Registration/line@2x.png"; sourceTree = "<group>"; };
 		8B9283B718832F34009F93C0 /* btn_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_ok.png; path = Images/Registration/btn_ok.png; sourceTree = "<group>"; };
 		8B9283B818832F34009F93C0 /* btn_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_ok@2x.png"; path = "Images/Registration/btn_ok@2x.png"; sourceTree = "<group>"; };
 		8B9283BB18833876009F93C0 /* btn_add_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_add_place@2x.png"; path = "Images/Registration/btn_add_place@2x.png"; sourceTree = "<group>"; };
@@ -341,6 +345,8 @@
 		8B7384A61881D0BE00D1E0C2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				8B8791D818859D21004E177E /* line.png */,
+				8B8791D918859D21004E177E /* line@2x.png */,
 				8B9283D41883CB66009F93C0 /* bg_screen01_5s.png */,
 				8B9283BB18833876009F93C0 /* btn_add_place@2x.png */,
 				8B9283BC18833876009F93C0 /* btn_add_place.png */,
@@ -809,7 +815,6 @@
 				8B73850E1881D10E00D1E0C2 /* header-back-button@2x.png in Resources */,
 				8B7385301881D10E00D1E0C2 /* login-button.png in Resources */,
 				8B7385401881D10E00D1E0C2 /* toolbar-home.png in Resources */,
-				C5949B2418848280005912BE /* line@2x.png in Resources */,
 				8B7385191881D10E00D1E0C2 /* icon-feed-info.png in Resources */,
 				8B7385201881D10E00D1E0C2 /* icon-menu@2x.png in Resources */,
 				8B73852C1881D10E00D1E0C2 /* login-bottom.jpg in Resources */,
@@ -826,11 +831,11 @@
 				8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */,
 				8B73850B1881D10E00D1E0C2 /* header-back-button-down.png in Resources */,
 				8B73851B1881D10E00D1E0C2 /* icon-feed-place.png in Resources */,
-				C5949B2318848280005912BE /* line.png in Resources */,
 				8B7385391881D10E00D1E0C2 /* stars-example@2x.png in Resources */,
 				8B7384FF1881D10E00D1E0C2 /* camera-take-icon-hover@2x.png in Resources */,
 				8B7385071881D10E00D1E0C2 /* flag_ru.png in Resources */,
 				8B7385031881D10E00D1E0C2 /* default-wallpaper.png in Resources */,
+				8B8791DB18859D21004E177E /* line@2x.png in Resources */,
 				8B9283C618833876009F93C0 /* btn_green.png in Resources */,
 				8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */,
 				8B7385331881D10E00D1E0C2 /* logo@2x.png in Resources */,
@@ -878,6 +883,7 @@
 				8B7385151881D10E00D1E0C2 /* home-button.png in Resources */,
 				8B7385361881D10E00D1E0C2 /* register-window.png in Resources */,
 				8B9283C418833876009F93C0 /* btn_add_place.png in Resources */,
+				8B8791DA18859D21004E177E /* line.png in Resources */,
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
 				8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */,
 				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
@@ -1087,6 +1093,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrueIMPRESSION/TrueIMPRESSION-Prefix.pch";
 				INFOPLIST_FILE = "TrueIMPRESSION/TrueIMPRESSION-Info.plist";
@@ -1105,6 +1112,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrueIMPRESSION/TrueIMPRESSION-Prefix.pch";
 				INFOPLIST_FILE = "TrueIMPRESSION/TrueIMPRESSION-Info.plist";
