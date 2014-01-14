@@ -117,8 +117,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        //верстка
         return 167;
     }
+    //верстка
     return 121;
 }
 
