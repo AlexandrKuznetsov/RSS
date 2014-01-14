@@ -34,10 +34,6 @@
     }
 }
 
-- (void)makeRaundedRectToView:(UIView*)view withCornerRadius:(CGFloat)radius{
-    view.layer.cornerRadius = radius;
-}
-
 - (void)getCrrentUserLocation{
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;

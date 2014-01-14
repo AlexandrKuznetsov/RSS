@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self makeRaundedRectToView:continueBtn withCornerRadius:15];
     if (!self.mapView) {
         [self.locationManager startUpdatingLocation];
     }
@@ -45,9 +44,9 @@
 }
 
 - (IBAction)goToNextStep:(id)sender {
-    if ([self checkIsDataValid]) {
+//    if ([self checkIsDataValid]) {
         [self pushStepTwo];
-    }
+//    }
 }
 
 - (BOOL)checkIsDataValid{
