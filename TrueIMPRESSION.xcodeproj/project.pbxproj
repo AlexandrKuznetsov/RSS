@@ -105,6 +105,7 @@
 		8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */; };
 		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
 		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
+		8B8791DE1885CC9A004E177E /* TIMContinueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8791DD1885CC9A004E177E /* TIMContinueButton.m */; };
 		8B9283B918832F34009F93C0 /* btn_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B718832F34009F93C0 /* btn_ok.png */; };
 		8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B818832F34009F93C0 /* btn_ok@2x.png */; };
 		8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BB18833876009F93C0 /* btn_add_place@2x.png */; };
@@ -263,6 +264,8 @@
 		8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		8B8791D818859D21004E177E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/Registration/line.png; sourceTree = "<group>"; };
 		8B8791D918859D21004E177E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Images/Registration/line@2x.png"; sourceTree = "<group>"; };
+		8B8791DC1885CC9A004E177E /* TIMContinueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMContinueButton.h; path = "Custom Elements/TIMContinueButton.h"; sourceTree = "<group>"; };
+		8B8791DD1885CC9A004E177E /* TIMContinueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMContinueButton.m; path = "Custom Elements/TIMContinueButton.m"; sourceTree = "<group>"; };
 		8B9283B718832F34009F93C0 /* btn_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_ok.png; path = Images/Registration/btn_ok.png; sourceTree = "<group>"; };
 		8B9283B818832F34009F93C0 /* btn_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_ok@2x.png"; path = "Images/Registration/btn_ok@2x.png"; sourceTree = "<group>"; };
 		8B9283BB18833876009F93C0 /* btn_add_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_add_place@2x.png"; path = "Images/Registration/btn_add_place@2x.png"; sourceTree = "<group>"; };
@@ -586,6 +589,8 @@
 				8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */,
 				8B73857F188203E100D1E0C2 /* TIMLoginButtonSmall.h */,
 				8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */,
+				8B8791DC1885CC9A004E177E /* TIMContinueButton.h */,
+				8B8791DD1885CC9A004E177E /* TIMContinueButton.m */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -969,6 +974,7 @@
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,
 				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
 				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
+				8B8791DE1885CC9A004E177E /* TIMContinueButton.m in Sources */,
 				8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
