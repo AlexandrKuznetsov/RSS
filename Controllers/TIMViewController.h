@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface TIMViewController : UIViewController
+
+- (void)setBorderWidht:(CGFloat)widht
+                 color:(UIColor*)color
+          cornerRadius:(CGFloat)cornerRadius
+                toView:(UIView*)view;
 
 @end

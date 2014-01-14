@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-#import <QuartzCore/QuartzCore.h>
 
 @interface TIMRegistrationViewController : TIMViewController <CLLocationManagerDelegate>{
     
@@ -18,7 +17,5 @@
 
 @property (strong, nonatomic) MKMapView* mapView;
 @property (strong, nonatomic) CLLocationManager* locationManager;
-
-- (void)makeRaundedRectToView:(UIView*)view withCornerRadius:(CGFloat)radius;
 
 @end

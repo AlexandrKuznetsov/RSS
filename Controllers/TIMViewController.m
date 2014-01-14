@@ -59,6 +59,19 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
+- (void)setBorderWidht:(CGFloat)widht
+                 color:(UIColor*)color
+          cornerRadius:(CGFloat)cornerRadius
+                toView:(UIView*)view{
+    
+    view.layer.shouldRasterize = YES;
+    view.backgroundColor = [UIColor clearColor];
+    [view.layer setCornerRadius:cornerRadius];
+    [view.layer setBorderColor:[color CGColor]];
+    [view.layer setBorderWidth:widht];
+    view.layer.masksToBounds = YES;
+}
+
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
