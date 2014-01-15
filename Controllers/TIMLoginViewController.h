@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPKeyboardAvoidingScrollView.h"
 #import "TIMStepOneRegViewController.h"
+
+#define LOGIN_FIELD_TAG 1
+#define PASSWORD_FIELD_TAG 2
+
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
 
 @interface TIMLoginViewController : UIViewController < UITextFieldDelegate >
 
@@ -18,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *errorView;
 @property (weak, nonatomic) IBOutlet UIView *forgetView;
 @property (weak, nonatomic) IBOutlet UIButton *registrationButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)showLoginFields:(id)sender;
 - (IBAction)login:(id)sender;
 - (IBAction)goToRegistration:(id)sender;
