@@ -12,6 +12,7 @@
 
 @interface TIMStepTwoRegViewController : TIMRegistrationViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     
+    __weak IBOutlet UILabel *top2Label;
     __weak IBOutlet UILabel *makePhotoLabel;
     __weak IBOutlet UILabel *loadPhotoButton;
     __weak IBOutlet UILabel *deletePhotoLabel;

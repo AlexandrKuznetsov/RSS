@@ -109,8 +109,6 @@
 		8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B818832F34009F93C0 /* btn_ok@2x.png */; };
 		8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BB18833876009F93C0 /* btn_add_place@2x.png */; };
 		8B9283C418833876009F93C0 /* btn_add_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BC18833876009F93C0 /* btn_add_place.png */; };
-		8B9283C518833876009F93C0 /* btn_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BD18833876009F93C0 /* btn_green@2x.png */; };
-		8B9283C618833876009F93C0 /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BE18833876009F93C0 /* btn_green.png */; };
 		8B9283C718833876009F93C0 /* btn_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BF18833876009F93C0 /* btn_menu@2x.png */; };
 		8B9283C818833876009F93C0 /* btn_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283C018833876009F93C0 /* btn_menu.png */; };
 		8B9283C918833876009F93C0 /* icon_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283C118833876009F93C0 /* icon_circle@2x.png */; };
@@ -135,6 +133,24 @@
 		8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */; };
 		8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */; };
 		8BEAFDD218848A6B00D6A2BA /* TIMProfileImpressionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */; };
+		C550EDDE18871C9500C8CFD4 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCE18871C9500C8CFD4 /* LICENSE.txt */; };
+		C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */; };
+		C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */; };
+		C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */; };
+		C550EDE218871C9500C8CFD4 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD218871C9500C8CFD4 /* OpenSans-ExtraBoldItalic.ttf */; };
+		C550EDE318871C9500C8CFD4 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD318871C9500C8CFD4 /* OpenSans-Italic.ttf */; };
+		C550EDE418871C9500C8CFD4 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD418871C9500C8CFD4 /* OpenSans-Light.ttf */; };
+		C550EDE518871C9500C8CFD4 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD518871C9500C8CFD4 /* OpenSans-LightItalic.ttf */; };
+		C550EDE618871C9500C8CFD4 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD618871C9500C8CFD4 /* OpenSans-Regular.ttf */; };
+		C550EDE718871C9500C8CFD4 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD718871C9500C8CFD4 /* OpenSans-Semibold.ttf */; };
+		C550EDE818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf */; };
+		C550EDE918871C9500C8CFD4 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C550EDDA18871C9500C8CFD4 /* LICENSE.txt */; };
+		C550EDEA18871C9500C8CFD4 /* OpenSans-CondBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDDB18871C9500C8CFD4 /* OpenSans-CondBold.ttf */; };
+		C550EDEB18871C9500C8CFD4 /* OpenSans-CondLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDDC18871C9500C8CFD4 /* OpenSans-CondLight.ttf */; };
+		C550EDEC18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDDD18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf */; };
+		C550EDEF18871CCE00C8CFD4 /* UIFont+TIFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = C550EDEE18871CCE00C8CFD4 /* UIFont+TIFonts.m */; };
+		C561DAA3188746FF0006FD0D /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DAA1188746FF0006FD0D /* btn_green.png */; };
+		C561DAA4188746FF0006FD0D /* btn_green_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DAA2188746FF0006FD0D /* btn_green_@2x.png */; };
 		C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A531B718831D2E007B4019 /* NSObject+CheckData.m */; };
 		C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B51882F4B500B25ACA /* MapKit.framework */; };
 		C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B71882F57200B25ACA /* CoreLocation.framework */; };
@@ -267,8 +283,6 @@
 		8B9283B818832F34009F93C0 /* btn_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_ok@2x.png"; path = "Images/Registration/btn_ok@2x.png"; sourceTree = "<group>"; };
 		8B9283BB18833876009F93C0 /* btn_add_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_add_place@2x.png"; path = "Images/Registration/btn_add_place@2x.png"; sourceTree = "<group>"; };
 		8B9283BC18833876009F93C0 /* btn_add_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_add_place.png; path = Images/Registration/btn_add_place.png; sourceTree = "<group>"; };
-		8B9283BD18833876009F93C0 /* btn_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_green@2x.png"; path = "Images/Registration/btn_green@2x.png"; sourceTree = "<group>"; };
-		8B9283BE18833876009F93C0 /* btn_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_green.png; path = Images/Registration/btn_green.png; sourceTree = "<group>"; };
 		8B9283BF18833876009F93C0 /* btn_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_menu@2x.png"; path = "Images/Registration/btn_menu@2x.png"; sourceTree = "<group>"; };
 		8B9283C018833876009F93C0 /* btn_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_menu.png; path = Images/Registration/btn_menu.png; sourceTree = "<group>"; };
 		8B9283C118833876009F93C0 /* icon_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_circle@2x.png"; path = "Images/Registration/icon_circle@2x.png"; sourceTree = "<group>"; };
@@ -301,6 +315,25 @@
 		8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMProfileInfoCell.m; path = "Custom Elements/cells/TIMProfileInfoCell.m"; sourceTree = "<group>"; };
 		8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMProfileInfoCell.xib; path = "Custom Elements/cells/TIMProfileInfoCell.xib"; sourceTree = "<group>"; };
 		8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMProfileImpressionCell.xib; path = "Custom Elements/cells/TIMProfileImpressionCell.xib"; sourceTree = "<group>"; };
+		C550EDCE18871C9500C8CFD4 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C550EDD218871C9500C8CFD4 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		C550EDD318871C9500C8CFD4 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		C550EDD418871C9500C8CFD4 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		C550EDD518871C9500C8CFD4 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		C550EDD618871C9500C8CFD4 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		C550EDD718871C9500C8CFD4 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		C550EDD818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		C550EDDA18871C9500C8CFD4 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C550EDDB18871C9500C8CFD4 /* OpenSans-CondBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondBold.ttf"; sourceTree = "<group>"; };
+		C550EDDC18871C9500C8CFD4 /* OpenSans-CondLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondLight.ttf"; sourceTree = "<group>"; };
+		C550EDDD18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondLightItalic.ttf"; sourceTree = "<group>"; };
+		C550EDED18871CCE00C8CFD4 /* UIFont+TIFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+TIFonts.h"; sourceTree = "<group>"; };
+		C550EDEE18871CCE00C8CFD4 /* UIFont+TIFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+TIFonts.m"; sourceTree = "<group>"; };
+		C561DAA1188746FF0006FD0D /* btn_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_green.png; sourceTree = "<group>"; };
+		C561DAA2188746FF0006FD0D /* btn_green_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_green_@2x.png"; sourceTree = "<group>"; };
 		C5A531B618831D2E007B4019 /* NSObject+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CheckData.h"; sourceTree = "<group>"; };
 		C5A531B718831D2E007B4019 /* NSObject+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CheckData.m"; sourceTree = "<group>"; };
 		C5F728B51882F4B500B25ACA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -350,8 +383,8 @@
 				8B9283D41883CB66009F93C0 /* bg_screen01_5s.png */,
 				8B9283BB18833876009F93C0 /* btn_add_place@2x.png */,
 				8B9283BC18833876009F93C0 /* btn_add_place.png */,
-				8B9283BD18833876009F93C0 /* btn_green@2x.png */,
-				8B9283BE18833876009F93C0 /* btn_green.png */,
+				C561DAA1188746FF0006FD0D /* btn_green.png */,
+				C561DAA2188746FF0006FD0D /* btn_green_@2x.png */,
 				8B9283BF18833876009F93C0 /* btn_menu@2x.png */,
 				8B9283C018833876009F93C0 /* btn_menu.png */,
 				8B9283C118833876009F93C0 /* icon_circle@2x.png */,
@@ -572,6 +605,7 @@
 		8B73857A1882000400D1E0C2 /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				C561DAA518874D750006FD0D /* Pikers */,
 				8BEAFDC41884818900D6A2BA /* Cells */,
 				8B9283D018835918009F93C0 /* Image View */,
 				8B73857B1882001200D1E0C2 /* Buttons */,
@@ -597,6 +631,8 @@
 				8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */,
 				C5A531B618831D2E007B4019 /* NSObject+CheckData.h */,
 				C5A531B718831D2E007B4019 /* NSObject+CheckData.m */,
+				C550EDED18871CCE00C8CFD4 /* UIFont+TIFonts.h */,
+				C550EDEE18871CCE00C8CFD4 /* UIFont+TIFonts.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -622,6 +658,7 @@
 				8BA5B52118815D09009ED9D8 /* TrueIMPRESSIONTests */,
 				8BA5B50118815D09009ED9D8 /* Frameworks */,
 				8BA5B50018815D09009ED9D8 /* Products */,
+				C550EDCC18871C9500C8CFD4 /* Fonts */,
 				48AA3E4347A448F5B14DE388 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -716,6 +753,51 @@
 				8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */,
 			);
 			name = "Profile info cell";
+			sourceTree = "<group>";
+		};
+		C550EDCC18871C9500C8CFD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C550EDCD18871C9500C8CFD4 /* Open_Sans */,
+				C550EDD918871C9500C8CFD4 /* Open_Sans_Condensed */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C550EDCD18871C9500C8CFD4 /* Open_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				C550EDCE18871C9500C8CFD4 /* LICENSE.txt */,
+				C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */,
+				C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */,
+				C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */,
+				C550EDD218871C9500C8CFD4 /* OpenSans-ExtraBoldItalic.ttf */,
+				C550EDD318871C9500C8CFD4 /* OpenSans-Italic.ttf */,
+				C550EDD418871C9500C8CFD4 /* OpenSans-Light.ttf */,
+				C550EDD518871C9500C8CFD4 /* OpenSans-LightItalic.ttf */,
+				C550EDD618871C9500C8CFD4 /* OpenSans-Regular.ttf */,
+				C550EDD718871C9500C8CFD4 /* OpenSans-Semibold.ttf */,
+				C550EDD818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = Open_Sans;
+			sourceTree = "<group>";
+		};
+		C550EDD918871C9500C8CFD4 /* Open_Sans_Condensed */ = {
+			isa = PBXGroup;
+			children = (
+				C550EDDA18871C9500C8CFD4 /* LICENSE.txt */,
+				C550EDDB18871C9500C8CFD4 /* OpenSans-CondBold.ttf */,
+				C550EDDC18871C9500C8CFD4 /* OpenSans-CondLight.ttf */,
+				C550EDDD18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf */,
+			);
+			path = Open_Sans_Condensed;
+			sourceTree = "<group>";
+		};
+		C561DAA518874D750006FD0D /* Pikers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pikers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -819,10 +901,13 @@
 				8B7385201881D10E00D1E0C2 /* icon-menu@2x.png in Resources */,
 				8B73852C1881D10E00D1E0C2 /* login-bottom.jpg in Resources */,
 				8B7385171881D10E00D1E0C2 /* icon-done.png in Resources */,
+				C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */,
 				8B7385081881D10E00D1E0C2 /* flag_ua.png in Resources */,
+				C550EDE218871C9500C8CFD4 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				8B73853A1881D10E00D1E0C2 /* table-bottom.png in Resources */,
 				8B73850D1881D10E00D1E0C2 /* header-back-button.png in Resources */,
 				8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */,
+				C550EDE518871C9500C8CFD4 /* OpenSans-LightItalic.ttf in Resources */,
 				8B7385321881D10E00D1E0C2 /* logo.png in Resources */,
 				8BEAFDD218848A6B00D6A2BA /* TIMProfileImpressionCell.xib in Resources */,
 				8B9283B918832F34009F93C0 /* btn_ok.png in Resources */,
@@ -830,13 +915,15 @@
 				8B7385311881D10E00D1E0C2 /* login-button@2x.png in Resources */,
 				8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */,
 				8B73850B1881D10E00D1E0C2 /* header-back-button-down.png in Resources */,
+				C550EDE718871C9500C8CFD4 /* OpenSans-Semibold.ttf in Resources */,
 				8B73851B1881D10E00D1E0C2 /* icon-feed-place.png in Resources */,
 				8B7385391881D10E00D1E0C2 /* stars-example@2x.png in Resources */,
+				C550EDE618871C9500C8CFD4 /* OpenSans-Regular.ttf in Resources */,
+				C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */,
 				8B7384FF1881D10E00D1E0C2 /* camera-take-icon-hover@2x.png in Resources */,
 				8B7385071881D10E00D1E0C2 /* flag_ru.png in Resources */,
 				8B7385031881D10E00D1E0C2 /* default-wallpaper.png in Resources */,
 				8B8791DB18859D21004E177E /* line@2x.png in Resources */,
-				8B9283C618833876009F93C0 /* btn_green.png in Resources */,
 				8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */,
 				8B7385331881D10E00D1E0C2 /* logo@2x.png in Resources */,
 				8B7385411881D10E00D1E0C2 /* toolbar-home@2x.png in Resources */,
@@ -848,8 +935,11 @@
 				8B7385041881D10E00D1E0C2 /* disclosure-icon.png in Resources */,
 				8B9283C718833876009F93C0 /* btn_menu@2x.png in Resources */,
 				8B7385341881D10E00D1E0C2 /* reg-circle.png in Resources */,
+				C561DAA4188746FF0006FD0D /* btn_green_@2x.png in Resources */,
+				C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */,
 				8BA5B50D18815D09009ED9D8 /* InfoPlist.strings in Resources */,
 				8B7384FA1881D10E00D1E0C2 /* camera-delete-icon-hover.png in Resources */,
+				C550EDE318871C9500C8CFD4 /* OpenSans-Italic.ttf in Resources */,
 				8B73851A1881D10E00D1E0C2 /* icon-feed-info@2x.png in Resources */,
 				8B9283CF188350AE009F93C0 /* TIMHomeNavButtonsView.xib in Resources */,
 				8B7385241881D10E00D1E0C2 /* icon-toolbar-people@2x.png in Resources */,
@@ -867,16 +957,21 @@
 				8B73851E1881D10E00D1E0C2 /* icon-home-settings@2x.png in Resources */,
 				8B7385091881D10E00D1E0C2 /* flag-ru.png in Resources */,
 				8B7384FD1881D10E00D1E0C2 /* camera-delete-icon@2x.png in Resources */,
+				C550EDE918871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B7385211881D10E00D1E0C2 /* icon-toolbar-eye.png in Resources */,
 				8B73850F1881D10E00D1E0C2 /* header-title.png in Resources */,
 				8B7385261881D10E00D1E0C2 /* icon-toolbar-search@2x.png in Resources */,
+				C550EDE818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				8B73852F1881D10E00D1E0C2 /* login-button-down@2x.png in Resources */,
 				8B73853B1881D10E00D1E0C2 /* table-bottom@2x.png in Resources */,
+				C561DAA3188746FF0006FD0D /* btn_green.png in Resources */,
+				C550EDE418871C9500C8CFD4 /* OpenSans-Light.ttf in Resources */,
 				8B7385161881D10E00D1E0C2 /* home-button@2x.png in Resources */,
 				8B73852D1881D10E00D1E0C2 /* login-bottom@2x.jpg in Resources */,
 				8B7384FE1881D10E00D1E0C2 /* camera-take-icon-hover.png in Resources */,
 				8B7385231881D10E00D1E0C2 /* icon-toolbar-people.png in Resources */,
 				8B7385061881D10E00D1E0C2 /* flag_by.png in Resources */,
+				C550EDEC18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf in Resources */,
 				8B7384FC1881D10E00D1E0C2 /* camera-delete-icon.png in Resources */,
 				8B7384F91881D10E00D1E0C2 /* camera-choose-icon@2x.png in Resources */,
 				8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */,
@@ -886,14 +981,16 @@
 				8B8791DA18859D21004E177E /* line.png in Resources */,
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
 				8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */,
+				C550EDEB18871C9500C8CFD4 /* OpenSans-CondLight.ttf in Resources */,
 				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
 				8B7385141881D10E00D1E0C2 /* home-button-waves@2x.png in Resources */,
 				8B7385381881D10E00D1E0C2 /* stars-example.png in Resources */,
+				C550EDEA18871C9500C8CFD4 /* OpenSans-CondBold.ttf in Resources */,
 				8B9283CA18833876009F93C0 /* icon_circle.png in Resources */,
 				8B73853D1881D10E00D1E0C2 /* text-field@2x.png in Resources */,
+				C550EDDE18871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B73852B1881D10E00D1E0C2 /* login-area@2x.png in Resources */,
 				8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */,
-				8B9283C518833876009F93C0 /* btn_green@2x.png in Resources */,
 				8B9283C818833876009F93C0 /* btn_menu.png in Resources */,
 				8B7384F81881D10E00D1E0C2 /* camera-choose-icon.png in Resources */,
 				8BA5B51518815D09009ED9D8 /* Images.xcassets in Resources */,
@@ -969,6 +1066,7 @@
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,
 				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
 				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
+				C550EDEF18871CCE00C8CFD4 /* UIFont+TIFonts.m in Sources */,
 				8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "UIFont+TIFonts.h"
 
 @interface TIMRegistrationViewController : TIMViewController <CLLocationManagerDelegate>{
     

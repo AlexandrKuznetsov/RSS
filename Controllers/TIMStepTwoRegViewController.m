@@ -33,6 +33,40 @@
     int maxY = CGRectGetMaxY(nextStepBtn.frame) + REGISTRATION_OFFSET_FROM_NEXT_STEP_BTN;
     [_scrollView setContentSize:CGSizeMake(_scrollView.contentSize.width,
                                            maxY)];
+    [self createCustomFonts];
+    [self createPikers];
+}
+
+- (void)createPikers{
+    UIDatePicker* pikerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 100, 320, 200)];
+    pikerView.datePickerMode = UIDatePickerModeDate;
+    userLanguageTextField.inputView = pikerView;
+}
+
+- (void)createCustomFonts{
+    //for labels
+    UIImage* bkgImage = [[UIImage imageNamed:@"btn_green.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 28, 16, 28)];
+    [nextStepBtn setBackgroundImage:bkgImage forState:UIControlStateNormal];
+    top2Label.font = [UIFont boldFontWithSize:17];
+    makePhotoLabel.font = [UIFont lightFontWithSize:11];
+    loadPhotoButton.font = [UIFont lightFontWithSize:11];
+    deletePhotoLabel.font = [UIFont lightFontWithSize:11];
+    userNameLabel.font = [UIFont lightFontWithSize:13];
+    userLanguageLabel.font = [UIFont lightFontWithSize:13];
+    userGenderLabel.font = [UIFont lightFontWithSize:13];
+    birthdayLabel.font = [UIFont lightFontWithSize:13];
+    userSecondNameLabel.font = [UIFont lightFontWithSize:13];
+    //for textFields
+    userLanguageTextField.font = [UIFont lightFontWithSize:15];
+    userGenderTextField.font = [UIFont lightFontWithSize:15];
+    birthdayTextField.font = [UIFont lightFontWithSize:15];
+    userSecondNameTextField.font = [UIFont lightFontWithSize:15];
+    userNameTextField.font = [UIFont lightFontWithSize:15];
+    [userLanguageTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    [userGenderTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    [birthdayTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    [userSecondNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    [userNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,6 +12,7 @@
 
 @interface TIMStepOneRegViewController : TIMRegistrationViewController{
     
+    __weak IBOutlet UILabel *top1label;
     __weak IBOutlet UIButton *continueBtn;
     __weak IBOutlet UITextField *repeatPasswordTextField;
     __weak IBOutlet UITextField *passwordTextField;

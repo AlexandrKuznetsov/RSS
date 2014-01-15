@@ -29,12 +29,23 @@
     if (!self.mapView) {
         [self.locationManager startUpdatingLocation];
     }
+    [self setFontToTextFields];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)setFontToTextFields{
+    UIImage* bkgImage = [[UIImage imageNamed:@"btn_green.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 28, 16, 28)];
+    [continueBtn setBackgroundImage:bkgImage forState:UIControlStateNormal];
+    
+    top1label.font = [UIFont boldFontWithSize:17];
+    repeatPasswordTextField.font = [UIFont regularFontWithSize:12];
+    passwordTextField.font = [UIFont regularFontWithSize:12];
+    mailTextField.font = [UIFont regularFontWithSize:12];
 }
 
 - (void)didReceiveMemoryWarning

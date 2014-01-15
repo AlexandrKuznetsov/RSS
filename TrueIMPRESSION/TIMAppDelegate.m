@@ -21,7 +21,12 @@
     self.window.rootViewController = homeNavigation;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [self setAppearance];
     return YES;
+}
+
+- (void)setAppearance{
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
