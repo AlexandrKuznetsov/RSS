@@ -38,9 +38,6 @@
 
 
 - (void)createCustomFonts{
-    //for labels
-    UIImage* bkgImage = [[UIImage imageNamed:@"btn_green.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 28, 16, 28)];
-    [nextStepBtn setBackgroundImage:bkgImage forState:UIControlStateNormal];
     top2Label.font = [UIFont boldFontWithSize:17];
     makePhotoLabel.font = [UIFont lightFontWithSize:11];
     loadPhotoButton.font = [UIFont lightFontWithSize:11];

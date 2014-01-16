@@ -39,9 +39,6 @@
 }
 
 - (void)setFontToTextFields{
-    UIImage* bkgImage = [[UIImage imageNamed:@"btn_green.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 28, 16, 28)];
-    [continueBtn setBackgroundImage:bkgImage forState:UIControlStateNormal];
-    
     top1label.font = [UIFont boldFontWithSize:17];
     repeatPasswordTextField.font = [UIFont regularFontWithSize:12];
     passwordTextField.font = [UIFont regularFontWithSize:12];
