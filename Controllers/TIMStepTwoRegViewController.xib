@@ -125,12 +125,15 @@
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иван" textAlignment="right" minimumFontSize="17" id="zIg-Dd-NcS">
+                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Иван" textAlignment="right" minimumFontSize="17" id="zIg-Dd-NcS">
                             <rect key="frame" x="83" y="161" width="196" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="YUD-EG-4s0"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7kk-3P-nBh">
                             <rect key="frame" x="25" y="204" width="83" height="30"/>
@@ -139,12 +142,15 @@
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Петров" textAlignment="right" minimumFontSize="17" id="KYK-mb-VQr">
+                        <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Петров" textAlignment="right" minimumFontSize="17" id="KYK-mb-VQr">
                             <rect key="frame" x="116" y="204" width="163" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="IcJ-pa-cai"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QMb-AD-I6F">
                             <rect key="frame" x="25" y="246" width="132" height="30"/>
@@ -153,12 +159,15 @@
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="18.09.1983" textAlignment="right" minimumFontSize="17" id="HZh-83-xhU">
+                        <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="18.09.1983" textAlignment="right" minimumFontSize="17" id="HZh-83-xhU">
                             <rect key="frame" x="165" y="246" width="114" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="o6u-oy-0wT"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пол:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UzO-Rn-4Ea">
                             <rect key="frame" x="25" y="288" width="39" height="30"/>
@@ -167,12 +176,15 @@
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мужской" textAlignment="right" minimumFontSize="17" id="q35-rL-loE">
+                        <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мужской" textAlignment="right" minimumFontSize="17" id="q35-rL-loE">
                             <rect key="frame" x="72" y="288" width="207" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Zav-H1-7l9"/>
+                            </connections>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="nxJ-tw-hb8">
                             <rect key="frame" x="287" y="166" width="13" height="20"/>
@@ -197,12 +209,15 @@
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="English" textAlignment="right" minimumFontSize="17" id="Fa6-Aw-9Qc">
+                        <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="English" textAlignment="right" minimumFontSize="17" id="Fa6-Aw-9Qc">
                             <rect key="frame" x="201" y="397" width="76" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="fMp-s1-zqf"/>
+                            </connections>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="uKZ-Q9-aui">
                             <rect key="frame" x="285" y="402" width="13" height="20"/>
@@ -278,28 +293,6 @@
                             <state key="highlighted" image="camera-delete-icon-hover.png"/>
                             <connections>
                                 <action selector="deletePhotoAction:" destination="-1" eventType="touchUpInside" id="oeI-1k-dQT"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="13d-kM-EoS">
-                            <rect key="frame" x="165" y="245" width="133" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="chooseBirthdayAction:" destination="-1" eventType="touchUpInside" id="W1f-ay-aS4"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sj0-cR-zy8">
-                            <rect key="frame" x="72" y="287" width="228" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="chooseGenderAction:" destination="-1" eventType="touchUpInside" id="nl2-cS-6j9"/>
                             </connections>
                         </button>
                     </subviews>

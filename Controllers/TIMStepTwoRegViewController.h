@@ -10,8 +10,19 @@
 #import "TIMStepThreeRegViewController.h"
 #import "TPKeyboardAvoidingScrollView.h"
 
-@interface TIMStepTwoRegViewController : TIMRegistrationViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
+#define PICKER_RECT CGRectMake(0, 200, 320, 200)
+
+typedef enum {
+    name = 1,
+    secondName = 2,
+    birthday = 3,
+    gender = 4,
+    language = 5
+}textFieldEnum;
+
+@interface TIMStepTwoRegViewController : TIMRegistrationViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>{
     
+    NSArray* pickerDataSource;
     __weak IBOutlet UILabel *top2Label;
     __weak IBOutlet UILabel *makePhotoLabel;
     __weak IBOutlet UILabel *loadPhotoButton;
