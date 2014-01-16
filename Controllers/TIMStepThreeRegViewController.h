@@ -21,6 +21,16 @@
 @property (weak, nonatomic) IBOutlet UIImageView *registerBackgrImageView;
 @property (weak, nonatomic) IBOutlet TIMContinueButton *regButtonOutlet;
 
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *interstsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *professionLabel;
+@property (weak, nonatomic) IBOutlet UITextField *cityNameField;
+@property (weak, nonatomic) IBOutlet UITextField *countryNameField;
+@property (weak, nonatomic) IBOutlet UILabel *interestsCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentProfessionLabel;
+
+
 - (IBAction)finishRegistration:(id)sender;
 
 @end

@@ -35,7 +35,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self saveStandartUIValues];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,9 +47,25 @@
 
 - (void)design {
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), SCROLL_HEIGHT);
+    [self customizeFonts];
 }
 
-- (void)saveStandartUIValues {
+- (void)customizeFonts {
+    self.cityLabel.font = [UIFont lightFontWithSize:13];
+    self.countryLabel.font = [UIFont lightFontWithSize:13];
+    self.interstsLabel.font = [UIFont lightFontWithSize:13];
+    self.professionLabel.font = [UIFont lightFontWithSize:13];
+    
+    self.interestsCountLabel.font = [UIFont lightFontWithSize:13];
+    self.currentProfessionLabel.font = [UIFont lightFontWithSize:13];
+    
+    self.cityNameField.font = [UIFont lightFontWithSize:15];
+    self.countryNameField.font = [UIFont lightFontWithSize:15];
+    
+    [self.cityNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.countryNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    self.aboutTextView.font = [UIFont lightFontWithSize:15];
 }
 
 - (void)resizeViewsByDelta:(CGFloat)deltaHeight {
@@ -68,9 +83,6 @@
     CGRect imageViewFrame = self.registerBackgrImageView.frame;
     imageViewFrame.size.height = self.registerBackgrImageView.frame.size.height + deltaHeight;
     self.registerBackgrImageView.frame = imageViewFrame;
-}
-
-- (void)makeStandartSizes {
 }
 
 #pragma mark - Actions
@@ -92,7 +104,7 @@
 - (void)textViewDidChange:(UITextView *)textView {
     if ([self is_ios7]) {
         CGFloat oldFrameHeight = textView.frame.size.height;
-        CGSize textViewSize = [self text:textView.text sizeWithFont:[UIFont lightFontWithSize:15.0f] constrainedToSize:CGSizeMake(273,9999)];
+        CGSize textViewSize = [self text:textView.text sizeWithFont:[UIFont lightFontWithSize:15.0f] constrainedToSize:CGSizeMake(265,9999)];
         CGFloat textHeight = textViewSize.height;
         CGRect newFrame = textView.frame;
         newFrame.size.height = textViewSize.height;
@@ -122,16 +134,13 @@
 
 - (CGSize)text:(NSString *)text sizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size
 {
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
-    {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
         CGRect frame = [text boundingRectWithSize:size
                                           options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                        attributes:@{NSFontAttributeName:font}
                                           context:nil];
         return frame.size;
-    }
-    else
-    {
+    } else {
         return [text sizeWithFont:font constrainedToSize:size];
     }
 }
