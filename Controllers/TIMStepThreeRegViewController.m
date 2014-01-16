@@ -90,20 +90,51 @@
 #pragma mark - Delegates 
 
 - (void)textViewDidChange:(UITextView *)textView {
-    if (textView.text.length == 0) {
-        //[self makeStandartSizes];
-        //TODO не ресайзится при полном быстром удалении
+    if ([self is_ios7]) {
+        CGFloat oldFrameHeight = textView.frame.size.height;
+        CGSize textViewSize = [self text:textView.text sizeWithFont:[UIFont lightFontWithSize:15.0f] constrainedToSize:CGSizeMake(273,9999)];
+        CGFloat textHeight = textViewSize.height;
+        CGRect newFrame = textView.frame;
+        newFrame.size.height = textViewSize.height;
+        textView.frame = newFrame;
+        
+        CGFloat deltaHeight = textHeight - oldFrameHeight;
+        NSLog(@"delta %f", deltaHeight);
+        [self resizeViewsByDelta:deltaHeight];
+    } else {
+        CGFloat oldFrameHeight = textView.frame.size.height;
+        CGRect newFrame = textView.frame;
+        newFrame.size.height = textView.contentSize.height;
+        textView.frame = newFrame;
+        CGFloat newFrameHeight = textView.frame.size.height;
+        CGFloat deltaHeight = newFrameHeight - oldFrameHeight;
+        [self resizeViewsByDelta:deltaHeight];
     }
-    CGFloat oldFrameHeight = textView.frame.size.height;
-    CGRect newFrame = textView.frame;
-    newFrame.size.height = textView.contentSize.height;
-    textView.frame = newFrame;
-    CGFloat newFrameHeight = textView.frame.size.height;
-    
-    CGFloat deltaHeight = newFrameHeight - oldFrameHeight;
-    [self resizeViewsByDelta:deltaHeight];
+
 }
 
+- (BOOL)is_ios7 {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (version >= 7.0) {
+        return YES;
+    } else return NO;
+}
+
+- (CGSize)text:(NSString *)text sizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size
+{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        CGRect frame = [text boundingRectWithSize:size
+                                          options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                       attributes:@{NSFontAttributeName:font}
+                                          context:nil];
+        return frame.size;
+    }
+    else
+    {
+        return [text sizeWithFont:font constrainedToSize:size];
+    }
+}
 
 
 @end

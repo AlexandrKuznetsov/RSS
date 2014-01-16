@@ -65,7 +65,7 @@
     self.destinationsCountLabel.font = [UIFont semiBoldFontWithSize:14.0f];
     self.impressionsCountLabel.font = [UIFont semiBoldFontWithSize:14.0f];
     
-//    self.usersLabel.font = [UIFont regularFontWithSize:10.0f];
+    //self.usersLabel.font = [UIFont regularFontWithSize:10.0f];
 //    self.destinationsLabel.font = [UIFont regularFontWithSize:10.0f];
 //    self.impressionsLabel.font = [UIFont regularFontWithSize:10.0f];
 //    
