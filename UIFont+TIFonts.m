@@ -48,7 +48,7 @@
 }
 
 + (UIFont*)regularFontWithSize:(CGFloat)size{
-    UIFont* font = [UIFont fontWithName:@"OpenSans-Regular" size:size];
+    UIFont* font = [UIFont fontWithName:@"OpenSans" size:size];
     return font;
 }
 
