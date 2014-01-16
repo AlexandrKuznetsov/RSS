@@ -7,14 +7,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TIMLoginViewController">
             <connections>
+                <outlet property="destinationsCountLabel" destination="bi2-cT-jOb" id="Tqv-9s-yeH"/>
+                <outlet property="destinationsLabel" destination="e6B-YY-TCz" id="PDB-KM-Hih"/>
+                <outlet property="errorLabel" destination="vxf-WZ-ojD" id="llB-Gk-r61"/>
+                <outlet property="errorTextLabel" destination="ajX-db-297" id="LvC-Rc-NJm"/>
                 <outlet property="errorView" destination="gwq-9Z-PX9" id="HzM-80-jAN"/>
                 <outlet property="fieldsView" destination="GeP-GD-mHg" id="lQF-2f-ICn"/>
+                <outlet property="forgetButtonOutlet" destination="HHp-CU-vG6" id="SFU-Bo-2aU"/>
+                <outlet property="forgetTextLabel" destination="M9R-OV-fnr" id="svr-ik-2Iz"/>
                 <outlet property="forgetView" destination="uRS-76-NyH" id="kOW-br-ZIs"/>
+                <outlet property="impressionsCountLabel" destination="zh4-au-eCS" id="lHH-ph-Uli"/>
+                <outlet property="impressionsLabel" destination="dB0-LJ-OSt" id="3tM-gn-zJE"/>
+                <outlet property="loginButtonOutlet" destination="KbY-8Q-Doz" id="jXb-bN-VsX"/>
                 <outlet property="loginField" destination="FvC-ow-TiJ" id="oCm-VE-N11"/>
                 <outlet property="loginView" destination="JNx-TE-gLk" id="iO9-L2-SDR"/>
                 <outlet property="passwordField" destination="4UO-fS-nhJ" id="EEQ-ko-bzy"/>
                 <outlet property="registrationButton" destination="XeY-Gb-nyf" id="EO4-7Y-x96"/>
                 <outlet property="scrollView" destination="RNs-WP-gag" id="1sE-Wi-QVx"/>
+                <outlet property="usersCountLabel" destination="ura-H7-EZ4" id="G6V-Dw-2a3"/>
+                <outlet property="usersLabel" destination="yFo-Eg-hUl" id="LK8-eE-bdV"/>
                 <outlet property="view" destination="rhY-zE-MK3" id="CWv-Rd-md1"/>
             </connections>
         </placeholder>
@@ -40,7 +51,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" id="jB5-gr-AmX" userLabel="statistics view">
-                                    <rect key="frame" x="20" y="182" width="289" height="38"/>
+                                    <rect key="frame" x="20" y="182" width="289" height="49"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info-line.png" id="gd0-4y-tIz">
@@ -48,42 +59,42 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1536" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ura-H7-EZ4">
-                                            <rect key="frame" x="24" y="12" width="32" height="17"/>
+                                            <rect key="frame" x="6" y="12" width="74" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registred Users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yFo-Eg-hUl">
-                                            <rect key="frame" x="6" y="26" width="86" height="12"/>
+                                            <rect key="frame" x="6" y="31" width="86" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1536" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bi2-cT-jOb">
-                                            <rect key="frame" x="120" y="12" width="32" height="17"/>
+                                            <rect key="frame" x="84" y="12" width="104" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e6B-YY-TCz">
-                                            <rect key="frame" x="100" y="26" width="86" height="12"/>
+                                            <rect key="frame" x="100" y="31" width="86" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1536" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zh4-au-eCS">
-                                            <rect key="frame" x="220" y="12" width="32" height="17"/>
+                                            <rect key="frame" x="200" y="12" width="80" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Impressions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dB0-LJ-OSt">
-                                            <rect key="frame" x="200" y="26" width="80" height="12"/>
+                                            <rect key="frame" x="200" y="31" width="80" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,11 +119,11 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XeY-Gb-nyf">
-                                            <rect key="frame" x="17" y="162" width="246" height="36"/>
+                                            <rect key="frame" x="15" y="162" width="246" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <state key="normal" title="регистрация">
-                                                <color key="titleColor" red="0.180392161" green="0.33333334329999997" blue="0.29019609089999998" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="titleColor" red="0.20392156862745098" green="0.24313725490196078" blue="0.23137254901960785" alpha="1" colorSpace="deviceRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -151,7 +162,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <state key="normal" title="напомнить пароль">
-                                                        <color key="titleColor" red="0.180392161" green="0.33333334329999997" blue="0.29019609089999998" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="titleColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.23137254900000001" alpha="1" colorSpace="deviceRGB"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -233,7 +244,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uLW-v3-Oij">
-                                                    <rect key="frame" x="114" y="114" width="64" height="55"/>
+                                                    <rect key="frame" x="114" y="127" width="64" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <state key="normal" image="btn_ok.png">
@@ -243,8 +254,8 @@
                                                         <action selector="openMail:" destination="-1" eventType="touchUpInside" id="aL3-3N-Ljv"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш пароль был отправлен на емайл, указанный при регистрации этого аккаунта. Пожалуйста, проверьте свой почтовый ящик." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M9R-OV-fnr">
-                                                    <rect key="frame" x="20" y="30" width="240" height="85"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш пароль был отправлен на емайл, указанный при регистрации этого аккаунта. Пожалуйста, проверьте свой почтовый ящик." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M9R-OV-fnr">
+                                                    <rect key="frame" x="5" y="9" width="270" height="110"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>

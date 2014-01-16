@@ -197,7 +197,7 @@
         </view>
     </objects>
     <resources>
-        <image name="btn_green.png" width="160" height="35"/>
+        <image name="btn_green.png" width="59" height="34"/>
         <image name="disclosure-icon.png" width="13" height="20"/>
         <image name="line.png" width="7" height="3"/>
         <image name="reg-circle.png" width="40" height="40"/>

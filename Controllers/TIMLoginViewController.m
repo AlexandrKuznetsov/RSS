@@ -53,10 +53,28 @@
     if([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    [self customizeFonts];
     [self.loginField setValue:[UIColor colorWithWhite:0.5 alpha:1.0]
                        forKeyPath:@"_placeholderLabel.textColor"];
     [self.passwordField setValue:[UIColor colorWithWhite:0.5 alpha:1.0]
                           forKeyPath:@"_placeholderLabel.textColor"];
+}
+
+- (void)customizeFonts {
+    self.usersCountLabel.font = [UIFont semiBoldFontWithSize:14.0f];
+    self.destinationsCountLabel.font = [UIFont semiBoldFontWithSize:14.0f];
+    self.impressionsCountLabel.font = [UIFont semiBoldFontWithSize:14.0f];
+    
+//    self.usersLabel.font = [UIFont regularFontWithSize:10.0f];
+//    self.destinationsLabel.font = [UIFont regularFontWithSize:10.0f];
+//    self.impressionsLabel.font = [UIFont regularFontWithSize:10.0f];
+//    
+//    self.registrationButton.titleLabel.font = [UIFont regularFontWithSize:50];
+    
+    self.errorLabel.font = [UIFont semiBoldFontWithSize:15.0f];
+    self.errorTextLabel.font = [UIFont lightFontWithSize:15.0f];
+    
+    self.forgetTextLabel.font = [UIFont semiBoldFontWithSize:15.0f];
 }
 
 #pragma mark - UI
@@ -200,6 +218,7 @@
 }
 
 - (IBAction)login:(id)sender {
+    [self standartScrollSize];
     [self hideKeyBoard];
     if ([self isAllFieldsAreValid]) {
         [self sendLogin:self.loginField.text andPassword:self.passwordField.text];
