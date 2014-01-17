@@ -22,4 +22,11 @@
         language:(NSString *)aLanguage
     profilePhoto:(UIImage *)aPhoto;
 
+- (void)saveInterests:(NSArray *)anIntersts
+           profession:(NSString *)profession
+                about:(NSString *)about;
+
+- (void)saveCountry:(NSString *)aCountry
+               city:(NSString *)aCity;
+
 @end

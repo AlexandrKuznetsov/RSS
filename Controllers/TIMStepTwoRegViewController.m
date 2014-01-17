@@ -69,7 +69,7 @@
 #pragma mark - Actions
 
 - (IBAction)goToNextStep:(id)sender {
-    if ([self checkIsDataValid]) {
+    //if ([self checkIsDataValid]) {
         [[TIMRegistrationModel sharedInstance] saveName:userNameTextField.text
                                                 surname:userSecondNameTextField.text
                                                birthday:birthdayTextField.text
@@ -77,7 +77,7 @@
                                                language:userLanguageTextField.text
                                            profilePhoto:avatarImageView.image];
        [self pushStepThree];
-    }
+    //}
     
 }
 

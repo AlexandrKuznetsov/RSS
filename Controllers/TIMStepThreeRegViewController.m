@@ -61,10 +61,7 @@
     
     self.cityNameField.font = [UIFont lightFontWithSize:15];
     self.countryNameField.font = [UIFont lightFontWithSize:15];
-    
-//    [self.cityNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-//    [self.countryNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    
+
     self.aboutTextView.font = [UIFont lightFontWithSize:15];
 }
 
@@ -101,7 +98,13 @@
 #pragma mark - Actions
 
 - (IBAction)finishRegistration:(id)sender {
-    [self dismissRegistration];
+    if ([self checkIsDataValid]) {
+        [[TIMRegistrationModel sharedInstance] saveCountry:self.countryNameField.text
+                                                      city:self.cityNameField.text];
+        [[TIMRegistrationModel sharedInstance] saveInterests:@[@"123", @"123"]
+                                                  profession:@"qwery" about:self.aboutTextView.text];
+        [self dismissRegistration];
+    }
 }
 
 
@@ -186,6 +189,24 @@ numberOfRowsInComponent:(NSInteger)component{
     return _pickerDataSource.count;
 }
 
+#pragma mark - Checkings 
+
+- (BOOL)checkIsDataValid{
+    NSString* problem = [self checkCity:self.cityNameField.text
+                                country:self.countryNameField.text];
+    if (!problem) {
+        return YES;
+    } else {
+        UIAlertView* alerView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                           message:problem
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Закрыть"
+                                                 otherButtonTitles:nil, nil];
+        [alerView show];
+        return NO;
+    }
+}
+
 - (BOOL)is_ios7 {
     float version = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (version >= 7.0) {
@@ -206,5 +227,23 @@ numberOfRowsInComponent:(NSInteger)component{
     }
 }
 
+
+#pragma mark - Location Delegate 
+
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+//    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+//        CLPlacemark *myPlacemark = [placemarks objectAtIndex:0];
+//        NSString *country = myPlacemark.country;
+//        NSString *city = myPlacemark.addressDictionary[@"City"];
+//    }];
+//}
+//
+//// this delegate method is called if an error occurs in locating your current location
+//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+//{
+//    NSLog(@"locationManager:%@ didFailWithError:%@", manager, error);
+//}
 
 @end

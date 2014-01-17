@@ -53,6 +53,19 @@
     return nil;
 }
 
+
+- (NSString *)checkCity:(NSString *)aCity
+                country:(NSString *)aCountry {
+    if (![self isStringNotEmpty:aCity]) {
+        return @"Поле города не может быть пустым";
+    }
+    if (![self isStringNotEmpty:aCountry]) {
+        return @"Поле страны не может быть пустым";
+    }
+    return nil;
+}
+
+
 - (BOOL)isValidMail:(NSString*)mail{
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];

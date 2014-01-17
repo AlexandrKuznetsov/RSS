@@ -20,7 +20,7 @@ enum FieldType {
     Profession
     };
 
-@interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource , UIPickerViewDelegate> {
+@interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource , UIPickerViewDelegate, CLLocationManagerDelegate> {
     NSArray *_pickerDataSource;
 }
 
