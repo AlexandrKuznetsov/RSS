@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     [self design];
-    //[self checkForLoginInformation];
+    [self checkForLoginInformation];
     [self addNavigationButtons];
 }
 
