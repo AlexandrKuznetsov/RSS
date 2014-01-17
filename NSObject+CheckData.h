@@ -15,5 +15,9 @@
 - (NSString*)checkFirsStepRegistration:(NSString*)mail
                              pass:(NSString*)pass
                    andConfirmPass:(NSString*)confirmPass;
+- (NSString *)checkName:(NSString *)aName
+                surname:(NSString *)aSurname
+               birthday:(NSString *)aBirthday
+                 gender:(NSString *)aGender;
 
 @end

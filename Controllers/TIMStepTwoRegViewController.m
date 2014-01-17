@@ -66,8 +66,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+
 - (IBAction)goToNextStep:(id)sender {
-    [self pushStepThree];
+    if ([self checkIsDataValid]) {
+        [[TIMRegistrationModel sharedInstance] saveName:userNameTextField.text
+                                                surname:userSecondNameTextField.text
+                                               birthday:birthdayTextField.text
+                                                 gender:userGenderTextField.text
+                                               language:userLanguageTextField.text
+                                           profilePhoto:avatarImageView.image];
+       [self pushStepThree];
+    }
+    
 }
 
 - (IBAction)makePhotoAction:(id)sender {
@@ -82,14 +93,7 @@
     avatarImageView.image = [UIImage imageNamed:@"default-avatar.png"];
 }
 
-- (IBAction)chooseBirthdayAction:(id)sender {
-}
-
-- (IBAction)chooseGenderAction:(id)sender {
-}
-
-- (IBAction)chooseLenguageAction:(id)sender {
-}
+#pragma mark - Navigation
 
 - (void)pushStepThree {
     TIMStepThreeRegViewController *stepThreeController = [[TIMStepThreeRegViewController alloc]
@@ -98,6 +102,9 @@
     stepThreeController.mapView = self.mapView;
     [self.navigationController pushViewController:stepThreeController animated:YES];
 }
+
+
+#pragma mark - Image Controller
 
 - (void)callImagePickerControllerForMakePhoto:(BOOL)isMakePhoto{
     UIImagePickerController* imageController = [[UIImagePickerController alloc] init];
@@ -208,6 +215,26 @@ numberOfRowsInComponent:(NSInteger)component{
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - Checks 
+
+- (BOOL)checkIsDataValid{
+    NSString* problem = [self checkName:userNameTextField.text
+                                surname:userSecondNameTextField.text
+                               birthday:birthdayTextField.text
+                                 gender:userGenderTextField.text];
+    if (!problem) {
+        return YES;
+    } else {
+        UIAlertView* alerView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                           message:problem
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Закрыть"
+                                                 otherButtonTitles:nil, nil];
+        [alerView show];
+        return NO;
     }
 }
 

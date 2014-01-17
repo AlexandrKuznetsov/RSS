@@ -34,6 +34,25 @@
     return nil;
 }
 
+- (NSString *)checkName:(NSString *)aName
+                surname:(NSString *)aSurname
+               birthday:(NSString *)aBirthday
+                 gender:(NSString *)aGender {
+    if (![self isStringNotEmpty:aName]) {
+        return @"Имя не может быть пустым";
+    }
+    if (![self isStringNotEmpty:aSurname]) {
+        return @"Поле фамилии не может быть пустым";
+    }
+    if (![self isStringNotEmpty:aBirthday]) {
+        return @"Дата рождения обязательна для заполнения";
+    }
+    if (![self isStringNotEmpty:aGender]) {
+        return @"Пол обязателен для заполнения";
+    }
+    return nil;
+}
+
 - (BOOL)isValidMail:(NSString*)mail{
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];

@@ -8,7 +8,6 @@
 
 #import "TIMRegistrationViewController.h"
 #import "TIMStepTwoRegViewController.h"
-#import "NSObject+CheckData.h"
 
 @interface TIMStepOneRegViewController : TIMRegistrationViewController{
     

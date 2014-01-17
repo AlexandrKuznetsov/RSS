@@ -52,9 +52,11 @@
 }
 
 - (IBAction)goToNextStep:(id)sender {
-//    if ([self checkIsDataValid]) {
+    if ([self checkIsDataValid]) {
+        [[TIMRegistrationModel sharedInstance] saveLogin:mailTextField.text
+                                                password:passwordTextField.text];
         [self pushStepTwo];
-//    }
+    }
 }
 
 - (BOOL)checkIsDataValid{

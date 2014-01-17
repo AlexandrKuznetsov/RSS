@@ -53,9 +53,5 @@ typedef enum {
 - (IBAction)makePhotoAction:(id)sender;
 - (IBAction)loadPhotoAction:(id)sender;
 - (IBAction)deletePhotoAction:(id)sender;
-- (IBAction)chooseBirthdayAction:(id)sender;
-- (IBAction)chooseGenderAction:(id)sender;
-- (IBAction)chooseLenguageAction:(id)sender;
-
 
 @end

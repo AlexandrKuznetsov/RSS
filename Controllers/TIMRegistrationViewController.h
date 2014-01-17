@@ -11,6 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "UIFont+TIFonts.h"
+#import "TIMRegistrationModel.h"
+#import "NSObject+CheckData.h"
 
 @interface TIMRegistrationViewController : TIMViewController <CLLocationManagerDelegate>{
     
