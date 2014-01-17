@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self checkForLoginInformation];
+    [self design];
+    //[self checkForLoginInformation];
     [self addNavigationButtons];
 }
 
@@ -35,6 +36,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Design
+
+- (void)design {
+    [self customizeFonts];
+}
+
+- (void)customizeFonts {
+    self.nameLabel.font = [UIFont boldFontWithSize:15.0f];
+    self.countryLabel.font = [UIFont regularFontWithSize:11.0f];
+    self.impressionsLabel.font = [UIFont semiBoldFontWithSize:14.0f];
+    self.placesLabel.font = [UIFont semiBoldFontWithSize:14.0f];
+    self.imprTextLabel.font = [UIFont regularFontWithSize:10.0f];
+    self.placeesTextLabel.font = [UIFont regularFontWithSize:10.0f];
+    self.settingsOutlet.titleLabel.font = [UIFont semiBoldFontWithSize:10.0f];
+}
+
+#pragma mark - Checkings
 
 - (void)checkForLoginInformation {
     //проверка на информацию о логине. При отсутвии - переход на экран с логином.
@@ -97,31 +117,45 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
     if (indexPath.row == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"profileInfoCell"];
+        return [self createInfoCellForTable:tableView atIndexPath:indexPath];
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"impressionCell"];
+        return [self createImpressionCellForTable:tableView atIndexPath:indexPath];
     }
-    NSArray *topLevelObjects;
-    if (cell == nil) {
-        if (indexPath.row == 0) {
-            topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileInfoCell" owner:self options:nil];
-        } else {
-            topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileImpressionCell" owner:self options:nil];
-        }
-        cell = [topLevelObjects objectAtIndex:0];
+}
+
+- (TIMProfileInfoCell *)createInfoCellForTable:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    static NSString* identifier = @"profileInfoCell";
+    TIMProfileInfoCell* cell = (TIMProfileInfoCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        NSArray *topLevelItems = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileInfoCell" owner:nil options:nil];
+        cell = [topLevelItems lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
+    [cell cellDesign];
     return cell;
 }
+
+- (TIMProfileImpressionCell *)createImpressionCellForTable:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    static NSString* identifier = @"impressionCell";
+    TIMProfileImpressionCell* cell = (TIMProfileImpressionCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        NSArray *topLevelItems = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileImpressionCell" owner:nil options:nil];
+        cell = [topLevelItems lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    }
+    [cell customFonts];
+    return cell;
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         //верстка
-        return 167;
+        return 162;
     }
     //верстка
-    return 121;
+    return 113;
 }
 
 #pragma mark - Navigation actions

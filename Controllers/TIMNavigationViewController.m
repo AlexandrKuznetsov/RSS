@@ -26,14 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *navBarBackgroundImage = [[UIImage imageNamed:@"header-title.png"]
-                                      resizableImageWithCapInsets:UIEdgeInsetsMake(20, 0, 20, 0)];
+    UIImage *navBarBackgroundImage;
+    if ([self is_ios7]) {
+        navBarBackgroundImage = [UIImage imageNamed:@"top_panel.png"];
+    } else {
+        navBarBackgroundImage = [UIImage imageNamed:@"top_panel.png"];
+    }
     [self.navigationBar setBackgroundImage:navBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
-    [self backButtonCustomizaton];
 }
 
-- (void)backButtonCustomizaton {
-
+- (BOOL)is_ios7 {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (version >= 7.0) {
+        return YES;
+    } else return NO;
 }
 
 

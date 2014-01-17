@@ -26,4 +26,10 @@
     // Configure the view for the selected state
 }
 
+- (void)customFonts {
+    self.imprNameLabel.font = [UIFont boldFontWithSize:14.0f];
+    self.locationLabel.font = [UIFont semiBoldFontWithSize:10.0f];
+    self.dateLabel.font = [UIFont regularFontWithSize:10.0f];
+}
+
 @end

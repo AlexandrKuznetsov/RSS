@@ -19,7 +19,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="icon-toolbar-search.png">
+                            <state key="normal" image="btn_search.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -34,7 +34,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="icon-toolbar-people.png">
+                            <state key="normal" image="btn_friends.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -53,7 +53,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="icon-toolbar-eye.png">
+                            <state key="normal" image="bnt_events.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -70,9 +70,9 @@
         </view>
     </objects>
     <resources>
-        <image name="icon-toolbar-eye.png" width="21" height="21"/>
-        <image name="icon-toolbar-people.png" width="21" height="21"/>
-        <image name="icon-toolbar-search.png" width="21" height="21"/>
+        <image name="bnt_events.png" width="40" height="36"/>
+        <image name="btn_friends.png" width="40" height="36"/>
+        <image name="btn_search.png" width="40" height="36"/>
         <image name="icon_circle.png" width="20" height="22"/>
     </resources>
 </document>

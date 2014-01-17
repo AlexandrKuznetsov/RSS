@@ -23,5 +23,8 @@ UITableViewDelegate
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *impressionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *imprTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeesTextLabel;
+@property (weak, nonatomic) IBOutlet UIButton *settingsOutlet;
 
 @end

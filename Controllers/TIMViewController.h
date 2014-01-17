@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "UIFont+TIFonts.h"
 
 @interface TIMViewController : UIViewController
 

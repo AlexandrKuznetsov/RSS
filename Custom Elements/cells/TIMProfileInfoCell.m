@@ -26,4 +26,14 @@
     // Configure the view for the selected state
 }
 
+
+- (void)cellDesign {
+    self.professionTextLabel.font = [UIFont boldFontWithSize:12.0f];
+    self.interestsTextLabel.font = [UIFont boldFontWithSize:12.0f];
+    self.aboutTextLabel.font = [UIFont boldFontWithSize:12.0f];
+    self.professionLabel.font = [UIFont regularFontWithSize:12.0f];
+    self.interestLabel.font = [UIFont regularFontWithSize:12.0f];
+    self.aboutLabeel.font = [UIFont regularFontWithSize:12.0f];
+}
+
 @end
