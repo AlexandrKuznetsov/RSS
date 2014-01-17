@@ -53,11 +53,11 @@
     birthdayTextField.font = [UIFont lightFontWithSize:15];
     userSecondNameTextField.font = [UIFont lightFontWithSize:15];
     userNameTextField.font = [UIFont lightFontWithSize:15];
-    [userLanguageTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    [userGenderTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    [birthdayTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    [userSecondNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    [userNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [userLanguageTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [userGenderTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [birthdayTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [userSecondNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [userNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 - (void)didReceiveMemoryWarning

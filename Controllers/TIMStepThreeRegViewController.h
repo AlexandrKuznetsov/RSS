@@ -12,8 +12,17 @@
 
 #define SCROLL_HEIGHT 548
 #define TESXTVIEW_STANDART_HEIGHT 28
+#define PICKER_RECT CGRectMake(0, 200, 320, 200)
 
-@interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate>
+enum FieldType {
+    Country = 1,
+    Interests,
+    Profession
+    };
+
+@interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource , UIPickerViewDelegate> {
+    NSArray *_pickerDataSource;
+}
 
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *aboutFieldPlaceholder;

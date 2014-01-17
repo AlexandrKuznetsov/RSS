@@ -62,8 +62,8 @@
     self.cityNameField.font = [UIFont lightFontWithSize:15];
     self.countryNameField.font = [UIFont lightFontWithSize:15];
     
-    [self.cityNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    [self.countryNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [self.cityNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//    [self.countryNameField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
     
     self.aboutTextView.font = [UIFont lightFontWithSize:15];
 }
@@ -84,6 +84,19 @@
     imageViewFrame.size.height = self.registerBackgrImageView.frame.size.height + deltaHeight;
     self.registerBackgrImageView.frame = imageViewFrame;
 }
+
+
+- (void)createTextPikerToTextField:(UITextField*)textField
+                    withDataSource:(NSArray*)dataSource andTag:(NSInteger)tag{
+    _pickerDataSource = dataSource;
+    UIPickerView* pikerView = [[UIPickerView alloc] initWithFrame:PICKER_RECT];
+    pikerView.showsSelectionIndicator = YES;
+    pikerView.tag = tag;
+    pikerView.delegate = self;
+    pikerView.dataSource = self;
+    textField.inputView = pikerView;
+}
+
 
 #pragma mark - Actions
 
@@ -123,6 +136,54 @@
         [self resizeViewsByDelta:deltaHeight];
     }
 
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    switch (textField.tag) {
+        case Country:
+            [self createTextPikerToTextField:textField withDataSource:@[@"1234", @"12345"] andTag:Country];
+            break;
+        case Interests:
+            
+            break;
+        case Profession:
+            
+            break;
+        default:
+            break;
+    }
+}
+
+
+- (void)pickerView:(UIPickerView *)pickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component{
+    switch (pickerView.tag) {
+        case Country:
+            self.countryNameField.text = _pickerDataSource[row];
+            break;
+        case Interests:
+            break;
+        case Profession:
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma Picker View 
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return _pickerDataSource[row];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component{
+    return _pickerDataSource.count;
 }
 
 - (BOOL)is_ios7 {
