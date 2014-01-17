@@ -69,7 +69,8 @@
     self.destinationsLabel.font = [UIFont regularFontWithSize:10.0f];
     self.impressionsLabel.font = [UIFont regularFontWithSize:10.0f];
 
-    self.registrationButton.titleLabel.font = [UIFont regularFontWithSize:50];
+    self.registrationButton.titleLabel.font = [UIFont regularFontWithSize:18];
+    self.forgetButtonOutlet.titleLabel.font = [UIFont regularFontWithSize:18];
     
     self.errorLabel.font = [UIFont semiBoldFontWithSize:15.0f];
     self.errorTextLabel.font = [UIFont lightFontWithSize:15.0f];
