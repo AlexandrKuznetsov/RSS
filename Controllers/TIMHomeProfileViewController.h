@@ -12,6 +12,7 @@
 #import "TIMHomeNavButtonsView.h"
 #import "TIMProfileImpressionCell.h"
 #import "TIMProfileInfoCell.h"
+#import "TIMSetingsViewController.h"
 
 @interface TIMHomeProfileViewController : TIMViewController <
 UITableViewDataSource,
@@ -26,5 +27,8 @@ UITableViewDelegate
 @property (weak, nonatomic) IBOutlet UILabel *imprTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeesTextLabel;
 @property (weak, nonatomic) IBOutlet UIButton *settingsOutlet;
+
+- (IBAction)settingBtnAction:(id)sender;
+
 
 @end

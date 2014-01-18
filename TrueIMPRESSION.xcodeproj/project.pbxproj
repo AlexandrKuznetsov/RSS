@@ -163,6 +163,14 @@
 		C561DAA3188746FF0006FD0D /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DAA1188746FF0006FD0D /* btn_green.png */; };
 		C561DAA4188746FF0006FD0D /* btn_green_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DAA2188746FF0006FD0D /* btn_green_@2x.png */; };
 		C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A531B718831D2E007B4019 /* NSObject+CheckData.m */; };
+		C5E67DCD1889B7E2000CB56B /* TIMSetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E67DCB1889B7E2000CB56B /* TIMSetingsViewController.m */; };
+		C5E67DCE1889B7E2000CB56B /* TIMSetingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DCC1889B7E2000CB56B /* TIMSetingsViewController.xib */; };
+		C5E67DD11889B865000CB56B /* TIMPhotoButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E67DD01889B865000CB56B /* TIMPhotoButtons.m */; };
+		C5E67DD31889B88C000CB56B /* TIMPhotoButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD21889B88C000CB56B /* TIMPhotoButtons.xib */; };
+		C5E67DD81889F18C000CB56B /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD41889F18C000CB56B /* off.png */; };
+		C5E67DD91889F18C000CB56B /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD51889F18C000CB56B /* off@2x.png */; };
+		C5E67DDA1889F18C000CB56B /* on.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD61889F18C000CB56B /* on.png */; };
+		C5E67DDB1889F18C000CB56B /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD71889F18C000CB56B /* on@2x.png */; };
 		C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B51882F4B500B25ACA /* MapKit.framework */; };
 		C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B71882F57200B25ACA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -360,6 +368,16 @@
 		C561DAA2188746FF0006FD0D /* btn_green_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_green_@2x.png"; sourceTree = "<group>"; };
 		C5A531B618831D2E007B4019 /* NSObject+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CheckData.h"; sourceTree = "<group>"; };
 		C5A531B718831D2E007B4019 /* NSObject+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CheckData.m"; sourceTree = "<group>"; };
+		C5E67DCA1889B7E2000CB56B /* TIMSetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMSetingsViewController.h; path = Controllers/TIMSetingsViewController.h; sourceTree = "<group>"; };
+		C5E67DCB1889B7E2000CB56B /* TIMSetingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMSetingsViewController.m; path = Controllers/TIMSetingsViewController.m; sourceTree = "<group>"; };
+		C5E67DCC1889B7E2000CB56B /* TIMSetingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMSetingsViewController.xib; path = Controllers/TIMSetingsViewController.xib; sourceTree = "<group>"; };
+		C5E67DCF1889B865000CB56B /* TIMPhotoButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMPhotoButtons.h; path = "Custom Elements/TIMPhotoButtons.h"; sourceTree = "<group>"; };
+		C5E67DD01889B865000CB56B /* TIMPhotoButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMPhotoButtons.m; path = "Custom Elements/TIMPhotoButtons.m"; sourceTree = "<group>"; };
+		C5E67DD21889B88C000CB56B /* TIMPhotoButtons.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMPhotoButtons.xib; sourceTree = "<group>"; };
+		C5E67DD41889F18C000CB56B /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
+		C5E67DD51889F18C000CB56B /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "off@2x.png"; sourceTree = "<group>"; };
+		C5E67DD61889F18C000CB56B /* on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on.png; sourceTree = "<group>"; };
+		C5E67DD71889F18C000CB56B /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "on@2x.png"; sourceTree = "<group>"; };
 		C5F728B51882F4B500B25ACA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C5F728B71882F57200B25ACA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -548,6 +566,7 @@
 				8B73856A1881F31C00D1E0C2 /* Step 3 */,
 				8B73855A1881F24500D1E0C2 /* parent */,
 				8B7385591881F23500D1E0C2 /* navigation */,
+				C5E67DC91889B778000CB56B /* SettingsController */,
 			);
 			name = "Registration Controllers";
 			sourceTree = "<group>";
@@ -650,6 +669,9 @@
 				8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */,
 				8B8791DC1885CC9A004E177E /* TIMContinueButton.h */,
 				8B8791DD1885CC9A004E177E /* TIMContinueButton.m */,
+				C5E67DCF1889B865000CB56B /* TIMPhotoButtons.h */,
+				C5E67DD01889B865000CB56B /* TIMPhotoButtons.m */,
+				C5E67DD21889B88C000CB56B /* TIMPhotoButtons.xib */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -861,6 +883,16 @@
 			name = Pikers;
 			sourceTree = "<group>";
 		};
+		C5E67DC91889B778000CB56B /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				C5E67DCA1889B7E2000CB56B /* TIMSetingsViewController.h */,
+				C5E67DCB1889B7E2000CB56B /* TIMSetingsViewController.m */,
+				C5E67DCC1889B7E2000CB56B /* TIMSetingsViewController.xib */,
+			);
+			name = SettingsController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -980,9 +1012,11 @@
 				8B73850B1881D10E00D1E0C2 /* header-back-button-down.png in Resources */,
 				8B7B0A65188A632200E95FFD /* top_panel_64.png in Resources */,
 				C550EDE718871C9500C8CFD4 /* OpenSans-Semibold.ttf in Resources */,
+				C5E67DCE1889B7E2000CB56B /* TIMSetingsViewController.xib in Resources */,
 				8B73851B1881D10E00D1E0C2 /* icon-feed-place.png in Resources */,
 				8B7385391881D10E00D1E0C2 /* stars-example@2x.png in Resources */,
 				C550EDE618871C9500C8CFD4 /* OpenSans-Regular.ttf in Resources */,
+				C5E67DD31889B88C000CB56B /* TIMPhotoButtons.xib in Resources */,
 				C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */,
 				8B7384FF1881D10E00D1E0C2 /* camera-take-icon-hover@2x.png in Resources */,
 				8B816F8B1889D7F700C7DACA /* bnt_events@2x.png in Resources */,
@@ -1020,6 +1054,7 @@
 				8B73852A1881D10E00D1E0C2 /* login-area.png in Resources */,
 				8B7385011881D10E00D1E0C2 /* camera-take-icon@2x.png in Resources */,
 				8B7384FB1881D10E00D1E0C2 /* camera-delete-icon-hover@2x.png in Resources */,
+				C5E67DD81889F18C000CB56B /* off.png in Resources */,
 				8B73851E1881D10E00D1E0C2 /* icon-home-settings@2x.png in Resources */,
 				8B7385091881D10E00D1E0C2 /* flag-ru.png in Resources */,
 				8B7384FD1881D10E00D1E0C2 /* camera-delete-icon@2x.png in Resources */,
@@ -1042,6 +1077,7 @@
 				C550EDEC18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf in Resources */,
 				8B7384FC1881D10E00D1E0C2 /* camera-delete-icon.png in Resources */,
 				8B7384F91881D10E00D1E0C2 /* camera-choose-icon@2x.png in Resources */,
+				C5E67DDB1889F18C000CB56B /* on@2x.png in Resources */,
 				8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */,
 				8B7385151881D10E00D1E0C2 /* home-button.png in Resources */,
 				8B7385361881D10E00D1E0C2 /* register-window.png in Resources */,
@@ -1057,6 +1093,7 @@
 				8B7385381881D10E00D1E0C2 /* stars-example.png in Resources */,
 				C550EDEA18871C9500C8CFD4 /* OpenSans-CondBold.ttf in Resources */,
 				8B9283CA18833876009F93C0 /* icon_circle.png in Resources */,
+				C5E67DDA1889F18C000CB56B /* on.png in Resources */,
 				8B73853D1881D10E00D1E0C2 /* text-field@2x.png in Resources */,
 				C550EDDE18871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B73852B1881D10E00D1E0C2 /* login-area@2x.png in Resources */,
@@ -1139,7 +1176,9 @@
 				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
 				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
 				C550EDEF18871CCE00C8CFD4 /* UIFont+TIFonts.m in Sources */,
+				C5E67DCD1889B7E2000CB56B /* TIMSetingsViewController.m in Sources */,
 				8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */,
+				C5E67DD11889B865000CB56B /* TIMPhotoButtons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

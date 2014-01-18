@@ -12,7 +12,6 @@
 
 #define SCROLL_HEIGHT 548
 #define TESXTVIEW_STANDART_HEIGHT 28
-#define PICKER_RECT CGRectMake(0, 200, 320, 200)
 
 enum FieldType {
     Country = 1,

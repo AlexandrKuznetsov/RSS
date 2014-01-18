@@ -165,4 +165,10 @@
 - (void)addImpression {
 }
 
+- (IBAction)settingBtnAction:(id)sender {
+    TIMSetingsViewController* settingsViewController =
+    [[TIMSetingsViewController alloc] init];
+    [self.navigationController pushViewController:settingsViewController animated:YES];
+}
+
 @end

@@ -53,11 +53,6 @@
     birthdayTextField.font = [UIFont lightFontWithSize:15];
     userSecondNameTextField.font = [UIFont lightFontWithSize:15];
     userNameTextField.font = [UIFont lightFontWithSize:15];
-//    [userLanguageTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-//    [userGenderTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-//    [birthdayTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-//    [userSecondNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-//    [userNameTextField setValue:[UIColor colorWithRed:48/255.0 green:56/255.0 blue:68/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,92 +126,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - UITextFieldDelegate
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    switch (textField.tag) {
-        case birthday:
-            [self createDatePickerToTextField:textField];
-            break;
-        case gender:
-        {
-            NSArray* genderArray = [NSArray arrayWithObjects:@"Мужской", @"Женский", nil];
-            [self createTextPikerToTextField:textField
-                              withDataSource:genderArray
-                                      andTag:gender];
-        }
-            break;
-        case language:
-        {
-            NSArray* languageArray = [NSArray arrayWithObjects:@"English", @"Русский", nil];
-            [self createTextPikerToTextField:textField
-                              withDataSource:languageArray
-                                      andTag:language];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
-#pragma mark - DatePicker
-
-- (void)createDatePickerToTextField:(UITextField*)textField{
-    UIDatePicker* datePiker = [[UIDatePicker alloc] initWithFrame:PICKER_RECT];
-    datePiker.datePickerMode = UIDatePickerModeDate;
-    [datePiker addTarget:self action:@selector(changebirthdayValue:) forControlEvents:UIControlEventValueChanged];
-    textField.inputView = datePiker;
-}
-
-- (void)changebirthdayValue:(UIDatePicker*)picker{
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
-    NSString* dateString = [dateFormatter stringFromDate:picker.date];
-    birthdayTextField.text = dateString;
-}
-
-#pragma mark - TextPicker
-
-- (void)createTextPikerToTextField:(UITextField*)textField
-                    withDataSource:(NSArray*)dataSource andTag:(NSInteger)tag{
-    pickerDataSource = dataSource;
-    UIPickerView* pikerView = [[UIPickerView alloc] initWithFrame:PICKER_RECT];
-    pikerView.showsSelectionIndicator = YES;
-    pikerView.tag = tag;
-    pikerView.delegate = self;
-    pikerView.dataSource = self;
-    textField.inputView = pikerView;
-}
-
-#pragma mark - UIPikerViewDelegate
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return pickerDataSource[row];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component{
-    return pickerDataSource.count;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView
-      didSelectRow:(NSInteger)row
-       inComponent:(NSInteger)component{
-    switch (pickerView.tag) {
-        case gender:
-            userGenderTextField.text = pickerDataSource[row];
-            break;
-        case language:
-            userLanguageTextField.text = pickerDataSource[row];
-            break;
-        default:
-            break;
-    }
-}
 
 #pragma mark - Checks 
 
