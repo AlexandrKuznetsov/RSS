@@ -101,16 +101,13 @@
 		8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73857D1882003A00D1E0C2 /* TIMLoginButton.m */; };
 		8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */; };
 		8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */; };
-		8B7B0A64188A632200E95FFD /* top_panel_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A61188A632200E95FFD /* top_panel_44.png */; };
-		8B7B0A65188A632200E95FFD /* top_panel_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A62188A632200E95FFD /* top_panel_64.png */; };
-		8B7B0A66188A632200E95FFD /* top_panel_64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A63188A632200E95FFD /* top_panel_64@2x.png */; };
 		8B7B0A6A188B142400E95FFD /* top_panel_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A67188B142400E95FFD /* top_panel_44.png */; };
 		8B7B0A6B188B142400E95FFD /* top_panel_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A68188B142400E95FFD /* top_panel_64.png */; };
 		8B7B0A6C188B142400E95FFD /* top_panel_64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A69188B142400E95FFD /* top_panel_64@2x.png */; };
 		8B7B0A6E188B183E00E95FFD /* top_panel_44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A6D188B183E00E95FFD /* top_panel_44@2x.png */; };
+		8B7B0A71188B245F00E95FFD /* mask_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A6F188B245F00E95FFD /* mask_place.png */; };
+		8B7B0A72188B245F00E95FFD /* mask_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A70188B245F00E95FFD /* mask_place@2x.png */; };
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
-		8B816F811889D0D500C7DACA /* mask_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F7F1889D0D500C7DACA /* mask_place@2x.png */; };
-		8B816F821889D0D500C7DACA /* mask_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F801889D0D500C7DACA /* mask_place.png */; };
 		8B816F8A1889D7F700C7DACA /* bnt_events.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F841889D7F700C7DACA /* bnt_events.png */; };
 		8B816F8B1889D7F700C7DACA /* bnt_events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F851889D7F700C7DACA /* bnt_events@2x.png */; };
 		8B816F8C1889D7F700C7DACA /* btn_friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F861889D7F700C7DACA /* btn_friends.png */; };
@@ -298,17 +295,14 @@
 		8B738580188203E100D1E0C2 /* TIMLoginButtonSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLoginButtonSmall.m; path = "Custom Elements/TIMLoginButtonSmall.m"; sourceTree = "<group>"; };
 		8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		8B7B0A61188A632200E95FFD /* top_panel_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_44.png; path = Images/top_panel_44.png; sourceTree = "<group>"; };
-		8B7B0A62188A632200E95FFD /* top_panel_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_64.png; path = Images/top_panel_64.png; sourceTree = "<group>"; };
-		8B7B0A63188A632200E95FFD /* top_panel_64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top_panel_64@2x.png"; path = "Images/top_panel_64@2x.png"; sourceTree = "<group>"; };
 		8B7B0A67188B142400E95FFD /* top_panel_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_44.png; path = Images/top_panel_44.png; sourceTree = "<group>"; };
 		8B7B0A68188B142400E95FFD /* top_panel_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_64.png; path = Images/top_panel_64.png; sourceTree = "<group>"; };
 		8B7B0A69188B142400E95FFD /* top_panel_64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top_panel_64@2x.png"; path = "Images/top_panel_64@2x.png"; sourceTree = "<group>"; };
 		8B7B0A6D188B183E00E95FFD /* top_panel_44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top_panel_44@2x.png"; path = "Images/top_panel_44@2x.png"; sourceTree = "<group>"; };
+		8B7B0A6F188B245F00E95FFD /* mask_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask_place.png; path = Images/Profile/mask_place.png; sourceTree = "<group>"; };
+		8B7B0A70188B245F00E95FFD /* mask_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask_place@2x.png"; path = "Images/Profile/mask_place@2x.png"; sourceTree = "<group>"; };
 		8B816F781889AC3100C7DACA /* TIMRegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMRegistrationModel.h; sourceTree = "<group>"; };
 		8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMRegistrationModel.m; sourceTree = "<group>"; };
-		8B816F7F1889D0D500C7DACA /* mask_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask_place@2x.png"; path = "Images/Registration/mask_place@2x.png"; sourceTree = "<group>"; };
-		8B816F801889D0D500C7DACA /* mask_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask_place.png; path = Images/Registration/mask_place.png; sourceTree = "<group>"; };
 		8B816F841889D7F700C7DACA /* bnt_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bnt_events.png; path = Images/Profile/bnt_events.png; sourceTree = "<group>"; };
 		8B816F851889D7F700C7DACA /* bnt_events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bnt_events@2x.png"; path = "Images/Profile/bnt_events@2x.png"; sourceTree = "<group>"; };
 		8B816F861889D7F700C7DACA /* btn_friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_friends.png; path = Images/Profile/btn_friends.png; sourceTree = "<group>"; };
@@ -720,6 +714,8 @@
 		8B816F831889D7E900C7DACA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8B7B0A6F188B245F00E95FFD /* mask_place.png */,
+				8B7B0A70188B245F00E95FFD /* mask_place@2x.png */,
 				8B816F841889D7F700C7DACA /* bnt_events.png */,
 				8B816F851889D7F700C7DACA /* bnt_events@2x.png */,
 				8B816F861889D7F700C7DACA /* btn_friends.png */,
@@ -991,6 +987,7 @@
 				8B7385021881D10E00D1E0C2 /* default-avatar.png in Resources */,
 				8B73851F1881D10E00D1E0C2 /* icon-menu.png in Resources */,
 				8B7385281881D10E00D1E0C2 /* info-line@2x.png in Resources */,
+				8B7B0A72188B245F00E95FFD /* mask_place@2x.png in Resources */,
 				8B73850A1881D10E00D1E0C2 /* flag-ru@2x.png in Resources */,
 				8B7385271881D10E00D1E0C2 /* info-line.png in Resources */,
 				8B7385611881F29B00D1E0C2 /* TIMHomeProfileViewController.xib in Resources */,
@@ -998,6 +995,7 @@
 				8B7385421881D10E00D1E0C2 /* top-title.png in Resources */,
 				8B73853C1881D10E00D1E0C2 /* text-field.png in Resources */,
 				8B73852E1881D10E00D1E0C2 /* login-button-down.png in Resources */,
+				8B7B0A71188B245F00E95FFD /* mask_place.png in Resources */,
 				8B9283C918833876009F93C0 /* icon_circle@2x.png in Resources */,
 				8B73850E1881D10E00D1E0C2 /* header-back-button@2x.png in Resources */,
 				8B7385301881D10E00D1E0C2 /* login-button.png in Resources */,
@@ -1022,7 +1020,6 @@
 				8B7385311881D10E00D1E0C2 /* login-button@2x.png in Resources */,
 				8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */,
 				8B73850B1881D10E00D1E0C2 /* header-back-button-down.png in Resources */,
-				8B7B0A65188A632200E95FFD /* top_panel_64.png in Resources */,
 				C550EDE718871C9500C8CFD4 /* OpenSans-Semibold.ttf in Resources */,
 				C5E67DCE1889B7E2000CB56B /* TIMSetingsViewController.xib in Resources */,
 				8B73851B1881D10E00D1E0C2 /* icon-feed-place.png in Resources */,
@@ -1053,13 +1050,11 @@
 				C550EDE318871C9500C8CFD4 /* OpenSans-Italic.ttf in Resources */,
 				8B73851A1881D10E00D1E0C2 /* icon-feed-info@2x.png in Resources */,
 				8B9283CF188350AE009F93C0 /* TIMHomeNavButtonsView.xib in Resources */,
-				8B7B0A66188A632200E95FFD /* top_panel_64@2x.png in Resources */,
 				8B7B0A6A188B142400E95FFD /* top_panel_44.png in Resources */,
 				8B7385241881D10E00D1E0C2 /* icon-toolbar-people@2x.png in Resources */,
 				8B7385221881D10E00D1E0C2 /* icon-toolbar-eye@2x.png in Resources */,
 				8B9283D51883CB66009F93C0 /* bg_screen01_5s.png in Resources */,
 				8B7385431881D10E00D1E0C2 /* top-title@2x.png in Resources */,
-				8B816F821889D0D500C7DACA /* mask_place.png in Resources */,
 				8B7385121881D10E00D1E0C2 /* home-button-down@2x.png in Resources */,
 				8B7385351881D10E00D1E0C2 /* reg-circle@2x.png in Resources */,
 				8B7385371881D10E00D1E0C2 /* register-window@2x.png in Resources */,
@@ -1080,7 +1075,6 @@
 				C550EDE818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				8B73852F1881D10E00D1E0C2 /* login-button-down@2x.png in Resources */,
 				8B73853B1881D10E00D1E0C2 /* table-bottom@2x.png in Resources */,
-				8B816F811889D0D500C7DACA /* mask_place@2x.png in Resources */,
 				C561DAA3188746FF0006FD0D /* btn_green.png in Resources */,
 				C550EDE418871C9500C8CFD4 /* OpenSans-Light.ttf in Resources */,
 				8B7385161881D10E00D1E0C2 /* home-button@2x.png in Resources */,
@@ -1088,7 +1082,6 @@
 				8B7384FE1881D10E00D1E0C2 /* camera-take-icon-hover.png in Resources */,
 				8B7385231881D10E00D1E0C2 /* icon-toolbar-people.png in Resources */,
 				8B7385061881D10E00D1E0C2 /* flag_by.png in Resources */,
-				8B7B0A64188A632200E95FFD /* top_panel_44.png in Resources */,
 				C550EDEC18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf in Resources */,
 				8B7384FC1881D10E00D1E0C2 /* camera-delete-icon.png in Resources */,
 				8B7384F91881D10E00D1E0C2 /* camera-choose-icon@2x.png in Resources */,
