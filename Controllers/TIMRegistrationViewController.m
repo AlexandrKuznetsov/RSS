@@ -76,4 +76,117 @@
     [self createBackgroundMap:newLocation];
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    self.activeTextField = textField;
+    switch (textField.tag) {
+        case birthday:
+            [self createDatePickerToTextField:textField];
+            break;
+        case gender:
+        {
+            NSArray* genderArray = [NSArray arrayWithObjects:@"Мужской", @"Женский", nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:genderArray];
+        }
+            break;
+        case language:
+        {
+            NSArray* languageArray = [NSArray arrayWithObjects:@"English", @"Русский", nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:languageArray];
+        }
+            break;
+        case country:
+        {
+            NSArray* languageArray = [NSArray arrayWithObjects:@"Country1", @"Country2", nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:languageArray];
+        }
+            break;
+        case privacyMyPlace:
+        {
+            NSArray* sharedArray = [NSArray arrayWithObjects:@"все",
+                                    @"только я",
+                                    @"только друзья",nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:sharedArray];
+        }
+            break;
+        case privacyMyInterests:
+        {
+            NSArray* sharedArray = [NSArray arrayWithObjects:@"все", @"только я", @"только друзья",nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:sharedArray];
+        }
+            break;
+        case privacyMyImpressions:
+        {
+            NSArray* sharedArray = [NSArray arrayWithObjects:@"все", @"только я", @"только друзья",nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:sharedArray];
+        }
+            break;
+        case privacyMyProfession:
+        {
+            NSArray* sharedArray = [NSArray arrayWithObjects:@"все", @"только я", @"только друзья",nil];
+            [self createTextPikerToTextField:textField
+                              withDataSource:sharedArray];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - DatePicker
+
+- (void)createDatePickerToTextField:(UITextField*)textField{
+    UIDatePicker* datePiker = [[UIDatePicker alloc] initWithFrame:PICKER_RECT];
+    datePiker.datePickerMode = UIDatePickerModeDate;
+    [datePiker addTarget:self action:@selector(changebirthdayValue:) forControlEvents:UIControlEventValueChanged];
+    textField.inputView = datePiker;
+}
+
+- (void)changebirthdayValue:(UIDatePicker*)picker{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
+    NSString* dateString = [dateFormatter stringFromDate:picker.date];
+    _activeTextField.text = dateString;
+}
+
+#pragma mark - TextPicker
+
+- (void)createTextPikerToTextField:(UITextField*)textField
+                    withDataSource:(NSArray*)dataSource{
+    _pickerDataSource = dataSource;
+    UIPickerView* pikerView = [[UIPickerView alloc] initWithFrame:PICKER_RECT];
+    pikerView.showsSelectionIndicator = YES;
+    pikerView.delegate = self;
+    pikerView.dataSource = self;
+    textField.inputView = pikerView;
+}
+
+#pragma mark - UIPikerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return _pickerDataSource[row];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component{
+    return _pickerDataSource.count;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component{
+        _activeTextField.text = _pickerDataSource[row];
+}
+
 @end

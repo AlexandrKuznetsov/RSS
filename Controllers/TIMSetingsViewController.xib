@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TIMSetingsViewController">
+            <connections>
+                <outlet property="_scrollView" destination="Zmo-sR-Xse" id="YQ4-ce-l0d"/>
+                <outlet property="btnSave" destination="NSP-dm-EdJ" id="9tL-0m-Uia"/>
+                <outlet property="imageViewAvatar" destination="qKS-Jf-49j" id="QJE-89-c3s"/>
+                <outlet property="imageViewCover" destination="1US-2g-Q0C" id="Tbj-gJ-r6H"/>
+                <outlet property="imageViewFon" destination="Rwu-kK-fcw" id="so4-Nd-66u"/>
+                <outlet property="labelAboutMySelf" destination="9xK-qO-Qlw" id="Qtw-oH-dq2"/>
+                <outlet property="labelBirthday" destination="gao-1A-kXK" id="TcA-Gv-oNn"/>
+                <outlet property="labelCity" destination="fXK-tv-7AX" id="4ed-fY-eRl"/>
+                <outlet property="labelCountry" destination="mHs-Pq-0aX" id="S4C-WB-h5X"/>
+                <outlet property="labelFon" destination="UE2-Sw-5Ud" id="Wua-Qb-TRK"/>
+                <outlet property="labelHoCanSeeMyInfo" destination="3wU-Hn-J2Q" id="ysc-Dg-ihh"/>
+                <outlet property="labelInterests" destination="tXR-vQ-4Ar" id="7US-Gy-8hC"/>
+                <outlet property="labelInterestsList" destination="rea-LG-3up" id="hO6-7t-yXM"/>
+                <outlet property="labelIsAnonymousUser" destination="fRG-M2-yVL" id="x9g-3D-rhS"/>
+                <outlet property="labelMyImpressions" destination="98c-Tp-a19" id="OeN-x6-d1g"/>
+                <outlet property="labelMyInterests" destination="VQh-9b-rrL" id="SpM-Qs-0SR"/>
+                <outlet property="labelMyLocation" destination="U27-vx-6e5" id="Ljr-1X-TMv"/>
+                <outlet property="labelMyProfession" destination="498-wg-jcT" id="eoB-3B-wVb"/>
+                <outlet property="labelName" destination="h2F-zc-R5q" id="1I2-Qz-qxb"/>
+                <outlet property="labelPersonalInfo" destination="6Xb-i6-RaM" id="NYo-l9-RTw"/>
+                <outlet property="labelPrivacy" destination="EhF-eJ-k01" id="voE-Y2-dEx"/>
+                <outlet property="labelProfession" destination="02p-fQ-xJl" id="ltp-bD-VAd"/>
+                <outlet property="labelProfilePhoto" destination="A82-u3-I2s" id="UeO-GE-xXZ"/>
+                <outlet property="labelSecondName" destination="r2w-18-q3x" id="9Rd-e0-zOd"/>
+                <outlet property="photoBtnCover" destination="z9z-0Q-omj" id="QJd-wg-dUd"/>
+                <outlet property="photoBtnsAvatar" destination="lgr-LT-QZH" id="KAV-cg-bIq"/>
+                <outlet property="swicherBtn" destination="Rfn-Ee-nDC" id="71H-xe-ue8"/>
+                <outlet property="textFieldBirthday" destination="M5u-76-2g1" id="Xwf-dM-PIC"/>
+                <outlet property="textFieldCity" destination="cQE-n7-r9h" id="8a2-WD-Gaf"/>
+                <outlet property="textFieldCountry" destination="LEm-DB-wz0" id="2nN-ZJ-KCZ"/>
+                <outlet property="textFieldInterestsDescr" destination="jt6-FX-hKk" id="OXP-sT-Liw"/>
+                <outlet property="textFieldMyImpressions" destination="ojq-JU-WL0" id="T0H-AK-vEt"/>
+                <outlet property="textFieldMyInterests" destination="DgH-cG-4dL" id="Ebu-hI-SBA"/>
+                <outlet property="textFieldName" destination="Hij-H0-mcK" id="bdv-pP-lPc"/>
+                <outlet property="textFieldSeconName" destination="wfo-dg-jEz" id="eD7-Eb-K0d"/>
+                <outlet property="textFiewlMyLocation" destination="dps-FN-lwa" id="hlv-yy-Rub"/>
+                <outlet property="textFiewldMyProfession" destination="nGb-Oe-xtJ" id="WSH-Nm-zCc"/>
+                <outlet property="textFiewldProfession" destination="0od-cN-ljY" id="UBS-MX-e8k"/>
+                <outlet property="textViewAboutMySelf" destination="2dq-05-Syk" id="Mka-q7-wmg"/>
+                <outlet property="textViewAboveMySelfInfo" destination="5u2-Xw-obC" id="Kgu-hU-1ra"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="64" width="320" height="1391"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zmo-sR-Xse" customClass="TPKeyboardAvoidingScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1391"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table-bottom.png" id="Rwu-kK-fcw">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1311"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.59999999999999964"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar.png" id="qKS-Jf-49j" customClass="TIMRoundedImageView">
+                            <rect key="frame" x="25" y="60" width="108" height="108"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="lgr-LT-QZH" customClass="TIMPhotoButtons">
+                            <rect key="frame" x="147" y="88" width="171" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотография профиля" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A82-u3-I2s">
+                            <rect key="frame" x="0.0" y="27" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотография обложки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UE2-Sw-5Ud">
+                            <rect key="frame" x="0.0" y="190" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-wallpaper.png" id="1US-2g-Q0C">
+                            <rect key="frame" x="20" y="227" width="114" height="114"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="z9z-0Q-omj" customClass="TIMPhotoButtons">
+                            <rect key="frame" x="147" y="258" width="171" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персональная информация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Xb-i6-RaM">
+                            <rect key="frame" x="0.0" y="366" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="F4I-B0-Wgt">
+                            <rect key="frame" x="287" y="399" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h2F-zc-R5q">
+                            <rect key="frame" x="25" y="394" width="50" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Арсений" textAlignment="right" minimumFontSize="17" id="Hij-H0-mcK">
+                            <rect key="frame" x="83" y="394" width="196" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="KMe-qL-V8c"/>
+                            </connections>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="GD3-9e-50c">
+                            <rect key="frame" x="25" y="430" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="sgo-7n-ad7">
+                            <rect key="frame" x="287" y="442" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Салтыков-Щедрин" textAlignment="right" minimumFontSize="17" id="wfo-dg-jEz">
+                            <rect key="frame" x="96" y="437" width="183" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="12c-k6-Srp"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r2w-18-q3x">
+                            <rect key="frame" x="25" y="437" width="63" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="3yD-as-KI4">
+                            <rect key="frame" x="25" y="473" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="LXT-wb-FmP">
+                            <rect key="frame" x="287" y="485" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="18.09.1983" textAlignment="right" minimumFontSize="17" id="M5u-76-2g1">
+                            <rect key="frame" x="133" y="480" width="146" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="6x7-VW-7vj"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gao-1A-kXK">
+                            <rect key="frame" x="25" y="480" width="109" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="VX7-cE-Ozi">
+                            <rect key="frame" x="25" y="516" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="uMB-pn-mnm">
+                            <rect key="frame" x="287" y="584" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Москва" textAlignment="right" minimumFontSize="17" id="cQE-n7-r9h">
+                            <rect key="frame" x="83" y="579" width="196" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="pd3-TC-PKT"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fXK-tv-7AX">
+                            <rect key="frame" x="25" y="579" width="50" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="kfM-6N-smr">
+                            <rect key="frame" x="25" y="615" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="География" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NOG-fn-dZa">
+                            <rect key="frame" x="0.0" y="551" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="Bvg-ls-gRV">
+                            <rect key="frame" x="287" y="627" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Страна:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mHs-Pq-0aX">
+                            <rect key="frame" x="25" y="622" width="50" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="GIu-HZ-qfo">
+                            <rect key="frame" x="25" y="658" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Буркина-Фасо" textAlignment="right" minimumFontSize="17" id="LEm-DB-wz0">
+                            <rect key="frame" x="83" y="622" width="196" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="joH-pS-wtJ"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интересы и профессия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tXR-vQ-4Ar">
+                            <rect key="frame" x="0.0" y="693" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="XKm-e1-Vm3">
+                            <rect key="frame" x="287" y="726" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интересы:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rea-LG-3up">
+                            <rect key="frame" x="25" y="721" width="69" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="Lqt-b7-5re">
+                            <rect key="frame" x="25" y="757" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="35 интересов" textAlignment="right" minimumFontSize="17" id="jt6-FX-hKk">
+                            <rect key="frame" x="96" y="722" width="183" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="o2k-2a-y4P">
+                            <rect key="frame" x="287" y="772" width="13" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профессия:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="02p-fQ-xJl">
+                            <rect key="frame" x="25" y="767" width="80" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="O8w-LU-U47">
+                            <rect key="frame" x="25" y="803" width="275" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Менеджер по продажам" textAlignment="right" minimumFontSize="17" id="0od-cN-ljY">
+                            <rect key="frame" x="104" y="767" width="175" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О себе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9xK-qO-Qlw">
+                            <rect key="frame" x="0.0" y="842" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="2dq-05-Syk">
+                            <rect key="frame" x="25" y="880" width="270" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <string key="text">jahsdfjahsdvfnbavdmfajhsdgfjkhagdfjhavdsbnvjkahsgdfjkhgadjsv,asdgfjhabjhsdv,asbvhagsdhfgadgfjhagdfhjabdsjvbasjdkhgflahgflafyuioueryiuwhrgegkljgabnmvbakhgfiqurgiuqreifhdljkbvlahgfiuqrgiuqrehkghaljdhfgalkhrguiqhriughaklfjhglakhjhgiuqlrghilargfkjlafglakhrgu</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Zql-fl-r1A"/>
+                            </connections>
+                        </textView>
+                        <view contentMode="scaleToFill" id="5u2-Xw-obC">
+                            <rect key="frame" x="0.0" y="909" width="320" height="482"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="KfP-3I-gIh">
+                                    <rect key="frame" x="25" y="0.0" width="275" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приватность" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EhF-eJ-k01">
+                                    <rect key="frame" x="0.0" y="35" width="320" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Анонимный пользователь:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fRG-M2-yVL">
+                                    <rect key="frame" x="25" y="63" width="198" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="hXR-97-89T">
+                                    <rect key="frame" x="25" y="99" width="275" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="кто может видеть мою информацию:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3wU-Hn-J2Q">
+                                    <rect key="frame" x="0.0" y="133" width="320" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="12"/>
+                                    <color key="textColor" red="0.21960784494876862" green="0.21960784494876862" blue="0.21960784494876862" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мое местонахождения:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U27-vx-6e5">
+                                    <rect key="frame" x="23" y="162" width="153" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="KIz-I4-hKj">
+                                    <rect key="frame" x="23" y="198" width="275" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="только друзья" textAlignment="right" minimumFontSize="17" id="dps-FN-lwa">
+                                    <rect key="frame" x="175" y="162" width="109" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="L53-nM-DSS"/>
+                                    </connections>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="tPm-QB-0Uf">
+                                    <rect key="frame" x="287" y="167" width="13" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="58U-Ro-vdC">
+                                    <rect key="frame" x="21" y="244" width="275" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мои интересы:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VQh-9b-rrL">
+                                    <rect key="frame" x="21" y="208" width="101" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="только я" textAlignment="right" minimumFontSize="17" id="DgH-cG-4dL">
+                                    <rect key="frame" x="130" y="208" width="154" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="LUH-gB-jNn"/>
+                                    </connections>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="xka-sM-etD">
+                                    <rect key="frame" x="285" y="213" width="13" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="NoC-RJ-GU8">
+                                    <rect key="frame" x="21" y="290" width="275" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мои впечатления:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="98c-Tp-a19">
+                                    <rect key="frame" x="21" y="254" width="119" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="все" textAlignment="right" minimumFontSize="17" id="ojq-JU-WL0">
+                                    <rect key="frame" x="148" y="254" width="136" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="Yq2-Jg-lyb"/>
+                                    </connections>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="g93-PB-Z0w">
+                                    <rect key="frame" x="285" y="259" width="13" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" id="Rw2-hq-V1H">
+                                    <rect key="frame" x="21" y="336" width="275" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Моя профессия:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="498-wg-jcT">
+                                    <rect key="frame" x="21" y="300" width="108" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="только друзья" textAlignment="right" minimumFontSize="17" id="nGb-Oe-xtJ">
+                                    <rect key="frame" x="130" y="300" width="154" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="kfx-CV-pVu"/>
+                                    </connections>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="ZEJ-a9-xbM">
+                                    <rect key="frame" x="285" y="305" width="13" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rfn-Ee-nDC">
+                                    <rect key="frame" x="243" y="65" width="57" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" image="off.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="swicherBtnAction:" destination="-1" eventType="touchUpInside" id="3Hy-M5-Fw9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NSP-dm-EdJ" customClass="TIMContinueButton">
+                                    <rect key="frame" x="107" y="417" width="110" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="Сохранить" backgroundImage="btn_green.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="kOh-h6-nLA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_green.png" width="59" height="34"/>
+        <image name="default-avatar.png" width="336" height="336"/>
+        <image name="default-wallpaper.png" width="640" height="329"/>
+        <image name="disclosure-icon.png" width="13" height="20"/>
+        <image name="line.png" width="7" height="3"/>
+        <image name="off.png" width="57" height="26"/>
+        <image name="table-bottom.png" width="320" height="50"/>
+    </resources>
+</document>

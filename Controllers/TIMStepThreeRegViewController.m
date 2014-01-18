@@ -85,19 +85,6 @@
     self.registerBackgrImageView.frame = imageViewFrame;
 }
 
-
-- (void)createTextPikerToTextField:(UITextField*)textField
-                    withDataSource:(NSArray*)dataSource andTag:(NSInteger)tag{
-    _pickerDataSource = dataSource;
-    UIPickerView* pikerView = [[UIPickerView alloc] initWithFrame:PICKER_RECT];
-    pikerView.showsSelectionIndicator = YES;
-    pikerView.tag = tag;
-    pikerView.delegate = self;
-    pikerView.dataSource = self;
-    textField.inputView = pikerView;
-}
-
-
 #pragma mark - Actions
 
 - (IBAction)finishRegistration:(id)sender {
@@ -135,55 +122,6 @@
         CGFloat deltaHeight = newFrameHeight - oldFrameHeight;
         [self resizeViewsByDelta:deltaHeight];
     }
-
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    switch (textField.tag) {
-        case Country:
-            [self createTextPikerToTextField:textField withDataSource:@[@"1234", @"12345"] andTag:Country];
-            break;
-        case Interests:
-            
-            break;
-        case Profession:
-            
-            break;
-        default:
-            break;
-    }
-}
-
-
-- (void)pickerView:(UIPickerView *)pickerView
-      didSelectRow:(NSInteger)row
-       inComponent:(NSInteger)component{
-    switch (pickerView.tag) {
-        case Country:
-            self.countryNameField.text = _pickerDataSource[row];
-            break;
-        case Interests:
-            break;
-        case Profession:
-            break;
-        default:
-            break;
-    }
-}
-
-#pragma Picker View 
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return _pickerDataSource[row];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component{
-    return _pickerDataSource.count;
 }
 
 - (BOOL)is_ios7 {
