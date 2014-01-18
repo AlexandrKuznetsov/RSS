@@ -104,6 +104,10 @@
 		8B7B0A64188A632200E95FFD /* top_panel_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A61188A632200E95FFD /* top_panel_44.png */; };
 		8B7B0A65188A632200E95FFD /* top_panel_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A62188A632200E95FFD /* top_panel_64.png */; };
 		8B7B0A66188A632200E95FFD /* top_panel_64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A63188A632200E95FFD /* top_panel_64@2x.png */; };
+		8B7B0A6A188B142400E95FFD /* top_panel_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A67188B142400E95FFD /* top_panel_44.png */; };
+		8B7B0A6B188B142400E95FFD /* top_panel_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A68188B142400E95FFD /* top_panel_64.png */; };
+		8B7B0A6C188B142400E95FFD /* top_panel_64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A69188B142400E95FFD /* top_panel_64@2x.png */; };
+		8B7B0A6E188B183E00E95FFD /* top_panel_44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A6D188B183E00E95FFD /* top_panel_44@2x.png */; };
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
 		8B816F811889D0D500C7DACA /* mask_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F7F1889D0D500C7DACA /* mask_place@2x.png */; };
 		8B816F821889D0D500C7DACA /* mask_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B816F801889D0D500C7DACA /* mask_place.png */; };
@@ -297,6 +301,10 @@
 		8B7B0A61188A632200E95FFD /* top_panel_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_44.png; path = Images/top_panel_44.png; sourceTree = "<group>"; };
 		8B7B0A62188A632200E95FFD /* top_panel_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_64.png; path = Images/top_panel_64.png; sourceTree = "<group>"; };
 		8B7B0A63188A632200E95FFD /* top_panel_64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top_panel_64@2x.png"; path = "Images/top_panel_64@2x.png"; sourceTree = "<group>"; };
+		8B7B0A67188B142400E95FFD /* top_panel_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_44.png; path = Images/top_panel_44.png; sourceTree = "<group>"; };
+		8B7B0A68188B142400E95FFD /* top_panel_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_panel_64.png; path = Images/top_panel_64.png; sourceTree = "<group>"; };
+		8B7B0A69188B142400E95FFD /* top_panel_64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top_panel_64@2x.png"; path = "Images/top_panel_64@2x.png"; sourceTree = "<group>"; };
+		8B7B0A6D188B183E00E95FFD /* top_panel_44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "top_panel_44@2x.png"; path = "Images/top_panel_44@2x.png"; sourceTree = "<group>"; };
 		8B816F781889AC3100C7DACA /* TIMRegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMRegistrationModel.h; sourceTree = "<group>"; };
 		8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMRegistrationModel.m; sourceTree = "<group>"; };
 		8B816F7F1889D0D500C7DACA /* mask_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask_place@2x.png"; path = "Images/Registration/mask_place@2x.png"; sourceTree = "<group>"; };
@@ -421,11 +429,14 @@
 		8B7384A61881D0BE00D1E0C2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				8B7B0A61188A632200E95FFD /* top_panel_44.png */,
-				8B7B0A62188A632200E95FFD /* top_panel_64.png */,
-				8B7B0A63188A632200E95FFD /* top_panel_64@2x.png */,
-				8B816F7F1889D0D500C7DACA /* mask_place@2x.png */,
-				8B816F801889D0D500C7DACA /* mask_place.png */,
+				8B7B0A6D188B183E00E95FFD /* top_panel_44@2x.png */,
+				8B7B0A67188B142400E95FFD /* top_panel_44.png */,
+				8B7B0A68188B142400E95FFD /* top_panel_64.png */,
+				8B7B0A69188B142400E95FFD /* top_panel_64@2x.png */,
+				C5E67DD41889F18C000CB56B /* off.png */,
+				C5E67DD51889F18C000CB56B /* off@2x.png */,
+				C5E67DD61889F18C000CB56B /* on.png */,
+				C5E67DD71889F18C000CB56B /* on@2x.png */,
 				8B8791D818859D21004E177E /* line.png */,
 				8B8791D918859D21004E177E /* line@2x.png */,
 				8B9283D41883CB66009F93C0 /* bg_screen01_5s.png */,
@@ -983,6 +994,7 @@
 				8B73850A1881D10E00D1E0C2 /* flag-ru@2x.png in Resources */,
 				8B7385271881D10E00D1E0C2 /* info-line.png in Resources */,
 				8B7385611881F29B00D1E0C2 /* TIMHomeProfileViewController.xib in Resources */,
+				8B7B0A6E188B183E00E95FFD /* top_panel_44@2x.png in Resources */,
 				8B7385421881D10E00D1E0C2 /* top-title.png in Resources */,
 				8B73853C1881D10E00D1E0C2 /* text-field.png in Resources */,
 				8B73852E1881D10E00D1E0C2 /* login-button-down.png in Resources */,
@@ -1028,6 +1040,7 @@
 				8B7385411881D10E00D1E0C2 /* toolbar-home@2x.png in Resources */,
 				8B73853E1881D10E00D1E0C2 /* title-image.png in Resources */,
 				8B7385131881D10E00D1E0C2 /* home-button-waves.png in Resources */,
+				8B7B0A6B188B142400E95FFD /* top_panel_64.png in Resources */,
 				8B7385251881D10E00D1E0C2 /* icon-toolbar-search.png in Resources */,
 				8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */,
 				8B7385041881D10E00D1E0C2 /* disclosure-icon.png in Resources */,
@@ -1041,6 +1054,7 @@
 				8B73851A1881D10E00D1E0C2 /* icon-feed-info@2x.png in Resources */,
 				8B9283CF188350AE009F93C0 /* TIMHomeNavButtonsView.xib in Resources */,
 				8B7B0A66188A632200E95FFD /* top_panel_64@2x.png in Resources */,
+				8B7B0A6A188B142400E95FFD /* top_panel_44.png in Resources */,
 				8B7385241881D10E00D1E0C2 /* icon-toolbar-people@2x.png in Resources */,
 				8B7385221881D10E00D1E0C2 /* icon-toolbar-eye@2x.png in Resources */,
 				8B9283D51883CB66009F93C0 /* bg_screen01_5s.png in Resources */,
@@ -1061,6 +1075,7 @@
 				8B816F8E1889D7F700C7DACA /* btn_search.png in Resources */,
 				C550EDE918871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B7385211881D10E00D1E0C2 /* icon-toolbar-eye.png in Resources */,
+				C5E67DD91889F18C000CB56B /* off@2x.png in Resources */,
 				8B7385261881D10E00D1E0C2 /* icon-toolbar-search@2x.png in Resources */,
 				C550EDE818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				8B73852F1881D10E00D1E0C2 /* login-button-down@2x.png in Resources */,
@@ -1087,6 +1102,7 @@
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
 				8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */,
 				C550EDEB18871C9500C8CFD4 /* OpenSans-CondLight.ttf in Resources */,
+				8B7B0A6C188B142400E95FFD /* top_panel_64@2x.png in Resources */,
 				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
 				8B816F8C1889D7F700C7DACA /* btn_friends.png in Resources */,
 				8B7385141881D10E00D1E0C2 /* home-button-waves@2x.png in Resources */,

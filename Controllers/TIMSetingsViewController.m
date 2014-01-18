@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!self.mapView) {
+        [self.locationManager startUpdatingLocation];
+    }
     self.navigationItem.title = @"Настройки";
     [self createAppearence];
     photoBtnCover.photoDelegate = self;

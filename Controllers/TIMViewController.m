@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	[self customBackButtonItem];
+    if([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout=UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning

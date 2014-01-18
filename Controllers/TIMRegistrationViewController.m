@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Регистрация";
+
     if(_mapView){
         [self addingMapAndmoveToBack];
     } else {
