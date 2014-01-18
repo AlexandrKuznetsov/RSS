@@ -28,9 +28,9 @@
     [super viewDidLoad];
     UIImage *navBarBackgroundImage;
     if ([self is_ios7]) {
-        navBarBackgroundImage = [UIImage imageNamed:@"top_panel.png"];
+        navBarBackgroundImage = [UIImage imageNamed:@"top_panel_64"];
     } else {
-        navBarBackgroundImage = [UIImage imageNamed:@"top_panel.png"];
+        navBarBackgroundImage = [UIImage imageNamed:@"top_panel_44"];
     }
     [self.navigationBar setBackgroundImage:navBarBackgroundImage forBarMetrics:UIBarMetricsDefault];
 }
