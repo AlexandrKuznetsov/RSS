@@ -10,6 +10,19 @@
 
 @implementation TIMLocalUserInfo
 
+@synthesize name = _name;
+@synthesize surname = _surname;
+@synthesize birthday = _birthday;
+@synthesize gender = _gender;
+@synthesize defaultLanguage = _defaultLanguage;
+@synthesize country = _country;
+@synthesize city = _city;
+@synthesize interests = _interests;
+@synthesize profession = _profession;
+@synthesize aboutMe = _aboutMe;
+@synthesize userPhoto = _userPhoto;
+@synthesize userWalpaper = _userWalpaper;
+
 static TIMLocalUserInfo *sharedInstance = nil;
 
 + (TIMLocalUserInfo *)sharedInstance{
@@ -23,7 +36,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (BOOL)readUserFromUserDefaults {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"user"]) {
-        self.user = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"user"]];
+        self.user = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults]
+                                                                   objectForKey:@"user"]];
         return YES;
     } else {
         self.user = [[NSMutableDictionary alloc] init];
@@ -46,7 +60,10 @@ static TIMLocalUserInfo *sharedInstance = nil;
     NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:nameString];
     NSError *error;
     if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:dataPath withIntermediateDirectories:NO attributes:nil error:&error]; //Create folder
+        [[NSFileManager defaultManager] createDirectoryAtPath:dataPath
+                                  withIntermediateDirectories:NO
+                                                   attributes:nil
+                                                        error:&error]; //Create folder
         return dataPath;
     }
     else {
@@ -55,7 +72,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (NSString *)saveImage:(UIImage *)image withName:(NSString *)name {
-    NSString* imagePath = [[self createUserDirectoryForPhotos] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",name]];
+    NSString* imagePath = [[self createUserDirectoryForPhotos]
+                           stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",name]];
     NSData* data = UIImagePNGRepresentation(image);
     if (data) {
         if ([data writeToFile:imagePath atomically:YES]) {
@@ -68,7 +86,14 @@ static TIMLocalUserInfo *sharedInstance = nil;
         return nil;
 }
 
+- (UIImage *)imageByFolderPath:(NSString *)path {
+    NSData *image = [NSData dataWithContentsOfFile:path];
+    return [UIImage imageWithData:image];
+}
+
 #pragma mark - Setters 
+
+
 
 - (void)setName:(NSString *)name {
     _name = name;
@@ -123,6 +148,61 @@ static TIMLocalUserInfo *sharedInstance = nil;
 - (void)setUserPhoto:(UIImage *)userPhoto {
     _userPhoto = userPhoto;
     [self.user setObject:[self saveImage:userPhoto withName:@"avatar"] forKey:@"avatar"];
+}
+
+- (void)setUserWalpaper:(UIImage *)userWalpaper {
+    _userWalpaper = userWalpaper;
+    [self.user setObject:[self saveImage:userWalpaper withName:@"walpaper"] forKey:@"walpaper"];
+}
+
+#pragma mark - Getters 
+
+- (NSString *)name {
+    return [self.user objectForKey:@"name"];
+}
+
+- (NSString *)surname {
+    return [self.user objectForKey:@"surname"];
+}
+
+- (NSString *)birthday {
+    return [self.user objectForKey:@"birthday"];
+}
+
+- (NSString *)gender {
+    return [self.user objectForKey:@"gender"];
+}
+
+- (NSString *)defaultLanguage {
+    return [self.user objectForKey:@"defaultLanguage"];
+}
+
+- (NSDictionary *)country {
+    return [self.user objectForKey:@"country"];
+}
+
+- (NSString *)city {
+    return [self.user objectForKey:@"city"];
+}
+
+- (NSString *)interests {
+    return [self.user objectForKey:@"interests"];
+}
+
+- (NSString *)profession {
+    return [self.user objectForKey:@"profession"];
+}
+
+- (NSString *)aboutMe {
+    return [self.user objectForKey:@"aboutMe"];
+}
+
+- (UIImage *)userPhoto {
+    return [self imageByFolderPath:[self.user objectForKey:@"avatar"]];
+}
+
+- (UIImage *)userWalpaper {
+    return [self imageByFolderPath:[self.user objectForKey:@"walpaper"]];
 }
 
 @end
