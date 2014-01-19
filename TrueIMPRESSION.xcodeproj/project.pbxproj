@@ -117,6 +117,8 @@
 		8B7B0A8A188BBD9600E95FFD /* TIMLocalUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */; };
 		8B7B0A8F188BFE0900E95FFD /* TIMAPIRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */; };
 		8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A91188C014F00E95FFD /* NSError+True.m */; };
+		8B7B0A98188C34B300E95FFD /* TIMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A96188C34B300E95FFD /* TIMTableViewController.m */; };
+		8B7B0A99188C34B300E95FFD /* TIMTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A97188C34B300E95FFD /* TIMTableViewController.xib */; };
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
 		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
 		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
@@ -319,6 +321,9 @@
 		8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMAPIRequests.m; sourceTree = "<group>"; };
 		8B7B0A90188C014F00E95FFD /* NSError+True.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+True.h"; sourceTree = "<group>"; };
 		8B7B0A91188C014F00E95FFD /* NSError+True.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+True.m"; sourceTree = "<group>"; };
+		8B7B0A95188C34B300E95FFD /* TIMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMTableViewController.h; sourceTree = "<group>"; };
+		8B7B0A96188C34B300E95FFD /* TIMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMTableViewController.m; sourceTree = "<group>"; };
+		8B7B0A97188C34B300E95FFD /* TIMTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMTableViewController.xib; sourceTree = "<group>"; };
 		8B816F781889AC3100C7DACA /* TIMRegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMRegistrationModel.h; sourceTree = "<group>"; };
 		8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMRegistrationModel.m; sourceTree = "<group>"; };
 		8B8791D818859D21004E177E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/Registration/line.png; sourceTree = "<group>"; };
@@ -538,6 +543,7 @@
 		8B7385441881EA0200D1E0C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8B7B0A94188C348C00E95FFD /* Table View Controller */,
 				8B7385461881EA2900D1E0C2 /* Custom Nav Controller */,
 				8B7385471881EA3600D1E0C2 /* Custom View Controller */,
 				8B7385491881EAC400D1E0C2 /* Main Home Controller */,
@@ -741,6 +747,16 @@
 			children = (
 			);
 			name = "Interests and Profession";
+			sourceTree = "<group>";
+		};
+		8B7B0A94188C348C00E95FFD /* Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B7B0A95188C34B300E95FFD /* TIMTableViewController.h */,
+				8B7B0A96188C34B300E95FFD /* TIMTableViewController.m */,
+				8B7B0A97188C34B300E95FFD /* TIMTableViewController.xib */,
+			);
+			name = "Table View Controller";
 			sourceTree = "<group>";
 		};
 		8B816F761889AC0700C7DACA /* Models */ = {
@@ -1085,6 +1101,7 @@
 				8B8791DB18859D21004E177E /* line@2x.png in Resources */,
 				8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */,
 				8B7385331881D10E00D1E0C2 /* logo@2x.png in Resources */,
+				8B7B0A99188C34B300E95FFD /* TIMTableViewController.xib in Resources */,
 				8B7385411881D10E00D1E0C2 /* toolbar-home@2x.png in Resources */,
 				8B73853E1881D10E00D1E0C2 /* title-image.png in Resources */,
 				8B7385131881D10E00D1E0C2 /* home-button-waves.png in Resources */,
@@ -1221,6 +1238,7 @@
 				8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */,
 				8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */,
 				8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */,
+				8B7B0A98188C34B300E95FFD /* TIMTableViewController.m in Sources */,
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
 				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,

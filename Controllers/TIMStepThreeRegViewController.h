@@ -26,11 +26,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *interstsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profLabel;
 @property (weak, nonatomic) IBOutlet UILabel *professionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cityNameField;
 @property (weak, nonatomic) IBOutlet UITextField *countryNameField;
 @property (weak, nonatomic) IBOutlet UILabel *interestsCountLabel;
-@property (weak, nonatomic) IBOutlet UITextField *professionField;
+- (IBAction)selectProfession:(id)sender;
+- (IBAction)selectInterests:(id)sender;
+
+
+
 
 
 

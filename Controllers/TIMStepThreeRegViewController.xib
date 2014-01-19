@@ -15,8 +15,8 @@
                 <outlet property="countryNameField" destination="dn6-3T-xZz" id="tgX-kC-bvA"/>
                 <outlet property="interestsCountLabel" destination="Ayb-Eh-AT0" id="oY5-Lb-huW"/>
                 <outlet property="interstsLabel" destination="bDc-RQ-1aV" id="LB4-5t-cnb"/>
-                <outlet property="professionField" destination="Owg-lW-jTJ" id="E96-wr-82R"/>
-                <outlet property="professionLabel" destination="8xE-xk-dJr" id="kO6-d2-HK6"/>
+                <outlet property="profLabel" destination="8xE-xk-dJr" id="0l1-Yf-X8K"/>
+                <outlet property="professionLabel" destination="5Xy-2b-vBn" id="Lts-P4-ye7"/>
                 <outlet property="regButtonOutlet" destination="TeD-L1-M5F" id="ekh-1c-ahW"/>
                 <outlet property="registerBackgrImageView" destination="Afq-kI-C9I" id="e7s-fE-xfs"/>
                 <outlet property="scrollView" destination="zom-R8-e4O" id="hMj-3g-fvg"/>
@@ -37,6 +37,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <rect key="contentStretch" x="0.0" y="0.39999999999999963" width="1" height="0.40000000000000002"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mIE-ht-n9U">
+                            <rect key="frame" x="10" y="10" width="177" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О себе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nuY-KB-eOu">
                             <rect key="frame" x="35" y="405" width="250" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -198,16 +205,33 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="Owg-lW-jTJ">
-                            <rect key="frame" x="123" y="343" width="156" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2yu-RX-6Dz">
+                            <rect key="frame" x="123" y="302" width="177" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
-                                <outlet property="delegate" destination="-1" id="FLU-qD-7W9"/>
+                                <action selector="selectInterests:" destination="-1" eventType="touchUpInside" id="2TZ-yU-sMH"/>
                             </connections>
-                        </textField>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработчик" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Xy-2b-vBn">
+                            <rect key="frame" x="123" y="347" width="156" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fqv-dK-7iL">
+                            <rect key="frame" x="121" y="343" width="177" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectProfession:" destination="-1" eventType="touchUpInside" id="U3E-mC-PGm"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </scrollView>
             </subviews>

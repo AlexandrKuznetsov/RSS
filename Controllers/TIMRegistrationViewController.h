@@ -15,6 +15,7 @@
 #import "TIMModelWithStaticData.h"
 #import "NSObject+CheckData.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "TIMTableViewController.h"
 
 #define PICKER_RECT CGRectMake(0, 200, 320, 216)
 

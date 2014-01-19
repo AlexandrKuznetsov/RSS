@@ -151,21 +151,6 @@
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
         }
-        case profession:
-        {
-            [textField resignFirstResponder];
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [[TIMRegistrationModel sharedInstance] loadProfessionsWithCompletition:^(NSArray *data, BOOL status, NSString *error) {
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                if (status) {
-                    [self createTextPikerToTextField:textField
-                                      withDataSource:data];
-                } else {
-                    [self showAlertWithError:error];
-                }
-            }];
-        }
-            break;
         default:
             break;
     }

@@ -60,10 +60,10 @@
     self.cityLabel.font = [UIFont lightFontWithSize:13];
     self.countryLabel.font = [UIFont lightFontWithSize:13];
     self.interstsLabel.font = [UIFont lightFontWithSize:13];
-    self.professionLabel.font = [UIFont lightFontWithSize:13];
+    self.profLabel.font = [UIFont lightFontWithSize:13];
     
     self.interestsCountLabel.font = [UIFont lightFontWithSize:13];
-    self.professionField.font = [UIFont lightFontWithSize:13];
+    self.professionLabel.font = [UIFont lightFontWithSize:13];
     
     self.cityNameField.font = [UIFont lightFontWithSize:15];
     self.countryNameField.font = [UIFont lightFontWithSize:15];
@@ -90,6 +90,14 @@
 
 #pragma mark - Actions
 
+- (IBAction)selectProfession:(id)sender {
+    [self presentTableViewControllerForProfessions:YES];
+}
+
+- (IBAction)selectInterests:(id)sender {
+    [self presentTableViewControllerForProfessions:NO];
+}
+
 - (IBAction)finishRegistration:(id)sender {
     if ([self checkIsDataValid]) {
         [[TIMRegistrationModel sharedInstance] saveCountry:self.currentCountry
@@ -105,6 +113,14 @@
 
 - (void)dismissRegistration {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)presentTableViewControllerForProfessions:(BOOL)profession {
+    TIMTableViewController *tableController = [[TIMTableViewController alloc]
+                                               initWithNibName:@"TIMTableViewController"
+                                               bundle:[NSBundle mainBundle]];
+    tableController.isProfessions = profession;
+    [self.navigationController pushViewController:tableController animated:YES];
 }
 
 
