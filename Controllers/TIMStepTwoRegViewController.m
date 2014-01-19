@@ -27,15 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!self.mapView) {
-        [self.locationManager startUpdatingLocation];
-    }
     int maxY = CGRectGetMaxY(nextStepBtn.frame) + REGISTRATION_OFFSET_FROM_NEXT_STEP_BTN;
     [_scrollView setContentSize:CGSizeMake(_scrollView.contentSize.width,
                                            maxY)];
     [self createCustomFonts];
 }
 
+- (void)viewWillAppear:(BOOL)animate {
+    [super viewWillAppear:YES];
+    [super getCrrentUserLocation];
+    [self.locationManager startUpdatingLocation];
+}
 
 - (void)createCustomFonts{
     top2Label.font = [UIFont boldFontWithSize:17];

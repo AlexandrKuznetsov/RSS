@@ -44,13 +44,16 @@
     _locationManager.delegate = self;
 }
 
+
 - (void)createBackgroundMap:(CLLocation*)location{
-    _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
-    [_mapView setCenterCoordinate:location.coordinate];
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
-    MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, span);
-    [_mapView setRegion:region animated:NO];
-    [self addingMapAndmoveToBack];
+    if (!_mapView) {
+        _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    }
+        [_mapView setCenterCoordinate:location.coordinate];
+        MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+        MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, span);
+        [_mapView setRegion:region animated:NO];
+        [self addingMapAndmoveToBack];
 }
 
 - (void)addingMapAndmoveToBack{

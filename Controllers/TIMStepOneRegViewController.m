@@ -26,9 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!self.mapView) {
-        [self.locationManager startUpdatingLocation];
-    }
     [self setFontToTextFields];
     // Do any additional setup after loading the view from its nib.
 }
@@ -36,6 +33,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super getCrrentUserLocation];
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)setFontToTextFields{
