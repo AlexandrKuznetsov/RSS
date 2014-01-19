@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "UIFont+TIFonts.h"
 #import "TIMRegistrationModel.h"
+#import "TIMModelWithStaticData.h"
 #import "NSObject+CheckData.h"
 
 #define PICKER_RECT CGRectMake(0, 200, 320, 216)
@@ -37,8 +38,7 @@ typedef enum {
 }photoBtnsEnam;
 
 @interface TIMRegistrationViewController : TIMViewController <CLLocationManagerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>{
-    
-    
+    TIMModelWithStaticData *_staticModel;
 }
 
 @property (strong, nonatomic) NSArray* pickerDataSource;

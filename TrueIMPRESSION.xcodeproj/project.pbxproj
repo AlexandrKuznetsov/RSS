@@ -113,6 +113,7 @@
 		8B7B0A80188BAC5400E95FFD /* btn_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A78188BAC5400E95FFD /* btn_search@2x.png */; };
 		8B7B0A81188BAC5400E95FFD /* mask_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A79188BAC5400E95FFD /* mask_place.png */; };
 		8B7B0A82188BAC5400E95FFD /* mask_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A7A188BAC5400E95FFD /* mask_place@2x.png */; };
+		8B7B0A86188BB60500E95FFD /* TIMModelWithStaticData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */; };
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
 		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
 		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
@@ -307,6 +308,8 @@
 		8B7B0A78188BAC5400E95FFD /* btn_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_search@2x.png"; sourceTree = "<group>"; };
 		8B7B0A79188BAC5400E95FFD /* mask_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_place.png; sourceTree = "<group>"; };
 		8B7B0A7A188BAC5400E95FFD /* mask_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask_place@2x.png"; sourceTree = "<group>"; };
+		8B7B0A84188BB60500E95FFD /* TIMModelWithStaticData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMModelWithStaticData.h; sourceTree = "<group>"; };
+		8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMModelWithStaticData.m; sourceTree = "<group>"; };
 		8B816F781889AC3100C7DACA /* TIMRegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMRegistrationModel.h; sourceTree = "<group>"; };
 		8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMRegistrationModel.m; sourceTree = "<group>"; };
 		8B8791D818859D21004E177E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/Registration/line.png; sourceTree = "<group>"; };
@@ -694,9 +697,19 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		8B7B0A83188BB5E500E95FFD /* ModelWithStaticData */ = {
+			isa = PBXGroup;
+			children = (
+				8B7B0A84188BB60500E95FFD /* TIMModelWithStaticData.h */,
+				8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */,
+			);
+			name = ModelWithStaticData;
+			sourceTree = "<group>";
+		};
 		8B816F761889AC0700C7DACA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8B7B0A83188BB5E500E95FFD /* ModelWithStaticData */,
 				8B816F771889AC0F00C7DACA /* Registration */,
 			);
 			name = Models;
@@ -1163,6 +1176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7B0A86188BB60500E95FFD /* TIMModelWithStaticData.m in Sources */,
 				8B95745118881EE10095392D /* TIMContinueButton.m in Sources */,
 				8BA5B50F18815D09009ED9D8 /* main.m in Sources */,
 				8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */,

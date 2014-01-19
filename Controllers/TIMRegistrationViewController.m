@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Регистрация";
-
+    _staticModel = [[TIMModelWithStaticData alloc] init];
     if(_mapView){
         [self addingMapAndmoveToBack];
     } else {
@@ -95,57 +95,74 @@
             break;
         case gender:
         {
-            NSArray* genderArray = [NSArray arrayWithObjects:@"Мужской", @"Женский", nil];
+            NSArray* genderArray = [_staticModel genderArray];
             [self createTextPikerToTextField:textField
                               withDataSource:genderArray];
         }
             break;
         case language:
         {
-            NSArray* languageArray = [NSArray arrayWithObjects:@"English", @"Русский", nil];
+            NSArray* languageArray = [_staticModel languageArray];
             [self createTextPikerToTextField:textField
                               withDataSource:languageArray];
         }
             break;
         case country:
         {
-            NSArray* languageArray = [NSArray arrayWithObjects:@"Country1", @"Country2", nil];
+            NSArray* countryArray = [self createCountryArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:languageArray];
+                              withDataSource:countryArray];
         }
             break;
         case privacyMyPlace:
         {
-            NSArray* sharedArray = [NSArray arrayWithObjects:@"все",
-                                    @"только я",
-                                    @"только друзья",nil];
+            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
         }
             break;
         case privacyMyInterests:
         {
-            NSArray* sharedArray = [NSArray arrayWithObjects:@"все", @"только я", @"только друзья",nil];
+            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
         }
             break;
         case privacyMyImpressions:
         {
-            NSArray* sharedArray = [NSArray arrayWithObjects:@"все", @"только я", @"только друзья",nil];
+            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
         }
             break;
         case privacyMyProfession:
         {
-            NSArray* sharedArray = [NSArray arrayWithObjects:@"все", @"только я", @"только друзья",nil];
+            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
         }
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - Data 
+
+- (NSArray *)createCountryArray {
+    NSMutableArray *stringsArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *countryDict in [_staticModel countryList]) {
+        NSString *stringCountry = countryDict[@"title"];
+        [stringsArray addObject:stringCountry];
+    }
+    return stringsArray;
+}
+
+- (void)saveCountry:(NSInteger)row {
+    if (_activeTextField.tag == country) {
+        NSArray *countries = [_staticModel countryList];
+        NSDictionary *currentCountry = countries[row];
+        //save to user information
     }
 }
 
@@ -196,6 +213,7 @@ numberOfRowsInComponent:(NSInteger)component{
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
         _activeTextField.text = _pickerDataSource[row];
+    [self saveCountry:row];
 }
 
 @end
