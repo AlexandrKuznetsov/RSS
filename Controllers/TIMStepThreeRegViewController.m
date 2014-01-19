@@ -27,9 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!self.mapView) {
-        [self.locationManager startUpdatingLocation];
-    }
+    [super getCrrentUserLocation];
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
     [self design];
 }
 
@@ -48,6 +48,11 @@
 - (void)design {
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), SCROLL_HEIGHT);
     [self customizeFonts];
+}
+
+- (void)setCountryLabel:(NSString *)county city:(NSString *)city {
+    self.countryNameField.text = county;
+    self.cityNameField.text = city;
 }
 
 - (void)customizeFonts {
@@ -168,20 +173,22 @@
 
 #pragma mark - Location Delegate 
 
-//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-//{
-//    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
-//    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-//        CLPlacemark *myPlacemark = [placemarks objectAtIndex:0];
-//        NSString *country = myPlacemark.country;
-//        NSString *city = myPlacemark.addressDictionary[@"City"];
-//    }];
-//}
-//
-//// this delegate method is called if an error occurs in locating your current location
-//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-//{
-//    NSLog(@"locationManager:%@ didFailWithError:%@", manager, error);
-//}
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *myPlacemark = [placemarks objectAtIndex:0];
+        NSString *country = myPlacemark.country;
+        NSString *city = myPlacemark.addressDictionary[@"City"];
+        [self setCountryLabel:country city:city];
+    }];
+    [self.locationManager stopUpdatingLocation];
+}
+
+// this delegate method is called if an error occurs in locating your current location
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"locationManager:%@ didFailWithError:%@", manager, error);
+}
 
 @end

@@ -47,4 +47,6 @@ typedef enum {
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) UIView *backgroundView;
 
+- (void)getCrrentUserLocation;
+
 @end
