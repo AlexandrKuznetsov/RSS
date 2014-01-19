@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "TIMLocalUserInfo.h"
+#import "TIMAPIRequests.h"
 
 @interface TIMRegistrationModel : NSObject
 
 + (TIMRegistrationModel *)sharedInstance;
+- (void)registerRequestWithCompletition:(void(^)(NSString *errorDescription, BOOL status))completition;
+@property (nonatomic, copy) void (^loadCompletionBlock)(NSString *errorDescription, BOOL status);
 
 - (void)saveLogin:(NSString *)loginEmail
          password:(NSString *)password;

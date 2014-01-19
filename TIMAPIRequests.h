@@ -20,4 +20,8 @@
          password:(NSString *)password
  withCompletition:(void(^)(NSError *error, id response))completitionBlock;
 
+- (void)registerWithEmail:(NSString *)login
+                 password:(NSString *)password
+         withCompletition:(void(^)(NSError *error, id response))completitionBlock;
+
 @end

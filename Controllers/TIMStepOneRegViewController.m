@@ -44,17 +44,38 @@
     mailTextField.font = [UIFont regularFontWithSize:12];
 }
 
+- (void)showAlertViewWithMessage:(NSString *)message {
+    UIAlertView* alerView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                       message:message
+                                                      delegate:nil
+                                             cancelButtonTitle:@"Закрыть"
+                                             otherButtonTitles:nil, nil];
+    [alerView show];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)registrationRequest {
+    [[TIMRegistrationModel sharedInstance] registerRequestWithCompletition:^(NSString *errorDescription, BOOL status) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (status) {
+            [self pushStepTwo];
+        } else {
+            [self showAlertViewWithMessage:errorDescription];
+        }
+    }];
+}
+
 - (IBAction)goToNextStep:(id)sender {
     if ([self checkIsDataValid]) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[TIMRegistrationModel sharedInstance] saveLogin:mailTextField.text
                                                 password:passwordTextField.text];
-        [self pushStepTwo];
+        [self registrationRequest];
     }
 }
 
@@ -65,17 +86,19 @@
     if (!problem) {
         return YES;
     } else {
-        UIAlertView* alerView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
-                                                           message:problem
-                                                          delegate:nil
-                                                 cancelButtonTitle:@"Закрыть"
-                                                 otherButtonTitles:nil, nil];
-        [alerView show];
+        [self showAlertViewWithMessage:problem];
         return NO;
     }
 }
 
 - (void)pushStepTwo {
+    mailTextField.text = @"";
+    [mailTextField resignFirstResponder];
+    passwordTextField.text = @"";
+    [passwordTextField resignFirstResponder];
+    repeatPasswordTextField.text = @"";
+    [repeatPasswordTextField resignFirstResponder];
+    
     TIMStepTwoRegViewController *stepTwoController = [[TIMStepTwoRegViewController alloc]
                                                       initWithNibName:@"TIMStepTwoRegViewController"
                                                       bundle:[NSBundle mainBundle]];

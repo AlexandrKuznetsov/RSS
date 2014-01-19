@@ -33,4 +33,19 @@
     }];
 }
 
+- (void)registerWithEmail:(NSString *)login
+                 password:(NSString *)password
+         withCompletition:(void(^)(NSError *error, id response))completitionBlock {
+    self.loadCompletionBlock = completitionBlock;
+    [_client postPath:@"/api/register" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([operation.responseString hasPrefix:@"OK"]) {
+            self.loadCompletionBlock(nil, responseObject);
+        } else {
+            self.loadCompletionBlock([NSError trueErrorWithServerResponseString:operation.responseString],nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        self.loadCompletionBlock(error, nil);
+    }];
+}
+
 @end

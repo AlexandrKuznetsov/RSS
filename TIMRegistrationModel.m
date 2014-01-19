@@ -99,4 +99,20 @@ static TIMRegistrationModel *sharedInstance = nil;
     return [interests substringToIndex:[interests length] - 2];
 }
 
+- (void)registerRequestWithCompletition:(void(^)(NSString *errorDescription, BOOL status))completition {
+    self.loadCompletionBlock = completition;
+    TIMAPIRequests *requests = [[TIMAPIRequests alloc] init];
+    [requests registerWithEmail:_login password:_password withCompletition:^(NSError *error, id response) {
+        if (error) {
+            if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
+                self.loadCompletionBlock(@"Отсутствует интернет подключение!", NO);
+            } else {
+                self.loadCompletionBlock(@"Пользователь с таким адресом уже зарегистрирован", NO);
+            }
+        } else {
+            self.loadCompletionBlock(nil, YES);
+        }
+    }];
+}
+
 @end

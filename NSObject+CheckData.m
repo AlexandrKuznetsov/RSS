@@ -19,14 +19,17 @@
     if (![self isStringNotEmpty:mail]) {
         return @"Поле email обязательно для заполнения";
     }
+    if (![self isValidMail:mail]) {
+        return @"Неверно указана почта";
+    }
     if (![self isStringNotEmpty:pass]) {
         return @"Поле пароль обязательно для заполнения";
     }
+    if (pass.length < 8) {
+        return @"Пароль слишком короткий. Минимальная длина - 8 символов";
+    }
     if (![self isStringNotEmpty:confirmPass]) {
         return @"Поле \"Подтвердите пароль\" обязательно для заполнения";
-    }
-    if (![self isValidMail:mail]) {
-         return @"Неверно указана почта";
     }
     if (![self isPassword:(NSString*)pass equalToConfirmPassword:confirmPass]) {
         return @"Пароли не совпадают";

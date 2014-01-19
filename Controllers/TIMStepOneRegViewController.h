@@ -8,6 +8,7 @@
 
 #import "TIMRegistrationViewController.h"
 #import "TIMStepTwoRegViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface TIMStepOneRegViewController : TIMRegistrationViewController{
     
