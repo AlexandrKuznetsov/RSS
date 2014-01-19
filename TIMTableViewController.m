@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     _tableViewData = [[NSArray alloc] init];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     [self customBackButtonItem];
     [self createNavigationOkBtn];
     if (self.isProfessions) {
@@ -95,6 +97,7 @@
 
 
 - (void)professionRequest {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[TIMRegistrationModel sharedInstance] loadProfessionsWithCompletition:^(NSArray *data, BOOL status, NSString *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (status) {
@@ -122,7 +125,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -138,9 +141,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    // Configure the cell...
-    
+    cell.textLabel.text = _tableViewData[indexPath.row];
     return cell;
 }
 

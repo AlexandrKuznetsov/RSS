@@ -10,7 +10,7 @@
 #import "TIMRegistrationModel.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface TIMTableViewController : UITableViewController
+@interface TIMTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (assign, nonatomic) BOOL isProfessions;
 
