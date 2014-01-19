@@ -56,11 +56,11 @@ static TIMRegistrationModel *sharedInstance = nil;
     [TIMLocalUserInfo sharedInstance].birthday = _birthdayDate;
     _gender = [aGender copy];
     [TIMLocalUserInfo sharedInstance].gender = _gender;
-    if (_language) {
+    if (aLanguage) {
         _language = [aLanguage copy];
         [TIMLocalUserInfo sharedInstance].defaultLanguage = _language;
     }
-    if (_profilePhoto) {
+    if (aPhoto) {
         _profilePhoto = [aPhoto copy];
         [TIMLocalUserInfo sharedInstance].userPhoto = _profilePhoto;
     }

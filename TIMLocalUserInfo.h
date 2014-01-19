@@ -26,6 +26,7 @@
 
 @property (strong, nonatomic) UIImage *userPhoto;
 @property (strong, nonatomic) UIImage *userWalpaper;
+@property (strong, nonatomic) UIImage *userFlag;
 
 
 + (TIMLocalUserInfo *)sharedInstance;

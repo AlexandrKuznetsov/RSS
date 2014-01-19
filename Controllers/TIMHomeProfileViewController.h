@@ -21,13 +21,17 @@ UITableViewDelegate
 >
 
 @property (strong, nonatomic) TIMHomeNavButtonsView *buttonsView;
+@property (strong, nonatomic) TIMLocalUserInfo *localUserInfo;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *surnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *impressionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *imprTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeesTextLabel;
 @property (weak, nonatomic) IBOutlet UIButton *settingsOutlet;
+@property (weak, nonatomic) IBOutlet TIMRoundedImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 
 - (IBAction)settingBtnAction:(id)sender;
 

@@ -101,7 +101,6 @@
     }
 }
 
-
 #pragma mark - Navigation
 
 - (void)dismissRegistration {
@@ -190,7 +189,7 @@
 // this delegate method is called if an error occurs in locating your current location
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"locationManager:%@ didFailWithError:%@", manager, error);
+    [self setCountryLabel:@"Австралия" city:@""];
 }
 
 @end

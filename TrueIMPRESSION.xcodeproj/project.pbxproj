@@ -115,6 +115,8 @@
 		8B7B0A82188BAC5400E95FFD /* mask_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A7A188BAC5400E95FFD /* mask_place@2x.png */; };
 		8B7B0A86188BB60500E95FFD /* TIMModelWithStaticData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */; };
 		8B7B0A8A188BBD9600E95FFD /* TIMLocalUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */; };
+		8B7B0A8F188BFE0900E95FFD /* TIMAPIRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */; };
+		8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A91188C014F00E95FFD /* NSError+True.m */; };
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
 		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
 		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
@@ -313,6 +315,10 @@
 		8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMModelWithStaticData.m; sourceTree = "<group>"; };
 		8B7B0A88188BBD9600E95FFD /* TIMLocalUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMLocalUserInfo.h; sourceTree = "<group>"; };
 		8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMLocalUserInfo.m; sourceTree = "<group>"; };
+		8B7B0A8D188BFE0900E95FFD /* TIMAPIRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMAPIRequests.h; sourceTree = "<group>"; };
+		8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMAPIRequests.m; sourceTree = "<group>"; };
+		8B7B0A90188C014F00E95FFD /* NSError+True.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+True.h"; sourceTree = "<group>"; };
+		8B7B0A91188C014F00E95FFD /* NSError+True.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+True.m"; sourceTree = "<group>"; };
 		8B816F781889AC3100C7DACA /* TIMRegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMRegistrationModel.h; sourceTree = "<group>"; };
 		8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMRegistrationModel.m; sourceTree = "<group>"; };
 		8B8791D818859D21004E177E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/Registration/line.png; sourceTree = "<group>"; };
@@ -690,6 +696,8 @@
 		8B73858218820D3500D1E0C2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8B7B0A90188C014F00E95FFD /* NSError+True.h */,
+				8B7B0A91188C014F00E95FFD /* NSError+True.m */,
 				8B73858318820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.h */,
 				8B73858418820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m */,
 				C5A531B618831D2E007B4019 /* NSObject+CheckData.h */,
@@ -716,6 +724,15 @@
 				8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */,
 			);
 			name = LocalUser;
+			sourceTree = "<group>";
+		};
+		8B7B0A8C188BFD2800E95FFD /* APIRequests */ = {
+			isa = PBXGroup;
+			children = (
+				8B7B0A8D188BFE0900E95FFD /* TIMAPIRequests.h */,
+				8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */,
+			);
+			name = APIRequests;
 			sourceTree = "<group>";
 		};
 		8B816F761889AC0700C7DACA /* Models */ = {
@@ -764,6 +781,7 @@
 		8BA5B4F618815D09009ED9D8 = {
 			isa = PBXGroup;
 			children = (
+				8B7B0A8C188BFD2800E95FFD /* APIRequests */,
 				8B816F761889AC0700C7DACA /* Models */,
 				8B73858218820D3500D1E0C2 /* Helpers */,
 				8B73857A1882000400D1E0C2 /* Custom Elements */,
@@ -1193,6 +1211,7 @@
 				8B95745118881EE10095392D /* TIMContinueButton.m in Sources */,
 				8BA5B50F18815D09009ED9D8 /* main.m in Sources */,
 				8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */,
+				8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */,
 				8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */,
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
@@ -1216,6 +1235,7 @@
 				8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */,
 				8B7B0A8A188BBD9600E95FFD /* TIMLocalUserInfo.m in Sources */,
 				C5E67DD11889B865000CB56B /* TIMPhotoButtons.m in Sources */,
+				8B7B0A8F188BFE0900E95FFD /* TIMAPIRequests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

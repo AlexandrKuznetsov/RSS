@@ -27,8 +27,12 @@
 {
     [super viewDidLoad];
     [self design];
-    [self checkForLoginInformation];
     [self addNavigationButtons];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self checkForLoginInformation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +41,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Set labels for local user 
+
+- (void)labelsForLocalUser {
+    self.localUserInfo = [TIMLocalUserInfo sharedInstance];
+    self.nameLabel.text = self.localUserInfo.name;
+    self.surnameLabel.text = self.localUserInfo.surname;
+    self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", self.localUserInfo.country, self.localUserInfo.city];
+    self.avatarImageView.image = self.localUserInfo.userPhoto;
+    self.flagImageView.image = self.localUserInfo.userFlag;
+}
 
 #pragma mark - Design
 
@@ -46,6 +60,7 @@
 
 - (void)customizeFonts {
     self.nameLabel.font = [UIFont boldFontWithSize:15.0f];
+    self.surnameLabel.font = [UIFont boldFontWithSize:15.0f];
     self.countryLabel.font = [UIFont regularFontWithSize:11.0f];
     self.impressionsLabel.font = [UIFont semiBoldFontWithSize:14.0f];
     self.placesLabel.font = [UIFont semiBoldFontWithSize:14.0f];
@@ -59,6 +74,9 @@
 - (void)checkForLoginInformation {
     if (![[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults]) {
         [self pushLoginViewController];
+    } else {
+        //загрузка локального пользователя при отсутствии инета
+        [self labelsForLocalUser];
     }
 }
 

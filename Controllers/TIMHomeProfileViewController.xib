@@ -7,13 +7,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TIMHomeProfileViewController">
             <connections>
+                <outlet property="avatarImageView" destination="Xjw-GN-8ZR" id="cfp-oe-eW4"/>
                 <outlet property="countryLabel" destination="jks-1m-goM" id="Ger-sl-QhC"/>
+                <outlet property="flagImageView" destination="Ye6-wv-bML" id="0fc-GY-saR"/>
                 <outlet property="imprTextLabel" destination="Obc-wW-nsb" id="y6v-iG-BEG"/>
                 <outlet property="impressionsLabel" destination="jy5-Fk-VNK" id="u2E-Da-nbU"/>
                 <outlet property="nameLabel" destination="Esw-L6-s4n" id="Saa-Gm-Nz1"/>
                 <outlet property="placeesTextLabel" destination="CWf-dC-AQM" id="ymB-BO-r77"/>
                 <outlet property="placesLabel" destination="RCM-AQ-oVj" id="79g-Nq-q41"/>
                 <outlet property="settingsOutlet" destination="THe-WW-OnR" id="QSY-FN-Ikt"/>
+                <outlet property="surnameLabel" destination="6If-A5-Nvj" id="G2z-OM-6h6"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -98,12 +101,19 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-GN-8ZR" customClass="TIMRoundedImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-GN-8ZR" customClass="TIMRoundedImageView">
                     <rect key="frame" x="20" y="22" width="92" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вдовиченко Дмитрий" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-L6-s4n">
-                    <rect key="frame" x="136" y="29" width="172" height="53"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вдовиченко" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-L6-s4n">
+                    <rect key="frame" x="136" y="38" width="172" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дмитрий" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="6If-A5-Nvj">
+                    <rect key="frame" x="136" y="57" width="172" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

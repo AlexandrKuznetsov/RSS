@@ -22,6 +22,7 @@
 @synthesize aboutMe = _aboutMe;
 @synthesize userPhoto = _userPhoto;
 @synthesize userWalpaper = _userWalpaper;
+@synthesize userFlag = _userFlag;
 
 static TIMLocalUserInfo *sharedInstance = nil;
 
@@ -73,8 +74,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (NSString *)saveImage:(UIImage *)image withName:(NSString *)name {
     NSString* imagePath = [[self createUserDirectoryForPhotos]
-                           stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",name]];
-    NSData* data = UIImagePNGRepresentation(image);
+                           stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpeg",name]];
+    NSData* data = UIImageJPEGRepresentation(image, 0.9f);
     if (data) {
         if ([data writeToFile:imagePath atomically:YES]) {
             return imagePath;
@@ -155,7 +156,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [self.user setObject:[self saveImage:userWalpaper withName:@"walpaper"] forKey:@"walpaper"];
 }
 
-#pragma mark - Getters 
+#pragma mark - Getters
 
 - (NSString *)name {
     return [self.user objectForKey:@"name"];
@@ -178,7 +179,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (NSDictionary *)country {
-    return [self.user objectForKey:@"country"];
+    NSDictionary *countryDict = [self.user objectForKey:@"country"];
+    return countryDict[@"title"];
 }
 
 - (NSString *)city {
@@ -203,6 +205,12 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (UIImage *)userWalpaper {
     return [self imageByFolderPath:[self.user objectForKey:@"walpaper"]];
+}
+
+- (UIImage *)userFlag {
+    NSDictionary *countryDict = [self.user objectForKey:@"country"];
+    NSString *countryId = countryDict[@"id"];
+    return [UIImage imageNamed:[NSString stringWithFormat:@"flag_%@", countryId]];
 }
 
 @end

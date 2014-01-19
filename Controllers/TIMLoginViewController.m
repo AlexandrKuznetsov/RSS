@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _requests = [[TIMAPIRequests alloc] init];
     [self design];
 }
 
@@ -163,6 +164,7 @@
 }
 
 - (void)showLoginError {
+    self.errorTextLabel.text = @"Вы ввели неправильную комбинацию логина и пароля. Повтрите пожалуйста ввод.";
     [self fieldsWithError];
     [self showErrorView];
     [self performSelector:@selector(hideError)
@@ -205,11 +207,27 @@
 #pragma mark - Data
 
 - (void) sendImpressionsRequest {
-    
+
 }
 
 - (void) sendLogin:(NSString *)login andPassword:(NSString *)password {
-    [self showLoginError];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [_requests postEmail:login password:password withCompletition:^(NSError *error, id response) {
+        if (error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
+                self.errorTextLabel.text = @"Отсутствует интернет подключение!";
+                [self showErrorView];
+            } else {
+                [self showLoginError];
+            }
+        } else {
+            if (response) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+    }];
 }
 
 #pragma mark - Actions
@@ -247,16 +265,19 @@
 
 - (BOOL)isAllFieldsAreValid {
     if (self.loginField.text.length == 0) {
-        [self showAlertWithMessage:@"Введите e-mail"];
+        self.errorTextLabel.text = @"Введите e-mail";
+        [self showErrorView];
         return NO;
     }
     if (![self emailIsValid:self.loginField.text]) {
-        [self showAlertWithMessage:@"Введите правильный e-mail"];
+        self.errorTextLabel.text = @"Введите правильный e-mail";
+        [self showErrorView];
         self.loginField.textColor = [UIColor redColor];
         return NO;
     }
     if (self.passwordField.text.length == 0) {
-        [self showAlertWithMessage:@"Введите пароль"];
+        self.errorTextLabel.text = @"Введите пароль";
+        [self showErrorView];
         return NO;
     }
     return YES;

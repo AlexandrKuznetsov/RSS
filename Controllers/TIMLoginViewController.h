@@ -11,6 +11,8 @@
 #import "TIMStepOneRegViewController.h"
 #import "TIMLoginButton.h"
 #import "UIFont+TIFonts.h"
+#import "TIMAPIRequests.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #define LOGIN_FIELD_TAG 1
 #define PASSWORD_FIELD_TAG 2
@@ -18,6 +20,8 @@
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
 
 @interface TIMLoginViewController : UIViewController < UITextFieldDelegate >
+
+@property (strong, nonatomic) TIMAPIRequests *requests;
 
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIView *fieldsView;
