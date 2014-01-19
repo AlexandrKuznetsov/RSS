@@ -65,11 +65,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                   withIntermediateDirectories:NO
                                                    attributes:nil
                                                         error:&error]; //Create folder
-        return dataPath;
     }
-    else {
-        return nil;
-    }
+    return dataPath;
+    
 }
 
 - (NSString *)saveImage:(UIImage *)image withName:(NSString *)name {
@@ -148,7 +146,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setUserPhoto:(UIImage *)userPhoto {
     _userPhoto = userPhoto;
-    [self.user setObject:[self saveImage:userPhoto withName:@"avatar"] forKey:@"avatar"];
+    [self.user setObject:[self saveImage:_userPhoto withName:@"avatar"] forKey:@"avatar"];
 }
 
 - (void)setUserWalpaper:(UIImage *)userWalpaper {

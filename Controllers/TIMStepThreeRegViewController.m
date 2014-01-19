@@ -63,7 +63,7 @@
     self.professionLabel.font = [UIFont lightFontWithSize:13];
     
     self.interestsCountLabel.font = [UIFont lightFontWithSize:13];
-    self.currentProfessionLabel.font = [UIFont lightFontWithSize:13];
+    self.professionField.font = [UIFont lightFontWithSize:13];
     
     self.cityNameField.font = [UIFont lightFontWithSize:15];
     self.countryNameField.font = [UIFont lightFontWithSize:15];

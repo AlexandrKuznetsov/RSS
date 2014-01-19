@@ -13,9 +13,9 @@
                 <outlet property="cityNameField" destination="kcF-P0-Hn3" id="TjN-wH-c1R"/>
                 <outlet property="countryLabel" destination="xiC-FX-0wC" id="c47-CG-Fbt"/>
                 <outlet property="countryNameField" destination="dn6-3T-xZz" id="tgX-kC-bvA"/>
-                <outlet property="currentProfessionLabel" destination="f2I-6H-aoT" id="dkj-gM-OO4"/>
                 <outlet property="interestsCountLabel" destination="Ayb-Eh-AT0" id="oY5-Lb-huW"/>
                 <outlet property="interstsLabel" destination="bDc-RQ-1aV" id="LB4-5t-cnb"/>
+                <outlet property="professionField" destination="Owg-lW-jTJ" id="E96-wr-82R"/>
                 <outlet property="professionLabel" destination="8xE-xk-dJr" id="kO6-d2-HK6"/>
                 <outlet property="regButtonOutlet" destination="TeD-L1-M5F" id="ekh-1c-ahW"/>
                 <outlet property="registerBackgrImageView" destination="Afq-kI-C9I" id="e7s-fE-xfs"/>
@@ -41,13 +41,6 @@
                             <rect key="frame" x="35" y="405" width="250" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="15"/>
-                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработчик" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="f2I-6H-aoT">
-                            <rect key="frame" x="138" y="347" width="141" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -205,6 +198,16 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
+                        <textField opaque="NO" clipsSubviews="YES" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="Owg-lW-jTJ">
+                            <rect key="frame" x="123" y="343" width="156" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="FLU-qD-7W9"/>
+                            </connections>
+                        </textField>
                     </subviews>
                 </scrollView>
             </subviews>

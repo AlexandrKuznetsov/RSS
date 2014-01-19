@@ -39,6 +39,16 @@
     }
 }
 
+
+- (void)showAlertWithError:(NSString *)message {
+    UIAlertView* alerView = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                       message:message
+                                                      delegate:nil
+                                             cancelButtonTitle:@"Закрыть"
+                                             otherButtonTitles:nil, nil];
+    [alerView show];
+}
+
 - (void)getCrrentUserLocation{
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
@@ -140,6 +150,20 @@
             NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
+        }
+        case profession:
+        {
+            [textField resignFirstResponder];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [[TIMRegistrationModel sharedInstance] loadProfessionsWithCompletition:^(NSArray *data, BOOL status, NSString *error) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                if (status) {
+                    [self createTextPikerToTextField:textField
+                                      withDataSource:data];
+                } else {
+                    [self showAlertWithError:error];
+                }
+            }];
         }
             break;
         default:

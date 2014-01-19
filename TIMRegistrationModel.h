@@ -15,6 +15,7 @@
 + (TIMRegistrationModel *)sharedInstance;
 - (void)registerRequestWithCompletition:(void(^)(NSString *errorDescription, BOOL status))completition;
 @property (nonatomic, copy) void (^loadCompletionBlock)(NSString *errorDescription, BOOL status);
+@property (nonatomic, copy) void (^loadDataBlock)(NSArray *data, BOOL status, NSString *error);
 
 - (void)saveLogin:(NSString *)loginEmail
          password:(NSString *)password;
@@ -32,5 +33,7 @@
 
 - (void)saveCountry:(NSDictionary *)aCountry
                city:(NSString *)aCity;
+
+- (void)loadProfessionsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock;
 
 @end

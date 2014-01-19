@@ -14,6 +14,7 @@
 #import "TIMRegistrationModel.h"
 #import "TIMModelWithStaticData.h"
 #import "NSObject+CheckData.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #define PICKER_RECT CGRectMake(0, 200, 320, 216)
 
@@ -28,7 +29,9 @@ typedef enum {
     privacyMyPlace = 107,
     privacyMyInterests = 108,
     privacyMyImpressions = 109,
-    privacyMyProfession = 110
+    privacyMyProfession = 110,
+    interests = 111,
+    profession = 112
 }textFieldEnum;
 
 typedef enum {

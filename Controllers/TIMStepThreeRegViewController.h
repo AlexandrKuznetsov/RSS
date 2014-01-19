@@ -13,12 +13,6 @@
 #define SCROLL_HEIGHT 548
 #define TESXTVIEW_STANDART_HEIGHT 28
 
-enum FieldType {
-    Country = 1,
-    Interests,
-    Profession
-    };
-
 @interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource , UIPickerViewDelegate, CLLocationManagerDelegate> {
     NSArray *_pickerDataSource;
 }
@@ -36,7 +30,8 @@ enum FieldType {
 @property (weak, nonatomic) IBOutlet UITextField *cityNameField;
 @property (weak, nonatomic) IBOutlet UITextField *countryNameField;
 @property (weak, nonatomic) IBOutlet UILabel *interestsCountLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentProfessionLabel;
+@property (weak, nonatomic) IBOutlet UITextField *professionField;
+
 
 
 - (IBAction)finishRegistration:(id)sender;
