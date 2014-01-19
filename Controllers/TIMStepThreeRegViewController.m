@@ -51,6 +51,7 @@
 }
 
 - (void)setCountryLabel:(NSString *)county city:(NSString *)city {
+    [super saveLocationCountry:county];
     self.countryNameField.text = county;
     self.cityNameField.text = city;
 }
@@ -91,10 +92,11 @@
 
 - (IBAction)finishRegistration:(id)sender {
     if ([self checkIsDataValid]) {
-        [[TIMRegistrationModel sharedInstance] saveCountry:self.countryNameField.text
+        [[TIMRegistrationModel sharedInstance] saveCountry:self.currentCountry
                                                       city:self.cityNameField.text];
         [[TIMRegistrationModel sharedInstance] saveInterests:@[@"123", @"123"]
                                                   profession:@"qwery" about:self.aboutTextView.text];
+        [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
         [self dismissRegistration];
     }
 }

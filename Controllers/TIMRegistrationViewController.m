@@ -159,10 +159,15 @@
 }
 
 - (void)saveCountry:(NSInteger)row {
-    if (_activeTextField.tag == country) {
         NSArray *countries = [_staticModel countryList];
-        NSDictionary *currentCountry = countries[row];
-        //save to user information
+        self.currentCountry = countries[row];
+}
+
+- (void)saveLocationCountry:(NSString *)locationCountry {
+    for (NSString *countryTitle in [self createCountryArray]) {
+        if ([countryTitle isEqualToString:locationCountry]) {
+            [self saveCountry:[[self createCountryArray] indexOfObject:countryTitle]];
+        }
     }
 }
 
@@ -213,7 +218,9 @@ numberOfRowsInComponent:(NSInteger)component{
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
         _activeTextField.text = _pickerDataSource[row];
-    [self saveCountry:row];
+    if (_activeTextField.tag == country) {
+        [self saveCountry:row];
+    }
 }
 
 @end

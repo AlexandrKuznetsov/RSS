@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TIMLocalUserInfo.h"
 
 @interface TIMRegistrationModel : NSObject
 
@@ -26,7 +27,7 @@
            profession:(NSString *)profession
                 about:(NSString *)about;
 
-- (void)saveCountry:(NSString *)aCountry
+- (void)saveCountry:(NSDictionary *)aCountry
                city:(NSString *)aCity;
 
 @end

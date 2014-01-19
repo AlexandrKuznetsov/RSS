@@ -49,30 +49,46 @@ static TIMRegistrationModel *sharedInstance = nil;
     profilePhoto:(UIImage *)aPhoto {
     
     _name = [aName copy];
+    [TIMLocalUserInfo sharedInstance].name = _name;
     _surname = [aSurname copy];
+    [TIMLocalUserInfo sharedInstance].surname = _surname;
     _birthdayDate = [aBirthday copy];
+    [TIMLocalUserInfo sharedInstance].birthday = _birthdayDate;
     _gender = [aGender copy];
-    if (_language)
+    [TIMLocalUserInfo sharedInstance].gender = _gender;
+    if (_language) {
         _language = [aLanguage copy];
-    if (_profilePhoto)
+        [TIMLocalUserInfo sharedInstance].defaultLanguage = _language;
+    }
+    if (_profilePhoto) {
         _profilePhoto = [aPhoto copy];
+        [TIMLocalUserInfo sharedInstance].userPhoto = _profilePhoto;
+    }
 }
 
-- (void)saveCountry:(NSString *)aCountry
+- (void)saveCountry:(NSDictionary *)aCountry
                city:(NSString *)aCity {
-    _country = [aCountry copy];
+    _country = aCountry[@"title"];
+    [TIMLocalUserInfo sharedInstance].country = aCountry;
     _city = [aCity copy];
+    [TIMLocalUserInfo sharedInstance].city = _city;
 }
 
 - (void)saveInterests:(NSArray *)anIntersts
            profession:(NSString *)profession
                 about:(NSString *)about {
-    if (about)
+    if (about) {
         _aboutMe = [about copy];
-    if (profession)
+        [TIMLocalUserInfo sharedInstance].aboutMe = _aboutMe;
+    }
+    if (profession) {
         _profession = [profession copy];
-    if (anIntersts)
+        [TIMLocalUserInfo sharedInstance].profession = _profession;
+    }
+    if (anIntersts) {
         _interests = [self stringFromInterestsArray:anIntersts];
+        [TIMLocalUserInfo sharedInstance].interests = _interests;
+    }
 }
 
 - (NSString *)stringFromInterestsArray:(NSArray *)array {

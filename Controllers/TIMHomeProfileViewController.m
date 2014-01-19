@@ -57,9 +57,9 @@
 #pragma mark - Checkings
 
 - (void)checkForLoginInformation {
-    //проверка на информацию о логине. При отсутвии - переход на экран с логином.
-    //На данный момент переход на экран логина осуществляется всегда для разработки экранов регистрации
-    [self pushLoginViewController];
+    if (![[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults]) {
+        [self pushLoginViewController];
+    }
 }
 
 #pragma mark - Accessors
