@@ -18,6 +18,9 @@
 @property (nonatomic, copy) void (^loadCompletionBlock)(NSError *error, id JSON);
 
 + (id)sharedManager;
+
+- (void)loadStatisticsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
+
 - (void)postEmail:(NSString *)login
          password:(NSString *)password
  withCompletition:(void(^)(NSError *error, id response))completitionBlock;
