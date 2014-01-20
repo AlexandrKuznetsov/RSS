@@ -47,7 +47,7 @@
     self.localUserInfo = [TIMLocalUserInfo sharedInstance];
     self.nameLabel.text = self.localUserInfo.name;
     self.surnameLabel.text = self.localUserInfo.surname;
-    self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", self.localUserInfo.country, self.localUserInfo.city];
+    self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", [self.localUserInfo.country objectForKey:@"title"], self.localUserInfo.city];
     self.avatarImageView.image = self.localUserInfo.userPhoto;
     self.flagImageView.image = self.localUserInfo.userFlag;
 }

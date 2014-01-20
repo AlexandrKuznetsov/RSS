@@ -10,6 +10,7 @@
 
 @interface TIMTableViewController () {
     NSArray *_tableViewData;
+    NSMutableArray *_selectedData;
 }
 
 @end
@@ -29,17 +30,22 @@
 {
     [super viewDidLoad];
     _tableViewData = [[NSArray alloc] init];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    _selectedData = [[NSMutableArray alloc] init];
     [self customBackButtonItem];
     [self createNavigationOkBtn];
     if (self.isProfessions) {
         self.navigationItem.title = @"Профессии";
+        [self allowMultipleSelection:NO];
         [self professionRequest];
     } else {
         self.navigationItem.title = @"Интересы";
+        [self allowMultipleSelection:YES];
         [self interestsRequest];
     }
+}
+
+- (void)allowMultipleSelection:(BOOL)flag {
+    [self.tableView setAllowsMultipleSelection:flag];
 }
 
 
@@ -88,7 +94,7 @@
 
 
 - (IBAction)saveAction:(id)sender {
-    NSLog(@"Ok");
+    NSLog(@"%d", _selectedData.count);
 }
 
 - (void)back{
@@ -152,7 +158,21 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = _tableViewData[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *thisCell = [tableView cellForRowAtIndexPath:indexPath];
+    if (thisCell.accessoryType == UITableViewCellAccessoryNone) {
+        thisCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [_selectedData addObject:[_tableViewData objectAtIndex:indexPath.row]];
+    } else {
+        thisCell.accessoryType = UITableViewCellAccessoryNone;
+        [_selectedData removeObject:[_tableViewData objectAtIndex:indexPath.row]];
+    }
 }
 
 @end

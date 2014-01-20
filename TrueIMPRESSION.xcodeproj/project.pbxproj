@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		83B6B4DC6FF34FCAB6409CA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C339152E343C19DB1D129 /* libPods.a */; };
 		8B68797D188D7AC1007EB325 /* TIMStatisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */; };
+		8B687982188D8155007EB325 /* TIMStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B687981188D8155007EB325 /* TIMStatistic.m */; };
 		8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384A71881D10D00D1E0C2 /* camera-choose-icon-hover.png */; };
 		8B7384F71881D10E00D1E0C2 /* camera-choose-icon-hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384A81881D10D00D1E0C2 /* camera-choose-icon-hover@2x.png */; };
 		8B7384F81881D10E00D1E0C2 /* camera-choose-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384A91881D10D00D1E0C2 /* camera-choose-icon.png */; };
@@ -198,6 +199,8 @@
 		844C339152E343C19DB1D129 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B68797B188D7AC1007EB325 /* TIMStatisticsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMStatisticsModel.h; sourceTree = "<group>"; };
 		8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMStatisticsModel.m; sourceTree = "<group>"; };
+		8B687980188D8155007EB325 /* TIMStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStatistic.h; path = "Server objects/TIMStatistic.h"; sourceTree = "<group>"; };
+		8B687981188D8155007EB325 /* TIMStatistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMStatistic.m; path = "Server objects/TIMStatistic.m"; sourceTree = "<group>"; };
 		8B7384A71881D10D00D1E0C2 /* camera-choose-icon-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-choose-icon-hover.png"; path = "Images/Registration/camera-choose-icon-hover.png"; sourceTree = "<group>"; };
 		8B7384A81881D10D00D1E0C2 /* camera-choose-icon-hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-choose-icon-hover@2x.png"; path = "Images/Registration/camera-choose-icon-hover@2x.png"; sourceTree = "<group>"; };
 		8B7384A91881D10D00D1E0C2 /* camera-choose-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-choose-icon.png"; path = "Images/Registration/camera-choose-icon.png"; sourceTree = "<group>"; };
@@ -438,6 +441,15 @@
 				8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */,
 			);
 			name = "Statistics Model";
+			sourceTree = "<group>";
+		};
+		8B68797F188D8129007EB325 /* ServerObjects */ = {
+			isa = PBXGroup;
+			children = (
+				8B687980188D8155007EB325 /* TIMStatistic.h */,
+				8B687981188D8155007EB325 /* TIMStatistic.m */,
+			);
+			name = ServerObjects;
 			sourceTree = "<group>";
 		};
 		8B7384A51881D0B500D1E0C2 /* Images */ = {
@@ -818,6 +830,7 @@
 		8BA5B4F618815D09009ED9D8 = {
 			isa = PBXGroup;
 			children = (
+				8B68797F188D8129007EB325 /* ServerObjects */,
 				8B7B0A8C188BFD2800E95FFD /* APIRequests */,
 				8B816F761889AC0700C7DACA /* Models */,
 				8B73858218820D3500D1E0C2 /* Helpers */,
@@ -1256,6 +1269,7 @@
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
 				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,
+				8B687982188D8155007EB325 /* TIMStatistic.m in Sources */,
 				8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */,
 				8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */,
