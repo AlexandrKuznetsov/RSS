@@ -607,7 +607,6 @@
 		8B7385481881EA5500D1E0C2 /* Registration Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8B7B0A93188C140C00E95FFD /* Interests and Profession */,
 				8B7385621881F2B100D1E0C2 /* Login */,
 				8B7385681881F30C00D1E0C2 /* Step 1 */,
 				8B7385691881F31600D1E0C2 /* Step 2 */,
@@ -764,13 +763,6 @@
 				8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */,
 			);
 			name = APIRequests;
-			sourceTree = "<group>";
-		};
-		8B7B0A93188C140C00E95FFD /* Interests and Profession */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Interests and Profession";
 			sourceTree = "<group>";
 		};
 		8B7B0A94188C348C00E95FFD /* Table View Controller */ = {

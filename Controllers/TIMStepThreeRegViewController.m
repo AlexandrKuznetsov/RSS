@@ -9,6 +9,7 @@
 #import "TIMStepThreeRegViewController.h"
 
 @interface TIMStepThreeRegViewController () {
+    NSArray *_interests;
 }
 
 @end
@@ -102,8 +103,9 @@
     if ([self checkIsDataValid]) {
         [[TIMRegistrationModel sharedInstance] saveCountry:self.currentCountry
                                                       city:self.cityNameField.text];
-        [[TIMRegistrationModel sharedInstance] saveInterests:@[@"123", @"123"]
-                                                  profession:@"qwery" about:self.aboutTextView.text];
+        [[TIMRegistrationModel sharedInstance] saveInterests:_interests
+                                                  profession:self.professionLabel.text
+                                                       about:self.aboutTextView.text];
         [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
         [self dismissRegistration];
     }
@@ -120,11 +122,22 @@
                                                initWithNibName:@"TIMTableViewController"
                                                bundle:[NSBundle mainBundle]];
     tableController.isProfessions = profession;
+    tableController.dataDelegate = self;
     [self.navigationController pushViewController:tableController animated:YES];
 }
 
 
-#pragma mark - Delegates 
+#pragma mark - Delegates
+
+- (void)tableViewForProfessions:(BOOL)isForProfessions pickedData:(NSArray *)data {
+    if (isForProfessions) {
+        self.professionLabel.text = [data lastObject];
+    } else {
+        _interests = [NSArray arrayWithArray:data];
+        _staticModel = [[TIMModelWithStaticData alloc] init];
+        self.interestsCountLabel.text = [_staticModel formatInterestsString:_interests.count];
+    }
+}
 
 - (void)textViewDidChange:(UITextView *)textView {
     if ([self is_ios7]) {
