@@ -36,5 +36,6 @@
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock;
 - (void)loadInterestsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock;
+- (NSString *)stringFromInterestsArray:(NSArray *)array;
 
 @end

@@ -12,7 +12,7 @@
 #import "TIMRoundedImageView.h"
 #import "TIMPhotoButtons.h"
 
-@interface TIMSetingsViewController : TIMRegistrationViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, TIMPhotoButtonsDelegate,UITextViewDelegate>{
+@interface TIMSetingsViewController : TIMRegistrationViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, TIMPhotoButtonsDelegate,UITextViewDelegate, TableDataDelegate>{
     
     BOOL anonymousUser;
     photoBtnsEnam currentImageView;
@@ -30,9 +30,7 @@
     __weak IBOutlet UILabel *labelPrivacy;
     __weak IBOutlet UIView *textViewAboveMySelfInfo;
     __weak IBOutlet UILabel *labelAboutMySelf;
-    __weak IBOutlet UITextField *textFiewldProfession;
     __weak IBOutlet UILabel *labelProfession;
-    __weak IBOutlet UITextField *textFieldInterestsDescr;
     __weak IBOutlet UILabel *labelInterestsList;
     __weak IBOutlet UILabel *labelInterests;
     __weak IBOutlet UITextField *textFieldCountry;

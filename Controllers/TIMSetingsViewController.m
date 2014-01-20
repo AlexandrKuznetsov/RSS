@@ -8,7 +8,9 @@
 
 #import "TIMSetingsViewController.h"
 
-@interface TIMSetingsViewController ()
+@interface TIMSetingsViewController () {
+    NSArray *_interests;
+}
 
 @end
 
@@ -53,6 +55,8 @@
 }
 
 - (void)createAppearence{
+    self.interestsLabel.font = [UIFont lightFontWithSize:13.0f];
+    self.professionsLabel.font = [UIFont lightFontWithSize:13.0f];
     [self setBorderWidht:4 color:[UIColor whiteColor] cornerRadius:0 toView:_imageViewCover];
     [self createNavigationOkBtn];
     [self setFontsToTextViewsInView:self.view];
@@ -61,15 +65,11 @@
 }
 
 - (void)setValuesToView{
-    textFiewldProfession.text = [[TIMLocalUserInfo sharedInstance] profession];
+    self.professionsLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
     textFieldMyImpressions.text = [[TIMLocalUserInfo sharedInstance] privacyImpressions];
     textFieldMyInterests.text = [[TIMLocalUserInfo sharedInstance] privacyInterest];
     textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance] privacyPlace];
     textFiewldMyProfession.text = [[TIMLocalUserInfo sharedInstance] privacyProfession];
-    textFieldInterestsDescr.text = [NSString stringWithFormat:@"%i интересов",
-                                    [[[[TIMLocalUserInfo sharedInstance] interests]
-                                     componentsSeparatedByString:@","] count]];
-    
     textFieldCountry.text = [[TIMLocalUserInfo sharedInstance] country][@"title"];
     
     if ([[[TIMLocalUserInfo sharedInstance] privacyOn] isEqualToString:@"Yes"]) {
@@ -98,14 +98,12 @@
 }
 
 - (void)writeDataToProfile{
-    [[TIMLocalUserInfo sharedInstance] setProfession:textFiewldProfession.text];
+    [[TIMLocalUserInfo sharedInstance] setProfession:self.professionsLabel.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyImpressions:textFieldMyImpressions.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:textFieldMyInterests.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyPlace:textFiewlMyLocation.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyProfession:textFiewldMyProfession.text];
-//    textFieldInterestsDescr.text = [ NSString stringWithFormat:@"%i интересов",
-//                                    [[[TIMLocalUserInfo sharedInstance] interests] count]];
-    
+    [[TIMLocalUserInfo sharedInstance] setInterests:[[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests]];
     [[[TIMLocalUserInfo sharedInstance] country] setValue:textFieldCountry.text forKey:@"title"];
     [[TIMLocalUserInfo sharedInstance] setCity:textFieldCity.text];
     [[TIMLocalUserInfo sharedInstance] setBirthday:textFieldBirthday.text];
@@ -227,6 +225,19 @@
     [self pushTableViewForLoadProfessions:YES];
 }
 
+#pragma mark - Professions Delegate
+
+- (void)tableViewForProfessions:(BOOL)isForProfessions pickedData:(NSArray *)data {
+    if (isForProfessions) {
+        self.professionsLabel.text = [data lastObject];
+    } else {
+        _staticModel = [[TIMModelWithStaticData alloc] init];
+        self.interestsLabel.text = [_staticModel formatInterestsString:data.count];
+        _interests = [NSArray arrayWithArray:data];
+    }
+}
+
+
 #pragma mark - ImagePickerCall
 
 - (void)callImagePickerControllerForMakePhoto:(BOOL)isMakePhoto{
@@ -300,6 +311,7 @@
                                                initWithNibName:@"TIMTableViewController"
                                                bundle:[NSBundle mainBundle]];
     tableController.isProfessions = prof;
+    tableController.dataDelegate = self;
     [self.navigationController pushViewController:tableController animated:YES];
 }
 
