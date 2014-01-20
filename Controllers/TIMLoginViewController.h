@@ -21,8 +21,6 @@
 
 @interface TIMLoginViewController : UIViewController < UITextFieldDelegate >
 
-@property (strong, nonatomic) TIMAPIRequests *requests;
-
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIView *fieldsView;
 

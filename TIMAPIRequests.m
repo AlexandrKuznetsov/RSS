@@ -12,7 +12,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        NSURL *url = [NSURL URLWithString:@"http://true-impressions.com/"];
+        NSURL *url = [NSURL URLWithString:@"http://true-impressions.com"];
         _client1 = [[AFHTTPClient alloc] initWithBaseURL:url];
     }
     return self;
@@ -22,7 +22,7 @@
     static TIMAPIRequests *sharedInstance;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        sharedInstance = [[super alloc] init];
+        sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
 }
@@ -32,7 +32,6 @@
  withCompletition:(void(^)(NSError *error, id response))completitionBlock {
     self.loadCompletionBlock = completitionBlock;
     [_client1 postPath:@"/api/login" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", operation.response.allHeaderFields);
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);
         } else {

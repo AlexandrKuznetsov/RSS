@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _requests = [[TIMAPIRequests alloc] init];
     [self design];
 }
 
@@ -212,7 +211,7 @@
 
 - (void) sendLogin:(NSString *)login andPassword:(NSString *)password {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [_requests postEmail:login password:password withCompletition:^(NSError *error, id response) {
+    [[TIMAPIRequests sharedManager] postEmail:login password:password withCompletition:^(NSError *error, id response) {
         if (error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {

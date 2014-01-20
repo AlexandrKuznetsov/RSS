@@ -30,7 +30,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
     
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        sharedInstance = [[super alloc] init];
+        sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
 }
@@ -294,11 +294,12 @@ static TIMLocalUserInfo *sharedInstance = nil;
     return [UIImage imageNamed:[NSString stringWithFormat:@"flag_%@", countryId]];
 }
 
-
 - (void)loadSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
+    NSLog(@"%@", [[TIMAPIRequests sharedManager] client1]);
+    
     [[[TIMAPIRequests sharedManager] client1] getPath:@"/api/settings" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             NSError* jsonError;
             NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData

@@ -30,7 +30,7 @@ static TIMRegistrationModel *sharedInstance = nil;
     
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        sharedInstance = [[super alloc] init];
+        sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
 }
@@ -101,8 +101,7 @@ static TIMRegistrationModel *sharedInstance = nil;
 
 - (void)registerRequestWithCompletition:(void(^)(NSString *errorDescription, BOOL status))completition {
     self.loadCompletionBlock = completition;
-    TIMAPIRequests *requests = [[TIMAPIRequests alloc] init];
-    [requests registerWithEmail:_login password:_password withCompletition:^(NSError *error, id response) {
+    [[TIMAPIRequests sharedManager] registerWithEmail:_login password:_password withCompletition:^(NSError *error, id response) {
         if (error) {
             if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
                 self.loadCompletionBlock(@"Отсутствует интернет подключение!", NO);
@@ -117,8 +116,7 @@ static TIMRegistrationModel *sharedInstance = nil;
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock {
     self.loadDataBlock = completitionBlock;
-    TIMAPIRequests *requests = [[TIMAPIRequests alloc] init];
-    [requests loadProfessionsWithCompletition:^(NSError *error, id response) {
+    [[TIMAPIRequests sharedManager] loadProfessionsWithCompletition:^(NSError *error, id response) {
         if (error) {
             if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
                 self.loadDataBlock(nil, NO, @"Отсутствует интернет подключение!");
