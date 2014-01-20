@@ -149,6 +149,10 @@
 		8BA5B51E18815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
 		8BA5B52618815D09009ED9D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5B52418815D09009ED9D8 /* InfoPlist.strings */; };
 		8BA5B52818815D09009ED9D8 /* TrueIMPRESSIONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */; };
+		8BB08524188DC9C000FC3792 /* bg_angle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08521188DC9C000FC3792 /* bg_angle.png */; };
+		8BB08528188DC9D700FC3792 /* bg_angle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08527188DC9D700FC3792 /* bg_angle@2x.png */; };
+		8BB0852B188DCA9A00FC3792 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08529188DCA9A00FC3792 /* email@2x.png */; };
+		8BB0852C188DCA9A00FC3792 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0852A188DCA9A00FC3792 /* email.png */; };
 		8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */; };
 		8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */; };
 		8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */; };
@@ -366,6 +370,10 @@
 		8BA5B52318815D09009ED9D8 /* TrueIMPRESSIONTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrueIMPRESSIONTests-Info.plist"; sourceTree = "<group>"; };
 		8BA5B52518815D09009ED9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrueIMPRESSIONTests.m; sourceTree = "<group>"; };
+		8BB08521188DC9C000FC3792 /* bg_angle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_angle.png; sourceTree = "<group>"; };
+		8BB08527188DC9D700FC3792 /* bg_angle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_angle@2x.png"; sourceTree = "<group>"; };
+		8BB08529188DCA9A00FC3792 /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
+		8BB0852A188DCA9A00FC3792 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		8BEAFDC61884826D00D6A2BA /* TIMProfileImpressionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMProfileImpressionCell.h; path = "Custom Elements/cells/TIMProfileImpressionCell.h"; sourceTree = "<group>"; };
 		8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMProfileImpressionCell.m; path = "Custom Elements/cells/TIMProfileImpressionCell.m"; sourceTree = "<group>"; };
 		8BEAFDCC18848A1200D6A2BA /* TIMProfileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMProfileInfoCell.h; path = "Custom Elements/cells/TIMProfileInfoCell.h"; sourceTree = "<group>"; };
@@ -464,6 +472,8 @@
 		8B7384A61881D0BE00D1E0C2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				8BB08529188DCA9A00FC3792 /* email@2x.png */,
+				8BB0852A188DCA9A00FC3792 /* email.png */,
 				8B7B0A6D188B183E00E95FFD /* top_panel_44@2x.png */,
 				8B7B0A67188B142400E95FFD /* top_panel_44.png */,
 				8B7B0A68188B142400E95FFD /* top_panel_64.png */,
@@ -567,6 +577,7 @@
 		8B7385441881EA0200D1E0C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5E67DC91889B778000CB56B /* SettingsController */,
 				8B7B0A94188C348C00E95FFD /* Table View Controller */,
 				8B7385461881EA2900D1E0C2 /* Custom Nav Controller */,
 				8B7385471881EA3600D1E0C2 /* Custom View Controller */,
@@ -613,7 +624,6 @@
 				8B73856A1881F31C00D1E0C2 /* Step 3 */,
 				8B73855A1881F24500D1E0C2 /* parent */,
 				8B7385591881F23500D1E0C2 /* navigation */,
-				C5E67DC91889B778000CB56B /* SettingsController */,
 			);
 			name = "Registration Controllers";
 			sourceTree = "<group>";
@@ -798,6 +808,8 @@
 		8B816F831889D7E900C7DACA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8BB08521188DC9C000FC3792 /* bg_angle.png */,
+				8BB08527188DC9D700FC3792 /* bg_angle@2x.png */,
 				8B7B0A73188BAC5400E95FFD /* bnt_events.png */,
 				8B7B0A74188BAC5400E95FFD /* bnt_events@2x.png */,
 				8B7B0A75188BAC5400E95FFD /* btn_friends.png */,
@@ -1096,6 +1108,7 @@
 				C550EDE218871C9500C8CFD4 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				8B73853A1881D10E00D1E0C2 /* table-bottom.png in Resources */,
 				8B7B0A7F188BAC5400E95FFD /* btn_search.png in Resources */,
+				8BB0852B188DCA9A00FC3792 /* email@2x.png in Resources */,
 				8B73850D1881D10E00D1E0C2 /* header-back-button.png in Resources */,
 				8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */,
 				C550EDE518871C9500C8CFD4 /* OpenSans-LightItalic.ttf in Resources */,
@@ -1142,6 +1155,7 @@
 				8B7385221881D10E00D1E0C2 /* icon-toolbar-eye@2x.png in Resources */,
 				8B9283D51883CB66009F93C0 /* bg_screen01_5s.png in Resources */,
 				8B7385431881D10E00D1E0C2 /* top-title@2x.png in Resources */,
+				8BB08528188DC9D700FC3792 /* bg_angle@2x.png in Resources */,
 				8B7385121881D10E00D1E0C2 /* home-button-down@2x.png in Resources */,
 				8B7385351881D10E00D1E0C2 /* reg-circle@2x.png in Resources */,
 				8B7385371881D10E00D1E0C2 /* register-window@2x.png in Resources */,
@@ -1157,6 +1171,7 @@
 				8B7384FD1881D10E00D1E0C2 /* camera-delete-icon@2x.png in Resources */,
 				C550EDE918871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B7385211881D10E00D1E0C2 /* icon-toolbar-eye.png in Resources */,
+				8BB0852C188DCA9A00FC3792 /* email.png in Resources */,
 				C5E67DD91889F18C000CB56B /* off@2x.png in Resources */,
 				8B7385261881D10E00D1E0C2 /* icon-toolbar-search@2x.png in Resources */,
 				C550EDE818871C9500C8CFD4 /* OpenSans-SemiboldItalic.ttf in Resources */,
@@ -1199,6 +1214,7 @@
 				8B7B0A7B188BAC5400E95FFD /* bnt_events.png in Resources */,
 				8B7385051881D10E00D1E0C2 /* disclosure-icon@2x.png in Resources */,
 				8B7385001881D10E00D1E0C2 /* camera-take-icon.png in Resources */,
+				8BB08524188DC9C000FC3792 /* bg_angle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

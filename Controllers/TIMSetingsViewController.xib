@@ -59,10 +59,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="1391"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table-bottom.png" id="Rwu-kK-fcw">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_angle.png" id="Rwu-kK-fcw">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="1311"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.59999999999999964"/>
+                            <rect key="contentStretch" x="0.0" y="0.75000000000000011" width="1" height="0.0"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar.png" id="qKS-Jf-49j" customClass="TIMRoundedImageView">
                             <rect key="frame" x="25" y="60" width="108" height="108"/>
@@ -501,12 +501,12 @@
         </view>
     </objects>
     <resources>
+        <image name="bg_angle.png" width="320" height="45"/>
         <image name="btn_green.png" width="59" height="34"/>
         <image name="default-avatar.png" width="336" height="336"/>
         <image name="default-wallpaper.png" width="640" height="329"/>
         <image name="disclosure-icon.png" width="13" height="20"/>
         <image name="line.png" width="7" height="3"/>
         <image name="off.png" width="57" height="26"/>
-        <image name="table-bottom.png" width="320" height="50"/>
     </resources>
 </document>
