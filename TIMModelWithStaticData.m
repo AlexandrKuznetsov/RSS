@@ -223,4 +223,16 @@
     return @[@"Мужской", @"Женский"];
 }
 
+- (NSString *)formatInterestsString:(NSInteger)count {
+    NSString *countString = [NSString stringWithFormat:@"%d", count];
+    NSString *lastChar = [countString substringFromIndex:[countString length] - 1];
+    if ([lastChar isEqualToString:@"1"]) {
+        return [NSString stringWithFormat:@"%d интерес",count];
+    } else if (([lastChar isEqualToString:@"2"]) || ([lastChar isEqualToString:@"3"]) || ([lastChar isEqualToString:@"4"])) {
+        return [NSString stringWithFormat:@"%d интереса",count];
+    } else {
+        return [NSString stringWithFormat:@"%d интересов",count];
+    }
+}
+
 @end

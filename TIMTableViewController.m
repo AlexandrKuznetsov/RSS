@@ -10,6 +10,7 @@
 
 @interface TIMTableViewController () {
     NSArray *_tableViewData;
+    NSMutableArray *_selectedData;
 }
 
 @end
@@ -29,17 +30,22 @@
 {
     [super viewDidLoad];
     _tableViewData = [[NSArray alloc] init];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    _selectedData = [[NSMutableArray alloc] init];
     [self customBackButtonItem];
     [self createNavigationOkBtn];
     if (self.isProfessions) {
         self.navigationItem.title = @"Профессии";
+        [self allowMultipleSelection:NO];
         [self professionRequest];
     } else {
         self.navigationItem.title = @"Интересы";
+        [self allowMultipleSelection:YES];
         [self interestsRequest];
     }
+}
+
+- (void)allowMultipleSelection:(BOOL)flag {
+    [self.tableView setAllowsMultipleSelection:flag];
 }
 
 
@@ -67,6 +73,15 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
+- (void)createSelectedArray {
+    _selectedData = [[NSMutableArray alloc] init];
+    if ([self.tableView indexPathsForSelectedRows]) {
+        for (NSIndexPath *path in [self.tableView indexPathsForSelectedRows]) {
+            [_selectedData addObject:[_tableViewData objectAtIndex:path.row]];
+        }
+    }
+}
+
 - (void)createNavigationOkBtn{
     UIButton* okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     okBtn.frame = CGRectMake(0, 0, 29, 29);
@@ -88,7 +103,15 @@
 
 
 - (IBAction)saveAction:(id)sender {
-    NSLog(@"Ok");
+    [self createSelectedArray];
+    if (_selectedData.count != 0) {
+        if (self.isProfessions) {
+            [self.dataDelegate tableViewForProfessions:YES pickedData:_selectedData];
+        } else {
+            [self.dataDelegate tableViewForProfessions:NO pickedData:_selectedData];
+        }
+    }
+    [self back];
 }
 
 - (void)back{
@@ -110,6 +133,16 @@
 }
 
 - (void)interestsRequest {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[TIMRegistrationModel sharedInstance] loadInterestsWithCompletition:^(NSArray *data, BOOL status, NSString *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (status) {
+            _tableViewData = data;
+            [self.tableView reloadData];
+        } else {
+            [self showAlertWithError:error];
+        }
+    }];
     
 }
 

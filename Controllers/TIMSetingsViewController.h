@@ -12,7 +12,7 @@
 #import "TIMRoundedImageView.h"
 #import "TIMPhotoButtons.h"
 
-@interface TIMSetingsViewController : TIMRegistrationViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, TIMPhotoButtonsDelegate,UITextViewDelegate>{
+@interface TIMSetingsViewController : TIMRegistrationViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, TIMPhotoButtonsDelegate,UITextViewDelegate, TableDataDelegate>{
     
     BOOL anonymousUser;
     photoBtnsEnam currentImageView;
@@ -30,9 +30,7 @@
     __weak IBOutlet UILabel *labelPrivacy;
     __weak IBOutlet UIView *textViewAboveMySelfInfo;
     __weak IBOutlet UILabel *labelAboutMySelf;
-    __weak IBOutlet UITextField *textFiewldProfession;
     __weak IBOutlet UILabel *labelProfession;
-    __weak IBOutlet UITextField *textFieldInterestsDescr;
     __weak IBOutlet UILabel *labelInterestsList;
     __weak IBOutlet UILabel *labelInterests;
     __weak IBOutlet UITextField *textFieldCountry;
@@ -54,13 +52,19 @@
     __weak IBOutlet TPKeyboardAvoidingScrollView *_scrollView;
     __weak IBOutlet UITextView *textViewAboutMySelf;
     __weak IBOutlet UIButton *swicherBtn;
+    __weak IBOutlet UIImageView *imageViewBottomFon;
 }
 
 @property (strong, nonatomic) UIActivityIndicatorView* activity;
 @property (weak, nonatomic) IBOutlet TIMRoundedImageView *imageViewAvatar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCover;
+@property (weak, nonatomic) IBOutlet UILabel *interestsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *professionsLabel;
 
 - (IBAction)saveAction:(id)sender;
 - (IBAction)swicherBtnAction:(id)sender;
+- (IBAction)loadInterests:(id)sender;
+- (IBAction)loadProfession:(id)sender;
+
 
 @end

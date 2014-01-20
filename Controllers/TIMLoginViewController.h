@@ -13,6 +13,8 @@
 #import "UIFont+TIFonts.h"
 #import "TIMAPIRequests.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "TIMStatisticsModel.h"
+#import "TIMStatistic.h"
 
 #define LOGIN_FIELD_TAG 1
 #define PASSWORD_FIELD_TAG 2
@@ -29,6 +31,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *errorView;
 @property (weak, nonatomic) IBOutlet UIView *forgetView;
+@property (weak, nonatomic) IBOutlet UIView *statisticView;
 
 @property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 @property (weak, nonatomic) IBOutlet UIButton *forgetButtonOutlet;

@@ -34,6 +34,11 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self sendImpressionsRequest];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -203,10 +208,27 @@
     [self.scrollView setContentOffset:contentOffset animated:YES];
 }
 
+- (void)setStatisticsLabel:(TIMStatistic *)stat {
+    self.impressionsCountLabel.text = [NSString stringWithFormat:@"%d", stat.impressions];
+    self.usersCountLabel.text = [NSString stringWithFormat:@"%d", stat.users];
+    self.destinationsCountLabel.text = [NSString stringWithFormat:@"%d", stat.locations];
+    self.statisticView.hidden = NO;
+}
+
 #pragma mark - Data
 
 - (void) sendImpressionsRequest {
-
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    TIMStatisticsModel *model = [[TIMStatisticsModel alloc] init];
+    [model loadStatisticWithCompletition:^(TIMStatistic *data, BOOL status, NSString *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (status) {
+            [self setStatisticsLabel:data];
+        } else {
+            self.errorTextLabel.text = @"Отсутствует интернет подключение!";
+            [self showErrorView];
+        }
+    }];
 }
 
 - (void) sendLogin:(NSString *)login andPassword:(NSString *)password {

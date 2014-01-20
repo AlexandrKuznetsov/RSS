@@ -15,4 +15,6 @@
 - (NSArray *)languageArray;
 - (NSArray *)genderArray;
 
+- (NSString *)formatInterestsString:(NSInteger)count;
+
 @end

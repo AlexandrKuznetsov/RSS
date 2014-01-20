@@ -129,6 +129,21 @@ static TIMRegistrationModel *sharedInstance = nil;
     }];
 }
 
+- (void)loadInterestsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock {
+    self.loadDataBlock = completitionBlock;
+    [[TIMAPIRequests sharedManager] loadInterestsWithCompletition:^(NSError *error, id response) {
+        if (error) {
+            if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
+                self.loadDataBlock(nil, NO, @"Отсутствует интернет подключение!");
+            } else {
+                self.loadDataBlock(nil,NO,@"Ошибка при загрузке");
+            }
+        } else {
+            self.loadDataBlock([self parseResponse:response], YES, nil);
+        }
+    }];
+}
+
 - (NSArray *)parseResponse:(id)response {
     NSMutableArray *responseStringsArray = [[NSMutableArray alloc] init];
     for (NSDictionary *dict in response) {

@@ -13,7 +13,7 @@
 #define SCROLL_HEIGHT 548
 #define TESXTVIEW_STANDART_HEIGHT 28
 
-@interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource , UIPickerViewDelegate, CLLocationManagerDelegate> {
+@interface TIMStepThreeRegViewController : TIMRegistrationViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource , UIPickerViewDelegate, CLLocationManagerDelegate, TableDataDelegate> {
     NSArray *_pickerDataSource;
 }
 
