@@ -31,6 +31,7 @@
     }
     self.navigationItem.title = @"Настройки";
     [self createAppearence];
+    [self loadData];
     photoBtnCover.photoDelegate = self;
     photoBtnsAvatar.photoDelegate = self;
     photoBtnCover.tag = coverInSettings;
@@ -38,16 +39,111 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)loadData{
+    [_activity startAnimating];
+    __weak TIMSetingsViewController* weakSelf = self;
+    [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+        if (!error) {
+            [weakSelf setValuesToView];
+        } else {
+            [weakSelf showError:[error localizedDescription]];
+        }
+    }];
+}
+
 - (void)createAppearence{
     [self setBorderWidht:4 color:[UIColor whiteColor] cornerRadius:0 toView:_imageViewCover];
     [self createNavigationOkBtn];
+    [self createActivityIndicator];
     [self setFontsToTextViewsInView:self.view];
     [self setValuesToView];
     [self calculateAboutMySelsBlock];
 }
 
+- (void)createActivityIndicator{
+    _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _activity.color = [UIColor lightGrayColor];
+    _activity.center = self.view.center;
+    _activity.hidesWhenStopped = YES;
+}
+
 - (void)setValuesToView{
+    textFiewldProfession.text = [[TIMLocalUserInfo sharedInstance] profession];
+    textFieldMyImpressions.text = [[TIMLocalUserInfo sharedInstance] privacyImpressions];
+    textFieldMyInterests.text = [[TIMLocalUserInfo sharedInstance] privacyInterest];
+    textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance] privacyPlace];
+    textFiewldMyProfession.text = [[TIMLocalUserInfo sharedInstance] privacyProfession];
+    textFieldInterestsDescr.text = [NSString stringWithFormat:@"%i интересов",
+                                    [[[[TIMLocalUserInfo sharedInstance] interests]
+                                     componentsSeparatedByString:@","] count]];
     
+    textFieldCountry.text = [[TIMLocalUserInfo sharedInstance] country][@"title"];
+    
+    if ([[[TIMLocalUserInfo sharedInstance] privacyOn] isEqualToString:@"Yes"]) {
+        anonymousUser = YES;
+    } else {
+        anonymousUser = NO;
+    }
+    [self swicherBtnAction:nil];
+    textFieldCity.text = [[TIMLocalUserInfo sharedInstance] city];
+    textFieldBirthday.text = [[TIMLocalUserInfo sharedInstance] birthday];
+    textFieldSeconName.text = [[TIMLocalUserInfo sharedInstance] surname];
+    textFieldName.text = [[TIMLocalUserInfo sharedInstance] name];
+
+    textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
+    UIImage* avaImage = [[TIMLocalUserInfo sharedInstance] userPhoto];
+    if (!avaImage) {
+        avaImage = [UIImage imageNamed:@"default-avatar.png"];
+    }
+    UIImage* walpaperImage = [[TIMLocalUserInfo sharedInstance] userWalpaper];
+    if (!walpaperImage) {
+        walpaperImage = [UIImage imageNamed:@"default-wallpaper.png"];
+    }
+    _imageViewAvatar.image = avaImage;
+    _imageViewCover.image = walpaperImage;
+    [self.activity stopAnimating];
+    [self calculateAboutMySelsBlock];
+}
+
+- (void)writeDataToProfile{
+    [[TIMLocalUserInfo sharedInstance] setProfession:textFiewldProfession.text];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyImpressions:textFieldMyImpressions.text];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:textFieldMyInterests.text];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyPlace:textFiewlMyLocation.text];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyProfession:textFiewldMyProfession.text];
+//    textFieldInterestsDescr.text = [ NSString stringWithFormat:@"%i интересов",
+//                                    [[[TIMLocalUserInfo sharedInstance] interests] count]];
+    
+    [[[TIMLocalUserInfo sharedInstance] country] setValue:textFieldCountry.text forKey:@"title"];
+    [[TIMLocalUserInfo sharedInstance] setCity:textFieldCity.text];
+    [[TIMLocalUserInfo sharedInstance] setBirthday:textFieldBirthday.text];
+    [[TIMLocalUserInfo sharedInstance] setSurname:textFieldSeconName.text];
+    [[TIMLocalUserInfo sharedInstance] setName:textFieldName.text];
+    [[TIMLocalUserInfo sharedInstance] setUserPhoto:_imageViewAvatar.image];
+    [[TIMLocalUserInfo sharedInstance] setUserWalpaper:_imageViewCover.image];
+    
+    NSString* anonymous;
+    if (anonymousUser) {
+        anonymous = @"Yes";
+    } else {
+        anonymous = @"No";
+    }
+    [[TIMLocalUserInfo sharedInstance] setPrivacyOn:anonymous];
+    [[TIMLocalUserInfo sharedInstance] setAboutMe:textViewAboutMySelf.text];
+    [self.activity startAnimating];
+    __weak TIMSetingsViewController* weakSelf = self;
+    [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
+        if (!error) {
+            [weakSelf setValuesToView];
+        } else {
+            [weakSelf showError:[error localizedDescription]];
+        }
+    }];
+}
+
+- (void)showError:(NSString*)error{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка!" message:error delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 - (void)calculateAboutMySelsBlock{
@@ -117,7 +213,7 @@
 }
 
 - (IBAction)saveAction:(id)sender {
-    NSLog(@"Ok");
+    [self writeDataToProfile];
 }
 
 - (IBAction)swicherBtnAction:(id)sender {

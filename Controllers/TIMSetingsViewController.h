@@ -56,6 +56,7 @@
     __weak IBOutlet UIButton *swicherBtn;
 }
 
+@property (strong, nonatomic) UIActivityIndicatorView* activity;
 @property (weak, nonatomic) IBOutlet TIMRoundedImageView *imageViewAvatar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCover;
 

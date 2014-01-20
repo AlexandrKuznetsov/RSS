@@ -13,16 +13,26 @@
 - (id)init {
     if (self = [super init]) {
         NSURL *url = [NSURL URLWithString:@"http://true-impressions.com/"];
-        _client = [[AFHTTPClient alloc] initWithBaseURL:url];
+        _client1 = [[AFHTTPClient alloc] initWithBaseURL:url];
     }
     return self;
+}
+
++ (id)sharedManager{
+    static TIMAPIRequests *sharedInstance;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedInstance = [[super alloc] init];
+    });
+    return sharedInstance;
 }
 
 - (void)postEmail:(NSString *)login
          password:(NSString *)password
  withCompletition:(void(^)(NSError *error, id response))completitionBlock {
     self.loadCompletionBlock = completitionBlock;
-    [_client postPath:@"/api/login" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_client1 postPath:@"/api/login" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", operation.response.allHeaderFields);
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);
         } else {
@@ -37,7 +47,7 @@
                  password:(NSString *)password
          withCompletition:(void(^)(NSError *error, id response))completitionBlock {
     self.loadCompletionBlock = completitionBlock;
-    [_client postPath:@"/api/register" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_client1 postPath:@"/api/register" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);
         } else {
@@ -50,7 +60,7 @@
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSError *error, id response))completitionBlock {
     self.loadCompletionBlock = completitionBlock;
-    [_client getPath:@"/professions.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_client1 getPath:@"/professions.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             NSError* jsonError;
             NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
@@ -68,5 +78,7 @@
         self.loadCompletionBlock(error, nil);
     }];
 }
+
+
 
 @end

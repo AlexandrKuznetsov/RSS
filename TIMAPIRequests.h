@@ -11,11 +11,13 @@
 #import "NSError+True.h"
 
 @interface TIMAPIRequests : NSObject {
-    AFHTTPClient *_client;
 }
+
+@property (strong, nonatomic) AFHTTPClient *client1;
 
 @property (nonatomic, copy) void (^loadCompletionBlock)(NSError *error, id JSON);
 
++ (id)sharedManager;
 - (void)postEmail:(NSString *)login
          password:(NSString *)password
  withCompletition:(void(^)(NSError *error, id response))completitionBlock;
