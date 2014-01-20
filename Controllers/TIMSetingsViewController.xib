@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -12,6 +12,7 @@
                 <outlet property="imageViewAvatar" destination="qKS-Jf-49j" id="QJE-89-c3s"/>
                 <outlet property="imageViewCover" destination="1US-2g-Q0C" id="Tbj-gJ-r6H"/>
                 <outlet property="imageViewFon" destination="Rwu-kK-fcw" id="so4-Nd-66u"/>
+                <outlet property="interestsLabel" destination="Z4E-6c-SAK" id="wuW-I7-pyB"/>
                 <outlet property="labelAboutMySelf" destination="9xK-qO-Qlw" id="Qtw-oH-dq2"/>
                 <outlet property="labelBirthday" destination="gao-1A-kXK" id="TcA-Gv-oNn"/>
                 <outlet property="labelCity" destination="fXK-tv-7AX" id="4ed-fY-eRl"/>
@@ -33,18 +34,17 @@
                 <outlet property="labelSecondName" destination="r2w-18-q3x" id="9Rd-e0-zOd"/>
                 <outlet property="photoBtnCover" destination="z9z-0Q-omj" id="QJd-wg-dUd"/>
                 <outlet property="photoBtnsAvatar" destination="lgr-LT-QZH" id="KAV-cg-bIq"/>
+                <outlet property="professionsLabel" destination="2cc-oD-Z5m" id="xBf-oI-KAR"/>
                 <outlet property="swicherBtn" destination="Rfn-Ee-nDC" id="71H-xe-ue8"/>
                 <outlet property="textFieldBirthday" destination="M5u-76-2g1" id="Xwf-dM-PIC"/>
                 <outlet property="textFieldCity" destination="cQE-n7-r9h" id="8a2-WD-Gaf"/>
                 <outlet property="textFieldCountry" destination="LEm-DB-wz0" id="2nN-ZJ-KCZ"/>
-                <outlet property="textFieldInterestsDescr" destination="jt6-FX-hKk" id="OXP-sT-Liw"/>
                 <outlet property="textFieldMyImpressions" destination="ojq-JU-WL0" id="T0H-AK-vEt"/>
                 <outlet property="textFieldMyInterests" destination="DgH-cG-4dL" id="Ebu-hI-SBA"/>
                 <outlet property="textFieldName" destination="Hij-H0-mcK" id="bdv-pP-lPc"/>
                 <outlet property="textFieldSeconName" destination="wfo-dg-jEz" id="eD7-Eb-K0d"/>
                 <outlet property="textFiewlMyLocation" destination="dps-FN-lwa" id="hlv-yy-Rub"/>
                 <outlet property="textFiewldMyProfession" destination="nGb-Oe-xtJ" id="WSH-Nm-zCc"/>
-                <outlet property="textFiewldProfession" destination="0od-cN-ljY" id="UBS-MX-e8k"/>
                 <outlet property="textViewAboutMySelf" destination="2dq-05-Syk" id="Mka-q7-wmg"/>
                 <outlet property="textViewAboveMySelfInfo" destination="5u2-Xw-obC" id="Kgu-hU-1ra"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -257,13 +257,6 @@
                             <rect key="frame" x="25" y="757" width="275" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="35 интересов" textAlignment="right" minimumFontSize="17" id="jt6-FX-hKk">
-                            <rect key="frame" x="96" y="722" width="183" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon.png" id="o2k-2a-y4P">
                             <rect key="frame" x="287" y="772" width="13" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -279,13 +272,6 @@
                             <rect key="frame" x="25" y="803" width="275" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Менеджер по продажам" textAlignment="right" minimumFontSize="17" id="0od-cN-ljY">
-                            <rect key="frame" x="104" y="767" width="175" height="28"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О себе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9xK-qO-Qlw">
                             <rect key="frame" x="0.0" y="842" width="320" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -464,6 +450,47 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z4E-6c-SAK">
+                            <rect key="frame" x="110" y="725" width="169" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2cc-oD-Z5m">
+                            <rect key="frame" x="110" y="771" width="169" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6O4-wI-iKg">
+                            <rect key="frame" x="110" y="771" width="169" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gz4-HH-URe">
+                            <rect key="frame" x="110" y="767" width="190" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="loadProfession:" destination="-1" eventType="touchUpInside" id="Pm2-YX-5Ty"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6OP-As-1Qw">
+                            <rect key="frame" x="110" y="721" width="190" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="loadInterests:" destination="-1" eventType="touchUpInside" id="TmH-M9-Psy"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </scrollView>
             </subviews>

@@ -110,6 +110,16 @@
 }
 
 - (void)interestsRequest {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[TIMRegistrationModel sharedInstance] loadInterestsWithCompletition:^(NSArray *data, BOOL status, NSString *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (status) {
+            _tableViewData = data;
+            [self.tableView reloadData];
+        } else {
+            [self showAlertWithError:error];
+        }
+    }];
     
 }
 

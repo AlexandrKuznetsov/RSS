@@ -59,8 +59,13 @@
 @property (strong, nonatomic) UIActivityIndicatorView* activity;
 @property (weak, nonatomic) IBOutlet TIMRoundedImageView *imageViewAvatar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCover;
+@property (weak, nonatomic) IBOutlet UILabel *interestsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *professionsLabel;
 
 - (IBAction)saveAction:(id)sender;
 - (IBAction)swicherBtnAction:(id)sender;
+- (IBAction)loadInterests:(id)sender;
+- (IBAction)loadProfession:(id)sender;
+
 
 @end

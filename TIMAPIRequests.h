@@ -27,5 +27,6 @@
          withCompletition:(void(^)(NSError *error, id response))completitionBlock;
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
+- (void)loadInterestsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
 
 @end

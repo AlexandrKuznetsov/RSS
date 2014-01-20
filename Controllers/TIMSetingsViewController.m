@@ -40,9 +40,10 @@
 }
 
 - (void)loadData{
-    [_activity startAnimating];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak TIMSetingsViewController* weakSelf = self;
     [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
             [weakSelf setValuesToView];
         } else {
@@ -54,17 +55,9 @@
 - (void)createAppearence{
     [self setBorderWidht:4 color:[UIColor whiteColor] cornerRadius:0 toView:_imageViewCover];
     [self createNavigationOkBtn];
-    [self createActivityIndicator];
     [self setFontsToTextViewsInView:self.view];
     [self setValuesToView];
     [self calculateAboutMySelsBlock];
-}
-
-- (void)createActivityIndicator{
-    _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _activity.color = [UIColor lightGrayColor];
-    _activity.center = self.view.center;
-    _activity.hidesWhenStopped = YES;
 }
 
 - (void)setValuesToView{
@@ -101,7 +94,6 @@
     }
     _imageViewAvatar.image = avaImage;
     _imageViewCover.image = walpaperImage;
-    [self.activity stopAnimating];
     [self calculateAboutMySelsBlock];
 }
 
@@ -130,7 +122,7 @@
     }
     [[TIMLocalUserInfo sharedInstance] setPrivacyOn:anonymous];
     [[TIMLocalUserInfo sharedInstance] setAboutMe:textViewAboutMySelf.text];
-    [self.activity startAnimating];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak TIMSetingsViewController* weakSelf = self;
     [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
         if (!error) {
@@ -227,6 +219,14 @@
     [swicherBtn setImage:image forState:UIControlStateNormal];
 }
 
+- (IBAction)loadInterests:(id)sender {
+    [self pushTableViewForLoadProfessions:NO];
+}
+
+- (IBAction)loadProfession:(id)sender {
+    [self pushTableViewForLoadProfessions:YES];
+}
+
 #pragma mark - ImagePickerCall
 
 - (void)callImagePickerControllerForMakePhoto:(BOOL)isMakePhoto{
@@ -291,6 +291,16 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     [self calculateAboutMySelsBlock];
+}
+
+#pragma mark - Navigation 
+
+- (void)pushTableViewForLoadProfessions:(BOOL)prof {
+    TIMTableViewController *tableController = [[TIMTableViewController alloc]
+                                               initWithNibName:@"TIMTableViewController"
+                                               bundle:[NSBundle mainBundle]];
+    tableController.isProfessions = prof;
+    [self.navigationController pushViewController:tableController animated:YES];
 }
 
 @end

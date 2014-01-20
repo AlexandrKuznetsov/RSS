@@ -80,5 +80,27 @@
 }
 
 
+- (void)loadInterestsWithCompletition:(void(^)(NSError *error, id response))completitionBlock {
+    self.loadCompletionBlock = completitionBlock;
+    [_client1 getPath:@"/interests.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (![operation.responseString hasPrefix:@"ERROR"]) {
+            NSError* jsonError;
+            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:&jsonError];
+            if (!jsonError) {
+                self.loadCompletionBlock(nil, jsonArray);
+            }else{
+                self.loadCompletionBlock(jsonError, nil);
+            }
+        } else {
+            self.loadCompletionBlock([NSError trueErrorWithServerResponseString:operation.responseString], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        self.loadCompletionBlock(error, nil);
+    }];
+}
+
+
 
 @end
