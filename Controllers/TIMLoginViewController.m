@@ -63,6 +63,8 @@
                        forKeyPath:@"_placeholderLabel.textColor"];
     [self.passwordField setValue:[UIColor colorWithWhite:0.5 alpha:1.0]
                           forKeyPath:@"_placeholderLabel.textColor"];
+    [self.mailField setValue:[UIColor colorWithWhite:0.5 alpha:1.0]
+                      forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 - (void)customizeFonts {
@@ -81,6 +83,7 @@
     self.errorTextLabel.font = [UIFont lightFontWithSize:15.0f];
     
     self.forgetTextLabel.font = [UIFont semiBoldFontWithSize:15.0f];
+    self.mailTextlabel.font = [UIFont semiBoldFontWithSize:15.0f];
 }
 
 #pragma mark - UI
@@ -98,8 +101,7 @@
 - (void)presentForgotView {
     [UIView animateWithDuration:0.5
                      animations:^{
-                         self.fieldsView.alpha = 0;
-                         self.registrationButton.alpha = 0;
+                         self.mailFieldView.alpha = 0;
                      } completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.5 animations:^{
                              self.forgetView.alpha = 1;
@@ -139,6 +141,18 @@
                          [UIView animateWithDuration:0.5 animations:^{
                              self.fieldsView.alpha = 1;
                              self.registrationButton.alpha = 1;
+                         }];
+                     }];
+}
+
+- (void)showForgetFieldView {
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         self.fieldsView.alpha = 0;
+                         self.registrationButton.alpha = 0;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.5 animations:^{
+                             self.mailFieldView.alpha = 1;
                          }];
                      }];
 }
@@ -251,6 +265,22 @@
     }];
 }
 
+- (void)sendPasswordRequest:(NSString *)mail {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[TIMAPIRequests sharedManager] sendPasswordOnMail:mail withCompletition:^(NSError *error, id response) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (error) {
+            if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
+                [self showAlertWithMessage:@"Отсутствует интернет подключение!"];
+            } else {
+                [self showAlertWithMessage:@"Ошибка сервера"];
+            }
+        } else {
+            [self presentForgotView];
+        }
+    }];
+}
+
 #pragma mark - Actions
 
 - (IBAction)showLoginFields:(id)sender {
@@ -278,11 +308,20 @@
 }
 
 - (IBAction)showForgetView:(id)sender {
-    //отправка запроса на забывание пароля
-    [self presentForgotView];
+    [self showForgetFieldView];
 }
 
-#pragma mark - Checks 
+- (IBAction)sendPassOnMail:(id)sender {
+    [self standartScrollSize];
+    [self.mailField resignFirstResponder];
+    if ([self emailIsValid:self.mailField.text]) {
+        [self sendPasswordRequest:self.mailField.text];
+    } else {
+        [self showAlertWithMessage:@"E-Mail адресс введен неправильно"];
+    }
+}
+
+#pragma mark - Checks
 
 - (BOOL)isAllFieldsAreValid {
     if (self.loginField.text.length == 0) {
@@ -318,7 +357,9 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [self resizeScrollView];
     [self changeOffsetForTextField:textField];
-    [self fieldsWithoutError];
+    if (textField.tag != MAIL_FIELD_TAG) {
+        [self fieldsWithoutError];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
