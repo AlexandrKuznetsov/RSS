@@ -50,6 +50,7 @@
     self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", [self.localUserInfo.country objectForKey:@"title"], self.localUserInfo.city];
     self.avatarImageView.image = self.localUserInfo.userPhoto;
     self.flagImageView.image = self.localUserInfo.userFlag;
+    self.wallpaperImageView.image = self.localUserInfo.userWalpaper;
 }
 
 #pragma mark - Design

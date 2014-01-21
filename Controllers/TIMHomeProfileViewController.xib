@@ -18,6 +18,7 @@
                 <outlet property="settingsOutlet" destination="THe-WW-OnR" id="QSY-FN-Ikt"/>
                 <outlet property="surnameLabel" destination="6If-A5-Nvj" id="G2z-OM-6h6"/>
                 <outlet property="view" destination="1" id="3"/>
+                <outlet property="wallpaperImageView" destination="gzX-Uk-Zbf" id="cra-IF-CIc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,13 +31,13 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="Ipr-0T-fG8"/>
-                        <constraint firstAttribute="height" constant="135" id="qp6-q8-zcr"/>
+                        <constraint firstAttribute="height" constant="135" id="J2p-U0-99W"/>
                     </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YUU-zy-Jsl">
                     <rect key="frame" x="0.0" y="181" width="320" height="323"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.92941176469999998" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="KgG-aQ-8pN"/>
                     </constraints>

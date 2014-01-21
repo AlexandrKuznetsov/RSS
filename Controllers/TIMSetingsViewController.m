@@ -71,7 +71,7 @@
     textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance] privacyPlace];
     textFiewldMyProfession.text = [[TIMLocalUserInfo sharedInstance] privacyProfession];
     textFieldCountry.text = [[TIMLocalUserInfo sharedInstance] country][@"title"];
-    
+    self.currentCountry = [[TIMLocalUserInfo sharedInstance] country];
     if ([[[TIMLocalUserInfo sharedInstance] privacyOn] isEqualToString:@"Yes"]) {
         anonymousUser = YES;
     } else {
@@ -103,8 +103,10 @@
     [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:textFieldMyInterests.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyPlace:textFiewlMyLocation.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyProfession:textFiewldMyProfession.text];
-    [[TIMLocalUserInfo sharedInstance] setInterests:[[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests]];
-    [[[TIMLocalUserInfo sharedInstance] country] setValue:textFieldCountry.text forKey:@"title"];
+    if (_interests) {
+        [[TIMLocalUserInfo sharedInstance] setInterests:[[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests]];
+    }
+    [[TIMLocalUserInfo sharedInstance] setCountry:self.currentCountry];
     [[TIMLocalUserInfo sharedInstance] setCity:textFieldCity.text];
     [[TIMLocalUserInfo sharedInstance] setBirthday:textFieldBirthday.text];
     [[TIMLocalUserInfo sharedInstance] setSurname:textFieldSeconName.text];
@@ -120,9 +122,11 @@
     }
     [[TIMLocalUserInfo sharedInstance] setPrivacyOn:anonymous];
     [[TIMLocalUserInfo sharedInstance] setAboutMe:textViewAboutMySelf.text];
+    [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak TIMSetingsViewController* weakSelf = self;
     [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
             [weakSelf setValuesToView];
         } else {

@@ -32,6 +32,7 @@ UITableViewDelegate
 @property (weak, nonatomic) IBOutlet UIButton *settingsOutlet;
 @property (weak, nonatomic) IBOutlet TIMRoundedImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *wallpaperImageView;
 
 - (IBAction)settingBtnAction:(id)sender;
 

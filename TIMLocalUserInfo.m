@@ -173,7 +173,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setUserPhoto:(UIImage *)userPhoto {
     if (!userPhoto) {
-        userPhoto = [UIImage imageNamed:@"default-wallpaper.png"];
+        userPhoto = [UIImage imageNamed:@"default-avatar.png"];
     }
     _userPhoto = userPhoto;
     [self.user setObject:[self saveImage:_userPhoto withName:@"avatar"] forKey:@"avatar"];
@@ -181,10 +181,10 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setUserWalpaper:(UIImage *)userWalpaper {
     if (!userWalpaper) {
-        userWalpaper = [UIImage imageNamed:@"default-avatar.png"];
+        userWalpaper = [UIImage imageNamed:@"default-wallpaper.png"];
     }
     _userWalpaper = userWalpaper;
-    [self.user setObject:[self saveImage:userWalpaper withName:@"walpaper"] forKey:@"walpaper"];
+    [self.user setObject:[self saveImage:_userWalpaper withName:@"walpaper"] forKey:@"walpaper"];
 }
 
 - (void)setEmail:(NSString *)email{
@@ -285,7 +285,11 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (UIImage *)userWalpaper {
-    return [self imageByFolderPath:[self.user objectForKey:@"walpaper"]];
+    if ([self.user objectForKey:@"walpaper"]) {
+        return [self imageByFolderPath:[self.user objectForKey:@"walpaper"]];
+    } else {
+        return [UIImage imageNamed:@"default-wallpaper.png"];
+    }
 }
 
 - (UIImage *)userFlag {
