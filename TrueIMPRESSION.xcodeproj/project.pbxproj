@@ -149,6 +149,10 @@
 		8BA5B51E18815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
 		8BA5B52618815D09009ED9D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5B52418815D09009ED9D8 /* InfoPlist.strings */; };
 		8BA5B52818815D09009ED9D8 /* TrueIMPRESSIONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */; };
+		8BAF893B188EB7F500A9C5C3 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAF8935188EB7F500A9C5C3 /* libTestFlight.a */; };
+		8BAF893C188EB7F500A9C5C3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF8936188EB7F500A9C5C3 /* README.md */; };
+		8BAF893D188EB7F500A9C5C3 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF8937188EB7F500A9C5C3 /* release_notes.md */; };
+		8BAF893F188EB81000A9C5C3 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAF893E188EB81000A9C5C3 /* libz.1.2.5.dylib */; };
 		8BB08524188DC9C000FC3792 /* bg_angle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08521188DC9C000FC3792 /* bg_angle.png */; };
 		8BB08528188DC9D700FC3792 /* bg_angle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08527188DC9D700FC3792 /* bg_angle@2x.png */; };
 		8BB0852B188DCA9A00FC3792 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08529188DCA9A00FC3792 /* email@2x.png */; };
@@ -370,6 +374,13 @@
 		8BA5B52318815D09009ED9D8 /* TrueIMPRESSIONTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrueIMPRESSIONTests-Info.plist"; sourceTree = "<group>"; };
 		8BA5B52518815D09009ED9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrueIMPRESSIONTests.m; sourceTree = "<group>"; };
+		8BAF8935188EB7F500A9C5C3 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		8BAF8936188EB7F500A9C5C3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		8BAF8937188EB7F500A9C5C3 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		8BAF8938188EB7F500A9C5C3 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		8BAF8939188EB7F500A9C5C3 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		8BAF893A188EB7F500A9C5C3 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		8BAF893E188EB81000A9C5C3 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		8BB08521188DC9C000FC3792 /* bg_angle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_angle.png; sourceTree = "<group>"; };
 		8BB08527188DC9D700FC3792 /* bg_angle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_angle@2x.png"; sourceTree = "<group>"; };
 		8BB08529188DCA9A00FC3792 /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
@@ -420,7 +431,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BAF893F188EB81000A9C5C3 /* libz.1.2.5.dylib in Frameworks */,
 				C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */,
+				8BAF893B188EB7F500A9C5C3 /* libTestFlight.a in Frameworks */,
 				C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */,
 				8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */,
 				8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */,
@@ -834,6 +847,7 @@
 		8BA5B4F618815D09009ED9D8 = {
 			isa = PBXGroup;
 			children = (
+				8BAF8934188EB7F500A9C5C3 /* TestFlightSDK2.1.4 */,
 				8B68797F188D8129007EB325 /* ServerObjects */,
 				8B7B0A8C188BFD2800E95FFD /* APIRequests */,
 				8B816F761889AC0700C7DACA /* Models */,
@@ -863,6 +877,7 @@
 		8BA5B50118815D09009ED9D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BAF893E188EB81000A9C5C3 /* libz.1.2.5.dylib */,
 				C5F728B71882F57200B25ACA /* CoreLocation.framework */,
 				C5F728B51882F4B500B25ACA /* MapKit.framework */,
 				8BA5B50218815D09009ED9D8 /* Foundation.framework */,
@@ -912,6 +927,19 @@
 				8BA5B52418815D09009ED9D8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BAF8934188EB7F500A9C5C3 /* TestFlightSDK2.1.4 */ = {
+			isa = PBXGroup;
+			children = (
+				8BAF8935188EB7F500A9C5C3 /* libTestFlight.a */,
+				8BAF8936188EB7F500A9C5C3 /* README.md */,
+				8BAF8937188EB7F500A9C5C3 /* release_notes.md */,
+				8BAF8938188EB7F500A9C5C3 /* TestFlight+AsyncLogging.h */,
+				8BAF8939188EB7F500A9C5C3 /* TestFlight+ManualSessions.h */,
+				8BAF893A188EB7F500A9C5C3 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.1.4;
 			sourceTree = "<group>";
 		};
 		8BEAFDC41884818900D6A2BA /* Cells */ = {
@@ -1163,11 +1191,13 @@
 				8B73851D1881D10E00D1E0C2 /* icon-home-settings.png in Resources */,
 				8B73852A1881D10E00D1E0C2 /* login-area.png in Resources */,
 				8B7385011881D10E00D1E0C2 /* camera-take-icon@2x.png in Resources */,
+				8BAF893D188EB7F500A9C5C3 /* release_notes.md in Resources */,
 				8B7384FB1881D10E00D1E0C2 /* camera-delete-icon-hover@2x.png in Resources */,
 				C5E67DD81889F18C000CB56B /* off.png in Resources */,
 				8B73851E1881D10E00D1E0C2 /* icon-home-settings@2x.png in Resources */,
 				8B7B0A7C188BAC5400E95FFD /* bnt_events@2x.png in Resources */,
 				8B7385091881D10E00D1E0C2 /* flag-ru.png in Resources */,
+				8BAF893C188EB7F500A9C5C3 /* README.md in Resources */,
 				8B7384FD1881D10E00D1E0C2 /* camera-delete-icon@2x.png in Resources */,
 				C550EDE918871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B7385211881D10E00D1E0C2 /* icon-toolbar-eye.png in Resources */,
@@ -1426,6 +1456,10 @@
 				GCC_PREFIX_HEADER = "TrueIMPRESSION/TrueIMPRESSION-Prefix.pch";
 				INFOPLIST_FILE = "TrueIMPRESSION/TrueIMPRESSION-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/HDD/Проекты/RSS/TestFlightSDK2.1.4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0F56F557-791F-40E0-A960-3E313E059442";
 				WRAPPER_EXTENSION = app;
@@ -1445,6 +1479,10 @@
 				GCC_PREFIX_HEADER = "TrueIMPRESSION/TrueIMPRESSION-Prefix.pch";
 				INFOPLIST_FILE = "TrueIMPRESSION/TrueIMPRESSION-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/HDD/Проекты/RSS/TestFlightSDK2.1.4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0F56F557-791F-40E0-A960-3E313E059442";
 				WRAPPER_EXTENSION = app;
