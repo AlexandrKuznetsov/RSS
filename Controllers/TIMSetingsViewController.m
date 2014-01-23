@@ -31,7 +31,7 @@
     if (!self.mapView) {
         [self.locationManager startUpdatingLocation];
     }
-    self.navigationItem.title = @"Настройки";
+    self.navigationItem.title = @"Настройки профиля";
     [self createAppearence];
     [self loadData];
     photoBtnCover.photoDelegate = self;

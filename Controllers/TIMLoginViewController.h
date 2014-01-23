@@ -51,6 +51,8 @@
 @property (weak, nonatomic) IBOutlet UIView *mailFieldView;
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
 @property (weak, nonatomic) IBOutlet UILabel *mailTextlabel;
+@property (weak, nonatomic) IBOutlet UILabel *backLabel;
+@property (weak, nonatomic) IBOutlet UIView *backView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)showLoginFields:(id)sender;
@@ -60,6 +62,8 @@
 - (IBAction)openMail:(id)sender;
 - (IBAction)showForgetView:(id)sender;
 - (IBAction)sendPassOnMail:(id)sender;
+- (IBAction)back:(id)sender;
+- (IBAction)hide:(id)sender;
 
 
 @end

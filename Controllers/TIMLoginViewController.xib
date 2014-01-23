@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TIMLoginViewController">
             <connections>
+                <outlet property="backLabel" destination="kGx-oF-UIZ" id="YIV-wu-117"/>
+                <outlet property="backView" destination="MLo-TK-SP0" id="bdi-IN-PJa"/>
                 <outlet property="destinationsCountLabel" destination="bi2-cT-jOb" id="Tqv-9s-yeH"/>
                 <outlet property="destinationsLabel" destination="e6B-YY-TCz" id="PDB-KM-Hih"/>
                 <outlet property="errorLabel" destination="vxf-WZ-ojD" id="llB-Gk-r61"/>
@@ -119,15 +121,15 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" id="6rS-0K-j3P">
-                                    <rect key="frame" x="20" y="20" width="280" height="200"/>
+                                    <rect key="frame" x="20" y="20" width="280" height="189"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XeY-Gb-nyf">
-                                            <rect key="frame" x="0.0" y="162" width="260" height="36"/>
+                                            <rect key="frame" x="0.0" y="162" width="260" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <state key="normal" title="регистрация">
-                                                <color key="titleColor" red="0.20392156862745098" green="0.24313725490196078" blue="0.23137254901960785" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="titleColor" red="0.16078431372549018" green="0.49019607843137253" blue="0.40000000000000002" alpha="1" colorSpace="deviceRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -166,7 +168,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <state key="normal" title="напомнить пароль">
-                                                        <color key="titleColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.23137254900000001" alpha="1" colorSpace="deviceRGB"/>
+                                                        <color key="titleColor" red="0.16078431369999999" green="0.49019607840000001" blue="0.40000000000000002" alpha="1" colorSpace="deviceRGB"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -212,7 +214,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <view alpha="0.0" contentMode="scaleToFill" id="gwq-9Z-PX9" userLabel="error view">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="189"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы ввели неправильную комбинацию логина и пароля. Повтрите пожалуйста ввод." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ajX-db-297">
@@ -244,7 +246,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <view alpha="0.0" contentMode="scaleToFill" id="uRS-76-NyH" userLabel="forgot view">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="189"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uLW-v3-Oij">
@@ -269,11 +271,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <view alpha="0.0" contentMode="scaleToFill" id="Hyk-UM-OxU">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="198"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="189"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите емейл, который вы указывали при регистрации" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XBM-vy-PyT">
-                                                    <rect key="frame" x="10" y="28" width="240" height="48"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите емейл, который вы указывали при регистрации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XBM-vy-PyT">
+                                                    <rect key="frame" x="0.0" y="8" width="280" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -310,20 +312,56 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <view alpha="0.0" contentMode="scaleToFill" id="MLo-TK-SP0">
+                                    <rect key="frame" x="0.0" y="195" width="107" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l5w-ny-cS5">
+                                            <rect key="frame" x="0.0" y="1" width="107" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="64" maxY="0.0"/>
+                                            <state key="normal" image="header-back-button.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="back:" destination="-1" eventType="touchUpInside" id="03J-Ft-Tuo"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="назад" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kGx-oF-UIZ">
+                                            <rect key="frame" x="35" y="0.0" width="66" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" red="0.16078431369999999" green="0.49019607840000001" blue="0.40000000000000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.43529411759999997" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="PJX-VC-IBK" appends="YES" id="kXf-qy-EwT"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
+        <tapGestureRecognizer id="PJX-VC-IBK">
+            <connections>
+                <action selector="hide:" destination="-1" id="xqs-a6-gRv"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="bg_screen01_5s.png" width="640" height="621"/>
         <image name="btn_ok.png" width="29" height="29"/>
         <image name="email.png" width="229" height="30"/>
+        <image name="header-back-button.png" width="22" height="22"/>
         <image name="home-button-waves.png" width="29" height="71"/>
         <image name="home-button.png" width="145" height="145"/>
         <image name="info-line.png" width="203" height="6"/>

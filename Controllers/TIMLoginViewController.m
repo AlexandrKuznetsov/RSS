@@ -78,6 +78,7 @@
 
     self.registrationButton.titleLabel.font = [UIFont regularFontWithSize:18];
     self.forgetButtonOutlet.titleLabel.font = [UIFont regularFontWithSize:18];
+    self.backLabel.font = [UIFont regularFontWithSize:18];
     
     self.errorLabel.font = [UIFont semiBoldFontWithSize:15.0f];
     self.errorTextLabel.font = [UIFont lightFontWithSize:15.0f];
@@ -102,6 +103,7 @@
     [UIView animateWithDuration:0.5
                      animations:^{
                          self.mailFieldView.alpha = 0;
+                         self.backView.alpha = 0;
                      } completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.5 animations:^{
                              self.forgetView.alpha = 1;
@@ -153,6 +155,20 @@
                      } completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.5 animations:^{
                              self.mailFieldView.alpha = 1;
+                             self.backView.alpha = 1;
+                         }];
+                     }];
+}
+
+- (void)hideForgetFieldView {
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         self.mailFieldView.alpha = 0;
+                         self.backView.alpha = 0;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.5 animations:^{
+                             self.registrationButton.alpha = 1;
+                             self.fieldsView.alpha = 1;
                          }];
                      }];
 }
@@ -319,6 +335,15 @@
     } else {
         [self showAlertWithMessage:@"E-Mail адресс введен неправильно"];
     }
+}
+
+- (IBAction)back:(id)sender {
+    [self hideForgetFieldView];
+}
+
+- (IBAction)hide:(id)sender {
+    [self standartScrollSize];
+    [self hideKeyBoard];
 }
 
 #pragma mark - Checks
