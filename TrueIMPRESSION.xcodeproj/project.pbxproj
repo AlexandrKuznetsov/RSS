@@ -149,7 +149,6 @@
 		8BA5B51E18815D09009ED9D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA5B50618815D09009ED9D8 /* UIKit.framework */; };
 		8BA5B52618815D09009ED9D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5B52418815D09009ED9D8 /* InfoPlist.strings */; };
 		8BA5B52818815D09009ED9D8 /* TrueIMPRESSIONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5B52718815D09009ED9D8 /* TrueIMPRESSIONTests.m */; };
-		8BAF893B188EB7F500A9C5C3 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAF8935188EB7F500A9C5C3 /* libTestFlight.a */; };
 		8BAF893C188EB7F500A9C5C3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF8936188EB7F500A9C5C3 /* README.md */; };
 		8BAF893D188EB7F500A9C5C3 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF8937188EB7F500A9C5C3 /* release_notes.md */; };
 		8BAF893F188EB81000A9C5C3 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAF893E188EB81000A9C5C3 /* libz.1.2.5.dylib */; };
@@ -161,7 +160,6 @@
 		8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */; };
 		8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */; };
 		8BEAFDD218848A6B00D6A2BA /* TIMProfileImpressionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */; };
-		C550EDDE18871C9500C8CFD4 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCE18871C9500C8CFD4 /* LICENSE.txt */; };
 		C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */; };
 		C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */; };
 		C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */; };
@@ -180,6 +178,7 @@
 		C561DAA3188746FF0006FD0D /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DAA1188746FF0006FD0D /* btn_green.png */; };
 		C561DAA4188746FF0006FD0D /* btn_green_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DAA2188746FF0006FD0D /* btn_green_@2x.png */; };
 		C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A531B718831D2E007B4019 /* NSObject+CheckData.m */; };
+		C5CC70DE1891A8A500036CED /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAF8935188EB7F500A9C5C3 /* libTestFlight.a */; };
 		C5E67DCD1889B7E2000CB56B /* TIMSetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E67DCB1889B7E2000CB56B /* TIMSetingsViewController.m */; };
 		C5E67DCE1889B7E2000CB56B /* TIMSetingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DCC1889B7E2000CB56B /* TIMSetingsViewController.xib */; };
 		C5E67DD11889B865000CB56B /* TIMPhotoButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E67DD01889B865000CB56B /* TIMPhotoButtons.m */; };
@@ -433,8 +432,8 @@
 			files = (
 				8BAF893F188EB81000A9C5C3 /* libz.1.2.5.dylib in Frameworks */,
 				C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */,
-				8BAF893B188EB7F500A9C5C3 /* libTestFlight.a in Frameworks */,
 				C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */,
+				C5CC70DE1891A8A500036CED /* libTestFlight.a in Frameworks */,
 				8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */,
 				8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */,
 				8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */,
@@ -939,8 +938,9 @@
 				8BAF8939188EB7F500A9C5C3 /* TestFlight+ManualSessions.h */,
 				8BAF893A188EB7F500A9C5C3 /* TestFlight.h */,
 			);
-			path = TestFlightSDK2.1.4;
-			sourceTree = "<group>";
+			name = TestFlightSDK2.1.4;
+			path = /Users/fist/Projects/RSS/TestFlightSDK2.1.4;
+			sourceTree = "<absolute>";
 		};
 		8BEAFDC41884818900D6A2BA /* Cells */ = {
 			isa = PBXGroup;
@@ -1235,7 +1235,6 @@
 				8B9283CA18833876009F93C0 /* icon_circle.png in Resources */,
 				C5E67DDA1889F18C000CB56B /* on.png in Resources */,
 				8B73853D1881D10E00D1E0C2 /* text-field@2x.png in Resources */,
-				C550EDDE18871C9500C8CFD4 /* LICENSE.txt in Resources */,
 				8B73852B1881D10E00D1E0C2 /* login-area@2x.png in Resources */,
 				8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */,
 				8B9283C818833876009F93C0 /* btn_menu.png in Resources */,
@@ -1459,6 +1458,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Volumes/HDD/Проекты/RSS/TestFlightSDK2.1.4",
+					/Users/fist/Projects/RSS/TestFlightSDK2.1.4,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0F56F557-791F-40E0-A960-3E313E059442";
@@ -1482,6 +1482,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Volumes/HDD/Проекты/RSS/TestFlightSDK2.1.4",
+					/Users/fist/Projects/RSS/TestFlightSDK2.1.4,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0F56F557-791F-40E0-A960-3E313E059442";

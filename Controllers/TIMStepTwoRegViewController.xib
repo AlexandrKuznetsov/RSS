@@ -61,11 +61,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg-circle.png" id="7eV-eb-QXL">
-                            <rect key="frame" x="0.0" y="24" width="320" height="40"/>
+                            <rect key="frame" x="0.0" y="15" width="320" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zkT-Tn-5Ny">
-                            <rect key="frame" x="0.0" y="24" width="320" height="40"/>
+                            <rect key="frame" x="0.0" y="15" width="320" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="0.81176470590000005" green="0.82745098039999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>

@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_scrollView setContentSize:CGSizeMake(_scrollView.contentSize.width,
+                                           (CGRectGetMaxY(continueBtn.frame) +
+                                            REGISTRATION_OFFSET_FROM_NEXT_STEP_BTN))];
     [self setFontToTextFields];
     // Do any additional setup after loading the view from its nib.
 }
@@ -38,10 +41,10 @@
 }
 
 - (void)setFontToTextFields{
-    top1label.font = [UIFont boldFontWithSize:17];
-    repeatPasswordTextField.font = [UIFont regularFontWithSize:12];
-    passwordTextField.font = [UIFont regularFontWithSize:12];
-    mailTextField.font = [UIFont regularFontWithSize:12];
+    top1label.font = [UIFont boldFontWithSize:top1label.font.pointSize];
+    repeatPasswordTextField.font = [UIFont regularFontWithSize:repeatPasswordTextField.font.pointSize];
+    passwordTextField.font = [UIFont regularFontWithSize:passwordTextField.font.pointSize];
+    mailTextField.font = [UIFont regularFontWithSize:mailTextField.font.pointSize];
 }
 
 - (void)showAlertViewWithMessage:(NSString *)message {
