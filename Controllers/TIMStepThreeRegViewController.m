@@ -139,6 +139,13 @@
     }
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        textView.text = @"";
+    });
+}
+
 - (void)textViewDidChange:(UITextView *)textView {
     if ([self is_ios7]) {
         CGFloat oldFrameHeight = textView.frame.size.height;

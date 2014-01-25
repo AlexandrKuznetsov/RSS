@@ -84,8 +84,9 @@
     textFieldBirthday.text = [[TIMLocalUserInfo sharedInstance] birthday];
     textFieldSeconName.text = [[TIMLocalUserInfo sharedInstance] surname];
     textFieldName.text = [[TIMLocalUserInfo sharedInstance] name];
-
-    textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
+    if ([[TIMLocalUserInfo sharedInstance].aboutMe length] > 0) {
+        textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
+    }
     UIImage* avaImage = [[TIMLocalUserInfo sharedInstance] userPhoto];
     if (!avaImage) {
         avaImage = [UIImage imageNamed:@"default-avatar.png"];
@@ -311,6 +312,14 @@
 - (void)textViewDidChange:(UITextView *)textView {
     [self calculateAboutMySelsBlock];
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        textView.text = @"";
+    });
+}
+
 
 #pragma mark - Navigation 
 
