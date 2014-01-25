@@ -7,6 +7,7 @@
 //
 
 #import "TIMLocalUserInfo.h"
+#import "TIMKeychain.h"
 
 @implementation TIMLocalUserInfo
 
@@ -15,7 +16,6 @@
 @synthesize birthday = _birthday;
 @synthesize gender = _gender;
 @synthesize defaultLanguage = _defaultLanguage;
-@synthesize country = _country;
 @synthesize city = _city;
 @synthesize interests = _interests;
 @synthesize profession = _profession;
@@ -33,6 +33,22 @@ static TIMLocalUserInfo *sharedInstance = nil;
         sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
+}
+
+- (id)init{
+    self = [super init];
+    if (self) {
+        [self initializeData];
+    }
+    return self;
+}
+
+- (void)initializeData{
+    self.user = [NSMutableDictionary dictionaryWithDictionary:
+                 [[NSUserDefaults standardUserDefaults] objectForKey:@"user"]];
+    if (!self.user) {
+        self.user = [[NSMutableDictionary alloc] init];
+    }
 }
 
 - (BOOL)readUserFromUserDefaults {
@@ -95,15 +111,15 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 
 - (void)setName:(NSString *)name {
-    if (!name) {
-     name = @"";
+    if (!name || [name isKindOfClass:([NSNull class])]) {
+        name = @"";
     }
     _name = [name copy];
     [self.user setObject:name forKey:@"name"];
 }
 
 - (void)setSurname:(NSString *)surname {
-    if (!surname) {
+    if (!surname || [surname isKindOfClass:([NSNull class])]) {
         surname = @"";
     }
     _surname = [surname copy];
@@ -111,7 +127,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setBirthday:(NSString *)birthday {
-    if (!birthday) {
+    if (!birthday || [birthday isKindOfClass:([NSNull class])]) {
         birthday = @"";
     }
     _birthday = [birthday copy];
@@ -119,7 +135,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setGender:(NSString *)gender {
-    if (!gender) {
+    if (!gender || [gender isKindOfClass:([NSNull class])]) {
         gender = @"";
     }
     _gender = [gender copy];
@@ -127,20 +143,22 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setDefaultLanguage:(NSString *)defaultLanguage {
-    if (!defaultLanguage) {
+    if (!defaultLanguage || [defaultLanguage isKindOfClass:([NSNull class])]) {
         defaultLanguage = @"";
     }
     _defaultLanguage = [defaultLanguage copy];
     [self.user setObject:defaultLanguage forKey:@"defaultLanguage"];
 }
 
-- (void)setCountry:(NSDictionary *)country {
-    _country = country;
+- (void)setCountry:(NSString *)country {
+    if (!country || [country isKindOfClass:([NSNull class])]) {
+        country = @"";
+    }
     [self.user setObject:country forKey:@"country"];
 }
 
 - (void)setCity:(NSString *)city {
-    if (!city) {
+    if (!city || [city isKindOfClass:([NSNull class])]) {
         city = @"";
     }
     _city = [city copy];
@@ -148,7 +166,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setInterests:(NSString *)interests {
-    if (!interests) {
+    if (!interests || [interests isKindOfClass:([NSNull class])]) {
         interests = @"";
     }
     _interests = interests;
@@ -156,7 +174,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setProfession:(NSString *)profession {
-    if (!profession) {
+    if (!profession || [profession isKindOfClass:([NSNull class])]) {
         profession = @"";
     }
     _profession = [profession copy];
@@ -164,7 +182,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setAboutMe:(NSString *)aboutMe {
-    if (!aboutMe) {
+    if (!aboutMe || [aboutMe isKindOfClass:([NSNull class])]) {
         aboutMe = @"";
     }
     _aboutMe = [aboutMe copy];
@@ -188,7 +206,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setEmail:(NSString *)email{
-    if (!email) {
+    if (!email || [email isKindOfClass:([NSNull class])]) {
         email = @"";
     }
     _email = [email copy];
@@ -196,7 +214,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setPrivacyImpressions:(NSString *)privacyImpressions{
-    if (!privacyImpressions) {
+    if (!privacyImpressions || [privacyImpressions isKindOfClass:([NSNull class])]) {
         privacyImpressions = @"";
     }
     _privacyImpressions = [privacyImpressions copy];
@@ -204,7 +222,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setPrivacyInterest:(NSString *)privacyInterest{
-    if (!privacyInterest) {
+    if (!privacyInterest || [privacyInterest isKindOfClass:([NSNull class])]) {
         privacyInterest = @"";
     }
     _privacyInterest = [privacyInterest copy];
@@ -212,7 +230,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setPrivacyOn:(NSString *)privacyOn{
-    if (!privacyOn) {
+    if (!privacyOn || [privacyOn isKindOfClass:([NSNull class])]) {
         privacyOn = @"";
     }
     _privacyOn = [privacyOn copy];
@@ -220,7 +238,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setPrivacyPlace:(NSString *)privacyPlace{
-    if (!privacyPlace) {
+    if (!privacyPlace || [privacyPlace isKindOfClass:([NSNull class])]) {
         privacyPlace = @"";
     }
     _privacyPlace = [privacyPlace copy];
@@ -229,7 +247,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setPrivacyProfession:(NSString *)privacyProfession{
-    if (!privacyProfession) {
+    if (!privacyProfession || [privacyProfession isKindOfClass:([NSNull class])]) {
         privacyProfession = @"";
     }
     _privacyProfession = [privacyProfession copy];
@@ -259,9 +277,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
     return [self.user objectForKey:@"defaultLanguage"];
 }
 
-- (NSDictionary *)country {
-    NSDictionary *countryDict = [self.user objectForKey:@"country"];
-    return countryDict;
+- (NSString *)country {
+    NSString *country = [self.user objectForKey:@"country"];
+    return country;
 }
 
 - (NSString *)city {
@@ -293,16 +311,18 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (UIImage *)userFlag {
-    NSDictionary *countryDict = [self.user objectForKey:@"country"];
+    NSString* countryString = [self.user objectForKey:@"country"];
+    TIMModelWithStaticData* staticData = [[TIMModelWithStaticData alloc] init];
+    NSDictionary *countryDict = [staticData getCounryDictWithCountryName:countryString];
     NSString *countryId = countryDict[@"id"];
     return [UIImage imageNamed:[NSString stringWithFormat:@"flag_%@", countryId]];
 }
 
 - (void)loadSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
-    NSLog(@"%@", [[TIMAPIRequests sharedManager] client1]);
+    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
     
-    [[[TIMAPIRequests sharedManager] client1] getPath:@"/api/settings" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/settings" parameters:someData success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             NSError* jsonError;
@@ -310,6 +330,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonError];
             if (!jsonError) {
+                [self parseResponse:jsonArray];
                 self.loadDataBlock(nil, jsonArray);
             }else{
                 self.loadDataBlock(jsonError, nil);
@@ -324,20 +345,14 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)saveSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
-    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/update_settings" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", operation.responseString);
-        NSLog(@"%@", operation.response.allHeaderFields);
+    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
+    NSMutableDictionary* allDAtaDict = [NSMutableDictionary
+                                        dictionaryWithDictionary:[self userSettingDictionary]];
+    [allDAtaDict setValuesForKeysWithDictionary:someData];
+    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/update_settings" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (![operation.responseString hasPrefix:@"ERROR"]) {
-            NSError* jsonError;
-            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
-                                                                 options:NSJSONReadingMutableContainers
-                                                                   error:&jsonError];
-            if (!jsonError) {
-                self.loadDataBlock(nil, jsonArray);
+                self.loadDataBlock(nil, nil);
                 [self saveUserInfoInUserDefaults];
-            }else{
-                self.loadDataBlock(jsonError, nil);
-            }
         } else {
             self.loadDataBlock([NSError trueErrorWithServerResponseString:operation.responseString], nil);
         }
@@ -352,7 +367,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.surname = [response objectForKey:@"last_name"];
         self.email = [response objectForKey:@"email"];
         self.city = [response objectForKey:@"city"];
-        self.country = [response objectForKey:@"country"];
+        [self setCountry:[response objectForKey:@"country"]];
         self.birthday = [response objectForKey:@"year_born"];
         self.gender = [response objectForKey:@"sex"];
         self.defaultLanguage = [response objectForKey:@"language"];
@@ -372,15 +387,15 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (NSDictionary*)userSettingDictionary{
-    NSDictionary* userDictionary = @{@"first_name": _name,
-                                     @"last_name": _surname,
-                                     @"email": _email,
-                                     @"city": _city,
-                                     @"country": _country,
-                                     @"year_born": _birthday,
-                                     @"sex": _gender,
-                                     @"language": _defaultLanguage,
-                                     @"description": _aboutMe,
+    NSDictionary* userDictionary = @{@"first_name": self.name,
+                                     @"last_name": self.surname,
+                                     @"email": self.email,
+                                     @"city": self.city,
+                                     @"country": self.user[@"country"],
+                                     @"year_born": self.birthday,
+                                     @"sex": self.gender,
+                                     @"language": self.defaultLanguage,
+                                     @"description": self.aboutMe,
 //                                     @"created_at": @"",
 //                                     @"updated_at": @"",
 //                                     @"encrypted_password": @"",
@@ -392,21 +407,25 @@ static TIMLocalUserInfo *sharedInstance = nil;
 //                                     @"last_sign_in_at": @"",
 //                                     @"current_sign_in_ip": @"",
 //                                     @"last_sign_in_ip": @"",
-                                     @"avatar_file_name": _avatarName,
+#warning AVATR_LOGIC
+//                                     @"avatar_file_name": self.avatarName,
+                                     
 //                                     @"avatar_content_type": @"",
 //                                     @"avatar_file_size": @"",
 //                                     @"avatar_updated_at": @"",
-                                     @"wallpaper_file_name": _wallpaperName,
+#warning WALLPAPER_LOGIC
+//                                     @"wallpaper_file_name": self.wallpaperName,
+                                     
 //                                     @"wallpaper_content_type": @"",
 //                                     @"wallpaper_file_size": @"",
 //                                     @"wallpaper_updated_at": @"",
-                                     @"profession": _profession,
-                                     @"interests": _interests,
-                                     @"privacy_on": _privacyOn,
-                                     @"privacy_place": _privacyPlace,
-                                     @"privacy_interest": _privacyInterest,
-                                     @"privacy_impressions": _privacyImpressions,
-                                     @"privacy_profession": _privacyProfession,
+                                     @"profession": self.profession,
+                                     @"interests": self.interests,
+                                     @"privacy_on": self.privacyOn,
+                                     @"privacy_place": self.privacyPlace,
+                                     @"privacy_interest": self.privacyInterest,
+                                     @"privacy_impressions": self.privacyImpressions,
+                                     @"privacy_profession": self.privacyProfession,
                                      };
     return userDictionary;
 }

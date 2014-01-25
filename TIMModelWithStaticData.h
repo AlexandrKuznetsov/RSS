@@ -10,6 +10,7 @@
 
 @interface TIMModelWithStaticData : NSObject
 
+- (NSMutableDictionary*)getCounryDictWithCountryName:(NSString*)name;
 - (NSArray*)countryList;
 - (NSArray *)privacyArray;
 - (NSArray *)languageArray;

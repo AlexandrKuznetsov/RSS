@@ -69,7 +69,7 @@ static TIMRegistrationModel *sharedInstance = nil;
 - (void)saveCountry:(NSDictionary *)aCountry
                city:(NSString *)aCity {
     _country = aCountry[@"title"];
-    [TIMLocalUserInfo sharedInstance].country = aCountry;
+    [[TIMLocalUserInfo sharedInstance] setCountry:_country];
     _city = [aCity copy];
     [TIMLocalUserInfo sharedInstance].city = _city;
 }

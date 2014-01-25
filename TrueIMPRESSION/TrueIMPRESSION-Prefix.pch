@@ -22,3 +22,4 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 #define REGISTRATION_OFFSET_FROM_NEXT_STEP_BTN 20
+#define KEYCHAIN_SERVICE @"TrueImpression"

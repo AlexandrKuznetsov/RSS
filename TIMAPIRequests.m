@@ -7,6 +7,7 @@
 //
 
 #import "TIMAPIRequests.h"
+#import "TIMKeychain.h"
 
 @implementation TIMAPIRequests
 
@@ -30,8 +31,11 @@
 - (void)postEmail:(NSString *)login
          password:(NSString *)password
  withCompletition:(void(^)(NSError *error, id response))completitionBlock {
+    NSDictionary* userDataDictionary = @{@"email": login, @"password": password};
     self.loadCompletionBlock = completitionBlock;
-    [_client1 postPath:@"/api/login" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [TIMKeychain deleteData:KEYCHAIN_SERVICE];
+    [TIMKeychain save:KEYCHAIN_SERVICE data:userDataDictionary];
+    [_client1 postPath:@"/api/login" parameters:userDataDictionary success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);
         } else {
@@ -45,8 +49,11 @@
 - (void)registerWithEmail:(NSString *)login
                  password:(NSString *)password
          withCompletition:(void(^)(NSError *error, id response))completitionBlock {
+    NSDictionary* userDataDictionary = @{@"email": login, @"password": password};
     self.loadCompletionBlock = completitionBlock;
-    [_client1 postPath:@"/api/register" parameters:@{@"email": login, @"password": password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [TIMKeychain deleteData:KEYCHAIN_SERVICE];
+    [TIMKeychain save:KEYCHAIN_SERVICE data:userDataDictionary];
+    [_client1 postPath:@"/api/register" parameters:userDataDictionary success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);
         } else {
@@ -134,6 +141,17 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.loadCompletionBlock(error, nil);
     }];
+}
+
+- (BOOL)connected {
+    Reachability* reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    if (internetStatus != NotReachable) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
 }
 
 @end

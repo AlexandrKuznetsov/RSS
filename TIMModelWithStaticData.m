@@ -235,4 +235,12 @@
     }
 }
 
+- (NSMutableDictionary*)getCounryDictWithCountryName:(NSString*)name{
+    NSPredicate* countryPredicate = [NSPredicate predicateWithFormat:@"title = %@", name];
+    NSArray* countryArray = [[self countryList]
+                             filteredArrayUsingPredicate:countryPredicate];
+    NSMutableDictionary* countyDictionary = [[countryArray lastObject] mutableCopy];
+    return countyDictionary;
+}
+
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
+#import "Reachability.h"
 #import "NSError+True.h"
 
 @interface TIMAPIRequests : NSObject {
@@ -34,5 +35,6 @@
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
 - (void)loadInterestsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
+- (BOOL)connected;
 
 @end

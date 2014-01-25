@@ -32,6 +32,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self checkForLoginInformation];
 }
 
@@ -47,7 +51,7 @@
     self.localUserInfo = [TIMLocalUserInfo sharedInstance];
     self.nameLabel.text = self.localUserInfo.name;
     self.surnameLabel.text = self.localUserInfo.surname;
-    self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", [self.localUserInfo.country objectForKey:@"title"], self.localUserInfo.city];
+    self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", [self.localUserInfo country], self.localUserInfo.city];
     self.avatarImageView.image = self.localUserInfo.userPhoto;
     self.flagImageView.image = self.localUserInfo.userFlag;
     self.wallpaperImageView.image = self.localUserInfo.userWalpaper;
@@ -77,7 +81,20 @@
         [self pushLoginViewController];
     } else {
         //загрузка локального пользователя при отсутствии инета
-        [self labelsForLocalUser];
+        if ([[TIMAPIRequests sharedManager] connected]) {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+                if (!error) {
+                    [self labelsForLocalUser];
+                } else {
+                    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                    [alertView show];
+                }
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }];
+        } else {
+            [self labelsForLocalUser];
+        }
     }
 }
 

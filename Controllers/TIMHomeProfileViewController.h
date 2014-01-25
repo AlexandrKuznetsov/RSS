@@ -14,6 +14,8 @@
 #import "TIMProfileInfoCell.h"
 #import "TIMSetingsViewController.h"
 #import "TIMLocalUserInfo.h"
+#import "TIMLocalUserInfo.h"
+
 
 @interface TIMHomeProfileViewController : TIMViewController <
 UITableViewDataSource,

@@ -50,7 +50,7 @@ typedef enum {
 @property (strong, nonatomic) MKMapView* mapView;
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) UIView *backgroundView;
-@property (strong, nonatomic) NSDictionary *currentCountry;
+@property (strong, nonatomic) NSMutableDictionary *currentCountry;
 
 - (void)getCrrentUserLocation;
 - (void)saveLocationCountry:(NSString *)locationCountry;

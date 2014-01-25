@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TIMAPIRequests.h"
+#import "TIMModelWithStaticData.h"
 
 @interface TIMLocalUserInfo : NSObject
 
@@ -20,7 +21,6 @@
 @property (copy, nonatomic) NSString *surname;
 @property (copy, nonatomic) NSString* email;
 @property (copy, nonatomic) NSString *city;
-@property (strong, nonatomic) NSDictionary *country;
 @property (copy, nonatomic) NSString *birthday;
 @property (copy, nonatomic) NSString *gender;
 @property (copy, nonatomic) NSString *defaultLanguage;
@@ -47,5 +47,7 @@
 - (void)saveUserInfoInUserDefaults;
 - (void)loadSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
 - (void)saveSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
+- (void)setCountry:(NSString *)country;
+- (NSString *)country;
 
 @end

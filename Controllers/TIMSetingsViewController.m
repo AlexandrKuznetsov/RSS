@@ -33,7 +33,6 @@
     }
     self.navigationItem.title = @"Настройки профиля";
     [self createAppearence];
-    [self loadData];
     photoBtnCover.photoDelegate = self;
     photoBtnsAvatar.photoDelegate = self;
     photoBtnCover.tag = coverInSettings;
@@ -62,6 +61,7 @@
     [self setFontsToTextViewsInView:self.view];
     [self setValuesToView];
     [self calculateAboutMySelsBlock];
+    [self loadData];
 }
 
 - (void)setValuesToView{
@@ -70,8 +70,10 @@
     textFieldMyInterests.text = [[TIMLocalUserInfo sharedInstance] privacyInterest];
     textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance] privacyPlace];
     textFiewldMyProfession.text = [[TIMLocalUserInfo sharedInstance] privacyProfession];
-    textFieldCountry.text = [[TIMLocalUserInfo sharedInstance] country][@"title"];
-    self.currentCountry = [[TIMLocalUserInfo sharedInstance] country];
+    NSString* country = [[TIMLocalUserInfo sharedInstance] country];
+    textFieldCountry.text = country;
+    TIMModelWithStaticData* staticData = [[TIMModelWithStaticData alloc] init];
+    self.currentCountry = [staticData getCounryDictWithCountryName:country];
     if ([[[TIMLocalUserInfo sharedInstance] privacyOn] isEqualToString:@"Yes"]) {
         anonymousUser = YES;
     } else {
@@ -106,7 +108,7 @@
     if (_interests) {
         [[TIMLocalUserInfo sharedInstance] setInterests:[[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests]];
     }
-    [[TIMLocalUserInfo sharedInstance] setCountry:self.currentCountry];
+    [[TIMLocalUserInfo sharedInstance] setCountry:self.currentCountry[@"title"]];
     [[TIMLocalUserInfo sharedInstance] setCity:textFieldCity.text];
     [[TIMLocalUserInfo sharedInstance] setBirthday:textFieldBirthday.text];
     [[TIMLocalUserInfo sharedInstance] setSurname:textFieldSeconName.text];
@@ -126,7 +128,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak TIMSetingsViewController* weakSelf = self;
     [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
             [weakSelf setValuesToView];
         } else {
@@ -160,9 +162,9 @@
                                                textViewAboveMySelfInfo.frame.size.width,
                                                textViewAboveMySelfInfo.frame.size.height);
     
-    imageViewBottomFon.frame = CGRectMake(imageViewFon.frame.origin.x,
-                                    imageViewFon.frame.origin.y,
-                                    imageViewFon.frame.size.width,
+    imageViewBottomFon.frame = CGRectMake(imageViewBottomFon.frame.origin.x,
+                                    imageViewBottomFon.frame.origin.y,
+                                    imageViewBottomFon.frame.size.width,
                                     CGRectGetMaxY(textViewAboveMySelfInfo.frame) - 78);
     
     [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width,
@@ -217,7 +219,9 @@
     } else {
         image = [UIImage imageNamed:@"on.png"];
     }
-    anonymousUser = !anonymousUser;
+    if (sender) {
+        anonymousUser = !anonymousUser;
+    }
     [swicherBtn setImage:image forState:UIControlStateNormal];
 }
 
