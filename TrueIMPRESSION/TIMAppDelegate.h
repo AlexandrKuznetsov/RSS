@@ -11,6 +11,9 @@
 #import "TIMHomeNavigationViewController.h"
 #import "TIMHomeProfileViewController.h"
 #import "TestFlight.h"
+#import <MFSideMenu/MFSideMenu.h>
+#import "MFSideMenuContainerViewController.h"
+#import "TIMLeftSideViewController.h"
 
 @interface TIMAppDelegate : UIResponder <UIApplicationDelegate>
 

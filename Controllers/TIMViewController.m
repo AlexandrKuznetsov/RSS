@@ -7,6 +7,7 @@
 //
 
 #import "TIMViewController.h"
+#import <MFSideMenu/MFSideMenu.h>
 
 @interface TIMViewController ()
 
@@ -26,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self customBackButtonItem];
+	[self setupBarButtonsItems];
     if([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout=UIRectEdgeNone;
 }
@@ -35,6 +36,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setupBarButtonsItems {
+    if([[self.navigationController.viewControllers objectAtIndex:0] isEqual:self]) {
+        self.navigationItem.leftBarButtonItem = [self customButtonWithImageName:@"btn_menu"
+                                                                       selector:@selector(showMenu)];
+    } else {
+        [self customBackButtonItem];
+    }
 }
 
 - (void)customBackButtonItem{
@@ -61,6 +71,17 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
+
+- (UIBarButtonItem *)customButtonWithImageName:(NSString *)imageName selector:(SEL)aSel {
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
+    UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
+    [customButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [customButton addTarget:self action:aSel forControlEvents:UIControlEventTouchUpInside];
+    [customView addSubview:customButton];
+    return [[UIBarButtonItem alloc] initWithCustomView:customView];
+}
+
+
 - (void)setBorderWidht:(CGFloat)widht
                  color:(UIColor*)color
           cornerRadius:(CGFloat)cornerRadius
@@ -76,6 +97,12 @@
 
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)showMenu {
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{
+        [self setupBarButtonsItems];
+    }];
 }
 
 - (CGSize)sizeString:(NSString *)string forLabel:(UILabel *)label {

@@ -120,8 +120,6 @@
 
 - (void)addNavigationButtons {
     self.navigationItem.titleView = self.buttonsView;
-    self.navigationItem.leftBarButtonItem = [self customButtonWithImageName:@"btn_menu"
-                                                                   selector:@selector(showMenu)];
     self.navigationItem.rightBarButtonItem = [self customButtonWithImageName:@"btn_add_place"
                                                                     selector:@selector(addImpression)];
 }
@@ -195,9 +193,6 @@
 }
 
 #pragma mark - Navigation actions
-- (void)showMenu {
-}
-
 - (void)addImpression {
 }
 

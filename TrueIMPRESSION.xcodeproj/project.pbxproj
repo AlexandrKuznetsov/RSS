@@ -127,6 +127,24 @@
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
 		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
 		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
+		8B890A02189436030032F761 /* TIMLeftSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A00189436030032F761 /* TIMLeftSideViewController.m */; };
+		8B890A03189436030032F761 /* TIMLeftSideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A01189436030032F761 /* TIMLeftSideViewController.xib */; };
+		8B890A0818944DFD0032F761 /* TIMGlobalSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A0618944DFD0032F761 /* TIMGlobalSettingsController.m */; };
+		8B890A0918944DFD0032F761 /* TIMGlobalSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A0718944DFD0032F761 /* TIMGlobalSettingsController.xib */; };
+		8B890A0E189458740032F761 /* TIMImpressionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A0C189458740032F761 /* TIMImpressionsController.m */; };
+		8B890A0F189458740032F761 /* TIMImpressionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A0D189458740032F761 /* TIMImpressionsController.xib */; };
+		8B890A14189458E50032F761 /* TIMSubscriptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A12189458E50032F761 /* TIMSubscriptionsController.m */; };
+		8B890A15189458E50032F761 /* TIMSubscriptionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A13189458E50032F761 /* TIMSubscriptionsController.xib */; };
+		8B890A1A189459470032F761 /* TIMFeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A18189459470032F761 /* TIMFeedController.m */; };
+		8B890A1B189459470032F761 /* TIMFeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A19189459470032F761 /* TIMFeedController.xib */; };
+		8B890A20189459BC0032F761 /* TIMFavouritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A1E189459BC0032F761 /* TIMFavouritesController.m */; };
+		8B890A21189459BC0032F761 /* TIMFavouritesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A1F189459BC0032F761 /* TIMFavouritesController.xib */; };
+		8B890A2618945A180032F761 /* TIMSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A2418945A180032F761 /* TIMSearchController.m */; };
+		8B890A2718945A180032F761 /* TIMSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A2518945A180032F761 /* TIMSearchController.xib */; };
+		8B890A2B18945A7F0032F761 /* TIMFriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A2918945A7F0032F761 /* TIMFriendsController.m */; };
+		8B890A2C18945A7F0032F761 /* TIMFriendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A2A18945A7F0032F761 /* TIMFriendsController.xib */; };
+		8B890A3218945ADB0032F761 /* TIMHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B890A3018945ADB0032F761 /* TIMHelpViewController.m */; };
+		8B890A3318945ADB0032F761 /* TIMHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B890A3118945ADB0032F761 /* TIMHelpViewController.xib */; };
 		8B9283B918832F34009F93C0 /* btn_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B718832F34009F93C0 /* btn_ok.png */; };
 		8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283B818832F34009F93C0 /* btn_ok@2x.png */; };
 		8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9283BB18833876009F93C0 /* btn_add_place@2x.png */; };
@@ -351,6 +369,33 @@
 		8B8791D918859D21004E177E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Images/Registration/line@2x.png"; sourceTree = "<group>"; };
 		8B8791DC1885CC9A004E177E /* TIMContinueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMContinueButton.h; path = "Custom Elements/TIMContinueButton.h"; sourceTree = "<group>"; };
 		8B8791DD1885CC9A004E177E /* TIMContinueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMContinueButton.m; path = "Custom Elements/TIMContinueButton.m"; sourceTree = "<group>"; };
+		8B8909FF189436030032F761 /* TIMLeftSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMLeftSideViewController.h; path = Controllers/TIMLeftSideViewController.h; sourceTree = "<group>"; };
+		8B890A00189436030032F761 /* TIMLeftSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMLeftSideViewController.m; path = Controllers/TIMLeftSideViewController.m; sourceTree = "<group>"; };
+		8B890A01189436030032F761 /* TIMLeftSideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMLeftSideViewController.xib; path = Controllers/TIMLeftSideViewController.xib; sourceTree = "<group>"; };
+		8B890A0518944DFD0032F761 /* TIMGlobalSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMGlobalSettingsController.h; path = Controllers/TIMGlobalSettingsController.h; sourceTree = "<group>"; };
+		8B890A0618944DFD0032F761 /* TIMGlobalSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMGlobalSettingsController.m; path = Controllers/TIMGlobalSettingsController.m; sourceTree = "<group>"; };
+		8B890A0718944DFD0032F761 /* TIMGlobalSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMGlobalSettingsController.xib; path = Controllers/TIMGlobalSettingsController.xib; sourceTree = "<group>"; };
+		8B890A0B189458740032F761 /* TIMImpressionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMImpressionsController.h; path = Controllers/TIMImpressionsController.h; sourceTree = "<group>"; };
+		8B890A0C189458740032F761 /* TIMImpressionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMImpressionsController.m; path = Controllers/TIMImpressionsController.m; sourceTree = "<group>"; };
+		8B890A0D189458740032F761 /* TIMImpressionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMImpressionsController.xib; path = Controllers/TIMImpressionsController.xib; sourceTree = "<group>"; };
+		8B890A11189458E50032F761 /* TIMSubscriptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMSubscriptionsController.h; path = Controllers/TIMSubscriptionsController.h; sourceTree = "<group>"; };
+		8B890A12189458E50032F761 /* TIMSubscriptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMSubscriptionsController.m; path = Controllers/TIMSubscriptionsController.m; sourceTree = "<group>"; };
+		8B890A13189458E50032F761 /* TIMSubscriptionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMSubscriptionsController.xib; path = Controllers/TIMSubscriptionsController.xib; sourceTree = "<group>"; };
+		8B890A17189459470032F761 /* TIMFeedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMFeedController.h; path = Controllers/TIMFeedController.h; sourceTree = "<group>"; };
+		8B890A18189459470032F761 /* TIMFeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMFeedController.m; path = Controllers/TIMFeedController.m; sourceTree = "<group>"; };
+		8B890A19189459470032F761 /* TIMFeedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMFeedController.xib; path = Controllers/TIMFeedController.xib; sourceTree = "<group>"; };
+		8B890A1D189459BC0032F761 /* TIMFavouritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMFavouritesController.h; path = Controllers/TIMFavouritesController.h; sourceTree = "<group>"; };
+		8B890A1E189459BC0032F761 /* TIMFavouritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMFavouritesController.m; path = Controllers/TIMFavouritesController.m; sourceTree = "<group>"; };
+		8B890A1F189459BC0032F761 /* TIMFavouritesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMFavouritesController.xib; path = Controllers/TIMFavouritesController.xib; sourceTree = "<group>"; };
+		8B890A2318945A180032F761 /* TIMSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMSearchController.h; path = Controllers/TIMSearchController.h; sourceTree = "<group>"; };
+		8B890A2418945A180032F761 /* TIMSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMSearchController.m; path = Controllers/TIMSearchController.m; sourceTree = "<group>"; };
+		8B890A2518945A180032F761 /* TIMSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMSearchController.xib; path = Controllers/TIMSearchController.xib; sourceTree = "<group>"; };
+		8B890A2818945A7F0032F761 /* TIMFriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMFriendsController.h; path = Controllers/TIMFriendsController.h; sourceTree = "<group>"; };
+		8B890A2918945A7F0032F761 /* TIMFriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMFriendsController.m; path = Controllers/TIMFriendsController.m; sourceTree = "<group>"; };
+		8B890A2A18945A7F0032F761 /* TIMFriendsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMFriendsController.xib; path = Controllers/TIMFriendsController.xib; sourceTree = "<group>"; };
+		8B890A2F18945ADB0032F761 /* TIMHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMHelpViewController.h; path = Controllers/TIMHelpViewController.h; sourceTree = "<group>"; };
+		8B890A3018945ADB0032F761 /* TIMHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMHelpViewController.m; path = Controllers/TIMHelpViewController.m; sourceTree = "<group>"; };
+		8B890A3118945ADB0032F761 /* TIMHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMHelpViewController.xib; path = Controllers/TIMHelpViewController.xib; sourceTree = "<group>"; };
 		8B9283B718832F34009F93C0 /* btn_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_ok.png; path = Images/Registration/btn_ok.png; sourceTree = "<group>"; };
 		8B9283B818832F34009F93C0 /* btn_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_ok@2x.png"; path = "Images/Registration/btn_ok@2x.png"; sourceTree = "<group>"; };
 		8B9283BB18833876009F93C0 /* btn_add_place@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_add_place@2x.png"; path = "Images/Registration/btn_add_place@2x.png"; sourceTree = "<group>"; };
@@ -595,6 +640,15 @@
 		8B7385441881EA0200D1E0C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8B890A2E18945ABF0032F761 /* Help Controller */,
+				8B890A2D18945A850032F761 /* Friends Controller */,
+				8B890A22189459FF0032F761 /* Search Controller */,
+				8B890A1C1894599F0032F761 /* Favourites Controller */,
+				8B890A16189459320032F761 /* Feed Controller */,
+				8B890A10189458C50032F761 /* SubscriptionsController */,
+				8B890A0A1894583A0032F761 /* ImpressionsController */,
+				8B890A0418944DB10032F761 /* GlobalSettingsController */,
+				8B8909FE189435DB0032F761 /* LeftViewController */,
 				C5E67DC91889B778000CB56B /* SettingsController */,
 				8B7B0A94188C348C00E95FFD /* Table View Controller */,
 				8B7385461881EA2900D1E0C2 /* Custom Nav Controller */,
@@ -840,6 +894,96 @@
 				8B7B0A7A188BAC5400E95FFD /* mask_place@2x.png */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		8B8909FE189435DB0032F761 /* LeftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8B8909FF189436030032F761 /* TIMLeftSideViewController.h */,
+				8B890A00189436030032F761 /* TIMLeftSideViewController.m */,
+				8B890A01189436030032F761 /* TIMLeftSideViewController.xib */,
+			);
+			name = LeftViewController;
+			sourceTree = "<group>";
+		};
+		8B890A0418944DB10032F761 /* GlobalSettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A0518944DFD0032F761 /* TIMGlobalSettingsController.h */,
+				8B890A0618944DFD0032F761 /* TIMGlobalSettingsController.m */,
+				8B890A0718944DFD0032F761 /* TIMGlobalSettingsController.xib */,
+			);
+			name = GlobalSettingsController;
+			sourceTree = "<group>";
+		};
+		8B890A0A1894583A0032F761 /* ImpressionsController */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A0B189458740032F761 /* TIMImpressionsController.h */,
+				8B890A0C189458740032F761 /* TIMImpressionsController.m */,
+				8B890A0D189458740032F761 /* TIMImpressionsController.xib */,
+			);
+			name = ImpressionsController;
+			sourceTree = "<group>";
+		};
+		8B890A10189458C50032F761 /* SubscriptionsController */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A11189458E50032F761 /* TIMSubscriptionsController.h */,
+				8B890A12189458E50032F761 /* TIMSubscriptionsController.m */,
+				8B890A13189458E50032F761 /* TIMSubscriptionsController.xib */,
+			);
+			name = SubscriptionsController;
+			sourceTree = "<group>";
+		};
+		8B890A16189459320032F761 /* Feed Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A17189459470032F761 /* TIMFeedController.h */,
+				8B890A18189459470032F761 /* TIMFeedController.m */,
+				8B890A19189459470032F761 /* TIMFeedController.xib */,
+			);
+			name = "Feed Controller";
+			sourceTree = "<group>";
+		};
+		8B890A1C1894599F0032F761 /* Favourites Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A1D189459BC0032F761 /* TIMFavouritesController.h */,
+				8B890A1E189459BC0032F761 /* TIMFavouritesController.m */,
+				8B890A1F189459BC0032F761 /* TIMFavouritesController.xib */,
+			);
+			name = "Favourites Controller";
+			sourceTree = "<group>";
+		};
+		8B890A22189459FF0032F761 /* Search Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A2318945A180032F761 /* TIMSearchController.h */,
+				8B890A2418945A180032F761 /* TIMSearchController.m */,
+				8B890A2518945A180032F761 /* TIMSearchController.xib */,
+			);
+			name = "Search Controller";
+			sourceTree = "<group>";
+		};
+		8B890A2D18945A850032F761 /* Friends Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A2818945A7F0032F761 /* TIMFriendsController.h */,
+				8B890A2918945A7F0032F761 /* TIMFriendsController.m */,
+				8B890A2A18945A7F0032F761 /* TIMFriendsController.xib */,
+			);
+			name = "Friends Controller";
+			sourceTree = "<group>";
+		};
+		8B890A2E18945ABF0032F761 /* Help Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B890A2F18945ADB0032F761 /* TIMHelpViewController.h */,
+				8B890A3018945ADB0032F761 /* TIMHelpViewController.m */,
+				8B890A3118945ADB0032F761 /* TIMHelpViewController.xib */,
+			);
+			name = "Help Controller";
 			sourceTree = "<group>";
 		};
 		8B9283D018835918009F93C0 /* Image View */ = {
@@ -1176,12 +1320,14 @@
 				8B7384FF1881D10E00D1E0C2 /* camera-take-icon-hover@2x.png in Resources */,
 				8B7385071881D10E00D1E0C2 /* flag_ru.png in Resources */,
 				8B7385031881D10E00D1E0C2 /* default-wallpaper.png in Resources */,
+				8B890A15189458E50032F761 /* TIMSubscriptionsController.xib in Resources */,
 				8B8791DB18859D21004E177E /* line@2x.png in Resources */,
 				8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */,
 				8B7385331881D10E00D1E0C2 /* logo@2x.png in Resources */,
 				8B7B0A99188C34B300E95FFD /* TIMTableViewController.xib in Resources */,
 				8B7385411881D10E00D1E0C2 /* toolbar-home@2x.png in Resources */,
 				8B73853E1881D10E00D1E0C2 /* title-image.png in Resources */,
+				8B890A21189459BC0032F761 /* TIMFavouritesController.xib in Resources */,
 				8B7385131881D10E00D1E0C2 /* home-button-waves.png in Resources */,
 				8B7B0A6B188B142400E95FFD /* top_panel_64.png in Resources */,
 				8B7385251881D10E00D1E0C2 /* icon-toolbar-search.png in Resources */,
@@ -1194,6 +1340,8 @@
 				C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */,
 				8BA5B50D18815D09009ED9D8 /* InfoPlist.strings in Resources */,
 				8B7384FA1881D10E00D1E0C2 /* camera-delete-icon-hover.png in Resources */,
+				8B890A1B189459470032F761 /* TIMFeedController.xib in Resources */,
+				8B890A03189436030032F761 /* TIMLeftSideViewController.xib in Resources */,
 				C550EDE318871C9500C8CFD4 /* OpenSans-Italic.ttf in Resources */,
 				8B73851A1881D10E00D1E0C2 /* icon-feed-info@2x.png in Resources */,
 				8B7B0A80188BAC5400E95FFD /* btn_search@2x.png in Resources */,
@@ -1207,6 +1355,7 @@
 				8B7385121881D10E00D1E0C2 /* home-button-down@2x.png in Resources */,
 				8B7385351881D10E00D1E0C2 /* reg-circle@2x.png in Resources */,
 				8B7385371881D10E00D1E0C2 /* register-window@2x.png in Resources */,
+				8B890A0918944DFD0032F761 /* TIMGlobalSettingsController.xib in Resources */,
 				8B7384F71881D10E00D1E0C2 /* camera-choose-icon-hover@2x.png in Resources */,
 				8B73851D1881D10E00D1E0C2 /* icon-home-settings.png in Resources */,
 				8B73852A1881D10E00D1E0C2 /* login-area.png in Resources */,
@@ -1214,6 +1363,7 @@
 				8B7384FB1881D10E00D1E0C2 /* camera-delete-icon-hover@2x.png in Resources */,
 				C5E67DD81889F18C000CB56B /* off.png in Resources */,
 				8B73851E1881D10E00D1E0C2 /* icon-home-settings@2x.png in Resources */,
+				8B890A3318945ADB0032F761 /* TIMHelpViewController.xib in Resources */,
 				8B7B0A7C188BAC5400E95FFD /* bnt_events@2x.png in Resources */,
 				8B7385091881D10E00D1E0C2 /* flag-ru.png in Resources */,
 				8B7384FD1881D10E00D1E0C2 /* camera-delete-icon@2x.png in Resources */,
@@ -1244,6 +1394,7 @@
 				8B8791DA18859D21004E177E /* line.png in Resources */,
 				8B7385181881D10E00D1E0C2 /* icon-done@2x.png in Resources */,
 				8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */,
+				8B890A2718945A180032F761 /* TIMSearchController.xib in Resources */,
 				C550EDEB18871C9500C8CFD4 /* OpenSans-CondLight.ttf in Resources */,
 				8B7B0A6C188B142400E95FFD /* top_panel_64@2x.png in Resources */,
 				8B73856F1881F37E00D1E0C2 /* TIMStepOneRegViewController.xib in Resources */,
@@ -1254,9 +1405,11 @@
 				C5E67DDA1889F18C000CB56B /* on.png in Resources */,
 				8B73853D1881D10E00D1E0C2 /* text-field@2x.png in Resources */,
 				8B73852B1881D10E00D1E0C2 /* login-area@2x.png in Resources */,
+				8B890A0F189458740032F761 /* TIMImpressionsController.xib in Resources */,
 				8B9283BA18832F34009F93C0 /* btn_ok@2x.png in Resources */,
 				8B9283C818833876009F93C0 /* btn_menu.png in Resources */,
 				8B7384F81881D10E00D1E0C2 /* camera-choose-icon.png in Resources */,
+				8B890A2C18945A7F0032F761 /* TIMFriendsController.xib in Resources */,
 				8BA5B51518815D09009ED9D8 /* Images.xcassets in Resources */,
 				8B7B0A7B188BAC5400E95FFD /* bnt_events.png in Resources */,
 				8B7385051881D10E00D1E0C2 /* disclosure-icon@2x.png in Resources */,
@@ -1314,17 +1467,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B7B0A86188BB60500E95FFD /* TIMModelWithStaticData.m in Sources */,
+				8B890A02189436030032F761 /* TIMLeftSideViewController.m in Sources */,
 				8B95745118881EE10095392D /* TIMContinueButton.m in Sources */,
 				8B68797D188D7AC1007EB325 /* TIMStatisticsModel.m in Sources */,
+				8B890A2618945A180032F761 /* TIMSearchController.m in Sources */,
 				8BA5B50F18815D09009ED9D8 /* main.m in Sources */,
+				8B890A14189458E50032F761 /* TIMSubscriptionsController.m in Sources */,
 				8B7385581881F22000D1E0C2 /* TIMHomeNavigationViewController.m in Sources */,
 				8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */,
 				8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */,
 				8B7B0A98188C34B300E95FFD /* TIMTableViewController.m in Sources */,
+				8B890A20189459BC0032F761 /* TIMFavouritesController.m in Sources */,
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
+				8B890A3218945ADB0032F761 /* TIMHelpViewController.m in Sources */,
+				8B890A1A189459470032F761 /* TIMFeedController.m in Sources */,
 				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,
 				8B687982188D8155007EB325 /* TIMStatistic.m in Sources */,
+				8B890A0E189458740032F761 /* TIMImpressionsController.m in Sources */,
 				8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */,
 				8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */,
@@ -1332,10 +1492,12 @@
 				C55CF01618940AEC00AF64DB /* Reachability.m in Sources */,
 				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
 				8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */,
+				8B890A0818944DFD0032F761 /* TIMGlobalSettingsController.m in Sources */,
 				C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */,
 				8B9283D31883593B009F93C0 /* TIMRoundedImageView.m in Sources */,
 				8B73854F1881F0BC00D1E0C2 /* TIMNavigationViewController.m in Sources */,
 				C55CF0131893EC2500AF64DB /* TIMKeychain.m in Sources */,
+				8B890A2B18945A7F0032F761 /* TIMFriendsController.m in Sources */,
 				8B9283CD188350A0009F93C0 /* TIMHomeNavButtonsView.m in Sources */,
 				8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */,
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,

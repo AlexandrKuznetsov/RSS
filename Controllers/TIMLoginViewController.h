@@ -20,8 +20,6 @@
 #define PASSWORD_FIELD_TAG 2
 #define MAIL_FIELD_TAG 3
 
-#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
-
 @interface TIMLoginViewController : UIViewController < UITextFieldDelegate >
 
 @property (weak, nonatomic) IBOutlet UIView *loginView;

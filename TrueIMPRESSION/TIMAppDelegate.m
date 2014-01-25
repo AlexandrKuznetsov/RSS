@@ -17,9 +17,16 @@
     TIMHomeProfileViewController *homeViewController = [[TIMHomeProfileViewController alloc]
                                                         initWithNibName:@"TIMHomeProfileViewController"
                                                         bundle:[NSBundle mainBundle]];
+    TIMLeftSideViewController *leftSideController = [[TIMLeftSideViewController alloc]
+                                                     initWithNibName:@"TIMLeftSideViewController"
+                                                     bundle:[NSBundle mainBundle]];
     TIMHomeNavigationViewController *homeNavigation = [[TIMHomeNavigationViewController alloc]
                                                        initWithRootViewController:homeViewController];
-    self.window.rootViewController = homeNavigation;
+    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController containerWithCenterViewController:homeNavigation
+                                                                                                 leftMenuViewController:leftSideController
+                                                                                                rightMenuViewController:nil];
+    
+    self.window.rootViewController = container;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [self setAppearance];
