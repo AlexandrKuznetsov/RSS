@@ -198,9 +198,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)setUserWalpaper:(UIImage *)userWalpaper {
-    if (!userWalpaper) {
-        userWalpaper = [UIImage imageNamed:@"default-wallpaper.png"];
-    }
+//    if (!userWalpaper) {
+//        userWalpaper = [UIImage imageNamed:@"default-wallpaper.png"];
+//    }
     _userWalpaper = userWalpaper;
     [self.user setObject:[self saveImage:_userWalpaper withName:@"walpaper"] forKey:@"walpaper"];
 }
@@ -305,9 +305,10 @@ static TIMLocalUserInfo *sharedInstance = nil;
 - (UIImage *)userWalpaper {
     if ([self.user objectForKey:@"walpaper"]) {
         return [self imageByFolderPath:[self.user objectForKey:@"walpaper"]];
-    } else {
-        return [UIImage imageNamed:@"default-wallpaper.png"];
-    }
+    } else return nil;
+//    } else {
+//        return [UIImage imageNamed:@"default-wallpaper.png"];
+//    }
 }
 
 - (UIImage *)userFlag {

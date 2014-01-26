@@ -92,9 +92,6 @@
         avaImage = [UIImage imageNamed:@"default-avatar.png"];
     }
     UIImage* walpaperImage = [[TIMLocalUserInfo sharedInstance] userWalpaper];
-    if (!walpaperImage) {
-        walpaperImage = [UIImage imageNamed:@"default-wallpaper.png"];
-    }
     _imageViewAvatar.image = avaImage;
     _imageViewCover.image = walpaperImage;
     [self calculateAboutMySelsBlock];

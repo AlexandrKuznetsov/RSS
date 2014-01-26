@@ -99,6 +99,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     self.activeTextField = textField;
+    textField.placeholder = @"";
     switch (textField.tag) {
         case birthday:
             [self createDatePickerToTextField:textField];
