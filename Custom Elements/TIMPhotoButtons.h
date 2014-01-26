@@ -24,6 +24,9 @@
 @interface TIMPhotoButtons : UIView{
     
     
+    __weak IBOutlet UIButton *deleteButton;
+    __weak IBOutlet UIButton *loadButton;
+    __weak IBOutlet UIButton *makeButton;
     __weak IBOutlet UILabel *deletePhotoLabel;
     __weak IBOutlet UILabel *loadPhotoLabel;
     __weak IBOutlet UILabel *makePhotoLabel;

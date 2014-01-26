@@ -34,6 +34,10 @@
     makePhotoLabel.font = [UIFont lightFontWithSize:11];
     loadPhotoLabel.font = [UIFont lightFontWithSize:11];
     deletePhotoLabel.font = [UIFont lightFontWithSize:11];
+    
+    [makeButton setImage:[UIImage imageNamed:@"make_on.png"] forState:UIControlStateHighlighted];
+    [loadButton setImage:[UIImage imageNamed:@"load_on.png"] forState:UIControlStateHighlighted];
+    [deleteButton setImage:[UIImage imageNamed:@"remove_on.png"] forState:UIControlStateHighlighted];
 }
 
 /*

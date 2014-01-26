@@ -26,7 +26,7 @@
                         <color key="textColor" red="0.50980392156862742" green="0.51764705882352935" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="s3U-sK-ISn">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-avatar_place.png" translatesAutoresizingMaskIntoConstraints="NO" id="s3U-sK-ISn">
                         <rect key="frame" x="32" y="20" width="86" height="86"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -73,7 +73,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="default-avatar.png" width="336" height="336"/>
+        <image name="default-avatar_place.png" width="336" height="336"/>
         <image name="flag-ru.png" width="18" height="18"/>
         <image name="icon-feed-place.png" width="30" height="30"/>
         <image name="mask_place.png" width="86" height="86"/>

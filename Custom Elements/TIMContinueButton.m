@@ -21,7 +21,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        UIImage *backgroundImage = [[UIImage imageNamed:@"btn_green.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 28, 16, 28)];
+        UIImage *backgroundImage = [[UIImage imageNamed:@"btn_green.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 22, 0, 22)];
         [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
     }
     return self;

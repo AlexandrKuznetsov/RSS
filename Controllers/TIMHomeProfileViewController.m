@@ -72,6 +72,7 @@
     self.imprTextLabel.font = [UIFont regularFontWithSize:10.0f];
     self.placeesTextLabel.font = [UIFont regularFontWithSize:10.0f];
     self.settingsOutlet.titleLabel.font = [UIFont semiBoldFontWithSize:10.0f];
+    [self.settingsOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 }
 
 #pragma mark - Checkings
