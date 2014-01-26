@@ -54,14 +54,14 @@
     _cellsNameArray = @[@"",
                         @"Имя фамилия",
                         @"",
-                        @"     Мои впечатления",
-                        @"     Мои подписки",
-                        @"     Лента событий",
-                        @"     Избранное",
-                        @"     Поиск",
-                        @"     Друзья",
-                        @"     Настройки",
-                        @"     Помощь",
+                        @"Мои впечатления",
+                        @"Мои подписки",
+                        @"Лента событий",
+                        @"Избранное",
+                        @"Поиск",
+                        @"Друзья",
+                        @"Настройки",
+                        @"Помощь",
                         @"",
                         @"Выход"];
     [self.tableView reloadData];
@@ -108,12 +108,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"menuCell";
+    TIMMenuCell* cell = (TIMMenuCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        NSArray *topLevelItems = [[NSBundle mainBundle] loadNibNamed:@"TIMMenuCell" owner:nil options:nil];
+        cell = [topLevelItems lastObject];
     }
-    cell.textLabel.text = _cellsNameArray[indexPath.row];
+    if (indexPath.row == 1) {
+        cell.isProfile = YES;
+    }
+    if (indexPath.row == 12) {
+        cell.isExit = YES;
+    }
+    NSString *text = _cellsNameArray[indexPath.row];
+    if (text.length != 0) {
+        cell.canSelect = YES;
+    }
+    cell.nameLabel.text = text;
     return cell;
 }
 

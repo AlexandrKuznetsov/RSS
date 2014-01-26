@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TIMMenuCell.h"
 
 #import "TIMGlobalSettingsController.h"
 #import "TIMHomeNavigationViewController.h"

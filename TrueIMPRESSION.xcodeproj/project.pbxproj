@@ -179,6 +179,8 @@
 		8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */; };
 		8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */; };
 		8BEAFDD218848A6B00D6A2BA /* TIMProfileImpressionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */; };
+		8BFB28411895951F0078F648 /* TIMMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB28401895951F0078F648 /* TIMMenuCell.m */; };
+		8BFB2843189595360078F648 /* TIMMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFB2842189595360078F648 /* TIMMenuCell.xib */; };
 		C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */; };
 		C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */; };
 		C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */; };
@@ -437,6 +439,9 @@
 		8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMProfileInfoCell.m; path = "Custom Elements/cells/TIMProfileInfoCell.m"; sourceTree = "<group>"; };
 		8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMProfileInfoCell.xib; path = "Custom Elements/cells/TIMProfileInfoCell.xib"; sourceTree = "<group>"; };
 		8BEAFDD118848A6B00D6A2BA /* TIMProfileImpressionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMProfileImpressionCell.xib; path = "Custom Elements/cells/TIMProfileImpressionCell.xib"; sourceTree = "<group>"; };
+		8BFB283F1895951F0078F648 /* TIMMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMMenuCell.h; path = "Custom Elements/TIMMenuCell.h"; sourceTree = "<group>"; };
+		8BFB28401895951F0078F648 /* TIMMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMMenuCell.m; path = "Custom Elements/TIMMenuCell.m"; sourceTree = "<group>"; };
+		8BFB2842189595360078F648 /* TIMMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMMenuCell.xib; sourceTree = "<group>"; };
 		C550EDCE18871C9500C8CFD4 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -1098,6 +1103,7 @@
 		8BEAFDC41884818900D6A2BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8BFB283E189594CD0078F648 /* Menu cell */,
 				8BEAFDCB188489CE00D6A2BA /* Profile info cell */,
 				8BEAFDC51884819600D6A2BA /* Profile impr cell */,
 			);
@@ -1122,6 +1128,16 @@
 				8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */,
 			);
 			name = "Profile info cell";
+			sourceTree = "<group>";
+		};
+		8BFB283E189594CD0078F648 /* Menu cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BFB283F1895951F0078F648 /* TIMMenuCell.h */,
+				8BFB28401895951F0078F648 /* TIMMenuCell.m */,
+				8BFB2842189595360078F648 /* TIMMenuCell.xib */,
+			);
+			name = "Menu cell";
 			sourceTree = "<group>";
 		};
 		C550EDCC18871C9500C8CFD4 /* Fonts */ = {
@@ -1368,6 +1384,7 @@
 				8B7385091881D10E00D1E0C2 /* flag-ru.png in Resources */,
 				8B7384FD1881D10E00D1E0C2 /* camera-delete-icon@2x.png in Resources */,
 				C550EDE918871C9500C8CFD4 /* LICENSE.txt in Resources */,
+				8BFB2843189595360078F648 /* TIMMenuCell.xib in Resources */,
 				8B7385211881D10E00D1E0C2 /* icon-toolbar-eye.png in Resources */,
 				8BB0852C188DCA9A00FC3792 /* email.png in Resources */,
 				C5E67DD91889F18C000CB56B /* off@2x.png in Resources */,
@@ -1501,6 +1518,7 @@
 				8B9283CD188350A0009F93C0 /* TIMHomeNavButtonsView.m in Sources */,
 				8B738581188203E100D1E0C2 /* TIMLoginButtonSmall.m in Sources */,
 				8B7385521881F15400D1E0C2 /* TIMRegistrationNavController.m in Sources */,
+				8BFB28411895951F0078F648 /* TIMMenuCell.m in Sources */,
 				8B7385601881F29B00D1E0C2 /* TIMHomeProfileViewController.m in Sources */,
 				8B7385661881F2E600D1E0C2 /* TIMLoginViewController.m in Sources */,
 				C550EDEF18871CCE00C8CFD4 /* UIFont+TIFonts.m in Sources */,
