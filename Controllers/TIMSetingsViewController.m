@@ -169,7 +169,7 @@
                                            CGRectGetMaxY(textViewAboveMySelfInfo.frame))];
 }
 
-- (void)setFontsToTextViewsInView:(UIView*)editingView{
+- (void)setFontsToTextViewsInView:(UIView*)editingView {
     for (UIView* view in [editingView subviews]) {
         if ([[view subviews] count] > 0) {
             [self setFontsToTextViewsInView:view];
