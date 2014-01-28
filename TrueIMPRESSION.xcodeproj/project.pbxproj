@@ -12,6 +12,8 @@
 		8B47454A1897A5CA00FCE895 /* icon_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745461897A5CA00FCE895 /* icon_logout.png */; };
 		8B47454B1897A5CA00FCE895 /* icon_profile_swipemenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745471897A5CA00FCE895 /* icon_profile_swipemenu@2x.png */; };
 		8B47454C1897A5CA00FCE895 /* icon_profile_swipemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745481897A5CA00FCE895 /* icon_profile_swipemenu.png */; };
+		8B47454F1897A82C00FCE895 /* icon_profilesettings_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B47454D1897A82C00FCE895 /* icon_profilesettings_on.png */; };
+		8B4745501897A82C00FCE895 /* icon_profilesettings_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B47454E1897A82C00FCE895 /* icon_profilesettings_on@2x.png */; };
 		8B68797D188D7AC1007EB325 /* TIMStatisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */; };
 		8B687982188D8155007EB325 /* TIMStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B687981188D8155007EB325 /* TIMStatistic.m */; };
 		8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384A71881D10D00D1E0C2 /* camera-choose-icon-hover.png */; };
@@ -241,6 +243,8 @@
 		8B4745461897A5CA00FCE895 /* icon_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_logout.png; path = Images/icon_logout.png; sourceTree = "<group>"; };
 		8B4745471897A5CA00FCE895 /* icon_profile_swipemenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_profile_swipemenu@2x.png"; path = "Images/icon_profile_swipemenu@2x.png"; sourceTree = "<group>"; };
 		8B4745481897A5CA00FCE895 /* icon_profile_swipemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_profile_swipemenu.png; path = Images/icon_profile_swipemenu.png; sourceTree = "<group>"; };
+		8B47454D1897A82C00FCE895 /* icon_profilesettings_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_profilesettings_on.png; path = Images/icon_profilesettings_on.png; sourceTree = "<group>"; };
+		8B47454E1897A82C00FCE895 /* icon_profilesettings_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_profilesettings_on@2x.png"; path = "Images/icon_profilesettings_on@2x.png"; sourceTree = "<group>"; };
 		8B68797B188D7AC1007EB325 /* TIMStatisticsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMStatisticsModel.h; sourceTree = "<group>"; };
 		8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMStatisticsModel.m; sourceTree = "<group>"; };
 		8B687980188D8155007EB325 /* TIMStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStatistic.h; path = "Server objects/TIMStatistic.h"; sourceTree = "<group>"; };
@@ -928,6 +932,8 @@
 		8B816F831889D7E900C7DACA /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8B47454D1897A82C00FCE895 /* icon_profilesettings_on.png */,
+				8B47454E1897A82C00FCE895 /* icon_profilesettings_on@2x.png */,
 				8BB08521188DC9C000FC3792 /* bg_angle.png */,
 				8BB08527188DC9D700FC3792 /* bg_angle@2x.png */,
 				8B7B0A73188BAC5400E95FFD /* bnt_events.png */,
@@ -1343,6 +1349,7 @@
 				8B7B0A6E188B183E00E95FFD /* top_panel_44@2x.png in Resources */,
 				8B7385421881D10E00D1E0C2 /* top-title.png in Resources */,
 				8B73853C1881D10E00D1E0C2 /* text-field.png in Resources */,
+				8B4745501897A82C00FCE895 /* icon_profilesettings_on@2x.png in Resources */,
 				8BFB284F1895A4890078F648 /* remove_on@2x.png in Resources */,
 				8B73852E1881D10E00D1E0C2 /* login-button-down.png in Resources */,
 				8B7B0A81188BAC5400E95FFD /* mask_place.png in Resources */,
@@ -1400,6 +1407,7 @@
 				8B9283C718833876009F93C0 /* btn_menu@2x.png in Resources */,
 				8B7E762A1891C8E10076F51B /* README.md in Resources */,
 				8B7385341881D10E00D1E0C2 /* reg-circle.png in Resources */,
+				8B47454F1897A82C00FCE895 /* icon_profilesettings_on.png in Resources */,
 				C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */,
 				8BA5B50D18815D09009ED9D8 /* InfoPlist.strings in Resources */,
 				8B7384FA1881D10E00D1E0C2 /* camera-delete-icon-hover.png in Resources */,
