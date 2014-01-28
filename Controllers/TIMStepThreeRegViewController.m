@@ -107,8 +107,24 @@
                                                   profession:self.professionLabel.text
                                                        about:self.aboutTextView.text];
         [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
-        [self dismissRegistration];
+        __weak TIMStepThreeRegViewController* weakSelf = self;
+        [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
+            if (!error) {
+                [weakSelf dismissRegistration];
+            } else {
+                [weakSelf showError:[error localizedDescription]];
+            }
+        }];
     }
+}
+
+- (void)showError:(NSString*)error{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка!"
+                                                        message:error
+                                                       delegate:nil
+                                              cancelButtonTitle:@"ОK"
+                                              otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 #pragma mark - Navigation

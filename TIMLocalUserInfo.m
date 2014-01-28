@@ -20,8 +20,8 @@
 @synthesize interests = _interests;
 @synthesize profession = _profession;
 @synthesize aboutMe = _aboutMe;
-@synthesize userPhoto = _userPhoto;
-@synthesize userWalpaper = _userWalpaper;
+//@synthesize userPhoto = _userPhoto;
+//@synthesize userWalpaper = _userWalpaper;
 @synthesize userFlag = _userFlag;
 
 static TIMLocalUserInfo *sharedInstance = nil;
@@ -60,6 +60,11 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.user = [[NSMutableDictionary alloc] init];
         return NO;
     }
+}
+
+- (void)deleteLocalUser{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
+    [self resetUserInfo];
 }
 
 - (void)saveUserInfoInUserDefaults {
@@ -189,21 +194,24 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [self.user setObject:aboutMe forKey:@"aboutMe"];
 }
 
-- (void)setUserPhoto:(UIImage *)userPhoto {
-    if (!userPhoto) {
-        userPhoto = [UIImage imageNamed:@"default-avatar.png"];
-    }
-    _userPhoto = userPhoto;
-    [self.user setObject:[self saveImage:_userPhoto withName:@"avatar"] forKey:@"avatar"];
-}
-
-- (void)setUserWalpaper:(UIImage *)userWalpaper {
-//    if (!userWalpaper) {
-//        userWalpaper = [UIImage imageNamed:@"default-wallpaper.png"];
+//- (void)setUserPhoto:(UIImage *)userPhoto {
+//    if (!userPhoto || [userPhoto isKindOfClass:([NSNull class])]) {
+//        userPhoto = [UIImage imageNamed:@"default-avatar.png"];
 //    }
-    _userWalpaper = userWalpaper;
-    [self.user setObject:[self saveImage:_userWalpaper withName:@"walpaper"] forKey:@"walpaper"];
-}
+//    _userPhoto = userPhoto;
+//    [self.user setObject:[self saveImage:_userPhoto withName:@"avatar"] forKey:@"avatar"];
+//}
+//
+//- (void)setUserWalpaper:(UIImage *)userWalpaper {
+//    if (!userWalpaper || [userWalpaper isKindOfClass:([NSNull class])]) {
+//        userWalpaper = [[UIImage alloc] init];
+//    }
+//    _userWalpaper = userWalpaper;
+//    NSString* imagePath = [self saveImage:_userWalpaper withName:@"walpaper"];
+//    if (imagePath) {
+//        [self.user setObject:imagePath forKey:@"walpaper"];
+//    }
+//}
 
 - (void)setEmail:(NSString *)email{
     if (!email || [email isKindOfClass:([NSNull class])]) {
@@ -244,6 +252,22 @@ static TIMLocalUserInfo *sharedInstance = nil;
     _privacyPlace = [privacyPlace copy];
     [self.user setObject:privacyPlace forKey:@"privacyPlace"];
 
+}
+
+- (void)setAvatarName:(NSString *)avatarName{
+    if (!avatarName || [avatarName isKindOfClass:([NSNull class])]) {
+        avatarName = @"";
+    }
+    _avatarName = [avatarName copy];
+    [self.user setObject:avatarName forKey:@"avatarName"];
+}
+
+- (void)setWallpaperName:(NSString *)wallpaperName{
+    if (!wallpaperName || [wallpaperName isKindOfClass:([NSNull class])]) {
+        wallpaperName = @"";
+    }
+    _wallpaperName = [wallpaperName copy];
+    [self.user setObject:wallpaperName forKey:@"wallpaperName"];
 }
 
 - (void)setPrivacyProfession:(NSString *)privacyProfession{
@@ -352,8 +376,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [allDAtaDict setValuesForKeysWithDictionary:someData];
     [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/update_settings" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (![operation.responseString hasPrefix:@"ERROR"]) {
-                self.loadDataBlock(nil, nil);
-                [self saveUserInfoInUserDefaults];
+            [self saveUserInfoInUserDefaults];
+            self.loadDataBlock(nil, nil);
         } else {
             self.loadDataBlock([NSError trueErrorWithServerResponseString:operation.responseString], nil);
         }
@@ -429,6 +453,30 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                      @"privacy_profession": self.privacyProfession,
                                      };
     return userDictionary;
+}
+
+- (void)resetUserInfo{
+    [self setName:nil];
+    [self setSurname:nil];
+    [self setEmail:nil];
+    [self setCity:nil];
+    [self setBirthday:nil];
+    [self setGender:nil];
+    [self setDefaultLanguage:nil];
+    [self setAvatarName:nil];
+    [self setWallpaperName:nil];
+    [self setProfession:nil];
+    [self setInterests:nil];
+    [self setAboutMe:nil];
+    [self setPrivacyOn:nil];
+    [self setPrivacyPlace:nil];
+    [self setPrivacyInterest:nil];
+    [self setPrivacyImpressions:nil];
+    [self setPrivacyProfession:nil];
+    
+//    [self setUserPhoto:nil];
+//    [self setUserWalpaper:nil];
+    [self setUserFlag:nil];
 }
 
 @end

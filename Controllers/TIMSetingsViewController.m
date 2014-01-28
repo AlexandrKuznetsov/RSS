@@ -87,13 +87,13 @@
     if ([[TIMLocalUserInfo sharedInstance].aboutMe length] > 0) {
         textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
     }
-    UIImage* avaImage = [[TIMLocalUserInfo sharedInstance] userPhoto];
-    if (!avaImage) {
-        avaImage = [UIImage imageNamed:@"default-avatar.png"];
+    UIImage* avaImage;
+    if (![[TIMLocalUserInfo sharedInstance] avatarName].length > 1) {
+         avaImage = [UIImage imageNamed:@"default-avatar.png"];
     }
-    UIImage* walpaperImage = [[TIMLocalUserInfo sharedInstance] userWalpaper];
+//    UIImage* walpaperImage = [[TIMLocalUserInfo sharedInstance] userWalpaper];
     _imageViewAvatar.image = avaImage;
-    _imageViewCover.image = walpaperImage;
+//    _imageViewCover.image = walpaperImage;
     [self calculateAboutMySelsBlock];
 }
 
@@ -111,8 +111,8 @@
     [[TIMLocalUserInfo sharedInstance] setBirthday:textFieldBirthday.text];
     [[TIMLocalUserInfo sharedInstance] setSurname:textFieldSeconName.text];
     [[TIMLocalUserInfo sharedInstance] setName:textFieldName.text];
-    [[TIMLocalUserInfo sharedInstance] setUserPhoto:_imageViewAvatar.image];
-    [[TIMLocalUserInfo sharedInstance] setUserWalpaper:_imageViewCover.image];
+//    [[TIMLocalUserInfo sharedInstance] setUserPhoto:_imageViewAvatar.image];
+//    [[TIMLocalUserInfo sharedInstance] setUserWalpaper:_imageViewCover.image];
     
     NSString* anonymous;
     if (anonymousUser) {

@@ -176,7 +176,7 @@
 - (void)showAlertWithMessage:(NSString *)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                     message:message
-                                                   delegate:self
+                                                   delegate:nil
                                           cancelButtonTitle:@"ОК"
                                           otherButtonTitles:nil];
     [alert show];
@@ -263,20 +263,34 @@
 
 - (void) sendLogin:(NSString *)login andPassword:(NSString *)password {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[TIMLocalUserInfo sharedInstance] deleteLocalUser];
+    __weak TIMLoginViewController* weakSelf = self;
     [[TIMAPIRequests sharedManager] postEmail:login password:password withCompletition:^(NSError *error, id response) {
         if (error) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
             if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
-                self.errorTextLabel.text = @"Отсутствует интернет подключение!";
-                [self showErrorView];
+                weakSelf.errorTextLabel.text = @"Отсутствует интернет подключение!";
+                [weakSelf showErrorView];
             } else {
-                [self showLoginError];
+                [weakSelf showLoginError];
             }
         } else {
             if (response) {
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                [weakSelf loadUserSettings];
             }
+        }
+    }];
+}
+
+- (void)loadUserSettings{
+    __weak TIMLoginViewController* weakSelf = self;
+    [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        if (!error) {
+            [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
+            [weakSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [weakSelf showAlertWithMessage:[error localizedDescription]];
         }
     }];
 }

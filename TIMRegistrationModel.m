@@ -49,21 +49,21 @@ static TIMRegistrationModel *sharedInstance = nil;
     profilePhoto:(UIImage *)aPhoto {
     
     _name = [aName copy];
-    [TIMLocalUserInfo sharedInstance].name = _name;
+    [[TIMLocalUserInfo sharedInstance] setName:_name];
     _surname = [aSurname copy];
-    [TIMLocalUserInfo sharedInstance].surname = _surname;
+    [[TIMLocalUserInfo sharedInstance] setSurname:_surname];
     _birthdayDate = [aBirthday copy];
-    [TIMLocalUserInfo sharedInstance].birthday = _birthdayDate;
+    [[TIMLocalUserInfo sharedInstance] setBirthday:_birthdayDate];
     _gender = [aGender copy];
-    [TIMLocalUserInfo sharedInstance].gender = _gender;
-    if (aLanguage) {
-        _language = [aLanguage copy];
-        [TIMLocalUserInfo sharedInstance].defaultLanguage = _language;
-    }
-    if (aPhoto) {
-        _profilePhoto = [aPhoto copy];
-        [TIMLocalUserInfo sharedInstance].userPhoto = _profilePhoto;
-    }
+    [[TIMLocalUserInfo sharedInstance] setGender:_gender];
+//    if (aLanguage) {
+//        _language = [aLanguage copy];
+//        [[TIMLocalUserInfo sharedInstance] setDefaultLanguage:_language];
+//    }
+//    if (aPhoto) {
+//        _profilePhoto = [aPhoto copy];
+//        [[TIMLocalUserInfo sharedInstance] setUserPhoto:_profilePhoto];
+//    }
 }
 
 - (void)saveCountry:(NSDictionary *)aCountry
@@ -71,7 +71,7 @@ static TIMRegistrationModel *sharedInstance = nil;
     _country = aCountry[@"title"];
     [[TIMLocalUserInfo sharedInstance] setCountry:_country];
     _city = [aCity copy];
-    [TIMLocalUserInfo sharedInstance].city = _city;
+    [[TIMLocalUserInfo sharedInstance] setCity:_city];
 }
 
 - (void)saveInterests:(NSArray *)anIntersts
@@ -79,15 +79,15 @@ static TIMRegistrationModel *sharedInstance = nil;
                 about:(NSString *)about {
     if (about) {
         _aboutMe = [about copy];
-        [TIMLocalUserInfo sharedInstance].aboutMe = _aboutMe;
+        [[TIMLocalUserInfo sharedInstance] setAboutMe:_aboutMe];
     }
     if (profession) {
         _profession = [profession copy];
-        [TIMLocalUserInfo sharedInstance].profession = _profession;
+        [[TIMLocalUserInfo sharedInstance] setProfession:_profession];
     }
     if (anIntersts) {
         _interests = [self stringFromInterestsArray:anIntersts];
-        [TIMLocalUserInfo sharedInstance].interests = _interests;
+        [[TIMLocalUserInfo sharedInstance] setInterests:_interests];
     }
 }
 

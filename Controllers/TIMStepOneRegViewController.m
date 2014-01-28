@@ -63,12 +63,14 @@
 }
 
 - (void)registrationRequest {
+    __weak TIMStepOneRegViewController* weakSelf = self;
     [[TIMRegistrationModel sharedInstance] registerRequestWithCompletition:^(NSString *errorDescription, BOOL status) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (status) {
-            [self pushStepTwo];
+            [weakSelf saveDataToLocalUserInfo];
+            [weakSelf pushStepTwo];
         } else {
-            [self showAlertViewWithMessage:errorDescription];
+            [weakSelf showAlertViewWithMessage:errorDescription];
         }
     }];
 }
@@ -80,6 +82,10 @@
                                                 password:passwordTextField.text];
         [self registrationRequest];
     }
+}
+
+- (void)saveDataToLocalUserInfo{
+    [[TIMLocalUserInfo sharedInstance] setEmail:mailTextField.text];
 }
 
 - (BOOL)checkIsDataValid{

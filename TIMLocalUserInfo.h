@@ -37,8 +37,8 @@
 @property (copy, nonatomic) NSString *privacyImpressions;
 @property (copy, nonatomic) NSString *privacyProfession;
 
-@property (strong, nonatomic) UIImage *userPhoto;
-@property (strong, nonatomic) UIImage *userWalpaper;
+//@property (strong, nonatomic) UIImage *userPhoto;
+//@property (strong, nonatomic) UIImage *userWalpaper;
 @property (strong, nonatomic) UIImage *userFlag;
 
 
@@ -49,5 +49,6 @@
 - (void)saveSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
 - (void)setCountry:(NSString *)country;
 - (NSString *)country;
+- (void)deleteLocalUser;
 
 @end

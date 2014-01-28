@@ -7,6 +7,7 @@
 //
 
 #import "TIMHomeProfileViewController.h"
+#import "TIMKeychain.h"
 
 @interface TIMHomeProfileViewController ()
 
@@ -52,9 +53,9 @@
     self.nameLabel.text = self.localUserInfo.name;
     self.surnameLabel.text = self.localUserInfo.surname;
     self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", [self.localUserInfo country], self.localUserInfo.city];
-    self.avatarImageView.image = self.localUserInfo.userPhoto;
+//    self.avatarImageView.image = self.localUserInfo.userPhoto;
     self.flagImageView.image = self.localUserInfo.userFlag;
-    self.wallpaperImageView.image = self.localUserInfo.userWalpaper;
+//    self.wallpaperImageView.image = self.localUserInfo.userWalpaper;
 }
 
 #pragma mark - Design
@@ -78,7 +79,9 @@
 #pragma mark - Checkings
 
 - (void)checkForLoginInformation {
-    if (![[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults]) {
+    NSLog(@"%hhd , %hhd", [[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults], [self isValidCurrentUser]);
+    if (![[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults] ||
+        ![self isValidCurrentUser]) {
         [self pushLoginViewController];
     } else {
         //загрузка локального пользователя при отсутствии инета
@@ -97,6 +100,16 @@
             [self labelsForLocalUser];
         }
     }
+}
+
+- (BOOL)isValidCurrentUser{
+    NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
+    NSLog(@"%@,  %@", keyChanDict[@"email"], [[TIMLocalUserInfo sharedInstance] email]);
+    if ([keyChanDict[@"email"] isEqualToString:
+         [[TIMLocalUserInfo sharedInstance] email]]) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - Accessors
