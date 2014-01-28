@@ -45,6 +45,7 @@
     _isProfile = isProfile;
     if (_isProfile) {
         self.nameLabel.font = [UIFont boldFontWithSize:20.0f];
+        self.iconImageView.image = [UIImage imageNamed:@"icon_profile_swipemenu"];
         self.iconImageView.hidden = NO;
     }
 }
@@ -53,6 +54,7 @@
     _isExit = isExit;
     if (_isExit) {
         self.iconImageView.hidden = NO;
+        self.iconImageView.image = [UIImage imageNamed:@"icon_logout"];
     }
 }
 

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		83B6B4DC6FF34FCAB6409CA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C339152E343C19DB1D129 /* libPods.a */; };
+		8B4745491897A5CA00FCE895 /* icon_logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745451897A5CA00FCE895 /* icon_logout@2x.png */; };
+		8B47454A1897A5CA00FCE895 /* icon_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745461897A5CA00FCE895 /* icon_logout.png */; };
+		8B47454B1897A5CA00FCE895 /* icon_profile_swipemenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745471897A5CA00FCE895 /* icon_profile_swipemenu@2x.png */; };
+		8B47454C1897A5CA00FCE895 /* icon_profile_swipemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4745481897A5CA00FCE895 /* icon_profile_swipemenu.png */; };
 		8B68797D188D7AC1007EB325 /* TIMStatisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */; };
 		8B687982188D8155007EB325 /* TIMStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B687981188D8155007EB325 /* TIMStatistic.m */; };
 		8B7384F61881D10E00D1E0C2 /* camera-choose-icon-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7384A71881D10D00D1E0C2 /* camera-choose-icon-hover.png */; };
@@ -233,6 +237,10 @@
 /* Begin PBXFileReference section */
 		48AA3E4347A448F5B14DE388 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		844C339152E343C19DB1D129 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B4745451897A5CA00FCE895 /* icon_logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_logout@2x.png"; path = "Images/icon_logout@2x.png"; sourceTree = "<group>"; };
+		8B4745461897A5CA00FCE895 /* icon_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_logout.png; path = Images/icon_logout.png; sourceTree = "<group>"; };
+		8B4745471897A5CA00FCE895 /* icon_profile_swipemenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_profile_swipemenu@2x.png"; path = "Images/icon_profile_swipemenu@2x.png"; sourceTree = "<group>"; };
+		8B4745481897A5CA00FCE895 /* icon_profile_swipemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_profile_swipemenu.png; path = Images/icon_profile_swipemenu.png; sourceTree = "<group>"; };
 		8B68797B188D7AC1007EB325 /* TIMStatisticsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMStatisticsModel.h; sourceTree = "<group>"; };
 		8B68797C188D7AC1007EB325 /* TIMStatisticsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMStatisticsModel.m; sourceTree = "<group>"; };
 		8B687980188D8155007EB325 /* TIMStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMStatistic.h; path = "Server objects/TIMStatistic.h"; sourceTree = "<group>"; };
@@ -524,6 +532,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B4745441897A59700FCE895 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8B4745451897A5CA00FCE895 /* icon_logout@2x.png */,
+				8B4745461897A5CA00FCE895 /* icon_logout.png */,
+				8B4745471897A5CA00FCE895 /* icon_profile_swipemenu@2x.png */,
+				8B4745481897A5CA00FCE895 /* icon_profile_swipemenu.png */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		8B68797A188D79BF007EB325 /* Statistics Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +564,7 @@
 		8B7384A51881D0B500D1E0C2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8B4745441897A59700FCE895 /* Menu */,
 				8BFB28501895A6180078F648 /* default-avatar_place.png */,
 				8B816F831889D7E900C7DACA /* Profile */,
 				8B7384A61881D0BE00D1E0C2 /* Registration */,
@@ -1306,7 +1326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B47454B1897A5CA00FCE895 /* icon_profile_swipemenu@2x.png in Resources */,
 				8B73853F1881D10E00D1E0C2 /* title-image@2x.png in Resources */,
+				8B47454C1897A5CA00FCE895 /* icon_profile_swipemenu.png in Resources */,
 				8BFB28591895A96D0078F648 /* btn_green@2x.png in Resources */,
 				8B7385111881D10E00D1E0C2 /* home-button-down.png in Resources */,
 				8B73851C1881D10E00D1E0C2 /* icon-feed-place@2x.png in Resources */,
@@ -1370,6 +1392,7 @@
 				8B73853E1881D10E00D1E0C2 /* title-image.png in Resources */,
 				8B890A21189459BC0032F761 /* TIMFavouritesController.xib in Resources */,
 				8B7385131881D10E00D1E0C2 /* home-button-waves.png in Resources */,
+				8B4745491897A5CA00FCE895 /* icon_logout@2x.png in Resources */,
 				8B7B0A6B188B142400E95FFD /* top_panel_64.png in Resources */,
 				8B7385251881D10E00D1E0C2 /* icon-toolbar-search.png in Resources */,
 				8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */,
@@ -1397,6 +1420,7 @@
 				8B7385351881D10E00D1E0C2 /* reg-circle@2x.png in Resources */,
 				8B7385371881D10E00D1E0C2 /* register-window@2x.png in Resources */,
 				8B890A0918944DFD0032F761 /* TIMGlobalSettingsController.xib in Resources */,
+				8B47454A1897A5CA00FCE895 /* icon_logout.png in Resources */,
 				8B7384F71881D10E00D1E0C2 /* camera-choose-icon-hover@2x.png in Resources */,
 				8B73851D1881D10E00D1E0C2 /* icon-home-settings.png in Resources */,
 				8B73852A1881D10E00D1E0C2 /* login-area.png in Resources */,
