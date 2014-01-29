@@ -74,6 +74,7 @@
     self.placeesTextLabel.font = [UIFont regularFontWithSize:10.0f];
     self.settingsOutlet.titleLabel.font = [UIFont semiBoldFontWithSize:10.0f];
     [self.settingsOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.settingsOutlet setImage:[UIImage imageNamed:@"icon_profilesettings_on"] forState:UIControlStateHighlighted];
 }
 
 #pragma mark - Checkings

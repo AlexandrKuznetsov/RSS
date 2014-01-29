@@ -23,7 +23,10 @@
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TIMHomeNavButtonsView"
                                                  owner:self
                                                options:nil];
-    return nib[0];
+    TIMHomeNavButtonsView *homeBtnView = nib[0];
+    [homeBtnView.feedBtnOutlet setImage:[UIImage imageNamed:@"bnt_events_on_trans.png"]
+                               forState:UIControlStateHighlighted];
+    return homeBtnView;
 }
 
 @end

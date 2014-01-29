@@ -223,6 +223,18 @@
     return @[@"Мужской", @"Женский"];
 }
 
+- (NSArray *)notificationsArray {
+    return @[@"Сразу", @"Ежесуточно", @"Выключить"];
+}
+
+- (NSArray *)searchArray {
+    return @[@"По карте", @"По имени"];
+}
+
+- (NSArray *)synchronizeArray {
+    return @[@"В режиме онлайн", @"По требованию"];
+}
+
 - (NSString *)formatInterestsString:(NSInteger)count {
     NSString *countString = [NSString stringWithFormat:@"%d", count];
     NSString *lastChar = [countString substringFromIndex:[countString length] - 1];

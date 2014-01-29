@@ -33,7 +33,10 @@ typedef enum {
     privacyMyImpressions = 109,
     privacyMyProfession = 110,
     interests = 111,
-    profession = 112
+    profession = 112,
+    notifications = 113,
+    search = 114,
+    synchronization = 115
 }textFieldEnum;
 
 typedef enum {

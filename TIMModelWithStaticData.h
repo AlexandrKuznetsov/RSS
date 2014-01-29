@@ -16,6 +16,9 @@
 - (NSArray *)languageArray;
 - (NSArray *)genderArray;
 - (NSDictionary*)formatInterestsDictionaryFromString:(NSString*)interests;
+- (NSArray *)notificationsArray;
+- (NSArray *)searchArray;
+- (NSArray *)synchronizeArray;
 - (NSString *)formatInterestsString:(NSInteger)count;
 
 @end

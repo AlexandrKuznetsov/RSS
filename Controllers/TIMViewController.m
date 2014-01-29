@@ -50,7 +50,7 @@
 - (void)customBackButtonItem{
     UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 22)];
     UIImage *buttonImage = [UIImage imageNamed:@"header-back-button.png"];
-    UIImage *buttonHiglitedImage = [UIImage imageNamed:@"header-back-button-down.png"];
+    UIImage *buttonHiglitedImage = [UIImage imageNamed:@"btn_back_on.png"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:buttonImage forState:UIControlStateNormal];
     [button setImage:buttonHiglitedImage forState:UIControlStateHighlighted];

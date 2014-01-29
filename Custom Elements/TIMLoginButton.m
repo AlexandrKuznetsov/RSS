@@ -21,7 +21,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self setBackgroundImage:[UIImage imageNamed:@"home-button-down"]
+        [self setBackgroundImage:[UIImage imageNamed:@"btn_login_on.png"]
               forState:UIControlStateHighlighted];
     }
     return self;

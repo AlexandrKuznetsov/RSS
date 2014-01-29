@@ -152,6 +152,28 @@
             [self createTextPikerToTextField:textField
                               withDataSource:sharedArray];
         }
+            break;
+        case notifications:
+        {
+            NSArray* notificationsArray = [_staticModel notificationsArray];
+            [self createTextPikerToTextField:textField
+                              withDataSource:notificationsArray];
+        }
+            break;
+        case search:
+        {
+            NSArray* searchArray = [_staticModel searchArray];
+            [self createTextPikerToTextField:textField
+                              withDataSource:searchArray];
+        }
+            break;
+        case synchronization:
+        {
+            NSArray* syncArray = [_staticModel synchronizeArray];
+            [self createTextPikerToTextField:textField
+                              withDataSource:syncArray];
+        }
+            break;
         default:
             break;
     }
