@@ -80,11 +80,18 @@
         anonymousUser = NO;
     }
     [self swicherBtnAction:nil];
+    if (!_staticModel) {
+        _staticModel = [[TIMModelWithStaticData alloc] init];
+    }
+    NSDictionary* interestsDict = [_staticModel formatInterestsDictionaryFromString:[[TIMLocalUserInfo sharedInstance] interests]];
+    _interestsLabel.text = interestsDict[@"string"];
+    _interests = interestsDict[@"array"];
+    _professionsLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
     textFieldCity.text = [[TIMLocalUserInfo sharedInstance] city];
     textFieldBirthday.text = [[TIMLocalUserInfo sharedInstance] birthday];
     textFieldSeconName.text = [[TIMLocalUserInfo sharedInstance] surname];
     textFieldName.text = [[TIMLocalUserInfo sharedInstance] name];
-    if ([[TIMLocalUserInfo sharedInstance].aboutMe length] > 0) {
+    if ([[[TIMLocalUserInfo sharedInstance] aboutMe] length] > 0) {
         textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
     }
     UIImage* avaImage;
@@ -237,7 +244,9 @@
     if (isForProfessions) {
         self.professionsLabel.text = [data lastObject];
     } else {
-        _staticModel = [[TIMModelWithStaticData alloc] init];
+        if (!_staticModel) {
+            _staticModel = [[TIMModelWithStaticData alloc] init];
+        }
         self.interestsLabel.text = [_staticModel formatInterestsString:data.count];
         _interests = [NSArray arrayWithArray:data];
     }

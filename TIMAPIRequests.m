@@ -35,6 +35,8 @@
     self.loadCompletionBlock = completitionBlock;
     [TIMKeychain deleteData:KEYCHAIN_SERVICE];
     [TIMKeychain save:KEYCHAIN_SERVICE data:userDataDictionary];
+    NSDictionary* dict = [TIMKeychain load:KEYCHAIN_SERVICE];
+    NSLog(@"%@, %@", dict[@"email"], dict[@"password"]);
     [_client1 postPath:@"/api/login" parameters:userDataDictionary success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);

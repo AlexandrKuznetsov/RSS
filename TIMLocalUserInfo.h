@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TIMAPIRequests.h"
 #import "TIMModelWithStaticData.h"
+#import "UIFont+TIFonts.h"
 
 @interface TIMLocalUserInfo : NSObject
 
@@ -30,7 +31,7 @@
 @property (copy, nonatomic) NSString *interests;
 
 @property (copy, nonatomic) NSString *aboutMe;
-
+@property (strong, nonatomic) NSDictionary* descrAboutMeSizes;
 @property (copy, nonatomic) NSString *privacyOn;
 @property (copy, nonatomic) NSString *privacyPlace;
 @property (copy, nonatomic) NSString *privacyInterest;

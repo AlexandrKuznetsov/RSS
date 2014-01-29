@@ -393,22 +393,46 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.email = [response objectForKey:@"email"];
         self.city = [response objectForKey:@"city"];
         [self setCountry:[response objectForKey:@"country"]];
-        self.birthday = [response objectForKey:@"year_born"];
+        self.birthday = [response objectForKey:@"born_date"];
         self.gender = [response objectForKey:@"sex"];
-        self.defaultLanguage = [response objectForKey:@"language"];
-        self.avatarName = [response objectForKey:@"avatar_file_name"];
-        self.wallpaperName = [response objectForKey:@"wallpaper_file_name"];
+        self.defaultLanguage = [response objectForKey:@"app_lang"];
+        self.avatarName = [response objectForKey:@"avatar"];
+        self.wallpaperName = [response objectForKey:@"wallpaper"];
         self.profession = [response objectForKey:@"profession"];
-        
         self.interests = [response objectForKey:@"interests"];
-        
+#warning ABOUT_MYSELF_BLOCK
         self.aboutMe = [response objectForKey:@"description"];
+        
         self.privacyOn = [response objectForKey:@"privacy_on"];
         self.privacyPlace = [response objectForKey:@"privacy_place"];
         self.privacyInterest = [response objectForKey:@"privacy_interest"];
         self.privacyImpressions = [response objectForKey:@"privacy_impressions"];
         self.privacyProfession = [response objectForKey:@"privacy_profession"];
+        [self calculateDescriptionAboutMeSizes];
     }
+}
+
+- (void)calculateDescriptionAboutMeSizes{
+    self.descrAboutMeSizes = @{@"interests": [self calculateHeightForText:self.interests],
+                               @"aboutMe": [self calculateHeightForText:self.aboutMe],
+                               @"cellHeight": [NSNumber numberWithFloat:162.0 - 16*2]};
+}
+
+- (NSNumber*)calculateHeightForText:(NSString*)text{
+    CGSize labelsSize = CGSizeMake(251, CGFLOAT_MAX);
+    CGSize size;
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+         CGRect frame = [text boundingRectWithSize:labelsSize
+                                          options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                       attributes:@{NSFontAttributeName:[UIFont regularFontWithSize:12.0f]}
+                                          context:nil];
+        size = frame.size;
+        size.height += 1;
+    } else {
+        size = [text sizeWithFont:[UIFont regularFontWithSize:12.0f]
+                 constrainedToSize:labelsSize];
+    }
+    return [NSNumber numberWithFloat:size.height];
 }
 
 - (NSDictionary*)userSettingDictionary{
@@ -417,9 +441,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                      @"email": self.email,
                                      @"city": self.city,
                                      @"country": self.user[@"country"],
-                                     @"year_born": self.birthday,
+                                     @"born_date": self.birthday,
                                      @"sex": self.gender,
-                                     @"language": self.defaultLanguage,
+                                     @"app_lang": self.defaultLanguage,
                                      @"description": self.aboutMe,
 //                                     @"created_at": @"",
 //                                     @"updated_at": @"",

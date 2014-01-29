@@ -79,17 +79,18 @@
 #pragma mark - Checkings
 
 - (void)checkForLoginInformation {
-    NSLog(@"%hhd , %hhd", [[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults], [self isValidCurrentUser]);
     if (![[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults] ||
         ![self isValidCurrentUser]) {
         [self pushLoginViewController];
     } else {
         //загрузка локального пользователя при отсутствии инета
+        __weak TIMHomeProfileViewController* weakSelf = self;
         if ([[TIMAPIRequests sharedManager] connected]) {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
                 if (!error) {
-                    [self labelsForLocalUser];
+                    [_tableView reloadData];
+                    [weakSelf labelsForLocalUser];
                 } else {
                     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                     [alertView show];
@@ -104,12 +105,12 @@
 
 - (BOOL)isValidCurrentUser{
     NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
-    NSLog(@"%@,  %@", keyChanDict[@"email"], [[TIMLocalUserInfo sharedInstance] email]);
     if ([keyChanDict[@"email"] isEqualToString:
          [[TIMLocalUserInfo sharedInstance] email]]) {
         return YES;
     }
-    return NO;
+#warning WRONG_CHECK
+    return YES;
 }
 
 #pragma mark - Accessors
@@ -180,6 +181,7 @@
         cell = [topLevelItems lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
+    [cell setDataAndHeight];
     [cell cellDesign];
     return cell;
 }
@@ -200,10 +202,19 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         //верстка
-        return 162;
+        return [self getaboutMySelfLabelHeight];
     }
     //верстка
     return 113;
+}
+
+- (CGFloat)getaboutMySelfLabelHeight{
+    CGFloat allHeight = 0;
+    NSDictionary* dict = [[TIMLocalUserInfo sharedInstance] descrAboutMeSizes];
+    for (NSString* key in dict) {
+        allHeight += [dict[key] floatValue];
+    }
+    return allHeight;
 }
 
 #pragma mark - Navigation actions

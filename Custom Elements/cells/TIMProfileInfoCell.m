@@ -26,6 +26,28 @@
     // Configure the view for the selected state
 }
 
+- (void)setDataAndHeight{
+    NSLog(@"%@", [[TIMLocalUserInfo sharedInstance] profession]);
+    NSLog(@"%@", [[TIMLocalUserInfo sharedInstance] interests]);
+    NSLog(@"%@", [[TIMLocalUserInfo sharedInstance] aboutMe]);
+    self.professionLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
+    self.interestLabel.text = [[TIMLocalUserInfo sharedInstance] interests];
+    self.aboutLabeel.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
+    
+    self.interestLabel.frame = CGRectMake(self.interestLabel.frame.origin.x,
+                                          self.interestLabel.frame.origin.y,
+                                          self.interestLabel.frame.size.width,
+                                          [[[TIMLocalUserInfo sharedInstance] descrAboutMeSizes][@"interests"] floatValue]);
+    self.aboutTextLabel.frame = CGRectMake(self.aboutTextLabel.frame.origin.x,
+                                           CGRectGetMaxY(self.interestLabel.frame),
+                                           self.aboutTextLabel.frame.size.width,
+                                           self.aboutTextLabel.frame.size.height);
+    self.aboutLabeel.frame = CGRectMake(self.aboutLabeel.frame.origin.x,
+                                        CGRectGetMaxY(self.aboutTextLabel.frame),
+                                        self.aboutLabeel.frame.size.width,
+                                        [[[TIMLocalUserInfo sharedInstance] descrAboutMeSizes][@"aboutMe"] floatValue]);
+    
+}
 
 - (void)cellDesign {
     self.professionTextLabel.font = [UIFont boldFontWithSize:12.0f];

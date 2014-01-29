@@ -15,7 +15,7 @@
 - (NSArray *)privacyArray;
 - (NSArray *)languageArray;
 - (NSArray *)genderArray;
-
+- (NSDictionary*)formatInterestsDictionaryFromString:(NSString*)interests;
 - (NSString *)formatInterestsString:(NSInteger)count;
 
 @end

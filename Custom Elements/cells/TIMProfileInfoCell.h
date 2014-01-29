@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIFont+TIFonts.h"
+#import "TIMLocalUserInfo.h"
 
 @interface TIMProfileInfoCell : UITableViewCell
 
@@ -20,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *aboutTextLabel;
 
 - (void)cellDesign;
+- (void)setDataAndHeight;
 
 @end

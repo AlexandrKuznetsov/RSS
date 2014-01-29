@@ -19,7 +19,10 @@
 @interface TIMHomeProfileViewController : TIMViewController <
 UITableViewDataSource,
 UITableViewDelegate
->
+>{
+    
+    __weak IBOutlet UITableView *_tableView;
+}
 
 @property (strong, nonatomic) TIMHomeNavButtonsView *buttonsView;
 @property (strong, nonatomic) TIMLocalUserInfo *localUserInfo;
