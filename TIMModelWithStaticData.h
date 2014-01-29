@@ -15,6 +15,9 @@
 - (NSArray *)privacyArray;
 - (NSArray *)languageArray;
 - (NSArray *)genderArray;
+- (NSArray *)notificationsArray;
+- (NSArray *)searchArray;
+- (NSArray *)synchronizeArray;
 
 - (NSString *)formatInterestsString:(NSInteger)count;
 

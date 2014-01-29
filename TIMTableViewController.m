@@ -86,7 +86,8 @@
     UIButton* okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     okBtn.frame = CGRectMake(0, 0, 29, 29);
     [okBtn addTarget:self action:@selector(saveAction:) forControlEvents:UIControlEventTouchUpInside];
-    [okBtn setImage:[UIImage imageNamed:@"btn_ok.png"] forState:UIControlStateNormal];
+    [okBtn setImage:[UIImage imageNamed:@"btn_ok_white.png"] forState:UIControlStateNormal];
+    [okBtn setImage:[UIImage imageNamed:@"btn_ok_white_on.png"] forState:UIControlStateHighlighted];
     UIBarButtonItem* okBarButton = [[UIBarButtonItem alloc] initWithCustomView:okBtn];
     [self.navigationItem setRightBarButtonItem:okBarButton];
 }

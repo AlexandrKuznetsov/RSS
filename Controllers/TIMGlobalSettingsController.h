@@ -14,6 +14,7 @@
 
 @interface TIMGlobalSettingsController : TIMRegistrationViewController {
     __weak IBOutlet UIScrollView *scrollView;
+    __weak IBOutlet UIImageView *bgImageView;
     
     BOOL pushEnabled;
     BOOL fbEnabled;
@@ -29,5 +30,6 @@
 - (IBAction)googleAction:(TIMSwichButton *)sender;
 - (IBAction)twitterAction:(TIMSwichButton *)sender;
 - (IBAction)resetPass:(id)sender;
+- (IBAction)hideAction:(id)sender;
 
 @end

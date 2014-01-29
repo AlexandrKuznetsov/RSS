@@ -46,6 +46,9 @@
 
 - (void)setViewSizes {
     scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), SCROLL_SIZE);
+    CGRect bgFrame = bgImageView.frame;
+    bgFrame.size.height = SCROLL_SIZE;
+    bgImageView.frame = bgFrame;
 }
 
 - (void)setFontsToTextViewsInView:(UIView*)editingView {
@@ -64,6 +67,18 @@
         if ([view isKindOfClass:([UITextView class])]) {
             UITextView* currentTextView = (UITextView*)view;
             currentTextView.font = [UIFont lightFontWithSize:currentTextView.font.pointSize];
+        }
+    }
+}
+
+- (void)hideKeyboardForView:(UIView *)view {
+    for (UIView* objView in [view subviews]) {
+        if ([[objView subviews] count] > 0) {
+            [self setFontsToTextViewsInView:objView];
+        }
+        if ([objView isKindOfClass:([UITextField class])]) {
+            UITextField* currentTextField = (UITextField*)objView;
+            [currentTextField resignFirstResponder];
         }
     }
 }
@@ -111,6 +126,10 @@
 
 - (IBAction)resetPass:(id)sender {
     [self pushResetPassController];
+}
+
+- (IBAction)hideAction:(id)sender {
+    [self hideKeyboardForView:scrollView];
 }
 
 @end

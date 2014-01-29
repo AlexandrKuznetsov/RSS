@@ -21,7 +21,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self setImage:[UIImage imageNamed:@"login-button-down"]
+        [self setImage:[UIImage imageNamed:@"btn_arrow_on.png"]
               forState:UIControlStateHighlighted];
     }
     return self;

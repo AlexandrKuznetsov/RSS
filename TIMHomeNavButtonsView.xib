@@ -67,6 +67,9 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="feedBtnOutlet" destination="BDr-if-8F2" id="zJe-eM-ShO"/>
+            </connections>
         </view>
     </objects>
     <resources>

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TIMHomeNavButtonsView : UIView
+@interface TIMHomeNavButtonsView : UIView {
+}
 
+@property (weak, nonatomic) IBOutlet UIButton *feedBtnOutlet;
 + (TIMHomeNavButtonsView *)loadView;
 
 @end
