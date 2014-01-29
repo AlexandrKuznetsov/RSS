@@ -7,7 +7,25 @@
 //
 
 #import "TIMRegistrationViewController.h"
+#import "TIMSwichButton.h"
 
-@interface TIMGlobalSettingsController : TIMRegistrationViewController
+#define SCROLL_SIZE 662
+
+@interface TIMGlobalSettingsController : TIMRegistrationViewController {
+    __weak IBOutlet UIScrollView *scrollView;
+    
+    BOOL pushEnabled;
+    BOOL fbEnabled;
+    BOOL VkEnabled;
+    BOOL odniklEnabled;
+    BOOL googleEnabled;
+    BOOL twitterEnabled;
+}
+- (IBAction)pushAction:(TIMSwichButton *)sender;
+- (IBAction)fbAction:(TIMSwichButton *)sender;
+- (IBAction)vkAction:(TIMSwichButton *)sender;
+- (IBAction)odnoklAction:(TIMSwichButton *)sender;
+- (IBAction)googleAction:(TIMSwichButton *)sender;
+- (IBAction)twitterAction:(TIMSwichButton *)sender;
 
 @end

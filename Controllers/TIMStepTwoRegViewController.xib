@@ -312,7 +312,7 @@
     </objects>
     <resources>
         <image name="bg_angle.png" width="320" height="45"/>
-        <image name="btn_green.png" width="59" height="34"/>
+        <image name="btn_green.png" width="49" height="34"/>
         <image name="camera-choose-icon-hover.png" width="27" height="27"/>
         <image name="camera-choose-icon.png" width="27" height="27"/>
         <image name="camera-delete-icon-hover.png" width="27" height="27"/>
