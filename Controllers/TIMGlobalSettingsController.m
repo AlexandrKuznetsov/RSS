@@ -68,6 +68,15 @@
     }
 }
 
+#pragma mark - Navigation 
+
+- (void)pushResetPassController {
+    TIMResetPassController *resetPassController = [[TIMResetPassController alloc]
+                                                   initWithNibName:@"TIMResetPassController"
+                                                   bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:resetPassController animated:YES];
+}
+
 #pragma mark - Actions
 
 - (IBAction)pushAction:(TIMSwichButton *)sender {
@@ -98,6 +107,10 @@
 - (IBAction)twitterAction:(TIMSwichButton *)sender {
     twitterEnabled = !twitterEnabled;
     [sender setActive:twitterEnabled];
+}
+
+- (IBAction)resetPass:(id)sender {
+    [self pushResetPassController];
 }
 
 @end

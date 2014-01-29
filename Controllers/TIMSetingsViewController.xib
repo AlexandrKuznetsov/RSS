@@ -440,7 +440,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NSP-dm-EdJ" customClass="TIMContinueButton">
-                                    <rect key="frame" x="107" y="417" width="110" height="35"/>
+                                    <rect key="frame" x="107" y="417" width="110" height="34"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="Сохранить" backgroundImage="btn_green.png">

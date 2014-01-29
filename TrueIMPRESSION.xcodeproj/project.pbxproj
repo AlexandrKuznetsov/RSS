@@ -193,6 +193,8 @@
 		8BB08528188DC9D700FC3792 /* bg_angle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08527188DC9D700FC3792 /* bg_angle@2x.png */; };
 		8BB0852B188DCA9A00FC3792 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08529188DCA9A00FC3792 /* email@2x.png */; };
 		8BB0852C188DCA9A00FC3792 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0852A188DCA9A00FC3792 /* email.png */; };
+		8BDD7BD01899078000B9BEF9 /* TIMResetPassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD7BCE1899078000B9BEF9 /* TIMResetPassController.m */; };
+		8BDD7BD11899078000B9BEF9 /* TIMResetPassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD7BCF1899078000B9BEF9 /* TIMResetPassController.xib */; };
 		8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */; };
 		8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCD18848A1200D6A2BA /* TIMProfileInfoCell.m */; };
 		8BEAFDD018848A2B00D6A2BA /* TIMProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEAFDCF18848A2B00D6A2BA /* TIMProfileInfoCell.xib */; };
@@ -477,6 +479,9 @@
 		8BB08527188DC9D700FC3792 /* bg_angle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_angle@2x.png"; sourceTree = "<group>"; };
 		8BB08529188DCA9A00FC3792 /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
 		8BB0852A188DCA9A00FC3792 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		8BDD7BCD1899078000B9BEF9 /* TIMResetPassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMResetPassController.h; path = Controllers/TIMResetPassController.h; sourceTree = "<group>"; };
+		8BDD7BCE1899078000B9BEF9 /* TIMResetPassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMResetPassController.m; path = Controllers/TIMResetPassController.m; sourceTree = "<group>"; };
+		8BDD7BCF1899078000B9BEF9 /* TIMResetPassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMResetPassController.xib; path = Controllers/TIMResetPassController.xib; sourceTree = "<group>"; };
 		8BEAFDC61884826D00D6A2BA /* TIMProfileImpressionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMProfileImpressionCell.h; path = "Custom Elements/cells/TIMProfileImpressionCell.h"; sourceTree = "<group>"; };
 		8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMProfileImpressionCell.m; path = "Custom Elements/cells/TIMProfileImpressionCell.m"; sourceTree = "<group>"; };
 		8BEAFDCC18848A1200D6A2BA /* TIMProfileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMProfileInfoCell.h; path = "Custom Elements/cells/TIMProfileInfoCell.h"; sourceTree = "<group>"; };
@@ -742,6 +747,7 @@
 		8B7385441881EA0200D1E0C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8BDD7BCC1899066B00B9BEF9 /* ResetPass Controller */,
 				8B890A2E18945ABF0032F761 /* Help Controller */,
 				8B890A2D18945A850032F761 /* Friends Controller */,
 				8B890A22189459FF0032F761 /* Search Controller */,
@@ -1201,6 +1207,16 @@
 			path = /Users/fist/Projects/RSS/TestFlightSDK2.1.4;
 			sourceTree = "<absolute>";
 		};
+		8BDD7BCC1899066B00B9BEF9 /* ResetPass Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD7BCD1899078000B9BEF9 /* TIMResetPassController.h */,
+				8BDD7BCE1899078000B9BEF9 /* TIMResetPassController.m */,
+				8BDD7BCF1899078000B9BEF9 /* TIMResetPassController.xib */,
+			);
+			name = "ResetPass Controller";
+			sourceTree = "<group>";
+		};
 		8BEAFDC41884818900D6A2BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1493,6 +1509,7 @@
 				8B7384F71881D10E00D1E0C2 /* camera-choose-icon-hover@2x.png in Resources */,
 				8B73851D1881D10E00D1E0C2 /* icon-home-settings.png in Resources */,
 				8B73852A1881D10E00D1E0C2 /* login-area.png in Resources */,
+				8BDD7BD11899078000B9BEF9 /* TIMResetPassController.xib in Resources */,
 				8B7385011881D10E00D1E0C2 /* camera-take-icon@2x.png in Resources */,
 				8B7384FB1881D10E00D1E0C2 /* camera-delete-icon-hover@2x.png in Resources */,
 				C5E67DD81889F18C000CB56B /* off.png in Resources */,
@@ -1619,6 +1636,7 @@
 				8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */,
 				8B7385781881F3AF00D1E0C2 /* TIMStepThreeRegViewController.m in Sources */,
 				8B7B0A98188C34B300E95FFD /* TIMTableViewController.m in Sources */,
+				8BDD7BD01899078000B9BEF9 /* TIMResetPassController.m in Sources */,
 				8B890A20189459BC0032F761 /* TIMFavouritesController.m in Sources */,
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "TIMRegistrationViewController.h"
+#import "TIMResetPassController.h"
 #import "TIMSwichButton.h"
 
 #define SCROLL_SIZE 662
@@ -27,5 +28,6 @@
 - (IBAction)odnoklAction:(TIMSwichButton *)sender;
 - (IBAction)googleAction:(TIMSwichButton *)sender;
 - (IBAction)twitterAction:(TIMSwichButton *)sender;
+- (IBAction)resetPass:(id)sender;
 
 @end

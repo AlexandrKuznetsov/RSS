@@ -225,6 +225,9 @@
                             <state key="normal" title="Изменить пароль" backgroundImage="btn_green.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="resetPass:" destination="-1" eventType="touchUpInside" id="H2V-X6-g4G"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook.png" id="qnd-O0-f2D">
                             <rect key="frame" x="20" y="444" width="25" height="25"/>
