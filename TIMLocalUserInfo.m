@@ -20,9 +20,15 @@
 @synthesize interests = _interests;
 @synthesize profession = _profession;
 @synthesize aboutMe = _aboutMe;
-//@synthesize userPhoto = _userPhoto;
-//@synthesize userWalpaper = _userWalpaper;
+@synthesize userPhoto = _userPhoto;
+@synthesize userWalpaper = _userWalpaper;
 @synthesize userFlag = _userFlag;
+@synthesize privacyImpressions = _privacyImpressions;
+@synthesize privacyInterest = _privacyInterest;
+@synthesize privacyOn = _privacyOn;
+@synthesize privacyPlace = _privacyPlace;
+@synthesize privacyProfession = _privacyProfession;
+@synthesize email = _email;
 
 static TIMLocalUserInfo *sharedInstance = nil;
 
@@ -174,7 +180,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
     if (!interests || [interests isKindOfClass:([NSNull class])]) {
         interests = @"";
     }
-    _interests = interests;
+    _interests = [interests copy];
     [self.user setObject:interests forKey:@"interests"];
 }
 
@@ -259,6 +265,16 @@ static TIMLocalUserInfo *sharedInstance = nil;
         avatarName = @"";
     }
     _avatarName = [avatarName copy];
+    if (![_avatarName isEqualToString:@""]) {
+        NSString* urlString = [NSString stringWithFormat:@"%@%@", [[TIMAPIRequests sharedManager] server], avatarName];
+        NSURL* url = [NSURL URLWithString:urlString];
+        NSData* imageData = [NSData dataWithContentsOfURL:url];
+        if (imageData.length > 0) {
+            self.userPhoto = [UIImage imageWithData:imageData];
+        } else {
+            self.userPhoto = nil;
+        }
+    }
     [self.user setObject:avatarName forKey:@"avatarName"];
 }
 
@@ -267,6 +283,16 @@ static TIMLocalUserInfo *sharedInstance = nil;
         wallpaperName = @"";
     }
     _wallpaperName = [wallpaperName copy];
+    if (![_wallpaperName isEqualToString:@""]) {
+        NSString* urlString = [NSString stringWithFormat:@"%@%@", [[TIMAPIRequests sharedManager] server], _wallpaperName];
+        NSURL* url = [NSURL URLWithString:urlString];
+        NSData* imageData = [NSData dataWithContentsOfURL:url];
+        if (imageData.length > 0) {
+            self.userPhoto = [UIImage imageWithData:imageData];
+        } else {
+            self.userPhoto = nil;
+        }
+    }
     [self.user setObject:wallpaperName forKey:@"wallpaperName"];
 }
 
@@ -279,60 +305,153 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 }
 
+- (void)setUserPhoto:(UIImage *)userPhoto{
+    _isAvatarChanged = YES;
+    if (!userPhoto) {
+        _userPhoto = nil;
+        return;
+    }
+    _userPhoto = [userPhoto copy];
+}
+
+- (void)setUserWalpaper:(UIImage *)userWalpaper{
+    _isWalpaperChanged = YES;
+    if (!userWalpaper) {
+        _userWalpaper = nil;
+        return;
+    }
+    _userWalpaper = [userWalpaper copy];
+}
+
 #pragma mark - Getters
 
 - (NSString *)name {
-    return [self.user objectForKey:@"name"];
+    if ([self.user objectForKey:@"name"]) {
+        return [self.user objectForKey:@"name"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)surname {
-    return [self.user objectForKey:@"surname"];
+    if ([self.user objectForKey:@"surname"]) {
+        return [self.user objectForKey:@"surname"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)birthday {
-    return [self.user objectForKey:@"birthday"];
+    if ([self.user objectForKey:@"birthday"]) {
+        return [self.user objectForKey:@"birthday"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)gender {
-    return [self.user objectForKey:@"gender"];
+    if ([self.user objectForKey:@"gender"]) {
+        return [self.user objectForKey:@"gender"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)defaultLanguage {
-    return [self.user objectForKey:@"defaultLanguage"];
+    if ([self.user objectForKey:@"defaultLanguage"]) {
+        return [self.user objectForKey:@"defaultLanguage"];
+    } else {
+        return @"English";
+    }
 }
 
 - (NSString *)country {
-    NSString *country = [self.user objectForKey:@"country"];
-    return country;
+    if ([self.user objectForKey:@"country"]) {
+        NSString *country = [self.user objectForKey:@"country"];
+        return country;
+    } else {
+        return @"";
+    }
+}
+
+- (NSString*)email{
+    if ([self.user objectForKey:@"email"]) {
+        return [self.user objectForKey:@"email"];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString*)privacyOn{
+    if ([self.user objectForKey:@"privacyOn"]) {
+        return [self.user objectForKey:@"privacyOn"];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString*)privacyPlace{
+    if ([self.user objectForKey:@"privacyPlace"]) {
+        return [self.user objectForKey:@"privacyPlace"];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString*)privacyInterest{
+    if ([self.user objectForKey:@"privacyInterest"]) {
+        return [self.user objectForKey:@"privacyInterest"];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString*)privacyImpressions{
+    if ([self.user objectForKey:@"privacyImpressions"]) {
+        return [self.user objectForKey:@"privacyImpressions"];
+    } else {
+        return @"";
+    }
+}
+
+- (NSString*)privacyProfession{
+    if ([self.user objectForKey:@"privacyProfession"]) {
+        return [self.user objectForKey:@"privacyProfession"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)city {
-    return [self.user objectForKey:@"city"];
+    if ([self.user objectForKey:@"city"]) {
+        return [self.user objectForKey:@"city"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)interests {
-    return [self.user objectForKey:@"interests"];
+    if ([self.user objectForKey:@"interests"]) {
+        return [self.user objectForKey:@"interests"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)profession {
-    return [self.user objectForKey:@"profession"];
+    if ([self.user objectForKey:@"profession"]) {
+        return [self.user objectForKey:@"profession"];
+    } else {
+        return @"";
+    }
 }
 
 - (NSString *)aboutMe {
-    return [self.user objectForKey:@"aboutMe"];
-}
-
-- (UIImage *)userPhoto {
-    return [self imageByFolderPath:[self.user objectForKey:@"avatar"]];
-}
-
-- (UIImage *)userWalpaper {
-    if ([self.user objectForKey:@"walpaper"]) {
-        return [self imageByFolderPath:[self.user objectForKey:@"walpaper"]];
-    } else return nil;
-//    } else {
-//        return [UIImage imageNamed:@"default-wallpaper.png"];
-//    }
+    if ([self.user objectForKey:@"aboutMe"]) {
+        return [self.user objectForKey:@"aboutMe"];
+    } else {
+        return @"";
+    }
 }
 
 - (UIImage *)userFlag {
@@ -374,16 +493,45 @@ static TIMLocalUserInfo *sharedInstance = nil;
     NSMutableDictionary* allDAtaDict = [NSMutableDictionary
                                         dictionaryWithDictionary:[self userSettingDictionary]];
     [allDAtaDict setValuesForKeysWithDictionary:someData];
-    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/update_settings" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSMutableURLRequest* request = [[[TIMAPIRequests sharedManager] client1] multipartFormRequestWithMethod:@"POST" path:@"/api/update_settings" parameters:allDAtaDict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        if (_isAvatarChanged) {
+            NSData* avaData;
+            if (self.userPhoto) {
+                avaData = UIImageJPEGRepresentation(self.userPhoto, 0.8);
+            }
+            
+            [formData appendPartWithFileData:avaData
+                                        name:@"avatar"
+                                    fileName:[@"avatar" stringByAppendingString:@".jpg"]
+                                    mimeType:@"image/jpeg"];
+            _isAvatarChanged = NO;
+        }
+        
+        if (_isWalpaperChanged) {
+            NSData* walpaperData;
+            if (self.userWalpaper) {
+                walpaperData = UIImageJPEGRepresentation(self.userWalpaper, 0.8);
+            }
+            
+            [formData appendPartWithFileData:walpaperData
+                                        name:@"walpaper"
+                                    fileName:[@"walpaper" stringByAppendingString:@".jpg"]
+                                    mimeType:@"image/jpeg"];
+            _isWalpaperChanged = NO;
+        }
+    }];
+    
+    [[[[TIMAPIRequests sharedManager] client1] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             [self saveUserInfoInUserDefaults];
             self.loadDataBlock(nil, nil);
         } else {
             self.loadDataBlock([NSError trueErrorWithServerResponseString:operation.responseString], nil);
         }
-    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.loadDataBlock(error, nil);
-    }];
+    }] start];
 }
 
 - (void)parseResponse:(id)response{
@@ -456,13 +604,13 @@ static TIMLocalUserInfo *sharedInstance = nil;
 //                                     @"last_sign_in_at": @"",
 //                                     @"current_sign_in_ip": @"",
 //                                     @"last_sign_in_ip": @"",
-#warning AVATR_LOGIC
+
 //                                     @"avatar_file_name": self.avatarName,
                                      
 //                                     @"avatar_content_type": @"",
 //                                     @"avatar_file_size": @"",
 //                                     @"avatar_updated_at": @"",
-#warning WALLPAPER_LOGIC
+                                     
 //                                     @"wallpaper_file_name": self.wallpaperName,
                                      
 //                                     @"wallpaper_content_type": @"",
@@ -501,6 +649,65 @@ static TIMLocalUserInfo *sharedInstance = nil;
 //    [self setUserPhoto:nil];
 //    [self setUserWalpaper:nil];
     [self setUserFlag:nil];
+}
+
+- (void)addImagesToRequestWithFormData:(id<AFMultipartFormData>)formData{
+    
+}
+
+-(void)updateUserSettingsWithDictionary:(NSDictionary*)params
+                                 images:(NSArray*)images
+                              imageKeys:(NSArray*)imageKeys
+                     andCompletionBlock:(void(^)(NSError* error))completionBlock{
+    
+    NSMutableDictionary* advancedDict = [params mutableCopy];
+    
+    NSString* email = [[NSUserDefaults standardUserDefaults] valueForKey:@"email"];
+    NSString* password = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+    
+    if (email) {
+        advancedDict[@"email"] = email;
+    }
+    
+    if (password) {
+        advancedDict[@"password"] = password;
+    }
+    
+    NSMutableURLRequest* request = [[[TIMAPIRequests sharedManager] client1] multipartFormRequestWithMethod:@"POST" path:advancedDict[@"email"] parameters:advancedDict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        if (images.count == imageKeys.count && imageKeys.count > 0) {
+            for (int i=0;i<images.count;i++) {
+                UIImage* image = images[i];
+                
+                if ([image isKindOfClass:[NSNull class]]) {
+                    continue;
+                }
+                
+                NSString* imageKey = imageKeys[i];
+                
+                NSData* data = UIImageJPEGRepresentation(image, 0.8);
+                
+                [formData appendPartWithFileData:data
+                                            name:imageKey
+                                        fileName:[imageKey stringByAppendingString:@".jpg"]
+                                        mimeType:@"image/jpeg"];
+            }
+        }
+    }];
+    
+    [[[[TIMAPIRequests sharedManager] client1] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([operation.responseString hasPrefix:@"OK"]) {
+            completionBlock(nil);
+            [self saveUserInfoInUserDefaults];
+        }else{
+            NSLog(@"Reponse: %@", operation.responseString);
+            completionBlock([NSError trueErrorWithServerResponseString:operation.responseString]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if(completionBlock){
+            completionBlock(error);
+        }
+    }] start];
 }
 
 @end

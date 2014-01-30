@@ -28,6 +28,10 @@
     return sharedInstance;
 }
 
+- (NSString*)server{
+    return @"http://true-impressions.com";
+}
+
 - (void)postEmail:(NSString *)login
          password:(NSString *)password
  withCompletition:(void(^)(NSError *error, id response))completitionBlock {

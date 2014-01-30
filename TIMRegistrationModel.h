@@ -27,7 +27,7 @@
         language:(NSString *)aLanguage
     profilePhoto:(UIImage *)aPhoto;
 
-- (void)saveInterests:(NSArray *)anIntersts
+- (void)saveInterests:(NSString *)anIntersts
            profession:(NSString *)profession
                 about:(NSString *)about;
 

@@ -70,24 +70,20 @@ static TIMRegistrationModel *sharedInstance = nil;
                city:(NSString *)aCity {
     _country = aCountry[@"title"];
     [[TIMLocalUserInfo sharedInstance] setCountry:_country];
-    _city = [aCity copy];
-    [[TIMLocalUserInfo sharedInstance] setCity:_city];
+    [[TIMLocalUserInfo sharedInstance] setCity:aCity];
 }
 
-- (void)saveInterests:(NSArray *)anIntersts
+- (void)saveInterests:(NSString *)anIntersts
            profession:(NSString *)profession
                 about:(NSString *)about {
     if (about) {
-        _aboutMe = [about copy];
-        [[TIMLocalUserInfo sharedInstance] setAboutMe:_aboutMe];
+        [[TIMLocalUserInfo sharedInstance] setAboutMe:about];
     }
     if (profession) {
-        _profession = [profession copy];
-        [[TIMLocalUserInfo sharedInstance] setProfession:_profession];
+        [[TIMLocalUserInfo sharedInstance] setProfession:profession];
     }
     if (anIntersts) {
-        _interests = [self stringFromInterestsArray:anIntersts];
-        [[TIMLocalUserInfo sharedInstance] setInterests:_interests];
+        [[TIMLocalUserInfo sharedInstance] setInterests:anIntersts];
     }
 }
 

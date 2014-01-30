@@ -103,7 +103,8 @@
     if ([self checkIsDataValid]) {
         [[TIMRegistrationModel sharedInstance] saveCountry:self.currentCountry
                                                       city:self.cityNameField.text];
-        [[TIMRegistrationModel sharedInstance] saveInterests:_interests
+        NSString* interestsString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
+        [[TIMRegistrationModel sharedInstance] saveInterests:interestsString
                                                   profession:self.professionLabel.text
                                                        about:self.aboutTextView.text];
         [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];

@@ -94,13 +94,14 @@
     if ([[[TIMLocalUserInfo sharedInstance] aboutMe] length] > 0) {
         textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
     }
-    UIImage* avaImage;
-    if (![[TIMLocalUserInfo sharedInstance] avatarName].length > 1) {
-         avaImage = [UIImage imageNamed:@"default-avatar.png"];
+    if (![[TIMLocalUserInfo sharedInstance] userPhoto]) {
+         _imageViewAvatar.image = [UIImage imageNamed:@"default-avatar.png"];
+    } else {
+        _imageViewAvatar.image = [[TIMLocalUserInfo sharedInstance] userPhoto];
     }
-//    UIImage* walpaperImage = [[TIMLocalUserInfo sharedInstance] userWalpaper];
-    _imageViewAvatar.image = avaImage;
-//    _imageViewCover.image = walpaperImage;
+    if ([[TIMLocalUserInfo sharedInstance] userWalpaper]) {
+        _imageViewCover.image = [[TIMLocalUserInfo sharedInstance] userWalpaper];
+    }
     [self calculateAboutMySelsBlock];
 }
 
@@ -118,8 +119,6 @@
     [[TIMLocalUserInfo sharedInstance] setBirthday:textFieldBirthday.text];
     [[TIMLocalUserInfo sharedInstance] setSurname:textFieldSeconName.text];
     [[TIMLocalUserInfo sharedInstance] setName:textFieldName.text];
-//    [[TIMLocalUserInfo sharedInstance] setUserPhoto:_imageViewAvatar.image];
-//    [[TIMLocalUserInfo sharedInstance] setUserWalpaper:_imageViewCover.image];
     
     NSString* anonymous;
     if (anonymousUser) {
@@ -275,9 +274,11 @@
     switch (currentImageView) {
         case avatarInSettings:
             _imageViewAvatar.image = image;
+            [[TIMLocalUserInfo sharedInstance] setUserPhoto:_imageViewAvatar.image];
             break;
         case coverInSettings:
             _imageViewCover.image = image;
+            [[TIMLocalUserInfo sharedInstance] setUserWalpaper:_imageViewCover.image];
             break;
         default:
             break;
@@ -305,9 +306,11 @@
     switch (photoButtons.tag) {
         case avatarInSettings:
             _imageViewAvatar.image = [UIImage imageNamed:@"default-avatar.png"];
+            [[TIMLocalUserInfo sharedInstance] setUserPhoto:nil];
             break;
         case coverInSettings:
-            _imageViewCover.image = [UIImage imageNamed:@"default-wallpaper.png"];
+            _imageViewCover.image = nil;
+            [[TIMLocalUserInfo sharedInstance] setUserWalpaper:nil];
             break;
         default:
             break;

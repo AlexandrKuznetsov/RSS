@@ -36,5 +36,6 @@
 - (void)loadProfessionsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
 - (void)loadInterestsWithCompletition:(void(^)(NSError *error, id response))completitionBlock;
 - (BOOL)connected;
+- (NSString*)server;
 
 @end

@@ -31,6 +31,13 @@
     [_scrollView setContentSize:CGSizeMake(_scrollView.contentSize.width,
                                            maxY)];
     [self createCustomFonts];
+    [self setUserAvatarPhoto];
+}
+
+- (void)setUserAvatarPhoto{
+    if ([[TIMLocalUserInfo sharedInstance] userPhoto]) {
+        avatarImageView.image = [[TIMLocalUserInfo sharedInstance] userPhoto];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animate {
@@ -73,7 +80,10 @@
                                                  gender:userGenderTextField.text
                                                language:userLanguageTextField.text
                                            profilePhoto:avatarImageView.image];
-       [self pushStepThree];
+        if (avatarImageView.image) {
+            [[TIMLocalUserInfo sharedInstance] setUserPhoto:avatarImageView.image];
+        }
+        [self pushStepThree];
     }
     
 }
@@ -87,6 +97,7 @@
 }
 
 - (IBAction)deletePhotoAction:(id)sender {
+    [[TIMLocalUserInfo sharedInstance] setUserPhoto:nil];
     avatarImageView.image = [UIImage imageNamed:@"default-avatar.png"];
 }
 
@@ -121,7 +132,9 @@
                   editingInfo:(NSDictionary *)editingInfo{
     
     avatarImageView.image = image;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[TIMLocalUserInfo sharedInstance] setUserPhoto:image];
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

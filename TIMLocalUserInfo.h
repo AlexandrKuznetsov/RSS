@@ -29,7 +29,8 @@
 @property (copy, nonatomic) NSString *wallpaperName;
 @property (copy, nonatomic) NSString *profession;
 @property (copy, nonatomic) NSString *interests;
-
+@property (assign, nonatomic) BOOL isWalpaperChanged;
+@property (assign, nonatomic) BOOL isAvatarChanged;
 @property (copy, nonatomic) NSString *aboutMe;
 @property (strong, nonatomic) NSDictionary* descrAboutMeSizes;
 @property (copy, nonatomic) NSString *privacyOn;
@@ -38,8 +39,8 @@
 @property (copy, nonatomic) NSString *privacyImpressions;
 @property (copy, nonatomic) NSString *privacyProfession;
 
-//@property (strong, nonatomic) UIImage *userPhoto;
-//@property (strong, nonatomic) UIImage *userWalpaper;
+@property (strong, nonatomic) UIImage *userPhoto;
+@property (strong, nonatomic) UIImage *userWalpaper;
 @property (strong, nonatomic) UIImage *userFlag;
 
 
