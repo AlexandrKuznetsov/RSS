@@ -128,7 +128,9 @@
 - (UIBarButtonItem *)customButtonWithImageName:(NSString *)imageName selector:(SEL)aSel {
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
     UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
-    [customButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [customButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [customButton setImage:[UIImage imageNamed:@"btn_add_place_on.png"]
+                  forState:UIControlStateHighlighted];
     [customButton addTarget:self action:aSel forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:customButton];
     return [[UIBarButtonItem alloc] initWithCustomView:customView];

@@ -12,6 +12,8 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *feedBtnOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *searchBtnOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *friendsBtnOutlet;
 + (TIMHomeNavButtonsView *)loadView;
 
 @end

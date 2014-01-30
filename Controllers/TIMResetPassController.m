@@ -50,6 +50,11 @@
 
 }
 
+- (void)showAlertWithMessage:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
 - (void)createNavigationOkBtn{
     UIButton* okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     okBtn.frame = CGRectMake(0, 0, 29, 29);
@@ -71,7 +76,17 @@
 }
 
 - (void)saveAction {
-    
+    if ([self isValidData]) {
+        //save
+    }
+}
+
+- (BOOL)isValidData {
+    if (![newPassField.text isEqualToString:confirmPassField.text]) {
+        [self showAlertWithMessage:@"Пароли не совпадают"];
+        return NO;
+    }
+    return YES;
 }
 
 - (IBAction)hideAction:(id)sender {

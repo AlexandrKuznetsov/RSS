@@ -69,6 +69,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="feedBtnOutlet" destination="BDr-if-8F2" id="zJe-eM-ShO"/>
+                <outlet property="friendsBtnOutlet" destination="yOW-Or-ff0" id="Hd4-kT-mEa"/>
+                <outlet property="searchBtnOutlet" destination="lgI-MT-z7K" id="McL-HX-dKm"/>
             </connections>
         </view>
     </objects>

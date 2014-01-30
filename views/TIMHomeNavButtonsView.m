@@ -24,8 +24,12 @@
                                                  owner:self
                                                options:nil];
     TIMHomeNavButtonsView *homeBtnView = nib[0];
-    [homeBtnView.feedBtnOutlet setImage:[UIImage imageNamed:@"bnt_events_on_trans.png"]
+    [homeBtnView.feedBtnOutlet setImage:[UIImage imageNamed:@"bnt_events_on.png"]
                                forState:UIControlStateHighlighted];
+    [homeBtnView.searchBtnOutlet setImage:[UIImage imageNamed:@"btn_search_on.png"]
+                                 forState:UIControlStateHighlighted];
+    [homeBtnView.friendsBtnOutlet setImage:[UIImage imageNamed:@"btn_friends_on.png"]
+                                  forState:UIControlStateHighlighted];
     return homeBtnView;
 }
 
