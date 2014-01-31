@@ -270,9 +270,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
         NSURL* url = [NSURL URLWithString:urlString];
         NSData* imageData = [NSData dataWithContentsOfURL:url];
         if (imageData.length > 0) {
-            self.userPhoto = [UIImage imageWithData:imageData];
+            _userPhoto = [UIImage imageWithData:imageData];
         } else {
-            self.userPhoto = nil;
+            _userPhoto = nil;
         }
     }
     [self.user setObject:avatarName forKey:@"avatarName"];
@@ -288,9 +288,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
         NSURL* url = [NSURL URLWithString:urlString];
         NSData* imageData = [NSData dataWithContentsOfURL:url];
         if (imageData.length > 0) {
-            self.userPhoto = [UIImage imageWithData:imageData];
+            _userWalpaper = [UIImage imageWithData:imageData];
         } else {
-            self.userPhoto = nil;
+            _userWalpaper = nil;
         }
     }
     [self.user setObject:wallpaperName forKey:@"wallpaperName"];
@@ -515,8 +515,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
             }
             
             [formData appendPartWithFileData:walpaperData
-                                        name:@"walpaper"
-                                    fileName:[@"walpaper" stringByAppendingString:@".jpg"]
+                                        name:@"wallpaper"
+                                    fileName:[@"wallpaper" stringByAppendingString:@".jpg"]
                                     mimeType:@"image/jpeg"];
             _isWalpaperChanged = NO;
         }
@@ -646,8 +646,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [self setPrivacyImpressions:nil];
     [self setPrivacyProfession:nil];
     
-//    [self setUserPhoto:nil];
-//    [self setUserWalpaper:nil];
+    [self setUserPhoto:nil];
+    [self setUserWalpaper:nil];
     [self setUserFlag:nil];
 }
 
@@ -708,6 +708,44 @@ static TIMLocalUserInfo *sharedInstance = nil;
             completionBlock(error);
         }
     }] start];
+}
+
+#pragma mark - Reachbility
+
+- (void)connected {
+    reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
+    if ((internetStatus) != (NotReachable)) {
+        _isConnection = YES;
+    } else {
+        _isConnection = NO;
+    }
+}
+
+- (void)checkNetworkStatus:(NSNotification *)notice {
+    // called after network status changes
+    
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    switch (internetStatus)
+    {
+        case NotReachable:
+        {
+            _isConnection = NO;
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            _isConnection = YES;
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            _isConnection = YES;
+            break;
+        }
+    }
 }
 
 @end

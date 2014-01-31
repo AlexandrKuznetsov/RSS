@@ -149,15 +149,4 @@
     }];
 }
 
-- (BOOL)connected {
-    Reachability* reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-    if (internetStatus != NotReachable) {
-        return YES;
-    }
-    else {
-        return NO;
-    }
-}
-
 @end

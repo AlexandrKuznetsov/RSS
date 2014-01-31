@@ -10,8 +10,11 @@
 #import "TIMAPIRequests.h"
 #import "TIMModelWithStaticData.h"
 #import "UIFont+TIFonts.h"
+#import "Reachability.h"
 
-@interface TIMLocalUserInfo : NSObject
+@interface TIMLocalUserInfo : NSObject{
+    Reachability* reachability;
+}
 
 @property (nonatomic, copy) void(^loadDataBlock)(NSError *error, id response);
 
@@ -38,7 +41,7 @@
 @property (copy, nonatomic) NSString *privacyInterest;
 @property (copy, nonatomic) NSString *privacyImpressions;
 @property (copy, nonatomic) NSString *privacyProfession;
-
+@property (assign, nonatomic) BOOL isConnection;
 @property (strong, nonatomic) UIImage *userPhoto;
 @property (strong, nonatomic) UIImage *userWalpaper;
 @property (strong, nonatomic) UIImage *userFlag;
@@ -52,5 +55,6 @@
 - (void)setCountry:(NSString *)country;
 - (NSString *)country;
 - (void)deleteLocalUser;
+- (void)connected;
 
 @end

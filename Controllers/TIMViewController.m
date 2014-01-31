@@ -115,5 +115,9 @@
                                           lineBreakMode:label.lineBreakMode];
 }
 
+- (void)showAlertViewWithMessage:(NSString*)massege{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:massege delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alertView show];
+}
 
 @end

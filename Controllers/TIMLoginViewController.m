@@ -7,6 +7,7 @@
 //
 
 #import "TIMLoginViewController.h"
+#import "TIMKeychain.h"
 
 @interface TIMLoginViewController ()
 
@@ -36,7 +37,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self sendImpressionsRequest];
+    if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
+        [self sendImpressionsRequest];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -262,24 +265,33 @@
 }
 
 - (void) sendLogin:(NSString *)login andPassword:(NSString *)password {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[TIMLocalUserInfo sharedInstance] deleteLocalUser];
-    __weak TIMLoginViewController* weakSelf = self;
-    [[TIMAPIRequests sharedManager] postEmail:login password:password withCompletition:^(NSError *error, id response) {
-        if (error) {
-            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-            if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
-                weakSelf.errorTextLabel.text = @"Отсутствует интернет подключение!";
-                [weakSelf showErrorView];
+    if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[TIMLocalUserInfo sharedInstance] deleteLocalUser];
+        __weak TIMLoginViewController* weakSelf = self;
+        [[TIMAPIRequests sharedManager] postEmail:login password:password withCompletition:^(NSError *error, id response) {
+            if (error) {
+                [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+                if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
+                    weakSelf.errorTextLabel.text = @"Отсутствует интернет подключение!";
+                    [weakSelf showErrorView];
+                } else {
+                    [weakSelf showLoginError];
+                }
             } else {
-                [weakSelf showLoginError];
+                if (response) {
+                    [weakSelf loadUserSettings];
+                }
             }
-        } else {
-            if (response) {
-                [weakSelf loadUserSettings];
-            }
+        }];
+    } else {
+        NSDictionary* keychan = [TIMKeychain load:KEYCHAIN_SERVICE];
+        if ([keychan[@"email"] isEqualToString:login] &&
+            [keychan[@"password"] isEqualToString:password]) {
+            
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         }
-    }];
+    }
 }
 
 - (void)loadUserSettings{
@@ -326,7 +338,11 @@
 }
 
 - (IBAction)goToRegistration:(id)sender {
-    [self pushRegistrationViewController];
+    if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
+        [self pushRegistrationViewController];
+    } else {
+        [self showAlertWithMessage:@"Регистраци в офлайн режиме не возможна!"];
+    }
 }
 
 - (IBAction)hideErrorView:(id)sender {
@@ -344,7 +360,9 @@
 - (IBAction)sendPassOnMail:(id)sender {
     [self standartScrollSize];
     [self.mailField resignFirstResponder];
-    if ([self emailIsValid:self.mailField.text]) {
+    if ([self emailIsValid:self.mailField.text] &&
+        [[TIMLocalUserInfo sharedInstance] isConnection]) {
+        
         [self sendPasswordRequest:self.mailField.text];
     } else {
         [self showAlertWithMessage:@"E-Mail адресс введен неправильно"];

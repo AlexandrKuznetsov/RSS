@@ -17,4 +17,6 @@
           cornerRadius:(CGFloat)cornerRadius
                 toView:(UIView*)view;
 
+- (void)showAlertViewWithMessage:(NSString*)massege;
+
 @end

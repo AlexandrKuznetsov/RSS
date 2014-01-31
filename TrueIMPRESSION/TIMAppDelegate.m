@@ -29,6 +29,7 @@
     self.window.rootViewController = container;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [[TIMLocalUserInfo sharedInstance] connected];
     [self setAppearance];
     return YES;
 }

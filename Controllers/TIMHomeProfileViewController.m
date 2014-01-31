@@ -53,9 +53,9 @@
     self.nameLabel.text = self.localUserInfo.name;
     self.surnameLabel.text = self.localUserInfo.surname;
     self.countryLabel.text = [NSString stringWithFormat:@"%@, %@", [self.localUserInfo country], self.localUserInfo.city];
-//    self.avatarImageView.image = self.localUserInfo.userPhoto;
+    self.avatarImageView.image = [[TIMLocalUserInfo sharedInstance] userPhoto];
     self.flagImageView.image = self.localUserInfo.userFlag;
-//    self.wallpaperImageView.image = self.localUserInfo.userWalpaper;
+    self.wallpaperImageView.image = [[TIMLocalUserInfo sharedInstance] userWalpaper];
 }
 
 #pragma mark - Design
@@ -86,19 +86,19 @@
     } else {
         //загрузка локального пользователя при отсутствии инета
         __weak TIMHomeProfileViewController* weakSelf = self;
-        if ([[TIMAPIRequests sharedManager] connected]) {
+        if ([[TIMAPIRequests sharedManager] isConnection]) {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
                 if (!error) {
                     [_tableView reloadData];
                     [weakSelf labelsForLocalUser];
                 } else {
-                    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                    [alertView show];
+                    [self showAlertViewWithMessage:[error localizedDescription]];
                 }
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             }];
         } else {
+            [self showAlertViewWithMessage:@"Интернет подключение не доступно!"];
             [self labelsForLocalUser];
         }
     }
