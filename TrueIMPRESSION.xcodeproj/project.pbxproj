@@ -221,6 +221,8 @@
 		8BB08528188DC9D700FC3792 /* bg_angle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08527188DC9D700FC3792 /* bg_angle@2x.png */; };
 		8BB0852B188DCA9A00FC3792 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB08529188DCA9A00FC3792 /* email@2x.png */; };
 		8BB0852C188DCA9A00FC3792 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0852A188DCA9A00FC3792 /* email.png */; };
+		8BC497FD18A0CC9F00F93414 /* TIMAppSettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC497FC18A0CC9F00F93414 /* TIMAppSettingsModel.m */; };
+		8BC4983818A1203600F93414 /* TIMAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4983718A1203600F93414 /* TIMAppSettings.m */; };
 		8BDD7BD01899078000B9BEF9 /* TIMResetPassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD7BCE1899078000B9BEF9 /* TIMResetPassController.m */; };
 		8BDD7BD11899078000B9BEF9 /* TIMResetPassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD7BCF1899078000B9BEF9 /* TIMResetPassController.xib */; };
 		8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAFDC71884826D00D6A2BA /* TIMProfileImpressionCell.m */; };
@@ -536,6 +538,10 @@
 		8BB08527188DC9D700FC3792 /* bg_angle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_angle@2x.png"; sourceTree = "<group>"; };
 		8BB08529188DCA9A00FC3792 /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
 		8BB0852A188DCA9A00FC3792 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		8BC497FB18A0CC9F00F93414 /* TIMAppSettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMAppSettingsModel.h; sourceTree = "<group>"; };
+		8BC497FC18A0CC9F00F93414 /* TIMAppSettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMAppSettingsModel.m; sourceTree = "<group>"; };
+		8BC4983618A1203600F93414 /* TIMAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMAppSettings.h; sourceTree = "<group>"; };
+		8BC4983718A1203600F93414 /* TIMAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMAppSettings.m; sourceTree = "<group>"; };
 		8BDD7BCD1899078000B9BEF9 /* TIMResetPassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMResetPassController.h; path = Controllers/TIMResetPassController.h; sourceTree = "<group>"; };
 		8BDD7BCE1899078000B9BEF9 /* TIMResetPassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMResetPassController.m; path = Controllers/TIMResetPassController.m; sourceTree = "<group>"; };
 		8BDD7BCF1899078000B9BEF9 /* TIMResetPassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TIMResetPassController.xib; path = Controllers/TIMResetPassController.xib; sourceTree = "<group>"; };
@@ -698,6 +704,8 @@
 			children = (
 				8B687980188D8155007EB325 /* TIMStatistic.h */,
 				8B687981188D8155007EB325 /* TIMStatistic.m */,
+				8BC4983618A1203600F93414 /* TIMAppSettings.h */,
+				8BC4983718A1203600F93414 /* TIMAppSettings.m */,
 			);
 			name = ServerObjects;
 			sourceTree = "<group>";
@@ -1064,6 +1072,7 @@
 		8B816F761889AC0700C7DACA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8BC497FA18A0CC5D00F93414 /* App Settings Model */,
 				8B68797A188D79BF007EB325 /* Statistics Model */,
 				8B7B0A87188BBD7100E95FFD /* LocalUser */,
 				8B7B0A83188BB5E500E95FFD /* ModelWithStaticData */,
@@ -1308,6 +1317,15 @@
 			name = TestFlightSDK2.1.4;
 			path = /Users/fist/Projects/RSS/TestFlightSDK2.1.4;
 			sourceTree = "<absolute>";
+		};
+		8BC497FA18A0CC5D00F93414 /* App Settings Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BC497FB18A0CC9F00F93414 /* TIMAppSettingsModel.h */,
+				8BC497FC18A0CC9F00F93414 /* TIMAppSettingsModel.m */,
+			);
+			name = "App Settings Model";
+			sourceTree = "<group>";
 		};
 		8BDD7BCC1899066B00B9BEF9 /* ResetPass Controller */ = {
 			isa = PBXGroup;
@@ -1758,6 +1776,7 @@
 				8B890A02189436030032F761 /* TIMLeftSideViewController.m in Sources */,
 				8B95745118881EE10095392D /* TIMContinueButton.m in Sources */,
 				8B68797D188D7AC1007EB325 /* TIMStatisticsModel.m in Sources */,
+				8BC4983818A1203600F93414 /* TIMAppSettings.m in Sources */,
 				8B890A2618945A180032F761 /* TIMSearchController.m in Sources */,
 				8BA5B50F18815D09009ED9D8 /* main.m in Sources */,
 				8B890A14189458E50032F761 /* TIMSubscriptionsController.m in Sources */,
@@ -1783,6 +1802,7 @@
 				C55CF01618940AEC00AF64DB /* Reachability.m in Sources */,
 				8B73854C1881F07F00D1E0C2 /* TIMViewController.m in Sources */,
 				8B73856E1881F37E00D1E0C2 /* TIMStepOneRegViewController.m in Sources */,
+				8BC497FD18A0CC9F00F93414 /* TIMAppSettingsModel.m in Sources */,
 				8B890A0818944DFD0032F761 /* TIMGlobalSettingsController.m in Sources */,
 				C5A531B818831D2E007B4019 /* NSObject+CheckData.m in Sources */,
 				8B9283D31883593B009F93C0 /* TIMRoundedImageView.m in Sources */,
