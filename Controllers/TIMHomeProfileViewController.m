@@ -33,11 +33,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self checkForLoginInformation];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self checkForLoginInformation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,12 +106,19 @@
 
 - (BOOL)isValidCurrentUser{
     NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
-    if ([keyChanDict[@"email"] isEqualToString:
-         [[TIMLocalUserInfo sharedInstance] email]]) {
-        return YES;
+    if (keyChanDict[@"email"]) {
+        if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
+            if ([keyChanDict[@"email"] isEqualToString:
+                 [[TIMLocalUserInfo sharedInstance] email]]) {
+                return YES;
+            }
+        } else {
+            if ([[TIMLocalUserInfo sharedInstance] user]) {
+                return YES;
+            }
+        }
     }
-#warning WRONG_CHECK
-    return YES;
+    return NO;
 }
 
 #pragma mark - Accessors

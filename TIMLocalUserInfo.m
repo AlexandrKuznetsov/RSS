@@ -548,9 +548,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.wallpaperName = [response objectForKey:@"wallpaper"];
         self.profession = [response objectForKey:@"profession"];
         self.interests = [response objectForKey:@"interests"];
-#warning ABOUT_MYSELF_BLOCK
-        self.aboutMe = [response objectForKey:@"description"];
-        
+        self.aboutMe = [response objectForKey:@"about"];        
         self.privacyOn = [response objectForKey:@"privacy_on"];
         self.privacyPlace = [response objectForKey:@"privacy_place"];
         self.privacyInterest = [response objectForKey:@"privacy_interest"];
@@ -592,7 +590,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                      @"born_date": self.birthday,
                                      @"sex": self.gender,
                                      @"app_lang": self.defaultLanguage,
-                                     @"description": self.aboutMe,
+                                     @"about": self.aboutMe,
 //                                     @"created_at": @"",
 //                                     @"updated_at": @"",
 //                                     @"encrypted_password": @"",
