@@ -33,11 +33,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self checkForLoginInformation];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self checkForLoginInformation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,7 +86,7 @@
     } else {
         //загрузка локального пользователя при отсутствии инета
         __weak TIMHomeProfileViewController* weakSelf = self;
-        if ([[TIMAPIRequests sharedManager] isConnection]) {
+        if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
                 if (!error) {
@@ -106,12 +106,15 @@
 
 - (BOOL)isValidCurrentUser{
     NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
-    if ([keyChanDict[@"email"] isEqualToString:
-         [[TIMLocalUserInfo sharedInstance] email]]) {
+    if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
+        if ([keyChanDict[@"email"] isEqualToString:
+             [[TIMLocalUserInfo sharedInstance] email]]) {
+            return YES;
+        }
+    } else {
         return YES;
     }
-#warning WRONG_CHECK
-    return YES;
+    return NO;
 }
 
 #pragma mark - Accessors
