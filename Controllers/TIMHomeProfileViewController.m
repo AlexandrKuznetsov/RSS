@@ -106,13 +106,17 @@
 
 - (BOOL)isValidCurrentUser{
     NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
-    if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
-        if ([keyChanDict[@"email"] isEqualToString:
-             [[TIMLocalUserInfo sharedInstance] email]]) {
-            return YES;
+    if (keyChanDict[@"email"]) {
+        if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
+            if ([keyChanDict[@"email"] isEqualToString:
+                 [[TIMLocalUserInfo sharedInstance] email]]) {
+                return YES;
+            }
+        } else {
+            if ([[TIMLocalUserInfo sharedInstance] user]) {
+                return YES;
+            }
         }
-    } else {
-        return YES;
     }
     return NO;
 }
