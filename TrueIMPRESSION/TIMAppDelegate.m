@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[TIMLocalUserInfo sharedInstance] connected];
     [TestFlight takeOff:@"09049131-8e66-4e5a-af19-8e3b1b83f61d"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     TIMHomeProfileViewController *homeViewController = [[TIMHomeProfileViewController alloc]
@@ -29,7 +30,6 @@
     self.window.rootViewController = container;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [[TIMLocalUserInfo sharedInstance] connected];
     [self setAppearance];
     return YES;
 }

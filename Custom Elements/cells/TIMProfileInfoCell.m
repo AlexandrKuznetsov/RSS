@@ -27,9 +27,6 @@
 }
 
 - (void)setDataAndHeight{
-    NSLog(@"%@", [[TIMLocalUserInfo sharedInstance] profession]);
-    NSLog(@"%@", [[TIMLocalUserInfo sharedInstance] interests]);
-    NSLog(@"%@", [[TIMLocalUserInfo sharedInstance] aboutMe]);
     self.professionLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
     self.interestLabel.text = [[TIMLocalUserInfo sharedInstance] interests];
     self.aboutLabeel.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
