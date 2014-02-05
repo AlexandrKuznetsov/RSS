@@ -218,14 +218,14 @@
 }
 
 - (IBAction)swicherBtnAction:(id)sender {
+    if (sender) {
+        anonymousUser = !anonymousUser;
+    }
     UIImage* image;
     if (!anonymousUser) {
         image = [UIImage imageNamed:@"off.png"];
     } else {
         image = [UIImage imageNamed:@"on.png"];
-    }
-    if (sender) {
-        anonymousUser = !anonymousUser;
     }
     [swicherBtn setImage:image forState:UIControlStateNormal];
 }

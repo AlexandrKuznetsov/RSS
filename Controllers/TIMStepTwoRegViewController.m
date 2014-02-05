@@ -32,6 +32,7 @@
                                            maxY)];
     [self createCustomFonts];
     [self setUserAvatarPhoto];
+    [self getDefaultLanguage];
 }
 
 - (void)setUserAvatarPhoto{
@@ -44,6 +45,15 @@
     [super viewWillAppear:YES];
     [super getCrrentUserLocation];
     [self.locationManager startUpdatingLocation];
+}
+
+- (void)getDefaultLanguage{
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:@"ru"]) {
+        userLanguageTextField.text = @"Русский";
+    } else {
+        userLanguageTextField.text = @"English";
+    }
 }
 
 - (void)createCustomFonts{
