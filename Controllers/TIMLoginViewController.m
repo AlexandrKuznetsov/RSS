@@ -188,6 +188,7 @@
 - (void)hideKeyBoard {
     [self.loginField resignFirstResponder];
     [self.passwordField resignFirstResponder];
+    [self.mailField resignFirstResponder];
 }
 
 - (void)fieldsWithError {
