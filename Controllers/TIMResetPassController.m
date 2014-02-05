@@ -77,7 +77,18 @@
 
 - (void)saveAction {
     if ([self isValidData]) {
-        //save
+        [TIMAppSettingsModel sharedInstance].passNew = newPassField.text;
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+       [[TIMAppSettingsModel sharedInstance] changePasswordWithCompletition:^(NSError *error, id response) {
+           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+           if (!error) {
+               NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[TIMKeychain load:KEYCHAIN_SERVICE]];
+               [dict setObject:newPassField.text forKey:@"password"];
+               [TIMKeychain save:KEYCHAIN_SERVICE data:dict];
+           } else {
+               [self showAlertViewWithMessage:error.localizedDescription];
+           }
+       }];
     }
 }
 
@@ -91,6 +102,10 @@
 
 - (IBAction)hideAction:(id)sender {
     [self hideKeyboard];
+}
+
+- (IBAction)save:(id)sender {
+    [self saveAction];
 }
 
 #pragma mark - Text Field Delegate

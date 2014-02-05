@@ -9,13 +9,21 @@
 #import "TIMRegistrationViewController.h"
 #import "TIMResetPassController.h"
 #import "TIMSwichButton.h"
+#import "TIMAppSettingsModel.h"
+#import "TIMAppSettings.h"
 
 #define SCROLL_SIZE 662
 
 @interface TIMGlobalSettingsController : TIMRegistrationViewController {
     __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UIImageView *bgImageView;
-    
+    __weak IBOutlet TIMSwichButton *_notifButton;
+    __weak IBOutlet TIMSwichButton *_googleButton;
+    __weak IBOutlet TIMSwichButton *_odnoklButton;
+    __weak IBOutlet TIMSwichButton *_vkButton;
+    __weak IBOutlet TIMSwichButton *_fbButton;
+    __weak IBOutlet TIMSwichButton *_twitterButton;
+
     BOOL pushEnabled;
     BOOL fbEnabled;
     BOOL VkEnabled;

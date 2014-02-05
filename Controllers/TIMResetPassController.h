@@ -7,6 +7,7 @@
 //
 
 #import "TIMRegistrationViewController.h"
+#import "TIMAppSettingsModel.h"
 
 @interface TIMResetPassController : TIMRegistrationViewController < UITextFieldDelegate >{
     
@@ -15,5 +16,6 @@
     __weak IBOutlet UITextField *confirmPassField;
 }
 - (IBAction)hideAction:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end

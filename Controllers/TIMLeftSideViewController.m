@@ -119,6 +119,7 @@
     }
     if (indexPath.row == 12) {
         cell.isExit = YES;
+        cell.canSelect = YES;
     }
     NSString *text = _cellsNameArray[indexPath.row];
     if (text.length != 0) {
@@ -131,6 +132,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TIMHomeNavigationViewController *navigation = self.menuContainerViewController.centerViewController;
     id controller = [_controllersArray objectAtIndex:indexPath.row];
+    if (indexPath.row == 12) {
+        [TIMKeychain deleteData:KEYCHAIN_SERVICE];
+        controller = [_controllersArray objectAtIndex:1];
+    }
     if (![controller isKindOfClass:[NSNull class]]) {
         NSArray *controllers = [NSArray arrayWithObject:controller];
         navigation.viewControllers = controllers;

@@ -132,7 +132,7 @@
 
 #pragma mark - Buttons 
 
-- (UIBarButtonItem *)customButtonWithImageName:(NSString *)imageName selector:(SEL)aSel {
+- (UIBarButtonItem *)customButtonWithName:(NSString *)imageName selector:(SEL)aSel {
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 36)];
     UIButton *customButton = [[UIButton alloc] initWithFrame:customView.bounds];
     [customButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
@@ -145,7 +145,7 @@
 
 - (void)addNavigationButtons {
     self.navigationItem.titleView = self.buttonsView;
-    self.navigationItem.rightBarButtonItem = [self customButtonWithImageName:@"btn_add_place"
+    self.navigationItem.rightBarButtonItem = [self customButtonWithName:@"btn_add_place"
                                                                     selector:@selector(addImpression)];
 }
 

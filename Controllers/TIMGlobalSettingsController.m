@@ -28,6 +28,8 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Настройки";
     [self setFontsToTextViewsInView:self.view];
+    [self createNavigationOkBtn];
+    [self settingsRequest];
 }
 
 - (void)viewWillAppear:(BOOL)animate {
@@ -40,6 +42,52 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Data 
+
+- (void)settingsRequest {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[TIMAppSettingsModel sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        if (!error) {
+            [self setButtonsForSettings:(TIMAppSettings *)response];
+        } else {
+            [self showAlertViewWithMessage:error.localizedDescription];
+        }
+    }];
+}
+
+#pragma mark - Interface
+
+- (void)setButtonsForSettings:(TIMAppSettings *)settings {
+    pushEnabled = settings.notifications;
+    fbEnabled = settings.facebook;
+    VkEnabled = settings.vk;
+    odniklEnabled = settings.odnoklassniki;
+    googleEnabled = settings.google;
+    twitterEnabled = settings.twitter;
+    
+    _fbButton.active = fbEnabled;
+    _notifButton.active = pushEnabled;
+    _odnoklButton.active = odniklEnabled;
+    _vkButton.active = VkEnabled;
+    _googleButton.active = googleEnabled;
+    _twitterButton.active = twitterEnabled;
+}
+
+- (void)createNavigationOkBtn{
+    UIButton* okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    okBtn.frame = CGRectMake(0, 0, 29, 29);
+    [okBtn addTarget:self
+              action:@selector(saveAction)
+    forControlEvents:UIControlEventTouchUpInside];
+    [okBtn setImage:[UIImage imageNamed:@"btn_ok_white.png"]
+           forState:UIControlStateNormal];
+    [okBtn setImage:[UIImage imageNamed:@"btn_ok_white_on.png"]
+           forState:UIControlStateHighlighted];
+    UIBarButtonItem* okBarButton = [[UIBarButtonItem alloc] initWithCustomView:okBtn];
+    [self.navigationItem setRightBarButtonItem:okBarButton];
 }
 
 #pragma mark - Design 
@@ -93,6 +141,24 @@
 }
 
 #pragma mark - Actions
+
+- (void)saveAction {
+    [TIMAppSettingsModel sharedInstance].pushEnabled = pushEnabled;
+    [TIMAppSettingsModel sharedInstance].fbEnabled = fbEnabled;
+    [TIMAppSettingsModel sharedInstance].VkEnabled = VkEnabled;
+    [TIMAppSettingsModel sharedInstance].odniklEnabled = odniklEnabled;
+    [TIMAppSettingsModel sharedInstance].twitterEnabled = twitterEnabled;
+    [TIMAppSettingsModel sharedInstance].googleEnabled = googleEnabled;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[TIMAppSettingsModel sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        if (!error) {
+        } else {
+            [self showAlertViewWithMessage:error.localizedDescription];
+        }
+    }];
+}
+
 
 - (IBAction)pushAction:(TIMSwichButton *)sender {
     pushEnabled = !pushEnabled;
