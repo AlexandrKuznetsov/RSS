@@ -95,7 +95,7 @@
         textViewAboutMySelf.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
     }
     if (![[TIMLocalUserInfo sharedInstance] userPhoto]) {
-         _imageViewAvatar.image = [UIImage imageNamed:@"default-avatar.png"];
+        [self changeImageAtImageView:_imageViewAvatar withGender:[[TIMLocalUserInfo sharedInstance] gender]];
     } else {
         _imageViewAvatar.image = [[TIMLocalUserInfo sharedInstance] userPhoto];
     }
@@ -134,6 +134,7 @@
     [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
+            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
             [weakSelf setValuesToView];
         } else {
             [weakSelf showError:[error localizedDescription]];
@@ -305,7 +306,7 @@
 - (void)deletePhoto:(TIMPhotoButtons*)photoButtons{
     switch (photoButtons.tag) {
         case avatarInSettings:
-            _imageViewAvatar.image = [UIImage imageNamed:@"default-avatar.png"];
+            [self changeImageAtImageView:_imageViewAvatar withGender:[[TIMLocalUserInfo sharedInstance] gender]];
             [[TIMLocalUserInfo sharedInstance] setUserPhoto:nil];
             break;
         case coverInSettings:
@@ -324,10 +325,9 @@
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    static dispatch_once_t once;
-    dispatch_once(&once, ^{
+    if ([textView.text isEqualToString:@"Пару слов о себе..."]) {
         textView.text = @"";
-    });
+    }
 }
 
 

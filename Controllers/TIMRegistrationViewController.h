@@ -58,5 +58,6 @@ typedef enum {
 
 - (void)getCrrentUserLocation;
 - (void)saveLocationCountry:(NSString *)locationCountry;
+- (void)changeImageAtImageView:(UIImageView*)imageView withGender:(NSString*)gender;
 
 @end

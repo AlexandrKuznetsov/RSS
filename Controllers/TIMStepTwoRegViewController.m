@@ -80,6 +80,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)changeAva{
+    [self changeImageAtImageView:avatarImageView withGender:userGenderTextField.text];
+}
+
 #pragma mark - Actions
 
 - (IBAction)goToNextStep:(id)sender {
@@ -108,7 +112,7 @@
 
 - (IBAction)deletePhotoAction:(id)sender {
     [[TIMLocalUserInfo sharedInstance] setUserPhoto:nil];
-    avatarImageView.image = [UIImage imageNamed:@"default-avatar.png"];
+    [self changeImageAtImageView:avatarImageView withGender:userGenderTextField.text];
 }
 
 #pragma mark - Navigation

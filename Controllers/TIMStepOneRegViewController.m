@@ -67,7 +67,6 @@
     [[TIMRegistrationModel sharedInstance] registerRequestWithCompletition:^(NSString *errorDescription, BOOL status) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (status) {
-            [weakSelf saveDataToLocalUserInfo];
             [weakSelf pushStepTwo];
         } else {
             [weakSelf showAlertViewWithMessage:errorDescription];
@@ -76,12 +75,14 @@
 }
 
 - (IBAction)goToNextStep:(id)sender {
-    if ([self checkIsDataValid]) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [[TIMRegistrationModel sharedInstance] saveLogin:mailTextField.text
-                                                password:passwordTextField.text];
-        [self registrationRequest];
-    }
+#warning TEST_SEGUE
+    [self pushStepTwo];
+//    if ([self checkIsDataValid]) {
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        [[TIMRegistrationModel sharedInstance] saveLogin:mailTextField.text
+//                                                password:passwordTextField.text];
+//        [self registrationRequest];
+//    }
 }
 
 - (void)saveDataToLocalUserInfo{

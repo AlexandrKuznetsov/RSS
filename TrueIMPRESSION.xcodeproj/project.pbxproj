@@ -240,6 +240,7 @@
 		8BFB28511895A6180078F648 /* default-avatar_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BFB28501895A6180078F648 /* default-avatar_place.png */; };
 		8BFB28581895A96D0078F648 /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BFB28541895A96D0078F648 /* btn_green.png */; };
 		8BFB28591895A96D0078F648 /* btn_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BFB28551895A96D0078F648 /* btn_green@2x.png */; };
+		C532EE9218A41ECC00A3A234 /* ava_female.png in Resources */ = {isa = PBXBuildFile; fileRef = C532EE9118A41ECC00A3A234 /* ava_female.png */; };
 		C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */; };
 		C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */; };
 		C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */; };
@@ -563,6 +564,7 @@
 		8BFB28501895A6180078F648 /* default-avatar_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-avatar_place.png"; path = "Images/default-avatar_place.png"; sourceTree = "<group>"; };
 		8BFB28541895A96D0078F648 /* btn_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_green.png; path = Images/btn_green.png; sourceTree = "<group>"; };
 		8BFB28551895A96D0078F648 /* btn_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_green@2x.png"; path = "Images/btn_green@2x.png"; sourceTree = "<group>"; };
+		C532EE9118A41ECC00A3A234 /* ava_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ava_female.png; sourceTree = "<group>"; };
 		C550EDCE18871C9500C8CFD4 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 		8B7384A61881D0BE00D1E0C2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				C532EE9118A41ECC00A3A234 /* ava_female.png */,
 				8B254B571899AE6800D49564 /* btn_arrow_on.png */,
 				8B254B581899AE6800D49564 /* btn_arrow_on@2x.png */,
 				8B254B591899AE6800D49564 /* btn_login_on.png */,
@@ -1684,6 +1687,7 @@
 				C5E67DDB1889F18C000CB56B /* on@2x.png in Resources */,
 				8B7385791881F3AF00D1E0C2 /* TIMStepThreeRegViewController.xib in Resources */,
 				8B7385151881D10E00D1E0C2 /* home-button.png in Resources */,
+				C532EE9218A41ECC00A3A234 /* ava_female.png in Resources */,
 				8B7385361881D10E00D1E0C2 /* register-window.png in Resources */,
 				8B254B3F1899A14800D49564 /* bnt_events_on_trans@2x.png in Resources */,
 				8B9283C418833876009F93C0 /* btn_add_place.png in Resources */,

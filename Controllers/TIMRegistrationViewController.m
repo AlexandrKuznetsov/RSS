@@ -106,76 +106,106 @@
             break;
         case gender:
         {
-            NSArray* genderArray = [_staticModel genderArray];
+            
             [self createTextPikerToTextField:textField
-                              withDataSource:genderArray];
+                              withDataSource:[self sortArray:[[_staticModel genderArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case language:
         {
-            NSArray* languageArray = [_staticModel languageArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:languageArray];
+                              withDataSource:[self sortArray:[[_staticModel languageArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case country:
         {
-            NSArray* countryArray = [self createCountryArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:countryArray];
+                              withDataSource:[self sortArray:[[self createCountryArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case privacyMyPlace:
         {
-            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:sharedArray];
+                              withDataSource:[self sortArray:[[_staticModel privacyArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case privacyMyInterests:
         {
-            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:sharedArray];
+                              withDataSource:[self sortArray:[[_staticModel privacyArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case privacyMyImpressions:
         {
-            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:sharedArray];
+                              withDataSource:[self sortArray:[[_staticModel privacyArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case privacyMyProfession:
         {
-            NSArray* sharedArray = [_staticModel privacyArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:sharedArray];
+                              withDataSource:[self sortArray:[[_staticModel privacyArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case notifications:
         {
-            NSArray* notificationsArray = [_staticModel notificationsArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:notificationsArray];
+                              withDataSource:[self sortArray:[[_staticModel notificationsArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case search:
         {
-            NSArray* searchArray = [_staticModel searchArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:searchArray];
+                              withDataSource:[self sortArray:[[_staticModel searchArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         case synchronization:
         {
-            NSArray* syncArray = [_staticModel synchronizeArray];
             [self createTextPikerToTextField:textField
-                              withDataSource:syncArray];
+                              withDataSource:[self sortArray:[[_staticModel synchronizeArray] mutableCopy] currentValue:textField.text]];
         }
             break;
         default:
             break;
+    }
+}
+
+- (NSMutableArray*)sortArray:(NSMutableArray*)dataSource
+                currentValue:(NSString*)string{
+    if (!string && !string.length > 0) {
+        return dataSource;
+    } else {
+        NSMutableArray* sortedArray = [[NSMutableArray alloc] init];
+        for (NSString* langStr in dataSource) {
+            if ([langStr isEqualToString:string]) {
+                [sortedArray addObject:langStr];
+            }
+        }
+        [dataSource removeObject:[sortedArray lastObject]];
+        [sortedArray addObjectsFromArray:dataSource];
+        return sortedArray;
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.tag == gender) {
+        [self changeAva];
+    }
+}
+
+- (void)changeAva{
+    //logic in children
+}
+
+- (void)changeImageAtImageView:(UIImageView*)imageView withGender:(NSString*)gender{
+    if (![[TIMLocalUserInfo sharedInstance] userPhoto]) {
+        UIImage* placeHolderImage;
+        if ([gender isEqualToString:@"Женский"]) {
+            placeHolderImage = [UIImage imageNamed:@"ava_female.png"];
+        } else {
+            placeHolderImage = [UIImage imageNamed:@"default-avatar.png"];
+        }
+        imageView.image = placeHolderImage;
     }
 }
 
@@ -210,6 +240,15 @@
     datePiker.datePickerMode = UIDatePickerModeDate;
     [datePiker addTarget:self action:@selector(changebirthdayValue:) forControlEvents:UIControlEventValueChanged];
     textField.inputView = datePiker;
+    if (_activeTextField.text && _activeTextField.text.length > 0) {
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd.MM.yyyy"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        NSDate* date = [dateFormatter dateFromString:_activeTextField.text];
+        if (date) {
+            [datePiker setDate:date];
+        }
+    }
 }
 
 - (void)changebirthdayValue:(UIDatePicker*)picker{

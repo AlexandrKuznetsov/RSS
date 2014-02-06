@@ -107,11 +107,11 @@
         [[TIMRegistrationModel sharedInstance] saveInterests:interestsString
                                                   profession:self.professionLabel.text
                                                        about:self.aboutTextView.text];
-        [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
         __weak TIMStepThreeRegViewController* weakSelf = self;
         [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
             if (!error) {
                 [weakSelf dismissRegistration];
+                [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
             } else {
                 [weakSelf showError:[error localizedDescription]];
             }
