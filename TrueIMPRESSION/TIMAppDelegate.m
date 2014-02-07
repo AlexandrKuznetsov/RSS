@@ -26,7 +26,7 @@
     MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController containerWithCenterViewController:homeNavigation
                                                                                                  leftMenuViewController:leftSideController
                                                                                                 rightMenuViewController:nil];
-    
+    container.menuAnimationDefaultDuration = 2.0;
     self.window.rootViewController = container;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

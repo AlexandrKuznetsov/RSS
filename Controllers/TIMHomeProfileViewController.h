@@ -14,6 +14,7 @@
 #import "TIMProfileInfoCell.h"
 #import "TIMSetingsViewController.h"
 #import "TIMLocalUserInfo.h"
+#import "TIMNoImressionsCell.h"
 
 
 @interface TIMHomeProfileViewController : TIMViewController <
