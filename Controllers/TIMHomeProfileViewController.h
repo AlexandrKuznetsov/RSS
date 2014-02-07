@@ -42,4 +42,7 @@ UITableViewDelegate
 - (IBAction)settingBtnAction:(id)sender;
 
 
+- (void)testMethod;
+
+
 @end

@@ -15,6 +15,10 @@
 
 @implementation TIMHomeProfileViewController
 
+- (void)testMethod {
+    [self checkForLoginInformation];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,6 +42,10 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews {
+    
 }
 
 - (void)didReceiveMemoryWarning

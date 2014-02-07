@@ -30,11 +30,11 @@
 {
     [super viewDidLoad];
     [self initControllersArray];
-    [self initNamesArray];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self initNamesArray];
     [self.tableView reloadData];
 }
 
@@ -43,9 +43,9 @@
     if (IS_IPHONE5) {
         self.tableView.frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
     }
-
     self.tableView.contentSize = CGSizeMake(0, _cellsNameArray.count * CELL_HEIGHT);
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -151,6 +151,7 @@
         NSArray *controllers = [NSArray arrayWithObject:controller];
         navigation.viewControllers = controllers;
         [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+        [controller testMethod];
     }
 }
 
