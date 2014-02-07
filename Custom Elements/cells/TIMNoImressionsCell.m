@@ -1,14 +1,15 @@
 //
-//  TIMProfileImpressionCell.m
+//  TIMNoImressionsCell.m
 //  TrueIMPRESSION
 //
-//  Created by Vdovichenko Dmitry on 13.01.14.
+//  Created by fist on 2/7/14.
 //  Copyright (c) 2014 Impression. All rights reserved.
 //
 
-#import "TIMProfileImpressionCell.h"
+#import "TIMNoImressionsCell.h"
+#import "UIFont+TIFonts.h"
 
-@implementation TIMProfileImpressionCell
+@implementation TIMNoImressionsCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,10 +27,8 @@
     // Configure the view for the selected state
 }
 
-- (void)customFonts {
-    self.imprNameLabel.font = [UIFont boldFontWithSize:14.0f];
-    self.locationLabel.font = [UIFont semiBoldFontWithSize:10.0f];
-    self.dateLabel.font = [UIFont regularFontWithSize:10.0f];
+- (void)customFonts{
+    self.textLabel.font = [UIFont regularFontWithSize:10.0f];
 }
 
 @end

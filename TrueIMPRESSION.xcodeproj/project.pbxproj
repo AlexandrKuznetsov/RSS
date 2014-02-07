@@ -241,6 +241,8 @@
 		8BFB28581895A96D0078F648 /* btn_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BFB28541895A96D0078F648 /* btn_green.png */; };
 		8BFB28591895A96D0078F648 /* btn_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BFB28551895A96D0078F648 /* btn_green@2x.png */; };
 		C532EE9218A41ECC00A3A234 /* ava_female.png in Resources */ = {isa = PBXBuildFile; fileRef = C532EE9118A41ECC00A3A234 /* ava_female.png */; };
+		C532EECF18A582E500A3A234 /* TIMNoImressionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C532EECE18A582E500A3A234 /* TIMNoImressionsCell.m */; };
+		C532EED118A5831800A3A234 /* TIMNoImpressionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C532EED018A5831800A3A234 /* TIMNoImpressionsCell.xib */; };
 		C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */; };
 		C550EDE018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */; };
 		C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C550EDD118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf */; };
@@ -565,6 +567,9 @@
 		8BFB28541895A96D0078F648 /* btn_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_green.png; path = Images/btn_green.png; sourceTree = "<group>"; };
 		8BFB28551895A96D0078F648 /* btn_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_green@2x.png"; path = "Images/btn_green@2x.png"; sourceTree = "<group>"; };
 		C532EE9118A41ECC00A3A234 /* ava_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ava_female.png; sourceTree = "<group>"; };
+		C532EECD18A582E500A3A234 /* TIMNoImressionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIMNoImressionsCell.h; path = "Custom Elements/cells/TIMNoImressionsCell.h"; sourceTree = "<group>"; };
+		C532EECE18A582E500A3A234 /* TIMNoImressionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIMNoImressionsCell.m; path = "Custom Elements/cells/TIMNoImressionsCell.m"; sourceTree = "<group>"; };
+		C532EED018A5831800A3A234 /* TIMNoImpressionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMNoImpressionsCell.xib; sourceTree = "<group>"; };
 		C550EDCE18871C9500C8CFD4 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C550EDCF18871C9500C8CFD4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		C550EDD018871C9500C8CFD4 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -1343,6 +1348,7 @@
 		8BEAFDC41884818900D6A2BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C532EECC18A5825D00A3A234 /* NoImpressionCell */,
 				8BFB283E189594CD0078F648 /* Menu cell */,
 				8BEAFDCB188489CE00D6A2BA /* Profile info cell */,
 				8BEAFDC51884819600D6A2BA /* Profile impr cell */,
@@ -1378,6 +1384,16 @@
 				8BFB2842189595360078F648 /* TIMMenuCell.xib */,
 			);
 			name = "Menu cell";
+			sourceTree = "<group>";
+		};
+		C532EECC18A5825D00A3A234 /* NoImpressionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C532EECD18A582E500A3A234 /* TIMNoImressionsCell.h */,
+				C532EECE18A582E500A3A234 /* TIMNoImressionsCell.m */,
+				C532EED018A5831800A3A234 /* TIMNoImpressionsCell.xib */,
+			);
+			name = NoImpressionCell;
 			sourceTree = "<group>";
 		};
 		C550EDCC18871C9500C8CFD4 /* Fonts */ = {
@@ -1673,6 +1689,7 @@
 				8B73852D1881D10E00D1E0C2 /* login-bottom@2x.jpg in Resources */,
 				8B7384FE1881D10E00D1E0C2 /* camera-take-icon-hover.png in Resources */,
 				8B7385231881D10E00D1E0C2 /* icon-toolbar-people.png in Resources */,
+				C532EED118A5831800A3A234 /* TIMNoImpressionsCell.xib in Resources */,
 				8B7385061881D10E00D1E0C2 /* flag_by.png in Resources */,
 				8BFB28581895A96D0078F648 /* btn_green.png in Resources */,
 				C550EDEC18871C9500C8CFD4 /* OpenSans-CondLightItalic.ttf in Resources */,
@@ -1791,6 +1808,7 @@
 				8BDD7BD01899078000B9BEF9 /* TIMResetPassController.m in Sources */,
 				8B890A20189459BC0032F761 /* TIMFavouritesController.m in Sources */,
 				8B254B3A18999B7900D49564 /* UINavigationItem+iOS7Spacing.m in Sources */,
+				C532EECF18A582E500A3A234 /* TIMNoImressionsCell.m in Sources */,
 				8B73857E1882003A00D1E0C2 /* TIMLoginButton.m in Sources */,
 				8BA5B51318815D09009ED9D8 /* TIMAppDelegate.m in Sources */,
 				8B890A3218945ADB0032F761 /* TIMHelpViewController.m in Sources */,

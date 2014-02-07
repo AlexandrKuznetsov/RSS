@@ -18,6 +18,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 
 - (void)customFonts;
-- (void)makeNoImpressionCell;
 
 @end

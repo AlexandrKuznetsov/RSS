@@ -193,7 +193,11 @@
     if (indexPath.row == 0) {
         return [self createInfoCellForTable:tableView atIndexPath:indexPath];
     } else {
-        return [self createImpressionCellForTable:tableView atIndexPath:indexPath];
+        if (!sourceData) {
+            return [self createNoImpressionCellForTable:tableView atIndexPath:indexPath];
+        } else {
+            return [self createImpressionCellForTable:tableView atIndexPath:indexPath];
+        }
     }
 }
 
@@ -217,14 +221,22 @@
         NSArray *topLevelItems = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileImpressionCell" owner:nil options:nil];
         cell = [topLevelItems lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        if (!sourceData) {
-            [cell makeNoImpressionCell];
-        }
     }
     [cell customFonts];
     return cell;
 }
 
+- (TIMNoImressionsCell*)createNoImpressionCellForTable:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    static NSString* identifier = @"NoImpression";
+    TIMNoImressionsCell* cell = (TIMNoImressionsCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        NSArray *topLevelItems = [[NSBundle mainBundle] loadNibNamed:@"TIMNoImpressionsCell" owner:nil options:nil];
+        cell = [topLevelItems lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        [cell customFonts];
+    }
+    return cell;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
@@ -232,7 +244,7 @@
         return [self getaboutMySelfLabelHeight];
     }
     if (!sourceData) {
-        return 33;
+        return 40;
     }
     //верстка
     return 113;
