@@ -40,18 +40,18 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)loadData{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak TIMSetingsViewController* weakSelf = self;
-    [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        if (!error) {
-            [weakSelf setValuesToView];
-        } else {
-            [weakSelf showError:[error localizedDescription]];
-        }
-    }];
-}
+//- (void)loadData{
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    __weak TIMSetingsViewController* weakSelf = self;
+//    [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//        if (!error) {
+//            [weakSelf setValuesToView];
+//        } else {
+//            [weakSelf showError:[error localizedDescription]];
+//        }
+//    }];
+//}
 
 - (void)createAppearence{
     self.interestsLabel.font = [UIFont lightFontWithSize:13.0f];
@@ -60,8 +60,7 @@
     [self createNavigationOkBtn];
     [self setFontsToTextViewsInView:self.view];
     [self setValuesToView];
-    [self calculateAboutMySelsBlock];
-    [self loadData];
+//    [self loadData];
 }
 
 - (void)setValuesToView{
@@ -166,7 +165,7 @@
                                                CGRectGetMaxY(textViewAboutMySelf.frame),
                                                textViewAboveMySelfInfo.frame.size.width,
                                                textViewAboveMySelfInfo.frame.size.height);
-    
+    NSLog(@"%f", CGRectGetMaxY(textViewAboveMySelfInfo.frame) - 78);
     imageViewBottomFon.frame = CGRectMake(imageViewBottomFon.frame.origin.x,
                                     imageViewBottomFon.frame.origin.y,
                                     imageViewBottomFon.frame.size.width,

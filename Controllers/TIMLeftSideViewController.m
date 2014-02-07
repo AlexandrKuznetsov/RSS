@@ -33,6 +33,11 @@
     [self initNamesArray];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (IS_IPHONE5) {
@@ -52,7 +57,7 @@
 
 - (void)initNamesArray {
     _cellsNameArray = @[@"",
-                        @"Дмитрий Вдовиченко",
+                        [self getUserFullName],
                         @"",
                         @"Мои впечатления",
                         @"Мои подписки",
@@ -65,6 +70,11 @@
                         @"",
                         @"Выход"];
     [self.tableView reloadData];
+}
+
+- (NSString*)getUserFullName{
+    return [NSString stringWithFormat:@"%@ %@", [[TIMLocalUserInfo sharedInstance] name],
+            [[TIMLocalUserInfo sharedInstance] surname]];
 }
 
 - (void)initControllersArray {
@@ -134,6 +144,7 @@
     id controller = [_controllersArray objectAtIndex:indexPath.row];
     if (indexPath.row == 12) {
         [TIMKeychain deleteData:KEYCHAIN_SERVICE];
+        [[TIMLocalUserInfo sharedInstance] deleteLocalUser];
         controller = [_controllersArray objectAtIndex:1];
     }
     if (![controller isKindOfClass:[NSNull class]]) {

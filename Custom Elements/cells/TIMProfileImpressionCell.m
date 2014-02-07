@@ -32,4 +32,14 @@
     self.dateLabel.font = [UIFont regularFontWithSize:10.0f];
 }
 
+- (void)makeNoImpressionCell{
+    self.imageViewPlace.hidden = YES;
+    self.dateLabel.frame = CGRectMake(self.dateLabel.frame.origin.x,
+                                      self.dateLabel.frame.origin.y,
+                                      self.dateLabel.frame.size.width,
+                                      self.dateLabel.frame.size.height * 2);
+    self.dateLabel.numberOfLines = 2;
+    self.dateLabel.text = @"У вас пока еще нет ни одного добавленного впечатления о посещенном месте";
+}
+
 @end

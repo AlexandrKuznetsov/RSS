@@ -82,6 +82,7 @@
 - (void)checkForLoginInformation {
     if (![[TIMLocalUserInfo sharedInstance] readUserFromUserDefaults] ||
         ![self isValidCurrentUser]) {
+        [[TIMLocalUserInfo sharedInstance] deleteLocalUser];
         [self pushLoginViewController];
     } else {
         //загрузка локального пользователя при отсутствии инета
@@ -90,8 +91,12 @@
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
                 if (!error) {
-                    [_tableView reloadData];
-                    [weakSelf labelsForLocalUser];
+                    if ([self keychanAndUserDefaults]) {
+                        [_tableView reloadData];
+                        [weakSelf labelsForLocalUser];
+                    } else {
+                        [weakSelf pushLoginViewController];
+                    }
                 } else {
                     [self showAlertViewWithMessage:[error localizedDescription]];
                 }
@@ -104,14 +109,20 @@
     }
 }
 
+- (BOOL)keychanAndUserDefaults{
+    NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
+    if ([keyChanDict[@"email"] isEqualToString:
+         [[TIMLocalUserInfo sharedInstance] email]]) {
+        return YES;
+    }
+    return NO;
+}
+
 - (BOOL)isValidCurrentUser{
     NSDictionary* keyChanDict = [TIMKeychain load:KEYCHAIN_SERVICE];
     if (keyChanDict[@"email"]) {
         if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
-            if ([keyChanDict[@"email"] isEqualToString:
-                 [[TIMLocalUserInfo sharedInstance] email]]) {
-                return YES;
-            }
+            return YES;
         } else {
             if ([[TIMLocalUserInfo sharedInstance] user]) {
                 return YES;
@@ -171,7 +182,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 4;
+    if (sourceData) {
+        return (sourceData.count + 1);
+    }
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -203,6 +217,9 @@
         NSArray *topLevelItems = [[NSBundle mainBundle] loadNibNamed:@"TIMProfileImpressionCell" owner:nil options:nil];
         cell = [topLevelItems lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        if (!sourceData) {
+            [cell makeNoImpressionCell];
+        }
     }
     [cell customFonts];
     return cell;
@@ -213,6 +230,9 @@
     if (indexPath.row == 0) {
         //верстка
         return [self getaboutMySelfLabelHeight];
+    }
+    if (!sourceData) {
+        return 33;
     }
     //верстка
     return 113;

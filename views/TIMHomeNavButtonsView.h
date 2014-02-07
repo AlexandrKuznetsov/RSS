@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface TIMHomeNavButtonsView : UIView {
+    
 }
-
+@property (weak, nonatomic) IBOutlet UIImageView *feedsCircle;
+@property (weak, nonatomic) IBOutlet UIImageView *friendsCircle;
 @property (weak, nonatomic) IBOutlet UIButton *feedBtnOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtnOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *friendsBtnOutlet;
+
 + (TIMHomeNavButtonsView *)loadView;
 
 @end

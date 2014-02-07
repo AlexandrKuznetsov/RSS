@@ -75,14 +75,12 @@
 }
 
 - (IBAction)goToNextStep:(id)sender {
-#warning TEST_SEGUE
-    [self pushStepTwo];
-//    if ([self checkIsDataValid]) {
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        [[TIMRegistrationModel sharedInstance] saveLogin:mailTextField.text
-//                                                password:passwordTextField.text];
-//        [self registrationRequest];
-//    }
+    if ([self checkIsDataValid]) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[TIMRegistrationModel sharedInstance] saveLogin:mailTextField.text
+                                                password:passwordTextField.text];
+        [self registrationRequest];
+    }
 }
 
 - (void)saveDataToLocalUserInfo{

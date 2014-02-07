@@ -7,6 +7,7 @@
 //
 
 #import "TIMRegistrationModel.h"
+#import "TIMKeychain.h"
 
 @implementation TIMRegistrationModel {
     NSString *_login;
@@ -88,11 +89,15 @@ static TIMRegistrationModel *sharedInstance = nil;
 }
 
 - (NSString *)stringFromInterestsArray:(NSArray *)array {
-    NSMutableString *interests = [[NSMutableString alloc] init];
-    for (NSString *interest in array) {
-        [interests appendString:[NSString stringWithFormat:@"%@, ",interest]];
+    if (array.count > 0 || array) {
+        NSMutableString *interests = [[NSMutableString alloc] init];
+        for (NSString *interest in array) {
+            [interests appendString:[NSString stringWithFormat:@"%@, ",interest]];
+        }
+        return [interests substringToIndex:[interests length] - 2];
+    } else {
+        return @"";
     }
-    return [interests substringToIndex:[interests length] - 2];
 }
 
 - (void)registerRequestWithCompletition:(void(^)(NSString *errorDescription, BOOL status))completition {
@@ -105,6 +110,8 @@ static TIMRegistrationModel *sharedInstance = nil;
                 self.loadCompletionBlock(@"Пользователь с таким адресом уже зарегистрирован", NO);
             }
         } else {
+            [TIMKeychain save:KEYCHAIN_SERVICE data:@{@"email" : _login,
+                                                      @"password": _password}];
             self.loadCompletionBlock(nil, YES);
         }
     }];

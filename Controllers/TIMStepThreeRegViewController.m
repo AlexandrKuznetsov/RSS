@@ -110,8 +110,8 @@
         __weak TIMStepThreeRegViewController* weakSelf = self;
         [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
             if (!error) {
-                [weakSelf dismissRegistration];
                 [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
+                [weakSelf dismissRegistration];
             } else {
                 [weakSelf showError:[error localizedDescription]];
             }

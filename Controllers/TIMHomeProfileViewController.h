@@ -22,6 +22,7 @@ UITableViewDelegate
 >{
     
     __weak IBOutlet UITableView *_tableView;
+    NSArray* sourceData;
 }
 
 @property (strong, nonatomic) TIMHomeNavButtonsView *buttonsView;

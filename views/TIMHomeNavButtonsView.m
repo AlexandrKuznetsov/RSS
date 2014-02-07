@@ -30,7 +30,13 @@
                                  forState:UIControlStateHighlighted];
     [homeBtnView.friendsBtnOutlet setImage:[UIImage imageNamed:@"btn_friends_on.png"]
                                   forState:UIControlStateHighlighted];
+    [homeBtnView positionForCircles];
     return homeBtnView;
+}
+
+- (void)positionForCircles{
+    self.friendsCircle.hidden = YES;
+    self.feedsCircle.hidden = YES;
 }
 
 @end

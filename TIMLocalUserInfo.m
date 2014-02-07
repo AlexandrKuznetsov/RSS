@@ -229,7 +229,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setPrivacyImpressions:(NSString *)privacyImpressions{
     if (!privacyImpressions || [privacyImpressions isKindOfClass:([NSNull class])]) {
-        privacyImpressions = @"";
+        privacyImpressions = @"только друзья";
     }
     _privacyImpressions = [privacyImpressions copy];
     [self.user setObject:privacyImpressions forKey:@"privacyImpressions"];
@@ -237,7 +237,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setPrivacyInterest:(NSString *)privacyInterest{
     if (!privacyInterest || [privacyInterest isKindOfClass:([NSNull class])]) {
-        privacyInterest = @"";
+        privacyInterest = @"только я";
     }
     _privacyInterest = [privacyInterest copy];
     [self.user setObject:privacyInterest forKey:@"privacyInterest"];
@@ -253,7 +253,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setPrivacyPlace:(NSString *)privacyPlace{
     if (!privacyPlace || [privacyPlace isKindOfClass:([NSNull class])]) {
-        privacyPlace = @"";
+        privacyPlace = @"все";
     }
     _privacyPlace = [privacyPlace copy];
     [self.user setObject:privacyPlace forKey:@"privacyPlace"];
@@ -298,7 +298,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)setPrivacyProfession:(NSString *)privacyProfession{
     if (!privacyProfession || [privacyProfession isKindOfClass:([NSNull class])]) {
-        privacyProfession = @"";
+        privacyProfession = @"только друзья";
     }
     _privacyProfession = [privacyProfession copy];
     [self.user setObject:privacyProfession forKey:@"privacyProfession"];
@@ -499,26 +499,24 @@ static TIMLocalUserInfo *sharedInstance = nil;
             NSData* avaData;
             if (self.userPhoto) {
                 avaData = UIImageJPEGRepresentation(self.userPhoto, 0.8);
+                [formData appendPartWithFileData:avaData
+                                            name:@"avatar"
+                                        fileName:[@"avatar" stringByAppendingString:@".jpg"]
+                                        mimeType:@"image/jpeg"];
+                _isAvatarChanged = NO;
             }
-            
-            [formData appendPartWithFileData:avaData
-                                        name:@"avatar"
-                                    fileName:[@"avatar" stringByAppendingString:@".jpg"]
-                                    mimeType:@"image/jpeg"];
-            _isAvatarChanged = NO;
         }
         
         if (_isWalpaperChanged) {
             NSData* walpaperData;
             if (self.userWalpaper) {
                 walpaperData = UIImageJPEGRepresentation(self.userWalpaper, 0.8);
+                [formData appendPartWithFileData:walpaperData
+                                            name:@"wallpaper"
+                                        fileName:[@"wallpaper" stringByAppendingString:@".jpg"]
+                                        mimeType:@"image/jpeg"];
+                _isWalpaperChanged = NO;
             }
-            
-            [formData appendPartWithFileData:walpaperData
-                                        name:@"wallpaper"
-                                    fileName:[@"wallpaper" stringByAppendingString:@".jpg"]
-                                    mimeType:@"image/jpeg"];
-            _isWalpaperChanged = NO;
         }
     }];
     
@@ -676,7 +674,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
             for (int i=0;i<images.count;i++) {
                 UIImage* image = images[i];
                 
-                if ([image isKindOfClass:[NSNull class]]) {
+                if ([image isKindOfClass:[NSNull class]] || !image) {
                     continue;
                 }
                 
