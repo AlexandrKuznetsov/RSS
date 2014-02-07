@@ -31,7 +31,7 @@
     if(_mapView){
         [self addingMapAndmoveToBack];
     } else {
-        self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+        self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
         self.backgroundView.backgroundColor = [UIColor colorWithRed:239/255.0f green:237/255.0f blue:233/255.0f alpha:1];
         [self.view addSubview:self.backgroundView];
         [self.view sendSubviewToBack:self.backgroundView];
@@ -93,6 +93,10 @@
 		   fromLocation:(CLLocation *)oldLocation{
     [manager stopUpdatingLocation];
     [self createBackgroundMap:newLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"%s", __FUNCTION__);
 }
 
 #pragma mark - UITextFieldDelegate

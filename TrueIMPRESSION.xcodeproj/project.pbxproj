@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		83B6B4DC6FF34FCAB6409CA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844C339152E343C19DB1D129 /* libPods.a */; };
+		8B21586818A585CC00AA7FA7 /* btn_back_biggreen_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21586418A585CC00AA7FA7 /* btn_back_biggreen_on.png */; };
+		8B21586918A585CC00AA7FA7 /* btn_back_biggreen_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21586518A585CC00AA7FA7 /* btn_back_biggreen_on@2x.png */; };
+		8B21586A18A585CC00AA7FA7 /* btn_back_biggreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21586618A585CC00AA7FA7 /* btn_back_biggreen.png */; };
+		8B21586B18A585CC00AA7FA7 /* btn_back_biggreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21586718A585CC00AA7FA7 /* btn_back_biggreen@2x.png */; };
 		8B254B3718999B0F00D49564 /* icon_facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B254B3618999B0F00D49564 /* icon_facebook@2x.png */; };
 		8B254B3A18999B7900D49564 /* UINavigationItem+iOS7Spacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B254B3918999B7900D49564 /* UINavigationItem+iOS7Spacing.m */; };
 		8B254B3E1899A14800D49564 /* bnt_events_on_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B254B3C1899A14800D49564 /* bnt_events_on_trans.png */; };
@@ -284,6 +288,10 @@
 /* Begin PBXFileReference section */
 		48AA3E4347A448F5B14DE388 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		844C339152E343C19DB1D129 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B21586418A585CC00AA7FA7 /* btn_back_biggreen_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_back_biggreen_on.png; path = "Images/tmp images/btn_back_biggreen_on.png"; sourceTree = "<group>"; };
+		8B21586518A585CC00AA7FA7 /* btn_back_biggreen_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_back_biggreen_on@2x.png"; path = "Images/tmp images/btn_back_biggreen_on@2x.png"; sourceTree = "<group>"; };
+		8B21586618A585CC00AA7FA7 /* btn_back_biggreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_back_biggreen.png; path = "Images/tmp images/btn_back_biggreen.png"; sourceTree = "<group>"; };
+		8B21586718A585CC00AA7FA7 /* btn_back_biggreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_back_biggreen@2x.png"; path = "Images/tmp images/btn_back_biggreen@2x.png"; sourceTree = "<group>"; };
 		8B254B3618999B0F00D49564 /* icon_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_facebook@2x.png"; path = "Images/Social icons/icon_facebook@2x.png"; sourceTree = "<group>"; };
 		8B254B3818999B7900D49564 /* UINavigationItem+iOS7Spacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+iOS7Spacing.h"; sourceTree = "<group>"; };
 		8B254B3918999B7900D49564 /* UINavigationItem+iOS7Spacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+iOS7Spacing.m"; sourceTree = "<group>"; };
@@ -634,6 +642,10 @@
 		8B254B3B1899A13400D49564 /* tmp images */ = {
 			isa = PBXGroup;
 			children = (
+				8B21586418A585CC00AA7FA7 /* btn_back_biggreen_on.png */,
+				8B21586518A585CC00AA7FA7 /* btn_back_biggreen_on@2x.png */,
+				8B21586618A585CC00AA7FA7 /* btn_back_biggreen.png */,
+				8B21586718A585CC00AA7FA7 /* btn_back_biggreen@2x.png */,
 				8B254B3C1899A14800D49564 /* bnt_events_on_trans.png */,
 				8B254B3D1899A14800D49564 /* bnt_events_on_trans@2x.png */,
 			);
@@ -1559,6 +1571,7 @@
 				8B254B561899ABD300D49564 /* btn_ok_white@2x.png in Resources */,
 				8B254B5D1899AE6800D49564 /* btn_login_on.png in Resources */,
 				8B7385401881D10E00D1E0C2 /* toolbar-home.png in Resources */,
+				8B21586918A585CC00AA7FA7 /* btn_back_biggreen_on@2x.png in Resources */,
 				8B7385191881D10E00D1E0C2 /* icon-feed-info.png in Resources */,
 				8B7B0A7E188BAC5400E95FFD /* btn_friends@2x.png in Resources */,
 				8B7385201881D10E00D1E0C2 /* icon-menu@2x.png in Resources */,
@@ -1575,6 +1588,7 @@
 				8BB0852B188DCA9A00FC3792 /* email@2x.png in Resources */,
 				8B73850D1881D10E00D1E0C2 /* header-back-button.png in Resources */,
 				8B9283C318833876009F93C0 /* btn_add_place@2x.png in Resources */,
+				8B21586B18A585CC00AA7FA7 /* btn_back_biggreen@2x.png in Resources */,
 				C550EDE518871C9500C8CFD4 /* OpenSans-LightItalic.ttf in Resources */,
 				8B7385321881D10E00D1E0C2 /* logo.png in Resources */,
 				8BFB284C1895A4890078F648 /* make_on.png in Resources */,
@@ -1584,6 +1598,7 @@
 				8B73850C1881D10E00D1E0C2 /* header-back-button-down@2x.png in Resources */,
 				8B7385311881D10E00D1E0C2 /* login-button@2x.png in Resources */,
 				8B7385671881F2E600D1E0C2 /* TIMLoginViewController.xib in Resources */,
+				8B21586818A585CC00AA7FA7 /* btn_back_biggreen_on.png in Resources */,
 				8B73850B1881D10E00D1E0C2 /* header-back-button-down.png in Resources */,
 				C550EDE718871C9500C8CFD4 /* OpenSans-Semibold.ttf in Resources */,
 				C5E67DCE1889B7E2000CB56B /* TIMSetingsViewController.xib in Resources */,
@@ -1626,6 +1641,7 @@
 				8B890A1B189459470032F761 /* TIMFeedController.xib in Resources */,
 				8B890A03189436030032F761 /* TIMLeftSideViewController.xib in Resources */,
 				C550EDE318871C9500C8CFD4 /* OpenSans-Italic.ttf in Resources */,
+				8B21586A18A585CC00AA7FA7 /* btn_back_biggreen.png in Resources */,
 				8B9C1CD0189A7FCF006101D1 /* bnt_events_on.png in Resources */,
 				8B254B431899A74200D49564 /* btn_back_on@2x.png in Resources */,
 				8B73851A1881D10E00D1E0C2 /* icon-feed-info@2x.png in Resources */,

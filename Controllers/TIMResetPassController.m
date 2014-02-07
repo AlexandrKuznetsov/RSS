@@ -93,6 +93,23 @@
 }
 
 - (BOOL)isValidData {
+    if (oldMailField.text.length == 0) {
+        [self showAlertWithMessage:@"Введите старый пароль"];
+        return NO;
+    }
+    NSDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[TIMKeychain load:KEYCHAIN_SERVICE]];
+    if (![dict[@"password"] isEqualToString:oldMailField.text]) {
+        [self showAlertWithMessage:@"Введите правильный пароль"];
+        return NO;
+    }
+    if (newPassField.text.length == 0) {
+        [self showAlertWithMessage:@"Введите новый пароль"];
+        return NO;
+    }
+    if (confirmPassField.text.length == 0) {
+        [self showAlertWithMessage:@"Подтвердите пароль"];
+        return NO;
+    }
     if (![newPassField.text isEqualToString:confirmPassField.text]) {
         [self showAlertWithMessage:@"Пароли не совпадают"];
         return NO;
