@@ -11,6 +11,7 @@
 #import "TIMContinueButton.h"
 #import "TIMRoundedImageView.h"
 #import "TIMPhotoButtons.h"
+#import <MFSideMenu/MFSideMenu.h>
 
 @interface TIMSetingsViewController : TIMRegistrationViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, TIMPhotoButtonsDelegate,UITextViewDelegate, TableDataDelegate>{
     

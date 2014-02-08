@@ -27,4 +27,6 @@
 
 @interface TIMLeftSideViewController : UITableViewController
 
+- (void)initNamesArray;
+
 @end

@@ -103,6 +103,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     self.activeTextField = textField;
+    self.placeholderText = textField.placeholder;
     textField.placeholder = @"";
     switch (textField.tag) {
         case birthday:
@@ -195,6 +196,9 @@
     if (textField.tag == gender) {
         [self changeAva];
     }
+    if (textField.text.length == 0) {
+        textField.placeholder = self.placeholderText;
+    }
 }
 
 - (void)changeAva{
@@ -240,14 +244,16 @@
 #pragma mark - DatePicker
 
 - (void)createDatePickerToTextField:(UITextField*)textField{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
     UIDatePicker* datePiker = [[UIDatePicker alloc] initWithFrame:PICKER_RECT];
     datePiker.datePickerMode = UIDatePickerModeDate;
     [datePiker addTarget:self action:@selector(changebirthdayValue:) forControlEvents:UIControlEventValueChanged];
+    [datePiker setMaximumDate:[NSDate date]];
     textField.inputView = datePiker;
     if (_activeTextField.text && _activeTextField.text.length > 0) {
-        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd.MM.yyyy"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
         NSDate* date = [dateFormatter dateFromString:_activeTextField.text];
         if (date) {
             [datePiker setDate:date];

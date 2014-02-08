@@ -8,6 +8,7 @@
 
 #import "TIMLeftSideViewController.h"
 
+
 @interface TIMLeftSideViewController () {
     NSArray *_controllersArray;
     NSArray *_cellsNameArray;
@@ -151,7 +152,9 @@
         NSArray *controllers = [NSArray arrayWithObject:controller];
         navigation.viewControllers = controllers;
         [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
-        [controller testMethod];
+        if ([controller isKindOfClass:[TIMHomeProfileViewController class]]) {
+            [controller testMethod];
+        }
     }
 }
 

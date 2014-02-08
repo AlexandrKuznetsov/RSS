@@ -50,9 +50,9 @@
 
 
 - (void)customBackButtonItem{
-    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 22)];
-    UIImage *buttonImage = [UIImage imageNamed:@"header-back-button.png"];
-    UIImage *buttonHiglitedImage = [UIImage imageNamed:@"header-back-button-down.png"];
+    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 29)];
+    UIImage *buttonImage = [UIImage imageNamed:@"btn_back_biggreen"];
+    UIImage *buttonHiglitedImage = [UIImage imageNamed:@"btn_back_biggreen_on"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:buttonImage forState:UIControlStateNormal];
     [button setImage:buttonHiglitedImage forState:UIControlStateHighlighted];
@@ -62,7 +62,7 @@
     } else {
         xPosition = customView.frame.size.width-22;
     }
-    button.frame = CGRectMake(xPosition, 0, 22, 22);
+    button.frame = CGRectMake(xPosition, 0, 29, 29);
     [customView addSubview:button];
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* customBackBtn = [[UIBarButtonItem alloc] initWithCustomView:customView];

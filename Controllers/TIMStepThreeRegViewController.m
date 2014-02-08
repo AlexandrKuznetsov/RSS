@@ -164,26 +164,24 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    if ([self is_ios7]) {
-        CGFloat oldFrameHeight = textView.frame.size.height;
-        CGSize textViewSize = [self text:textView.text sizeWithFont:[UIFont lightFontWithSize:15.0f] constrainedToSize:CGSizeMake(265,9999)];
-        CGFloat textHeight = textViewSize.height;
-        CGRect newFrame = textView.frame;
-        newFrame.size.height = textViewSize.height;
-        textView.frame = newFrame;
-        
-        CGFloat deltaHeight = textHeight - oldFrameHeight;
-        NSLog(@"delta %f", deltaHeight);
-        [self resizeViewsByDelta:deltaHeight];
-    } else {
-        CGFloat oldFrameHeight = textView.frame.size.height;
-        CGRect newFrame = textView.frame;
-        newFrame.size.height = textView.contentSize.height;
-        textView.frame = newFrame;
-        CGFloat newFrameHeight = textView.frame.size.height;
-        CGFloat deltaHeight = newFrameHeight - oldFrameHeight;
-        [self resizeViewsByDelta:deltaHeight];
-    }
+    [self calculateAboutMySelsBlock];
+}
+
+
+- (void)calculateAboutMySelsBlock{
+    CGFloat oldHeight = self.aboutTextView.frame.size.height;
+    CGSize blockSize;
+    CGSize maxSize = CGSizeMake(self.aboutTextView.frame.size.width, CGFLOAT_MAX);
+    
+    blockSize = [self.aboutTextView sizeThatFits:maxSize];
+    
+    self.aboutTextView.frame = CGRectMake(self.aboutTextView.frame.origin.x,
+                                           self.aboutTextView.frame.origin.y,
+                                           self.aboutTextView.frame.size.width,
+                                           blockSize.height);
+    CGFloat newHeight = self.aboutTextView.frame.size.height;
+    CGFloat deltaHeight = newHeight - oldHeight;
+    [self resizeViewsByDelta:deltaHeight];
 }
 
 #pragma mark - Checkings 

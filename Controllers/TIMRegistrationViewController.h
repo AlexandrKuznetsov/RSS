@@ -56,6 +56,8 @@ typedef enum {
 @property (strong, nonatomic) UIView *backgroundView;
 @property (strong, nonatomic) NSMutableDictionary *currentCountry;
 
+@property (strong, nonatomic) NSString *placeholderText;
+
 - (void)getCrrentUserLocation;
 - (void)saveLocationCountry:(NSString *)locationCountry;
 - (void)changeImageAtImageView:(UIImageView*)imageView withGender:(NSString*)gender;

@@ -7,6 +7,7 @@
 //
 
 #import "TIMSetingsViewController.h"
+#import "TIMLeftSideViewController.h"
 
 @interface TIMSetingsViewController () {
     NSArray *_interests;
@@ -135,6 +136,9 @@
         if (!error) {
             [weakSelf.navigationController popToRootViewControllerAnimated:YES];
             [weakSelf setValuesToView];
+            
+            id controller = self.menuContainerViewController.leftMenuViewController;
+            [controller initNamesArray];
         } else {
             [weakSelf showError:[error localizedDescription]];
         }
