@@ -250,7 +250,7 @@
 - (NSDictionary*)formatInterestsDictionaryFromString:(NSString*)interests{
     NSMutableDictionary* interestsDictionary = [[NSMutableDictionary alloc] init];
     if (interests || interests.length > 0) {
-        NSArray* interestsArray = [interests componentsSeparatedByString:@","];
+        NSArray* interestsArray = [interests componentsSeparatedByString:@"|"];
         [interestsDictionary setObject:interestsArray forKey:@"array"];
         NSString* interestsLabelString = [self formatInterestsString:interestsArray.count];
         [interestsDictionary setObject:interestsLabelString forKey:@"string"];

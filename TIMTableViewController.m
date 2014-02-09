@@ -175,8 +175,33 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    if (_isProfessions) {
+        if ([self checkForUserProfession:_tableViewData[indexPath.row]]) {
+            [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        }
+    } else {
+        if ([self checkForUserInterests:_tableViewData[indexPath.row]]) {
+            [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        }
+    }
     cell.textLabel.text = _tableViewData[indexPath.row];
     return cell;
+}
+
+- (BOOL)checkForUserProfession:(NSString*)profession{
+//    NSLog(@"%@, %@ \n\n", profession, [[TIMLocalUserInfo sharedInstance] profession]);
+    
+    if ([profession isEqualToString:[[TIMLocalUserInfo sharedInstance] profession]]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)checkForUserInterests:(NSString*)interest{
+    if ([[TIMLocalUserInfo sharedInstance] isInterestExist:interest]) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

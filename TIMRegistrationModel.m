@@ -92,9 +92,9 @@ static TIMRegistrationModel *sharedInstance = nil;
     if (array.count > 0 || array) {
         NSMutableString *interests = [[NSMutableString alloc] init];
         for (NSString *interest in array) {
-            [interests appendString:[NSString stringWithFormat:@"%@, ",interest]];
+            [interests appendString:[NSString stringWithFormat:@"%@|",interest]];
         }
-        return [interests substringToIndex:[interests length] - 2];
+        return [interests substringToIndex:[interests length] - 1];
     } else {
         return @"";
     }

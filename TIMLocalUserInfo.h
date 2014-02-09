@@ -56,5 +56,6 @@
 - (NSString *)country;
 - (void)deleteLocalUser;
 - (void)connected;
+- (BOOL)isInterestExist:(NSString*)interest;
 
 @end

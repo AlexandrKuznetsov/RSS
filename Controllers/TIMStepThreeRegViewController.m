@@ -149,9 +149,12 @@
 - (void)tableViewForProfessions:(BOOL)isForProfessions pickedData:(NSArray *)data {
     if (isForProfessions) {
         self.professionLabel.text = [data lastObject];
+        [[TIMLocalUserInfo sharedInstance] setProfession:self.professionLabel.text];
     } else {
         _interests = [NSArray arrayWithArray:data];
         _staticModel = [[TIMModelWithStaticData alloc] init];
+        NSString* interestString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
+        [[TIMLocalUserInfo sharedInstance] setInterests:interestString];
         self.interestsCountLabel.text = [_staticModel formatInterestsString:_interests.count];
     }
 }

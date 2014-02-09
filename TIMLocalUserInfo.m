@@ -454,6 +454,17 @@ static TIMLocalUserInfo *sharedInstance = nil;
     }
 }
 
+- (BOOL)isInterestExist:(NSString*)interest{
+    NSArray* interestArray = [_interests componentsSeparatedByString:@"|"];
+    for (NSString* singleInterest in interestArray) {
+        
+        if ([singleInterest isEqualToString:interest]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 - (UIImage *)userFlag {
     NSString* countryString = [self.user objectForKey:@"country"];
     TIMModelWithStaticData* staticData = [[TIMModelWithStaticData alloc] init];

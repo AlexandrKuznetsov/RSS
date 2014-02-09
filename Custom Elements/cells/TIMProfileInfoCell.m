@@ -28,7 +28,7 @@
 
 - (void)setDataAndHeight{
     self.professionLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
-    self.interestLabel.text = [[TIMLocalUserInfo sharedInstance] interests];
+    self.interestLabel.text = [[[TIMLocalUserInfo sharedInstance] interests] stringByReplacingOccurrencesOfString:@"|" withString:@", "];
     self.aboutLabeel.text = [[TIMLocalUserInfo sharedInstance] aboutMe];
     
     self.interestLabel.frame = CGRectMake(self.interestLabel.frame.origin.x,
