@@ -19,6 +19,8 @@
 @property BOOL odniklEnabled;
 @property BOOL googleEnabled;
 @property BOOL twitterEnabled;
+@property BOOL needUpdate;
+
 @property (strong, nonatomic) NSString *passNew;
 
 + (TIMAppSettingsModel *)sharedInstance;

@@ -134,6 +134,7 @@
     [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
+            [TIMLocalUserInfo sharedInstance].needUpdate = YES;
             [weakSelf.navigationController popToRootViewControllerAnimated:YES];
             [weakSelf setValuesToView];
             

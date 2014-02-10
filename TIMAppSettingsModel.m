@@ -21,6 +21,13 @@ static TIMAppSettingsModel *sharedInstance = nil;
     return sharedInstance;
 }
 
+- (id)init {
+    if (self = [super init]) {
+        self.needUpdate = YES;
+    }
+    return self;
+}
+
 - (void)loadSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
     NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];

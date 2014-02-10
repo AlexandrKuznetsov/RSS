@@ -100,7 +100,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-GN-8ZR" customClass="TIMRoundedImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-GN-8ZR" customClass="TIMRoundedImageView">
                     <rect key="frame" x="20" y="22" width="92" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -144,7 +144,6 @@
         </view>
     </objects>
     <resources>
-        <image name="default-avatar.png" width="336" height="336"/>
         <image name="icon-home-settings.png" width="24" height="24"/>
         <image name="toolbar-home.png" width="320" height="54"/>
     </resources>

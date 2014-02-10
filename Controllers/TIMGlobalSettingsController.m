@@ -47,15 +47,18 @@
 #pragma mark - Data 
 
 - (void)settingsRequest {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[TIMAppSettingsModel sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        if (!error) {
-            [self setButtonsForSettings:(TIMAppSettings *)response];
-        } else {
-            [self showAlertViewWithMessage:error.localizedDescription];
-        }
-    }];
+    if ([TIMAppSettingsModel sharedInstance].needUpdate) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[TIMAppSettingsModel sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            if (!error) {
+                [TIMAppSettingsModel sharedInstance].needUpdate = NO;
+                [self setButtonsForSettings:(TIMAppSettings *)response];
+            } else {
+                [self showAlertViewWithMessage:error.localizedDescription];
+            }
+        }];
+    }
 }
 
 #pragma mark - Interface
