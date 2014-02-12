@@ -105,12 +105,14 @@
 
 - (IBAction)saveAction:(id)sender {
     [self createSelectedArray];
-    if (_selectedData.count != 0) {
-        if (self.isProfessions) {
-            [self.dataDelegate tableViewForProfessions:YES pickedData:_selectedData];
-        } else {
-            [self.dataDelegate tableViewForProfessions:NO pickedData:_selectedData];
-        }
+    if (_selectedData.count == 0) {
+        [_selectedData addObject:@""];
+    }
+    if (self.isProfessions) {
+        [[TIMLocalUserInfo sharedInstance] setProfession:[_selectedData lastObject]];
+        [self.dataDelegate tableViewForProfessions:YES pickedData:_selectedData];
+    } else {
+        [self.dataDelegate tableViewForProfessions:NO pickedData:_selectedData];
     }
     [self back];
 }
@@ -187,6 +189,29 @@
     cell.textLabel.text = _tableViewData[indexPath.row];
     return cell;
 }
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.isProfessions) {
+        if ([self.tableView indexPathsForSelectedRows]) {
+            NSIndexPath* path = [[self.tableView indexPathsForSelectedRows] lastObject];
+            if (path.row == indexPath.row) {
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                return nil;
+            }
+        }
+    }
+    return indexPath;
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (self.isProfessions) {
+//        if ([self.tableView indexPathsForSelectedRows]) {
+//            for (NSIndexPath* path in [self.tableView indexPathsForSelectedRows]) {
+//                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//            }
+//        }
+//    }
+//}
 
 - (BOOL)checkForUserProfession:(NSString*)profession{
 //    NSLog(@"%@, %@ \n\n", profession, [[TIMLocalUserInfo sharedInstance] profession]);

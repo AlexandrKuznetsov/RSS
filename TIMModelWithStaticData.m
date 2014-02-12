@@ -252,7 +252,12 @@
     if (interests || interests.length > 0) {
         NSArray* interestsArray = [interests componentsSeparatedByString:@"|"];
         [interestsDictionary setObject:interestsArray forKey:@"array"];
-        NSString* interestsLabelString = [self formatInterestsString:interestsArray.count];
+        NSString* interestsLabelString;
+        if (interestsArray.count == 1 && [[interestsArray lastObject] isEqualToString:@""]) {
+            interestsLabelString = @"";
+        } else {
+            interestsLabelString = [self formatInterestsString:interestsArray.count];
+        }
         [interestsDictionary setObject:interestsLabelString forKey:@"string"];
     }
     return interestsDictionary;

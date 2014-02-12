@@ -251,7 +251,11 @@
         if (!_staticModel) {
             _staticModel = [[TIMModelWithStaticData alloc] init];
         }
-        self.interestsLabel.text = [_staticModel formatInterestsString:data.count];
+        if (data.count == 1 && [[data lastObject] isEqualToString:@""]) {
+            self.interestsLabel.text = [data lastObject];
+        } else {
+            self.interestsLabel.text = [_staticModel formatInterestsString:data.count];
+        }
         _interests = [NSArray arrayWithArray:data];
     }
 }
