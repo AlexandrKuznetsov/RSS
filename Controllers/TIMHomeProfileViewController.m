@@ -96,20 +96,23 @@
         //загрузка локального пользователя при отсутствии инета
         __weak TIMHomeProfileViewController* weakSelf = self;
         if ([[TIMLocalUserInfo sharedInstance] isConnection]) {
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
-                if (!error) {
-                    if ([self keychanAndUserDefaults]) {
-                        [_tableView reloadData];
-                        [weakSelf labelsForLocalUser];
+            if ([TIMLocalUserInfo sharedInstance].needUpdate) {
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                [[TIMLocalUserInfo sharedInstance] loadSettingsWithCompletition:^(NSError *error, id response) {
+                    if (!error) {
+                        if ([self keychanAndUserDefaults]) {
+                            [_tableView reloadData];
+                            [weakSelf labelsForLocalUser];
+                            [TIMLocalUserInfo sharedInstance].needUpdate = NO;
+                        } else {
+                            [weakSelf pushLoginViewController];
+                        }
                     } else {
-                        [weakSelf pushLoginViewController];
+                        [self showAlertViewWithMessage:[error localizedDescription]];
                     }
-                } else {
-                    [self showAlertViewWithMessage:[error localizedDescription]];
-                }
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            }];
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
+            }
         } else {
             [self showAlertViewWithMessage:@"Интернет подключение не доступно!"];
             [self labelsForLocalUser];

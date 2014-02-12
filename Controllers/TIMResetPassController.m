@@ -75,6 +75,12 @@
     [confirmPassField resignFirstResponder];
 }
 
+- (void)clearFields {
+    oldMailField.text = @"";
+    newPassField.text = @"";
+    confirmPassField.text = @"";
+}
+
 - (void)saveAction {
     if ([self isValidData]) {
         [TIMAppSettingsModel sharedInstance].passNew = newPassField.text;
@@ -85,6 +91,8 @@
                NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[TIMKeychain load:KEYCHAIN_SERVICE]];
                [dict setObject:newPassField.text forKey:@"password"];
                [TIMKeychain save:KEYCHAIN_SERVICE data:dict];
+               [self clearFields];
+               [self showAlertWithMessage:@"Ваш пароль успешно изменен"];
            } else {
                [self showAlertViewWithMessage:error.localizedDescription];
            }

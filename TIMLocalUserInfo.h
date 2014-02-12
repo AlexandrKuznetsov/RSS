@@ -45,7 +45,7 @@
 @property (strong, nonatomic) UIImage *userPhoto;
 @property (strong, nonatomic) UIImage *userWalpaper;
 @property (strong, nonatomic) UIImage *userFlag;
-
+@property (assign, nonatomic) BOOL needUpdate;
 
 + (TIMLocalUserInfo *)sharedInstance;
 - (BOOL)readUserFromUserDefaults;

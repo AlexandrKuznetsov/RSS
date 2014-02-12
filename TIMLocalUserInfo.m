@@ -55,6 +55,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
     if (!self.user) {
         self.user = [[NSMutableDictionary alloc] init];
     }
+    self.needUpdate = YES;
 }
 
 - (BOOL)readUserFromUserDefaults {
