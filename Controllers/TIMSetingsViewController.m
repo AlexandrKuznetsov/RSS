@@ -127,7 +127,11 @@
         anonymous = @"No";
     }
     [[TIMLocalUserInfo sharedInstance] setPrivacyOn:anonymous];
-    [[TIMLocalUserInfo sharedInstance] setAboutMe:textViewAboutMySelf.text];
+    if ([textViewAboutMySelf.text isEqualToString:@"Пару строк о себе..."]) {
+        [[TIMLocalUserInfo sharedInstance] setAboutMe:@""];
+    } else {
+        [[TIMLocalUserInfo sharedInstance] setAboutMe:textViewAboutMySelf.text];
+    }
     [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak TIMSetingsViewController* weakSelf = self;
@@ -249,15 +253,19 @@
     if (isForProfessions) {
         self.professionsLabel.text = [data lastObject];
     } else {
+        NSString* interestString;
         if (!_staticModel) {
             _staticModel = [[TIMModelWithStaticData alloc] init];
         }
+        _interests = [NSArray arrayWithArray:data];
         if (data.count == 1 && [[data lastObject] isEqualToString:@""]) {
             self.interestsLabel.text = [data lastObject];
+            interestString = [data lastObject];
         } else {
             self.interestsLabel.text = [_staticModel formatInterestsString:data.count];
+            interestString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
         }
-        _interests = [NSArray arrayWithArray:data];
+        [[TIMLocalUserInfo sharedInstance] setInterests:interestString];
     }
 }
 
@@ -333,11 +341,16 @@
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    if ([textView.text isEqualToString:@"Пару слов о себе..."]) {
+    if ([textView.text isEqualToString:@"Пару строк о себе..."]) {
         textView.text = @"";
     }
 }
 
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Пару строк о себе...";
+    }
+}
 
 #pragma mark - Navigation 
 

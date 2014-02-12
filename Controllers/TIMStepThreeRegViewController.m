@@ -165,12 +165,16 @@
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    static dispatch_once_t once;
-    dispatch_once(&once, ^{
+    if ([textView.text isEqualToString:@"Пару строк о себе..."]) {
         textView.text = @"";
-    });
+    }
 }
 
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Пару строк о себе...";
+    }
+}
 - (void)textViewDidChange:(UITextView *)textView {
     [self calculateAboutMySelsBlock];
 }
