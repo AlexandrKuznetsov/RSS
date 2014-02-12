@@ -569,8 +569,15 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (void)calculateDescriptionAboutMeSizes{
+    
+    NSNumber* aboutMySelf;
+    if ([self.aboutMe isEqualToString:@""]) {
+        aboutMySelf = [NSNumber numberWithInt:1];
+    } else {
+        aboutMySelf = [self calculateHeightForText:self.aboutMe];
+    }
     self.descrAboutMeSizes = @{@"interests": [self calculateHeightForText:self.interests],
-                               @"aboutMe": [self calculateHeightForText:self.aboutMe],
+                               @"aboutMe": aboutMySelf,
                                @"cellHeight": [NSNumber numberWithFloat:162.0 - 16*2]};
 }
 
