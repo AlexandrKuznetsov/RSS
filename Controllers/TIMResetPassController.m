@@ -92,6 +92,7 @@
                [dict setObject:newPassField.text forKey:@"password"];
                [TIMKeychain save:KEYCHAIN_SERVICE data:dict];
                [self clearFields];
+               [self.navigationController popViewControllerAnimated:YES];
                [self showAlertWithMessage:@"Ваш пароль успешно изменен"];
            } else {
                [self showAlertViewWithMessage:error.localizedDescription];
