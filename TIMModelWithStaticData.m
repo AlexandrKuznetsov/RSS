@@ -224,7 +224,7 @@
 }
 
 - (NSArray *)notificationsArray {
-    return @[@"Сразу", @"Ежесуточно", @"Выключить"];
+    return @[@"Выключены", @"Ежедневно", @"Сразу"];
 }
 
 - (NSArray *)searchArray {

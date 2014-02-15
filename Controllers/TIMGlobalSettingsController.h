@@ -23,6 +23,10 @@
     __weak IBOutlet TIMSwichButton *_vkButton;
     __weak IBOutlet TIMSwichButton *_fbButton;
     __weak IBOutlet TIMSwichButton *_twitterButton;
+    __weak IBOutlet UITextField *_mailField;
+    __weak IBOutlet UITextField *_languageField;
+    __weak IBOutlet UITextField *_searchField;
+    __weak IBOutlet UITextField *_syncField;
 
     BOOL pushEnabled;
     BOOL fbEnabled;

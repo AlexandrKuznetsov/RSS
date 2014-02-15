@@ -64,7 +64,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.29999999999999999"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar.png" id="qKS-Jf-49j" customClass="TIMRoundedImageView">
+                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qKS-Jf-49j" customClass="TIMRoundedImageView">
                             <rect key="frame" x="25" y="60" width="108" height="108"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -509,7 +509,6 @@
     <resources>
         <image name="bg_angle.png" width="320" height="45"/>
         <image name="btn_green.png" width="49" height="34"/>
-        <image name="default-avatar.png" width="336" height="336"/>
         <image name="disclosure-icon.png" width="13" height="20"/>
         <image name="line.png" width="7" height="3"/>
         <image name="off.png" width="57" height="26"/>

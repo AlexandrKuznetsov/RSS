@@ -111,6 +111,7 @@
         [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
             if (!error) {
                 [[TIMLocalUserInfo sharedInstance] saveUserInfoInUserDefaults];
+                [TIMLocalUserInfo sharedInstance].needUpdate = YES;
                 [weakSelf dismissRegistration];
             } else {
                 [weakSelf showError:[error localizedDescription]];

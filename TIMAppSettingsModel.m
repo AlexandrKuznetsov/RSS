@@ -93,7 +93,11 @@ static TIMAppSettingsModel *sharedInstance = nil;
                                      @"social_vk": @(self.VkEnabled),
                                      @"social_ok": @(self.odniklEnabled),
                                      @"social_google": @(self.googleEnabled),
-                                     @"social_twitter": @(self.twitterEnabled)
+                                     @"social_twitter": @(self.twitterEnabled),
+                                     @"email_notifications" : self.mails,
+                                     @"default_language" : @"ru",
+                                     @"default_search_type" : self.search,
+                                     @"sync_type" : self.sync
                                      };
     
     return userDictionary;

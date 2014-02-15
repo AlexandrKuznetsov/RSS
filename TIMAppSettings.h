@@ -16,6 +16,10 @@
 @property (assign, nonatomic) BOOL twitter;
 @property (assign, nonatomic) BOOL vk;
 @property (assign, nonatomic) BOOL notifications;
+@property (strong, nonatomic) NSNumber *mails;
+@property (strong, nonatomic) NSNumber *language;
+@property (strong, nonatomic) NSNumber *sync;
+@property (strong, nonatomic) NSNumber *search;
 
 + (instancetype)parseResponse:(id)response;
 

@@ -9,8 +9,12 @@
             <connections>
                 <outlet property="_fbButton" destination="blY-z3-LA0" id="cAN-2h-tVV"/>
                 <outlet property="_googleButton" destination="Lxz-HK-DK9" id="Ecg-ii-VRr"/>
+                <outlet property="_languageField" destination="mfS-E6-Rag" id="klh-kD-DRx"/>
+                <outlet property="_mailField" destination="UYb-Dt-Bfw" id="C2r-rq-vL6"/>
                 <outlet property="_notifButton" destination="x5g-F4-06b" id="rr9-xJ-sgT"/>
                 <outlet property="_odnoklButton" destination="WXb-T4-TP5" id="LKf-SK-5Yb"/>
+                <outlet property="_searchField" destination="zBA-w3-xoZ" id="OzW-P8-7t1"/>
+                <outlet property="_syncField" destination="MeX-nP-jXg" id="0sp-09-7z3"/>
                 <outlet property="_twitterButton" destination="4SB-9N-MFy" id="exz-Yi-lcV"/>
                 <outlet property="_vkButton" destination="ILE-mh-Y8x" id="SR9-wO-wKa"/>
                 <outlet property="bgImageView" destination="wGU-cD-h6T" id="deL-gh-Ffx"/>
@@ -120,7 +124,7 @@
                             <rect key="frame" x="285" y="317" width="13" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="115" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="По требованию" textAlignment="right" minimumFontSize="17" id="MeX-nP-jXg">
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="115" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="По требованию" textAlignment="right" minimumFontSize="17" id="MeX-nP-jXg">
                             <rect key="frame" x="23" y="312" width="254" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,7 +190,7 @@
                             <rect key="frame" x="23" y="272" width="275" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="По карте" textAlignment="right" minimumFontSize="17" id="zBA-w3-xoZ">
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="По карте" textAlignment="right" minimumFontSize="17" id="zBA-w3-xoZ">
                             <rect key="frame" x="23" y="237" width="254" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,7 +216,7 @@
                             <rect key="frame" x="285" y="115" width="13" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Сразу" textAlignment="right" minimumFontSize="17" id="UYb-Dt-Bfw">
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Выключены" textAlignment="right" minimumFontSize="17" id="UYb-Dt-Bfw">
                             <rect key="frame" x="23" y="110" width="254" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -229,7 +233,7 @@
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Русский" textAlignment="right" minimumFontSize="17" id="mfS-E6-Rag">
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Русский" textAlignment="right" minimumFontSize="17" id="mfS-E6-Rag">
                             <rect key="frame" x="23" y="195" width="254" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.18823529410000001" green="0.21960784310000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>

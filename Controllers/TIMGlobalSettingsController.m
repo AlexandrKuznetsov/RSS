@@ -61,6 +61,33 @@
     }
 }
 
+- (NSNumber *)indexOfString:(NSString *)string inArray:(NSUInteger)fieldTag {
+    NSArray *searchArray;
+    NSNumber *foundedIndex;
+    if (fieldTag == 113) {
+        //mail
+        searchArray = [_staticModel notificationsArray];
+    }
+    if (fieldTag == 104) {
+        //language
+        searchArray = [_staticModel languageArray];
+    }
+    if (fieldTag == 114) {
+        //search
+        searchArray = [_staticModel searchArray];
+    }
+    if (fieldTag == 115) {
+        //sync
+        searchArray = [_staticModel synchronizeArray];
+    }
+    for (NSString *obj in searchArray) {
+        if ([obj isEqualToString:string]) {
+            foundedIndex = @([searchArray indexOfObject:obj]);
+        }
+    }
+    return foundedIndex;
+}
+
 #pragma mark - Interface
 
 - (void)setButtonsForSettings:(TIMAppSettings *)settings {
@@ -70,6 +97,23 @@
     odniklEnabled = settings.odnoklassniki;
     googleEnabled = settings.google;
     twitterEnabled = settings.twitter;
+    _mailField.hidden = NO;
+    _languageField.hidden = NO;
+    _searchField.hidden = NO;
+    _syncField.hidden = NO;
+    
+    if (settings.mails) {
+        _mailField.text = [[_staticModel notificationsArray] objectAtIndex:[settings.mails integerValue]];
+    }
+    if (settings.language) {
+        _languageField.text = [[_staticModel languageArray] objectAtIndex:[settings.language integerValue]];
+    }
+    if (settings.search) {
+        _searchField.text = [[_staticModel searchArray] objectAtIndex:[settings.search integerValue]];
+    }
+    if (settings.sync) {
+        _syncField.text = [[_staticModel synchronizeArray] objectAtIndex:[settings.sync integerValue]];
+    }
     
     _fbButton.active = fbEnabled;
     _notifButton.active = pushEnabled;
@@ -152,6 +196,9 @@
     [TIMAppSettingsModel sharedInstance].odniklEnabled = odniklEnabled;
     [TIMAppSettingsModel sharedInstance].twitterEnabled = twitterEnabled;
     [TIMAppSettingsModel sharedInstance].googleEnabled = googleEnabled;
+    [TIMAppSettingsModel sharedInstance].mails = [self indexOfString:_mailField.text inArray:_mailField.tag];
+    [TIMAppSettingsModel sharedInstance].search = [self indexOfString:_searchField.text inArray:_searchField.tag];
+    [TIMAppSettingsModel sharedInstance].sync = [self indexOfString:_syncField.text inArray:_syncField.tag];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[TIMAppSettingsModel sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

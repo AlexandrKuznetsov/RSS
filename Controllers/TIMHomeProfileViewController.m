@@ -112,6 +112,8 @@
                     }
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                 }];
+            } else {
+                 [self labelsForLocalUser];
             }
         } else {
             [self showAlertViewWithMessage:@"Интернет подключение не доступно!"];
