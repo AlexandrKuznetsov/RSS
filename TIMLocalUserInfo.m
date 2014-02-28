@@ -482,9 +482,10 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             NSError* jsonError;
-            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
+            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonError];
+            NSLog(@"%@", jsonArray);
             if (!jsonError) {
                 [self parseResponse:jsonArray];
                 self.loadDataBlock(nil, jsonArray);

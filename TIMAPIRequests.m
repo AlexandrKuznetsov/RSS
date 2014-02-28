@@ -13,7 +13,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        NSURL *url = [NSURL URLWithString:@"http://true-impressions.com"];
+        NSURL *url = [NSURL URLWithString:@"http://37.252.121.145"];
         _client1 = [[AFHTTPClient alloc] initWithBaseURL:url];
     }
     return self;
@@ -29,7 +29,7 @@
 }
 
 - (NSString*)server{
-    return @"http://true-impressions.com";
+    return @"http://37.252.121.145";
 }
 
 - (void)postEmail:(NSString *)login
@@ -42,10 +42,14 @@
     NSDictionary* dict = [TIMKeychain load:KEYCHAIN_SERVICE];
     NSLog(@"%@, %@", dict[@"email"], dict[@"password"]);
     [_client1 postPath:@"/api/login" parameters:userDataDictionary success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([operation.responseString hasPrefix:@"OK"]) {
-            self.loadCompletionBlock(nil, responseObject);
+        NSError* error = nil;
+        NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                           options:NSJSONReadingAllowFragments
+                                                                             error:&error];
+        if (!error) {
+            self.loadCompletionBlock(nil, responseDictionary[@"data"]);
         } else {
-            self.loadCompletionBlock([NSError trueErrorWithServerResponseString:operation.responseString],nil);
+            self.loadCompletionBlock(/*@"Хер его как обрабатывать эти ошибки, о них нет данных вообще"*/nil, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.loadCompletionBlock(error, nil);
