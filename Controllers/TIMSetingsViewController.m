@@ -105,7 +105,7 @@
     [self calculateAboutMySelsBlock];
 }
 
-- (void)writeDataToProfile{
+- (void)writeDataToProfile {
     [[TIMLocalUserInfo sharedInstance] setProfession:self.professionsLabel.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyImpressions:textFieldMyImpressions.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:textFieldMyInterests.text];
@@ -322,8 +322,8 @@
 - (void)deletePhoto:(TIMPhotoButtons*)photoButtons{
     switch (photoButtons.tag) {
         case avatarInSettings:
-            [self changeImageAtImageView:_imageViewAvatar withGender:[[TIMLocalUserInfo sharedInstance] gender]];
             [[TIMLocalUserInfo sharedInstance] setUserPhoto:nil];
+            [self changeImageAtImageView:_imageViewAvatar withGender:[[TIMLocalUserInfo sharedInstance] gender]];
             break;
         case coverInSettings:
             _imageViewCover.image = nil;

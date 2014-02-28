@@ -352,6 +352,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (NSString *)gender {
     if ([self.user objectForKey:@"gender"]) {
+        NSLog(@"gender %@", [self.user objectForKey:@"gender"]);
         return [self.user objectForKey:@"gender"];
     } else {
         return @"";
@@ -512,14 +513,16 @@ static TIMLocalUserInfo *sharedInstance = nil;
             NSData* avaData;
             if (self.userPhoto) {
                 avaData = UIImageJPEGRepresentation(self.userPhoto, 0.8);
+            } else {
+                avaData = [NSData data];
+            }
                 [formData appendPartWithFileData:avaData
                                             name:@"avatar"
                                         fileName:[@"avatar" stringByAppendingString:@".jpg"]
                                         mimeType:@"image/jpeg"];
                 _isAvatarChanged = NO;
-            }
+            
         }
-        
         if (_isWalpaperChanged) {
             NSData* walpaperData;
             if (self.userWalpaper) {
@@ -545,7 +548,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
     }] start];
 }
 
-- (void)parseResponse:(id)response{
+- (void)parseResponse:(id)response {
     if ([response isKindOfClass:([NSDictionary class])]) {
         self.name = [response objectForKey:@"first_name"];
         self.surname = [response objectForKey:@"last_name"];

@@ -20,6 +20,10 @@
 @property BOOL googleEnabled;
 @property BOOL twitterEnabled;
 @property BOOL needUpdate;
+@property (strong, nonatomic) NSNumber *mails;
+@property (strong, nonatomic) NSNumber *language;
+@property (strong, nonatomic) NSNumber *sync;
+@property (strong, nonatomic) NSNumber *search;
 
 @property (strong, nonatomic) NSString *passNew;
 
