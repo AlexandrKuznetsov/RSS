@@ -203,6 +203,7 @@
     [[TIMAppSettingsModel sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
+            NSLog(@"OK");
         } else {
             [self showAlertViewWithMessage:error.localizedDescription];
         }

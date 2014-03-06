@@ -566,7 +566,6 @@ static TIMLocalUserInfo *sharedInstance = nil;
     }];
     
     [[[[TIMAPIRequests sharedManager] client1] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        aksjdhakjsgd
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             [self saveUserInfoInUserDefaults];
             self.loadDataBlock(nil, nil);

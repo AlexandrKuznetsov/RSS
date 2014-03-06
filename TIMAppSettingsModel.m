@@ -30,9 +30,7 @@ static TIMAppSettingsModel *sharedInstance = nil;
 
 - (void)loadSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
-    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
-    
-    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/app_settings" parameters:someData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[TIMAPIRequests sharedManager] client1] getPath:@"/api/settings" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             NSError* jsonError;
@@ -40,7 +38,7 @@ static TIMAppSettingsModel *sharedInstance = nil;
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonError];
             if (!jsonError) {
-                self.loadDataBlock(nil, [self parseResponse:dict]);
+                self.loadDataBlock(nil, [self parseResponse:dict[@"data"]]);
             }else{
                 self.loadDataBlock(jsonError, nil);
             }
@@ -54,11 +52,11 @@ static TIMAppSettingsModel *sharedInstance = nil;
 
 - (void)saveSettingsWithCompletition:(void (^)(NSError *, id))completitionBlock {
     self.loadDataBlock = completitionBlock;
-    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
     NSMutableDictionary* allDAtaDict = [NSMutableDictionary
                                         dictionaryWithDictionary:[self userSettingDictionary]];
-    [allDAtaDict setValuesForKeysWithDictionary:someData];
-    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/update_app_settings" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/settings" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", newStr);
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             self.loadDataBlock(nil, nil);
         } else {
@@ -73,7 +71,7 @@ static TIMAppSettingsModel *sharedInstance = nil;
     self.loadDataBlock = completitionBlock;
     NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
     NSMutableDictionary* allDAtaDict = [NSMutableDictionary
-                                        dictionaryWithDictionary:@{@"new_password": self.passNew
+                                        dictionaryWithDictionary:@{@"newPassword": self.passNew
                                                                    }];
     [allDAtaDict setValuesForKeysWithDictionary:someData];
     [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/update_password" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -88,16 +86,15 @@ static TIMAppSettingsModel *sharedInstance = nil;
 }
 
 - (NSDictionary*)userSettingDictionary{
-    NSDictionary* userDictionary = @{@"push_notifications": @(self.pushEnabled),
-                                     @"social_facebook": @(self.fbEnabled),
-                                     @"social_vk": @(self.VkEnabled),
-                                     @"social_ok": @(self.odniklEnabled),
-                                     @"social_google": @(self.googleEnabled),
-                                     @"social_twitter": @(self.twitterEnabled),
-                                     @"email_notifications" : self.mails,
-                                     @"default_language" : @"ru",
-                                     @"default_search_type" : self.search,
-                                     @"sync_type" : self.sync
+    NSDictionary* userDictionary = @{@"pushNotifications": @(self.pushEnabled),
+                                     @"socialFacebook": @(self.fbEnabled),
+                                     @"socialVk": @(self.VkEnabled),
+                                     @"socialOk": @(self.odniklEnabled),
+                                     @"socialGoogle": @(self.googleEnabled),
+                                     @"socialTwitter": @(self.twitterEnabled),
+                                     @"emailNotifications" : self.mails,
+                                     @"defaultSearchType" : self.search,
+                                     @"syncType" : self.sync
                                      };
     
     return userDictionary;

@@ -228,11 +228,11 @@
 }
 
 - (NSArray *)searchArray {
-    return @[@"По карте", @"По имени"];
+    return @[@"По имени", @"По карте"];
 }
 
 - (NSArray *)synchronizeArray {
-    return @[@"В режиме онлайн", @"По требованию"];
+    return @[@"По требованию", @"В режиме онлайн"];
 }
 
 - (NSString *)formatInterestsString:(NSInteger)count {

@@ -65,6 +65,8 @@
     [TIMKeychain deleteData:KEYCHAIN_SERVICE];
     [TIMKeychain save:KEYCHAIN_SERVICE data:userDataDictionary];
     [_client1 postPath:@"/api/register" parameters:userDataDictionary success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString* newStr = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", newStr);
         if ([operation.responseString hasPrefix:@"OK"]) {
             self.loadCompletionBlock(nil, responseObject);
         } else {

@@ -27,9 +27,9 @@
 
 - (TIMStatistic *)parseResponse:(NSDictionary *)response {
     TIMStatistic *statistic = [[TIMStatistic alloc] init];
-    statistic.users = [[response objectForKey:@"users"] integerValue];
-    statistic.locations = [[response objectForKey:@"locations"] integerValue];
-    statistic.impressions = [[response objectForKey:@"impressions"] integerValue];
+    statistic.users = [response [@"data"][@"users"] integerValue];
+    statistic.locations = [response [@"data"][@"locations"] integerValue];
+    statistic.impressions = [response [@"data"][@"impressions"] integerValue];
     return statistic;
 }
 
