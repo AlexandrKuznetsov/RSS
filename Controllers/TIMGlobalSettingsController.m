@@ -83,6 +83,7 @@
     for (NSString *obj in searchArray) {
         if ([obj isEqualToString:string]) {
             foundedIndex = @([searchArray indexOfObject:obj]);
+            NSLog(@"%@ index", foundedIndex);
         }
     }
     return foundedIndex;

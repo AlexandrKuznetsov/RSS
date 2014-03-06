@@ -228,7 +228,7 @@
 }
 
 - (NSArray *)searchArray {
-    return @[@"По имени", @"По карте"];
+    return @[@"По карте", @"По имени"];
 }
 
 - (NSArray *)synchronizeArray {
