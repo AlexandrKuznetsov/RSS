@@ -46,10 +46,11 @@
         NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                            options:NSJSONReadingAllowFragments
                                                                              error:&error];
-        if (!error) {
+        if (!error && [responseDictionary[@"errors"] count] == 0) {
             self.loadCompletionBlock(nil, responseDictionary[@"data"]);
         } else {
-            self.loadCompletionBlock(/*@"Хер его как обрабатывать эти ошибки, о них нет данных вообще"*/nil, nil);
+            NSError* serverError = [NSError errorWithDomain:NSPOSIXErrorDomain code:kCFURLErrorBadServerResponse userInfo:nil];
+            self.loadCompletionBlock(serverError, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.loadCompletionBlock(error, nil);

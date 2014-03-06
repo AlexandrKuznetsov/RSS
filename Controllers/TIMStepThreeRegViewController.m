@@ -10,6 +10,7 @@
 
 @interface TIMStepThreeRegViewController () {
     NSArray *_interests;
+    NSArray* _proffesions;
 }
 
 @end
@@ -103,9 +104,9 @@
     if ([self checkIsDataValid]) {
         [[TIMRegistrationModel sharedInstance] saveCountry:self.currentCountry
                                                       city:self.cityNameField.text];
-        NSString* interestsString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
-        [[TIMRegistrationModel sharedInstance] saveInterests:interestsString
-                                                  profession:self.professionLabel.text
+//        NSString* interestsString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
+        [[TIMRegistrationModel sharedInstance] saveInterests:_interests
+                                                  profession:_proffesions
                                                        about:self.aboutTextView.text];
         __weak TIMStepThreeRegViewController* weakSelf = self;
         [[TIMLocalUserInfo sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
@@ -150,6 +151,8 @@
 - (void)tableViewForProfessions:(BOOL)isForProfessions pickedData:(NSArray *)data {
     if (isForProfessions) {
         self.professionLabel.text = [data lastObject];
+        _proffesions = [NSArray arrayWithArray:data];
+        [[TIMLocalUserInfo sharedInstance] setProfession:data];
     } else {
         _interests = [NSArray arrayWithArray:data];
         NSString* interestString;
@@ -161,7 +164,7 @@
             interestString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
             self.interestsCountLabel.text = [_staticModel formatInterestsString:_interests.count];
         }
-        [[TIMLocalUserInfo sharedInstance] setInterests:interestString];
+        [[TIMLocalUserInfo sharedInstance] setInterests:_interests];
     }
 }
 

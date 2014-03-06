@@ -27,11 +27,11 @@
 @property (copy, nonatomic) NSString *city;
 @property (copy, nonatomic) NSString *birthday;
 @property (copy, nonatomic) NSString *gender;
-@property (copy, nonatomic) NSString *defaultLanguage;
+//@property (copy, nonatomic) NSString *defaultLanguage;
 @property (copy, nonatomic) NSString *avatarName;
 @property (copy, nonatomic) NSString *wallpaperName;
-@property (copy, nonatomic) NSString *profession;
-@property (copy, nonatomic) NSString *interests;
+@property (copy, nonatomic) NSArray *profession;
+@property (copy, nonatomic) NSArray *interests;
 @property (assign, nonatomic) BOOL isWalpaperChanged;
 @property (assign, nonatomic) BOOL isAvatarChanged;
 @property (copy, nonatomic) NSString *aboutMe;
@@ -57,5 +57,8 @@
 - (void)deleteLocalUser;
 - (void)connected;
 - (BOOL)isInterestExist:(NSString*)interest;
+- (BOOL)isProfessionExist:(NSString*)profession;
+- (NSString*)professionText;
+- (NSString*)interestsText;
 
 @end

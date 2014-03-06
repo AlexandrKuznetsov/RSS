@@ -108,7 +108,11 @@
                             [weakSelf pushLoginViewController];
                         }
                     } else {
-                        [self showAlertViewWithMessage:[error localizedDescription]];
+                        if (error.code == 12015) {
+                            [self pushLoginViewController];
+                        } else {
+                            [self showAlertViewWithMessage:[error localizedDescription]];
+                        }
                     }
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                 }];

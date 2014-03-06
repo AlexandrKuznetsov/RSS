@@ -11,6 +11,7 @@
 
 @interface TIMSetingsViewController () {
     NSArray *_interests;
+    NSArray* _professions;
 }
 
 @end
@@ -65,7 +66,7 @@
 }
 
 - (void)setValuesToView{
-    self.professionsLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
+    self.professionsLabel.text = [[TIMLocalUserInfo sharedInstance] professionText];
     textFieldMyImpressions.text = [[TIMLocalUserInfo sharedInstance] privacyImpressions];
     textFieldMyInterests.text = [[TIMLocalUserInfo sharedInstance] privacyInterest];
     textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance] privacyPlace];
@@ -83,10 +84,10 @@
     if (!_staticModel) {
         _staticModel = [[TIMModelWithStaticData alloc] init];
     }
-    NSDictionary* interestsDict = [_staticModel formatInterestsDictionaryFromString:[[TIMLocalUserInfo sharedInstance] interests]];
-    _interestsLabel.text = interestsDict[@"string"];
-    _interests = interestsDict[@"array"];
-    _professionsLabel.text = [[TIMLocalUserInfo sharedInstance] profession];
+//    NSDictionary* interestsDict = [_staticModel formatInterestsDictionaryFromString:[[TIMLocalUserInfo sharedInstance] interests]];
+    _interestsLabel.text = [_staticModel formatInterestsString:[[TIMLocalUserInfo sharedInstance] interests].count];
+    _interests = [[TIMLocalUserInfo sharedInstance] interests];
+    _professionsLabel.text = [[TIMLocalUserInfo sharedInstance] professionText];
     textFieldCity.text = [[TIMLocalUserInfo sharedInstance] city];
     textFieldBirthday.text = [[TIMLocalUserInfo sharedInstance] birthday];
     textFieldSeconName.text = [[TIMLocalUserInfo sharedInstance] surname];
@@ -106,13 +107,15 @@
 }
 
 - (void)writeDataToProfile {
-    [[TIMLocalUserInfo sharedInstance] setProfession:self.professionsLabel.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyImpressions:textFieldMyImpressions.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:textFieldMyInterests.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyPlace:textFiewlMyLocation.text];
     [[TIMLocalUserInfo sharedInstance] setPrivacyProfession:textFiewldMyProfession.text];
+    if (_professions) {
+        [[TIMLocalUserInfo sharedInstance] setProfession:_professions];
+    }
     if (_interests) {
-        [[TIMLocalUserInfo sharedInstance] setInterests:[[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests]];
+        [[TIMLocalUserInfo sharedInstance] setInterests:_interests];
     }
     [[TIMLocalUserInfo sharedInstance] setCountry:self.currentCountry[@"title"]];
     [[TIMLocalUserInfo sharedInstance] setCity:textFieldCity.text];
@@ -252,6 +255,7 @@
 - (void)tableViewForProfessions:(BOOL)isForProfessions pickedData:(NSArray *)data {
     if (isForProfessions) {
         self.professionsLabel.text = [data lastObject];
+        _professions = [NSArray arrayWithArray:data];
     } else {
         NSString* interestString;
         if (!_staticModel) {
@@ -265,7 +269,7 @@
             self.interestsLabel.text = [_staticModel formatInterestsString:data.count];
             interestString = [[TIMRegistrationModel sharedInstance] stringFromInterestsArray:_interests];
         }
-        [[TIMLocalUserInfo sharedInstance] setInterests:interestString];
+        [[TIMLocalUserInfo sharedInstance] setInterests:_interests];
     }
 }
 

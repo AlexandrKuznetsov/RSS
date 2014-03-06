@@ -74,8 +74,8 @@ static TIMRegistrationModel *sharedInstance = nil;
     [[TIMLocalUserInfo sharedInstance] setCity:aCity];
 }
 
-- (void)saveInterests:(NSString *)anIntersts
-           profession:(NSString *)profession
+- (void)saveInterests:(NSArray *)anIntersts
+           profession:(NSArray *)profession
                 about:(NSString *)about {
     if (about) {
         [[TIMLocalUserInfo sharedInstance] setAboutMe:about];

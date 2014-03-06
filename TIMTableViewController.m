@@ -216,7 +216,7 @@
 - (BOOL)checkForUserProfession:(NSString*)profession{
 //    NSLog(@"%@, %@ \n\n", profession, [[TIMLocalUserInfo sharedInstance] profession]);
     
-    if ([profession isEqualToString:[[TIMLocalUserInfo sharedInstance] profession]]) {
+    if ([[TIMLocalUserInfo sharedInstance] isProfessionExist:profession]) {
         return YES;
     }
     return NO;
