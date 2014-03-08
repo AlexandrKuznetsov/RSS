@@ -83,6 +83,7 @@
     for (NSString *obj in searchArray) {
         if ([obj isEqualToString:string]) {
             foundedIndex = @([searchArray indexOfObject:obj]);
+            NSLog(@"%@ index", foundedIndex);
         }
     }
     return foundedIndex;
@@ -203,6 +204,7 @@
     [[TIMAppSettingsModel sharedInstance] saveSettingsWithCompletition:^(NSError *error, id response) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         if (!error) {
+            NSLog(@"OK");
         } else {
             [self showAlertViewWithMessage:error.localizedDescription];
         }

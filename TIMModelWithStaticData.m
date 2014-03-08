@@ -232,7 +232,7 @@
 }
 
 - (NSArray *)synchronizeArray {
-    return @[@"В режиме онлайн", @"По требованию"];
+    return @[@"По требованию", @"В режиме онлайн"];
 }
 
 - (NSString *)formatInterestsString:(NSInteger)count {
