@@ -77,14 +77,15 @@
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSError *error, id response))completitionBlock {
     self.loadCompletionBlock = completitionBlock;
-    [_client1 getPath:@"/professions.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (![operation.responseString hasPrefix:@"ERROR"]) {
+    [_client1 getPath:@"/profession" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSError* jsonError;
-            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
+            NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonError];
+        NSArray* errorArray = jsonArray[@"error"];
+        if ([errorArray count] < 1) {
             if (!jsonError) {
-                self.loadCompletionBlock(nil, jsonArray);
+                self.loadCompletionBlock(nil, jsonArray[@"data"][@"list"]);
             }else{
                 self.loadCompletionBlock(jsonError, nil);
             }
@@ -99,14 +100,16 @@
 
 - (void)loadInterestsWithCompletition:(void(^)(NSError *error, id response))completitionBlock {
     self.loadCompletionBlock = completitionBlock;
-    [_client1 getPath:@"/interests.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (![operation.responseString hasPrefix:@"ERROR"]) {
+    [_client1 getPath:@"/interest" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSError* jsonError;
-            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
+            NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:operation.responseData
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonError];
+        NSArray* errorArray = jsonArray[@"error"];
+        if ([errorArray count] < 1) {
             if (!jsonError) {
-                self.loadCompletionBlock(nil, jsonArray);
+                NSArray* responseArray = jsonArray[@"data"][@"list"];
+                self.loadCompletionBlock(nil, responseArray);
             }else{
                 self.loadCompletionBlock(jsonError, nil);
             }

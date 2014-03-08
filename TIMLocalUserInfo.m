@@ -457,9 +457,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (BOOL)isInterestExist:(NSString*)interest{
-    for (NSString* singleInterest in _interests) {
+    for (NSDictionary* singleInterest in _interests) {
         
-        if ([singleInterest isEqualToString:interest]) {
+        if ([singleInterest[@"name"] isEqualToString:interest]) {
             return YES;
         }
     }
@@ -467,9 +467,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
 }
 
 - (BOOL)isProfessionExist:(NSString*)profession{
-    for (NSString* singleInterest in _profession) {
+    for (NSDictionary* singleInterest in _profession) {
         
-        if ([singleInterest isEqualToString:profession]) {
+        if ([singleInterest[@"name"] isEqualToString:profession]) {
             return YES;
         }
     }
@@ -486,9 +486,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)loadSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
-    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
+//    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
     
-    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/profile" parameters:someData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/profile" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             NSError* jsonError;
@@ -532,10 +532,10 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (void)saveSettingsWithCompletition:(void(^)(NSError *error, id response))completitionBlock{
     self.loadDataBlock = completitionBlock;
-    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
+//    NSDictionary* someData = [TIMKeychain load:KEYCHAIN_SERVICE];
     NSMutableDictionary* allDAtaDict = [NSMutableDictionary
                                         dictionaryWithDictionary:[self userSettingDictionary]];
-    [allDAtaDict setValuesForKeysWithDictionary:someData];
+//    [allDAtaDict setValuesForKeysWithDictionary:someData];
     NSMutableURLRequest* request = [[[TIMAPIRequests sharedManager] client1] multipartFormRequestWithMethod:@"POST" path:@"/api/profile" parameters:allDAtaDict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         if (_isAvatarChanged) {
@@ -566,7 +566,7 @@ static TIMLocalUserInfo *sharedInstance = nil;
     }];
     
     [[[[TIMAPIRequests sharedManager] client1] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        aksjdhakjsgd
+        NSString* responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             [self saveUserInfoInUserDefaults];
             self.loadDataBlock(nil, nil);
@@ -593,11 +593,11 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.profession = [response objectForKey:@"professions"];
         self.interests = [response objectForKey:@"interests"];
         self.aboutMe = [response objectForKey:@"about"];        
-        self.privacyOn = [response objectForKey:@"privacy_on"];
-        self.privacyPlace = [response objectForKey:@"privacy_place"];
-        self.privacyInterest = [response objectForKey:@"privacy_interest"];
-        self.privacyImpressions = [response objectForKey:@"privacy_impressions"];
-        self.privacyProfession = [response objectForKey:@"privacy_profession"];
+        self.privacyOn = [response objectForKey:@"privacyOn"];
+        self.privacyPlace = [response objectForKey:@"privacyPlace"];
+        self.privacyInterest = [response objectForKey:@"privacyInterest"];
+        self.privacyImpressions = [response objectForKey:@"privacyImpressions"];
+        self.privacyProfession = [response objectForKey:@"privacyProfession"];
         [self calculateDescriptionAboutMeSizes];
     }
 }
@@ -611,8 +611,8 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                      @"birthday": self.birthday,
                                      @"sex": self.gender,
                                      @"about": self.aboutMe,
-                                     @"professions": self.profession,
-                                     @"interests": self.interests,
+                                     @"professions": [self professionsIds],
+                                     @"interests": [self interestsIds],
                                      @"privacy_on": self.privacyOn,
                                      @"privacy_place": self.privacyPlace,
                                      @"privacy_interest": self.privacyInterest,
@@ -620,6 +620,22 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                      @"privacy_profession": self.privacyProfession,
                                      };
     return userDictionary;
+}
+
+- (NSArray*)professionsIds{
+    NSMutableArray* idsArray = [[NSMutableArray alloc] init];
+    for (NSDictionary* profesion in self.profession) {
+        [idsArray addObject:profesion[@"id"]];
+    }
+    return idsArray;
+}
+
+- (NSArray*)interestsIds{
+    NSMutableArray* idsArray = [[NSMutableArray alloc] init];
+    for (NSDictionary* interes in self.interests) {
+        [idsArray addObject:interes[@"id"]];
+    }
+    return idsArray;
 }
 
 - (void)calculateDescriptionAboutMeSizes{

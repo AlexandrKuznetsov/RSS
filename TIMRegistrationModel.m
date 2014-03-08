@@ -119,7 +119,7 @@ static TIMRegistrationModel *sharedInstance = nil;
 
 - (void)loadProfessionsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock {
     self.loadDataBlock = completitionBlock;
-    [[TIMAPIRequests sharedManager] loadProfessionsWithCompletition:^(NSError *error, id response) {
+    [[TIMAPIRequests sharedManager] loadProfessionsWithCompletition:^(NSError *error, NSArray* response) {
         if (error) {
             if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
                 self.loadDataBlock(nil, NO, @"Отсутствует интернет подключение!");
@@ -127,14 +127,14 @@ static TIMRegistrationModel *sharedInstance = nil;
                 self.loadDataBlock(nil,NO,@"Ошибка при загрузке");
             }
         } else {
-            self.loadDataBlock([self parseResponse:response], YES, nil);
+            self.loadDataBlock(response, YES, nil);
         }
     }];
 }
 
 - (void)loadInterestsWithCompletition:(void(^)(NSArray *data, BOOL status, NSString *error))completitionBlock {
     self.loadDataBlock = completitionBlock;
-    [[TIMAPIRequests sharedManager] loadInterestsWithCompletition:^(NSError *error, id response) {
+    [[TIMAPIRequests sharedManager] loadInterestsWithCompletition:^(NSError *error, NSArray* response) {
         if (error) {
             if ((error.code == NSURLErrorNotConnectedToInternet) || (error.code == NSURLErrorTimedOut)) {
                 self.loadDataBlock(nil, NO, @"Отсутствует интернет подключение!");
@@ -142,7 +142,7 @@ static TIMRegistrationModel *sharedInstance = nil;
                 self.loadDataBlock(nil,NO,@"Ошибка при загрузке");
             }
         } else {
-            self.loadDataBlock([self parseResponse:response], YES, nil);
+            self.loadDataBlock(response, YES, nil);
         }
     }];
 }

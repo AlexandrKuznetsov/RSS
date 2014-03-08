@@ -178,15 +178,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     if (_isProfessions) {
-        if ([self checkForUserProfession:_tableViewData[indexPath.row]]) {
+        if ([self checkForUserProfession:_tableViewData[indexPath.row][@"name"]]) {
             [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
         }
     } else {
-        if ([self checkForUserInterests:_tableViewData[indexPath.row]]) {
+        if ([self checkForUserInterests:_tableViewData[indexPath.row][@"name"]]) {
             [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
         }
     }
-    cell.textLabel.text = _tableViewData[indexPath.row];
+    cell.textLabel.text = _tableViewData[indexPath.row][@"name"];
     return cell;
 }
 
