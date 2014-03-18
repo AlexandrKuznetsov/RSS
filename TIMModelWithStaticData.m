@@ -236,14 +236,14 @@
 }
 
 - (NSString *)formatInterestsString:(NSInteger)count {
-    NSString *countString = [NSString stringWithFormat:@"%d", count];
+    NSString *countString = [NSString stringWithFormat:@"%ld", (long)count];
     NSString *lastChar = [countString substringFromIndex:[countString length] - 1];
     if ([lastChar isEqualToString:@"1"]) {
-        return [NSString stringWithFormat:@"%d интерес",count];
+        return [NSString stringWithFormat:@"%ld интерес",count];
     } else if (([lastChar isEqualToString:@"2"]) || ([lastChar isEqualToString:@"3"]) || ([lastChar isEqualToString:@"4"])) {
-        return [NSString stringWithFormat:@"%d интереса",count];
+        return [NSString stringWithFormat:@"%ld интереса",count];
     } else {
-        return [NSString stringWithFormat:@"%d интересов",count];
+        return [NSString stringWithFormat:@"%ld интересов",count];
     }
 }
 

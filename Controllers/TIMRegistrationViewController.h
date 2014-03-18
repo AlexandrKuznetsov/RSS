@@ -39,11 +39,11 @@ typedef enum {
     synchronization = 115
 }textFieldEnum;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, photoBtnsEnam) {
     avatarInRegistration = 10,
     avatarInSettings = 11,
     coverInSettings = 12
-}photoBtnsEnam;
+};
 
 @interface TIMRegistrationViewController : TIMViewController <CLLocationManagerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>{
     TIMModelWithStaticData *_staticModel;

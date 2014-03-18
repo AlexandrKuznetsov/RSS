@@ -228,36 +228,40 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [self.user setObject:email forKey:@"email"];
 }
 
-- (void)setPrivacyImpressions:(NSString *)privacyImpressions{
-    if (!privacyImpressions || [privacyImpressions isKindOfClass:([NSNull class])]) {
-        privacyImpressions = @"только друзья";
+- (void)setPrivacyImpressions:(NSInteger)privacyImpressions{
+    if (!privacyImpressions) {
+        privacyImpressions = 2;
     }
-    _privacyImpressions = [privacyImpressions copy];
-    [self.user setObject:privacyImpressions forKey:@"privacyImpressions"];
+    _privacyImpressions = privacyImpressions;
+    [self.user setObject:[NSNumber numberWithInteger:privacyImpressions]
+                  forKey:@"privacyImpressions"];
 }
 
-- (void)setPrivacyInterest:(NSString *)privacyInterest{
-    if (!privacyInterest || [privacyInterest isKindOfClass:([NSNull class])]) {
-        privacyInterest = @"только я";
+- (void)setPrivacyInterest:(NSInteger)privacyInterest{
+    if (!privacyInterest) {
+        privacyInterest = 2;
     }
-    _privacyInterest = [privacyInterest copy];
-    [self.user setObject:privacyInterest forKey:@"privacyInterest"];
+    _privacyInterest = privacyInterest;
+    [self.user setObject:[NSNumber numberWithInteger:privacyInterest]
+                  forKey:@"privacyInterest"];
 }
 
-- (void)setPrivacyOn:(NSString *)privacyOn{
-    if (!privacyOn || [privacyOn isKindOfClass:([NSNull class])]) {
-        privacyOn = @"";
+- (void)setPrivacyOn:(NSInteger)privacyOn{
+    if (!privacyOn) {
+        privacyOn = 1;
     }
-    _privacyOn = [privacyOn copy];
-    [self.user setObject:privacyOn forKey:@"privacyOn"];
+    _privacyOn = privacyOn;
+    [self.user setObject:[NSNumber numberWithInteger:privacyOn]
+                  forKey:@"privacyOn"];
 }
 
-- (void)setPrivacyPlace:(NSString *)privacyPlace{
-    if (!privacyPlace || [privacyPlace isKindOfClass:([NSNull class])]) {
-        privacyPlace = @"все";
+- (void)setPrivacyPlace:(NSInteger)privacyPlace{
+    if (!privacyPlace) {
+        privacyPlace = 0;
     }
-    _privacyPlace = [privacyPlace copy];
-    [self.user setObject:privacyPlace forKey:@"privacyPlace"];
+    _privacyPlace = privacyPlace;
+    [self.user setObject:[NSNumber numberWithInteger:privacyPlace]
+                  forKey:@"privacyPlace"];
 
 }
 
@@ -297,12 +301,13 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [self.user setObject:wallpaperName forKey:@"wallpaperName"];
 }
 
-- (void)setPrivacyProfession:(NSString *)privacyProfession{
-    if (!privacyProfession || [privacyProfession isKindOfClass:([NSNull class])]) {
-        privacyProfession = @"только друзья";
+- (void)setPrivacyProfession:(NSInteger)privacyProfession{
+    if (!privacyProfession) {
+        privacyProfession = 2;
     }
-    _privacyProfession = [privacyProfession copy];
-    [self.user setObject:privacyProfession forKey:@"privacyProfession"];
+    _privacyProfession = privacyProfession;
+    [self.user setObject:[NSNumber numberWithInteger:privacyProfession]
+                  forKey:@"privacyProfession"];
 
 }
 
@@ -384,43 +389,43 @@ static TIMLocalUserInfo *sharedInstance = nil;
     }
 }
 
-- (NSString*)privacyOn{
+- (NSInteger)privacyOn{
     if ([self.user objectForKey:@"privacyOn"]) {
-        return [self.user objectForKey:@"privacyOn"];
+        return [[self.user objectForKey:@"privacyOn"] integerValue];
     } else {
-        return @"";
+        return 0;
     }
 }
 
-- (NSString*)privacyPlace{
+- (NSInteger)privacyPlace{
     if ([self.user objectForKey:@"privacyPlace"]) {
-        return [self.user objectForKey:@"privacyPlace"];
+        return [[self.user objectForKey:@"privacyPlace"] integerValue];
     } else {
-        return @"";
+        return 0;
     }
 }
 
-- (NSString*)privacyInterest{
+- (NSInteger)privacyInterest{
     if ([self.user objectForKey:@"privacyInterest"]) {
-        return [self.user objectForKey:@"privacyInterest"];
+        return [[self.user objectForKey:@"privacyInterest"] integerValue];
     } else {
-        return @"";
+        return 1;
     }
 }
 
-- (NSString*)privacyImpressions{
+- (NSInteger)privacyImpressions{
     if ([self.user objectForKey:@"privacyImpressions"]) {
-        return [self.user objectForKey:@"privacyImpressions"];
+        return [[self.user objectForKey:@"privacyImpressions"] integerValue];
     } else {
-        return @"";
+        return 2;
     }
 }
 
-- (NSString*)privacyProfession{
+- (NSInteger)privacyProfession{
     if ([self.user objectForKey:@"privacyProfession"]) {
-        return [self.user objectForKey:@"privacyProfession"];
+        return [[self.user objectForKey:@"privacyProfession"] integerValue];
     } else {
-        return @"";
+        return 2;
     }
 }
 
@@ -592,12 +597,12 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.wallpaperName = [response objectForKey:@"wallpaper"];
         self.profession = [response objectForKey:@"professions"];
         self.interests = [response objectForKey:@"interests"];
-        self.aboutMe = [response objectForKey:@"about"];        
-        self.privacyOn = [response objectForKey:@"privacyOn"];
-        self.privacyPlace = [response objectForKey:@"privacyPlace"];
-        self.privacyInterest = [response objectForKey:@"privacyInterest"];
-        self.privacyImpressions = [response objectForKey:@"privacyImpressions"];
-        self.privacyProfession = [response objectForKey:@"privacyProfession"];
+        self.aboutMe = [response objectForKey:@"about"];
+        self.privacyOn = (long)[[response objectForKey:@"privacyOn"] integerValue];
+        self.privacyPlace = (long)[[response objectForKey:@"privacyPlace"] integerValue];
+        self.privacyInterest = (long)[[response objectForKey:@"privacyInterest"] integerValue];
+        self.privacyImpressions = [[response objectForKey:@"privacyImpressions"] integerValue];
+        self.privacyProfession = [[response objectForKey:@"privacyProfession"] integerValue];
         [self calculateDescriptionAboutMeSizes];
     }
 }
@@ -613,11 +618,11 @@ static TIMLocalUserInfo *sharedInstance = nil;
                                      @"about": self.aboutMe,
                                      @"professions": [self professionsIds],
                                      @"interests": [self interestsIds],
-                                     @"privacy_on": self.privacyOn,
-                                     @"privacy_place": self.privacyPlace,
-                                     @"privacy_interest": self.privacyInterest,
-                                     @"privacy_impressions": self.privacyImpressions,
-                                     @"privacy_profession": self.privacyProfession,
+                                     @"privacyOn": [NSNumber numberWithInteger:self.privacyOn],
+                                     @"privacyPlace": [NSNumber numberWithInteger:self.privacyPlace],
+                                     @"privacyInterest": [NSNumber numberWithInteger:self.privacyInterest],
+                                     @"privacyImpressions": [NSNumber numberWithInteger:self.privacyImpressions],
+                                     @"privacyProfession": [NSNumber numberWithInteger:self.privacyProfession],
                                      };
     return userDictionary;
 }
@@ -693,9 +698,9 @@ static TIMLocalUserInfo *sharedInstance = nil;
 
 - (NSString*)interestsText{
     NSMutableString* interestsString = [[NSMutableString alloc] init];
-    for (NSString* interest in _interests) {
-        [interestsString appendString:interest];
-        if (![interest isEqualToString:[_interests lastObject]]) {
+    for (NSDictionary* interest in _interests) {
+        [interestsString appendString:interest[@"name"]];
+        if (![interest[@"name"] isEqualToString:[_interests lastObject][@"name"]]) {
             [interestsString appendString:@","];
         }
     }
@@ -715,11 +720,6 @@ static TIMLocalUserInfo *sharedInstance = nil;
     [self setProfession:nil];
     [self setInterests:nil];
     [self setAboutMe:nil];
-    [self setPrivacyOn:nil];
-    [self setPrivacyPlace:nil];
-    [self setPrivacyInterest:nil];
-    [self setPrivacyImpressions:nil];
-    [self setPrivacyProfession:nil];
     
     [self setUserPhoto:nil];
     [self setUserWalpaper:nil];
@@ -821,6 +821,23 @@ static TIMLocalUserInfo *sharedInstance = nil;
             break;
         }
     }
+}
+
+- (NSString*)privacyString:(NSInteger)type{
+    switch (type) {
+        case 0:
+            return @"Все";
+            break;
+        case 1:
+            return @"Только я";
+            break;
+        case 2:
+            return @"Только друзья";
+            break;
+        default:
+            break;
+    }
+    return nil;
 }
 
 @end

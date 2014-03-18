@@ -243,9 +243,9 @@
 }
 
 - (void)setStatisticsLabel:(TIMStatistic *)stat {
-    self.impressionsCountLabel.text = [NSString stringWithFormat:@"%d", stat.impressions];
-    self.usersCountLabel.text = [NSString stringWithFormat:@"%d", stat.users];
-    self.destinationsCountLabel.text = [NSString stringWithFormat:@"%d", stat.locations];
+    self.impressionsCountLabel.text = [NSString stringWithFormat:@"%ld", (long)stat.impressions];
+    self.usersCountLabel.text = [NSString stringWithFormat:@"%ld", stat.users];
+    self.destinationsCountLabel.text = [NSString stringWithFormat:@"%ld", stat.locations];
     self.statisticView.hidden = NO;
 }
 

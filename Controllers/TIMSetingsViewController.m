@@ -67,15 +67,17 @@
 
 - (void)setValuesToView{
     self.professionsLabel.text = [[TIMLocalUserInfo sharedInstance] professionText];
-    textFieldMyImpressions.text = [[TIMLocalUserInfo sharedInstance] privacyImpressions];
-    textFieldMyInterests.text = [[TIMLocalUserInfo sharedInstance] privacyInterest];
-    textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance] privacyPlace];
-    textFiewldMyProfession.text = [[TIMLocalUserInfo sharedInstance] privacyProfession];
+    
+    textFieldMyImpressions.text = [[TIMLocalUserInfo sharedInstance]privacyString: [[TIMLocalUserInfo sharedInstance] privacyImpressions]];
+    textFieldMyInterests.text = [[TIMLocalUserInfo sharedInstance]privacyString:[[TIMLocalUserInfo sharedInstance] privacyInterest]];
+    textFiewlMyLocation.text = [[TIMLocalUserInfo sharedInstance]privacyString:[[TIMLocalUserInfo sharedInstance] privacyPlace]];
+    textFiewldMyProfession.text = [[TIMLocalUserInfo sharedInstance]privacyString:[[TIMLocalUserInfo sharedInstance] privacyProfession]];
+    
     NSString* country = [[TIMLocalUserInfo sharedInstance] country];
     textFieldCountry.text = country;
     TIMModelWithStaticData* staticData = [[TIMModelWithStaticData alloc] init];
     self.currentCountry = [staticData getCounryDictWithCountryName:country];
-    if ([[[TIMLocalUserInfo sharedInstance] privacyOn] isEqualToString:@"Yes"]) {
+    if ([[TIMLocalUserInfo sharedInstance] privacyOn] == 1) {
         anonymousUser = YES;
     } else {
         anonymousUser = NO;
@@ -107,10 +109,14 @@
 }
 
 - (void)writeDataToProfile {
-    [[TIMLocalUserInfo sharedInstance] setPrivacyImpressions:textFieldMyImpressions.text];
-    [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:textFieldMyInterests.text];
-    [[TIMLocalUserInfo sharedInstance] setPrivacyPlace:textFiewlMyLocation.text];
-    [[TIMLocalUserInfo sharedInstance] setPrivacyProfession:textFiewldMyProfession.text];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyImpressions:
+     [self integerFromString:textFieldMyImpressions.text]];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyInterest:
+     [self integerFromString:textFieldMyInterests.text]];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyPlace:
+     [self integerFromString:textFiewlMyLocation.text]];
+    [[TIMLocalUserInfo sharedInstance] setPrivacyProfession:
+     [self integerFromString:textFiewldMyProfession.text]];
     if (_professions) {
         [[TIMLocalUserInfo sharedInstance] setProfession:_professions];
     }
@@ -123,11 +129,11 @@
     [[TIMLocalUserInfo sharedInstance] setSurname:textFieldSeconName.text];
     [[TIMLocalUserInfo sharedInstance] setName:textFieldName.text];
     
-    NSString* anonymous;
+    NSInteger anonymous;
     if (anonymousUser) {
-        anonymous = @"Yes";
+        anonymous = 1;
     } else {
-        anonymous = @"No";
+        anonymous = 0;
     }
     [[TIMLocalUserInfo sharedInstance] setPrivacyOn:anonymous];
     if ([textViewAboutMySelf.text isEqualToString:@"Пару строк о себе..."]) {
@@ -365,6 +371,19 @@
     tableController.isProfessions = prof;
     tableController.dataDelegate = self;
     [self.navigationController pushViewController:tableController animated:YES];
+}
+
+- (NSInteger)integerFromString:(NSString*)string{
+    if ([string isEqualToString:@"Все"]) {
+        return 0;
+    }
+    if ([string isEqualToString:@"Только я"]) {
+        return 1;
+    }
+    if ([string isEqualToString:@"Только друзья"]) {
+        return 2;
+    }
+    return 0;
 }
 
 @end

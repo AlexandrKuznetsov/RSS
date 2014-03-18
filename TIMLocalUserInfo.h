@@ -36,11 +36,11 @@
 @property (assign, nonatomic) BOOL isAvatarChanged;
 @property (copy, nonatomic) NSString *aboutMe;
 @property (strong, nonatomic) NSDictionary* descrAboutMeSizes;
-@property (copy, nonatomic) NSString *privacyOn;
-@property (copy, nonatomic) NSString *privacyPlace;
-@property (copy, nonatomic) NSString *privacyInterest;
-@property (copy, nonatomic) NSString *privacyImpressions;
-@property (copy, nonatomic) NSString *privacyProfession;
+@property (assign, nonatomic) NSInteger privacyOn;
+@property (assign, nonatomic) NSInteger privacyPlace;
+@property (assign, nonatomic) NSInteger privacyInterest;
+@property (assign, nonatomic) NSInteger privacyImpressions;
+@property (assign, nonatomic) NSInteger privacyProfession;
 @property (assign, nonatomic) BOOL isConnection;
 @property (strong, nonatomic) UIImage *userPhoto;
 @property (strong, nonatomic) UIImage *userWalpaper;
@@ -60,5 +60,6 @@
 - (BOOL)isProfessionExist:(NSString*)profession;
 - (NSString*)professionText;
 - (NSString*)interestsText;
+- (NSString*)privacyString:(NSInteger)type;
 
 @end
