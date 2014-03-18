@@ -161,9 +161,6 @@
 		8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A91188C014F00E95FFD /* NSError+True.m */; };
 		8B7B0A98188C34B300E95FFD /* TIMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A96188C34B300E95FFD /* TIMTableViewController.m */; };
 		8B7B0A99188C34B300E95FFD /* TIMTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A97188C34B300E95FFD /* TIMTableViewController.xib */; };
-		8B7E76291891C8E10076F51B /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7E76231891C8E10076F51B /* libTestFlight.a */; };
-		8B7E762A1891C8E10076F51B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E76241891C8E10076F51B /* README.md */; };
-		8B7E762B1891C8E10076F51B /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E76251891C8E10076F51B /* release_notes.md */; };
 		8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */; };
 		8B8791DA18859D21004E177E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D818859D21004E177E /* line.png */; };
 		8B8791DB18859D21004E177E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8791D918859D21004E177E /* line@2x.png */; };
@@ -465,12 +462,6 @@
 		8B7B0A95188C34B300E95FFD /* TIMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMTableViewController.h; sourceTree = "<group>"; };
 		8B7B0A96188C34B300E95FFD /* TIMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMTableViewController.m; sourceTree = "<group>"; };
 		8B7B0A97188C34B300E95FFD /* TIMTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIMTableViewController.xib; sourceTree = "<group>"; };
-		8B7E76231891C8E10076F51B /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = TestFlightSDK2.1.4/libTestFlight.a; sourceTree = SOURCE_ROOT; };
-		8B7E76241891C8E10076F51B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = TestFlightSDK2.1.4/README.md; sourceTree = SOURCE_ROOT; };
-		8B7E76251891C8E10076F51B /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = release_notes.md; path = TestFlightSDK2.1.4/release_notes.md; sourceTree = SOURCE_ROOT; };
-		8B7E76261891C8E10076F51B /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = TestFlightSDK2.1.4/TestFlight.h; sourceTree = SOURCE_ROOT; };
-		8B7E76271891C8E10076F51B /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "TestFlightSDK2.1.4/TestFlight+AsyncLogging.h"; sourceTree = SOURCE_ROOT; };
-		8B7E76281891C8E10076F51B /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "TestFlightSDK2.1.4/TestFlight+ManualSessions.h"; sourceTree = SOURCE_ROOT; };
 		8B816F781889AC3100C7DACA /* TIMRegistrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMRegistrationModel.h; sourceTree = "<group>"; };
 		8B816F791889AC3100C7DACA /* TIMRegistrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMRegistrationModel.m; sourceTree = "<group>"; };
 		8B8791D818859D21004E177E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = Images/Registration/line.png; sourceTree = "<group>"; };
@@ -623,7 +614,6 @@
 				8BAF893F188EB81000A9C5C3 /* libz.1.2.5.dylib in Frameworks */,
 				C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */,
 				C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */,
-				8B7E76291891C8E10076F51B /* libTestFlight.a in Frameworks */,
 				8BA5B50518815D09009ED9D8 /* CoreGraphics.framework in Frameworks */,
 				8BA5B50718815D09009ED9D8 /* UIKit.framework in Frameworks */,
 				8BA5B50318815D09009ED9D8 /* Foundation.framework in Frameworks */,
@@ -1241,7 +1231,6 @@
 		8BA5B4F618815D09009ED9D8 = {
 			isa = PBXGroup;
 			children = (
-				8BAF8934188EB7F500A9C5C3 /* TestFlightSDK2.1.4 */,
 				C55CF0101893EBD900AF64DB /* Keychain */,
 				8B68797F188D8129007EB325 /* ServerObjects */,
 				8B7B0A8C188BFD2800E95FFD /* APIRequests */,
@@ -1323,20 +1312,6 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		8BAF8934188EB7F500A9C5C3 /* TestFlightSDK2.1.4 */ = {
-			isa = PBXGroup;
-			children = (
-				8B7E76231891C8E10076F51B /* libTestFlight.a */,
-				8B7E76241891C8E10076F51B /* README.md */,
-				8B7E76251891C8E10076F51B /* release_notes.md */,
-				8B7E76261891C8E10076F51B /* TestFlight.h */,
-				8B7E76271891C8E10076F51B /* TestFlight+AsyncLogging.h */,
-				8B7E76281891C8E10076F51B /* TestFlight+ManualSessions.h */,
-			);
-			name = TestFlightSDK2.1.4;
-			path = /Users/fist/Projects/RSS/TestFlightSDK2.1.4;
-			sourceTree = "<absolute>";
 		};
 		8BC497FA18A0CC5D00F93414 /* App Settings Model */ = {
 			isa = PBXGroup;
@@ -1591,7 +1566,6 @@
 				8B7385191881D10E00D1E0C2 /* icon-feed-info.png in Resources */,
 				8B7B0A7E188BAC5400E95FFD /* btn_friends@2x.png in Resources */,
 				8B7385201881D10E00D1E0C2 /* icon-menu@2x.png in Resources */,
-				8B7E762B1891C8E10076F51B /* release_notes.md in Resources */,
 				8B73852C1881D10E00D1E0C2 /* login-bottom.jpg in Resources */,
 				8B7385171881D10E00D1E0C2 /* icon-done.png in Resources */,
 				C550EDDF18871C9500C8CFD4 /* OpenSans-Bold.ttf in Resources */,
@@ -1648,7 +1622,6 @@
 				8B7385741881F39500D1E0C2 /* TIMStepTwoRegViewController.xib in Resources */,
 				8B7385041881D10E00D1E0C2 /* disclosure-icon.png in Resources */,
 				8B9283C718833876009F93C0 /* btn_menu@2x.png in Resources */,
-				8B7E762A1891C8E10076F51B /* README.md in Resources */,
 				8B7385341881D10E00D1E0C2 /* reg-circle.png in Resources */,
 				8B47454F1897A82C00FCE895 /* icon_profilesettings_on.png in Resources */,
 				C550EDE118871C9500C8CFD4 /* OpenSans-ExtraBold.ttf in Resources */,
@@ -1984,13 +1957,9 @@
 				GCC_PREFIX_HEADER = "TrueIMPRESSION/TrueIMPRESSION-Prefix.pch";
 				INFOPLIST_FILE = "TrueIMPRESSION/TrueIMPRESSION-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Volumes/HDD/Проекты/RSS/TestFlightSDK2.1.4",
-					/Users/fist/Projects/RSS/TestFlightSDK2.1.4,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "81337913-D0EF-402E-A636-D433D99B5E52";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2007,13 +1976,9 @@
 				GCC_PREFIX_HEADER = "TrueIMPRESSION/TrueIMPRESSION-Prefix.pch";
 				INFOPLIST_FILE = "TrueIMPRESSION/TrueIMPRESSION-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Volumes/HDD/Проекты/RSS/TestFlightSDK2.1.4",
-					/Users/fist/Projects/RSS/TestFlightSDK2.1.4,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "81337913-D0EF-402E-A636-D433D99B5E52";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

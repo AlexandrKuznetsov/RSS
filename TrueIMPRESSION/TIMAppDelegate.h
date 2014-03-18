@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "TIMHomeNavigationViewController.h"
 #import "TIMHomeProfileViewController.h"
-#import "TestFlight.h"
+#import <TestFlightSDK/TestFlight.h>
 #import <MFSideMenu/MFSideMenu.h>
 #import "MFSideMenuContainerViewController.h"
 #import "TIMLeftSideViewController.h"
