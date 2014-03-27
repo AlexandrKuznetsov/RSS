@@ -541,46 +541,75 @@ static TIMLocalUserInfo *sharedInstance = nil;
     NSMutableDictionary* allDAtaDict = [NSMutableDictionary
                                         dictionaryWithDictionary:[self userSettingDictionary]];
 //    [allDAtaDict setValuesForKeysWithDictionary:someData];
-    NSMutableURLRequest* request = [[[TIMAPIRequests sharedManager] client1] multipartFormRequestWithMethod:@"POST" path:@"/api/profile" parameters:allDAtaDict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        
-        if (_isAvatarChanged) {
-            NSData* avaData;
-            if (self.userPhoto) {
-                avaData = UIImageJPEGRepresentation(self.userPhoto, 0.8);
-            } else {
-                avaData = [NSData data];
-            }
-                [formData appendPartWithFileData:avaData
-                                            name:@"avatar"
-                                        fileName:[@"avatar" stringByAppendingString:@".jpg"]
-                                        mimeType:@"image/jpeg"];
-                _isAvatarChanged = NO;
-            
-        }
-        if (_isWalpaperChanged) {
-            NSData* walpaperData;
-            if (self.userWalpaper) {
-                walpaperData = UIImageJPEGRepresentation(self.userWalpaper, 0.8);
-                [formData appendPartWithFileData:walpaperData
-                                            name:@"wallpaper"
-                                        fileName:[@"wallpaper" stringByAppendingString:@".jpg"]
-                                        mimeType:@"image/jpeg"];
-                _isWalpaperChanged = NO;
-            }
-        }
-    }];
+//    NSMutableURLRequest* request = [[[TIMAPIRequests sharedManager] client1] multipartFormRequestWithMethod:@"POST" path:@"/api/profile" parameters:allDAtaDict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        
+//        if (_isAvatarChanged) {
+//            NSData* avaData;
+//            if (self.userPhoto) {
+//                avaData = UIImageJPEGRepresentation(self.userPhoto, 0.8);
+//            } else {
+//                avaData = [NSData data];
+//            }
+//                [formData appendPartWithFileData:avaData
+//                                            name:@"avatar"
+//                                        fileName:[@"avatar" stringByAppendingString:@".jpg"]
+//                                        mimeType:@"image/jpeg"];
+//                _isAvatarChanged = NO;
+//            
+//        }
+//        if (_isWalpaperChanged) {
+//            NSData* walpaperData;
+//            if (self.userWalpaper) {
+//                walpaperData = UIImageJPEGRepresentation(self.userWalpaper, 0.8);
+//                [formData appendPartWithFileData:walpaperData
+//                                            name:@"wallpaper"
+//                                        fileName:[@"wallpaper" stringByAppendingString:@".jpg"]
+//                                        mimeType:@"image/jpeg"];
+//                _isWalpaperChanged = NO;
+//            }
+//        }
+//    }];
     
-    [[[[TIMAPIRequests sharedManager] client1] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString* responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/profile" parameters:allDAtaDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             [self saveUserInfoInUserDefaults];
+            NSDictionary* avatarDict;
+            фывфывфыв
+            if (_isAvatarChanged) {
+                if (self.userPhoto) {
+                    NSData* avatarData = UIImagePNGRepresentation(self.userPhoto);
+                    avatarDict = @{@"avatarfile": avatarData};
+                } else {
+                    avatarDict = @{@"deleteAvatar": [NSNumber numberWithBool:YES]};
+                }
+                
+                [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/avatar" parameters:avatarDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSLog(@"%@", operation.responseString);
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"%@ -- %@", operation.responseString, error.localizedDescription);
+                }];
+            }
+            if (_isWalpaperChanged) {
+                if (self.userPhoto) {
+                    NSData* avatarData = UIImagePNGRepresentation(self.userPhoto);
+                    avatarDict = @{@"wallpaperFile": avatarData};
+                } else {
+                    avatarDict = @{@"deleteWallpaper": [NSNumber numberWithBool:YES]};
+                }
+                
+                [[[TIMAPIRequests sharedManager] client1] postPath:@"/api/wallpaper" parameters:avatarDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSLog(@"%@", operation.responseString);
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    
+                }];
+            }
             self.loadDataBlock(nil, nil);
         } else {
             self.loadDataBlock([NSError trueErrorWithServerResponseString:operation.responseString], nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.loadDataBlock(error, nil);
-    }] start];
+    }];
 }
 
 - (void)parseResponse:(id)response {
@@ -593,16 +622,16 @@ static TIMLocalUserInfo *sharedInstance = nil;
         self.birthday = [response objectForKey:@"birthday"];
         self.gender = [response objectForKey:@"sex"];
 //        self.defaultLanguage = [response objectForKey:@"language"];
-        self.avatarName = [response objectForKey:@"avatar"];
-        self.wallpaperName = [response objectForKey:@"wallpaper"];
+//        self.avatarName = [response objectForKey:@"avatar"];
+//        self.wallpaperName = [response objectForKey:@"wallpaper"];
         self.profession = [response objectForKey:@"professions"];
         self.interests = [response objectForKey:@"interests"];
         self.aboutMe = [response objectForKey:@"about"];
-        self.privacyOn = (long)[[response objectForKey:@"privacyOn"] integerValue];
-        self.privacyPlace = (long)[[response objectForKey:@"privacyPlace"] integerValue];
-        self.privacyInterest = (long)[[response objectForKey:@"privacyInterest"] integerValue];
-        self.privacyImpressions = [[response objectForKey:@"privacyImpressions"] integerValue];
-        self.privacyProfession = [[response objectForKey:@"privacyProfession"] integerValue];
+//        self.privacyOn = [[response objectForKey:@"privacyOn"] integerValue];
+//        self.privacyPlace = [[response objectForKey:@"privacyPlace"] integerValue];
+//        self.privacyInterest = [[response objectForKey:@"privacyInterest"] integerValue];
+//        self.privacyImpressions = [[response objectForKey:@"privacyImpressions"] integerValue];
+//        self.privacyProfession = [[response objectForKey:@"privacyProfession"] integerValue];
         [self calculateDescriptionAboutMeSizes];
     }
 }

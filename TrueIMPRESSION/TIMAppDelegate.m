@@ -13,7 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[TIMLocalUserInfo sharedInstance] connected];
-    [TestFlight takeOff:@"09049131-8e66-4e5a-af19-8e3b1b83f61d"];
+//    [TestFlight takeOff:@"09049131-8e66-4e5a-af19-8e3b1b83f61d"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     TIMHomeProfileViewController *homeViewController = [[TIMHomeProfileViewController alloc]
                                                         initWithNibName:@"TIMHomeProfileViewController"

@@ -156,7 +156,6 @@
 		8B7B0A81188BAC5400E95FFD /* mask_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A79188BAC5400E95FFD /* mask_place.png */; };
 		8B7B0A82188BAC5400E95FFD /* mask_place@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7B0A7A188BAC5400E95FFD /* mask_place@2x.png */; };
 		8B7B0A86188BB60500E95FFD /* TIMModelWithStaticData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */; };
-		8B7B0A8A188BBD9600E95FFD /* TIMLocalUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */; };
 		8B7B0A8F188BFE0900E95FFD /* TIMAPIRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */; };
 		8B7B0A92188C014F00E95FFD /* NSError+True.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A91188C014F00E95FFD /* NSError+True.m */; };
 		8B7B0A98188C34B300E95FFD /* TIMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B0A96188C34B300E95FFD /* TIMTableViewController.m */; };
@@ -270,6 +269,7 @@
 		C5E67DD91889F18C000CB56B /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD51889F18C000CB56B /* off@2x.png */; };
 		C5E67DDA1889F18C000CB56B /* on.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD61889F18C000CB56B /* on.png */; };
 		C5E67DDB1889F18C000CB56B /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E67DD71889F18C000CB56B /* on@2x.png */; };
+		C5EDCD8618E0CE3500BD4176 /* TIMLocalUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EDCD8518E0CE3500BD4176 /* TIMLocalUserInfo.m */; };
 		C5F728B61882F4B500B25ACA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B51882F4B500B25ACA /* MapKit.framework */; };
 		C5F728B81882F57200B25ACA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F728B71882F57200B25ACA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -454,7 +454,6 @@
 		8B7B0A84188BB60500E95FFD /* TIMModelWithStaticData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMModelWithStaticData.h; sourceTree = "<group>"; };
 		8B7B0A85188BB60500E95FFD /* TIMModelWithStaticData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMModelWithStaticData.m; sourceTree = "<group>"; };
 		8B7B0A88188BBD9600E95FFD /* TIMLocalUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMLocalUserInfo.h; sourceTree = "<group>"; };
-		8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMLocalUserInfo.m; sourceTree = "<group>"; };
 		8B7B0A8D188BFE0900E95FFD /* TIMAPIRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMAPIRequests.h; sourceTree = "<group>"; };
 		8B7B0A8E188BFE0900E95FFD /* TIMAPIRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMAPIRequests.m; sourceTree = "<group>"; };
 		8B7B0A90188C014F00E95FFD /* NSError+True.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+True.h"; sourceTree = "<group>"; };
@@ -602,6 +601,7 @@
 		C5E67DD51889F18C000CB56B /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "off@2x.png"; sourceTree = "<group>"; };
 		C5E67DD61889F18C000CB56B /* on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on.png; sourceTree = "<group>"; };
 		C5E67DD71889F18C000CB56B /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "on@2x.png"; sourceTree = "<group>"; };
+		C5EDCD8518E0CE3500BD4176 /* TIMLocalUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMLocalUserInfo.m; sourceTree = "<group>"; };
 		C5F728B51882F4B500B25ACA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C5F728B71882F57200B25ACA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -1055,7 +1055,7 @@
 			isa = PBXGroup;
 			children = (
 				8B7B0A88188BBD9600E95FFD /* TIMLocalUserInfo.h */,
-				8B7B0A89188BBD9600E95FFD /* TIMLocalUserInfo.m */,
+				C5EDCD8518E0CE3500BD4176 /* TIMLocalUserInfo.m */,
 			);
 			name = LocalUser;
 			sourceTree = "<group>";
@@ -1805,6 +1805,7 @@
 				8B7385551881F1DD00D1E0C2 /* TIMRegistrationViewController.m in Sources */,
 				8B687982188D8155007EB325 /* TIMStatistic.m in Sources */,
 				8B890A0E189458740032F761 /* TIMImpressionsController.m in Sources */,
+				C5EDCD8618E0CE3500BD4176 /* TIMLocalUserInfo.m in Sources */,
 				8BEAFDCE18848A1200D6A2BA /* TIMProfileInfoCell.m in Sources */,
 				8B73858518820D7900D1E0C2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8B816F7A1889AC3100C7DACA /* TIMRegistrationModel.m in Sources */,
@@ -1829,7 +1830,6 @@
 				C550EDEF18871CCE00C8CFD4 /* UIFont+TIFonts.m in Sources */,
 				C5E67DCD1889B7E2000CB56B /* TIMSetingsViewController.m in Sources */,
 				8BEAFDC81884826D00D6A2BA /* TIMProfileImpressionCell.m in Sources */,
-				8B7B0A8A188BBD9600E95FFD /* TIMLocalUserInfo.m in Sources */,
 				C5E67DD11889B865000CB56B /* TIMPhotoButtons.m in Sources */,
 				8B7B0A8F188BFE0900E95FFD /* TIMAPIRequests.m in Sources */,
 			);
