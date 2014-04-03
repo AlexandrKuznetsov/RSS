@@ -574,11 +574,11 @@ static TIMLocalUserInfo *sharedInstance = nil;
         if (![operation.responseString hasPrefix:@"ERROR"]) {
             [self saveUserInfoInUserDefaults];
             NSDictionary* avatarDict;
-            фывфывфыв
+            //фывфывфыв
             if (_isAvatarChanged) {
                 if (self.userPhoto) {
                     NSData* avatarData = UIImagePNGRepresentation(self.userPhoto);
-                    avatarDict = @{@"avatarfile": avatarData};
+                    avatarDict = @{@"avatarFile": avatarData};
                 } else {
                     avatarDict = @{@"deleteAvatar": [NSNumber numberWithBool:YES]};
                 }
